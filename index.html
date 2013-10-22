@@ -9,54 +9,189 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
+    :hover, :focus {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
     body {
         font-family: 'Open Sans', sans-serif;
-        padding: 20px;
         color: #f1f1f1;
-        font-size: 16px;
-        background-color: #222;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        background-color: #1c1d28;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Stint Ultra Expanded', cursive;
+        text-transform: uppercase;
     }
     h1 {
-        text-transform: uppercase;
         font-size: 80px;
+        margin: 0;
     }
     hr {
         border:none;
         height: 1px;
         background-color: #999;
     }
-    #intro {
-        margin-bottom: 100px;
-        border-bottom: 1px solid #444;
+    #days-indicator {
+        color: #5c5f93;
+        padding: 5px 10px;
+        text-align: right;
+        float: right;
+        font-size: 30px;
+        margin-top: 20px;
     }
-    .btn {
-        border:2px solid #444;
+    .lead {
+        font-size: 150%;
+    }
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #intro {
+        padding: 40px 60px;
+        width: 60%;
+        position: fixed;
+    }
+    #days {
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: auto;
+        margin: 0;
+        width: 360px;
+        top: 0;
+        min-height: 100%;
+        height: 150%;
+        right: 10%;
+        background-color: #0f0f19;
+        padding: 40px 30px;
+    }
+    li {
+        border:1px solid #5c5f93;
+        border-bottom: 10px solid #5c5f93;
         color: #fff;
         text-decoration: none;
         padding: 5px 10px;
+        margin: 10px 0;
         border-radius: 5px;
         text-align: center;
-        margin-left: 10px;
+        display: inline-block;
+        width: 300px;
+        height: 220px;
+        text-align: center;
+        padding: 20px;
+        position: relative;
     }
-    .btn:hover {
+    li a {
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+    }
+    li .title {
+        display: none;
+    }
+    li span {
+        display: inline-block;
+    }
+    li .date .day {
+        font-family: 'Stint Ultra Expanded', cursive;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    li .date .day-digit {
+        font-size: 24px;
+        border:2px solid #1e1723;
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 10px;
+        display: block;
+        position: relative;
+        width: 50%;
+        margin: 0 auto;
+        text-shadow: 0 1px 1px #444;
+    }
+    li .date .year {
+        font-size: 16px;
+        color: #74697c;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+    }
+    li:hover {
         border-color: #fff;
+    }
+    li:hover a .day-digit {
+        color: #d8d6b8;
+    }
+    li .date .day-digit sup {
+        font-weight: normal;
+        font-size: 50%;
+        text-transform: uppercase;
+        margin-top: 4px;
+        margin-left: -2px;
+    }
+    @media (min-width: 1173px) {
+        body {
+            font-size: 24px;
+        }
+    }
+    @media (max-width: 1173px) {
+        #days-indicator {
+            display: none;
+        }
+        #days {
+            right: 0;
+        }
+    }
+    @media (max-width: 900px) {
+        #days,
+        #intro {
+            position: static;
+            width: 100%;
+        }
+        #days li {
+            width: 100%;
+        }
+        #days {
+            right: 0;
+        }
+    }
+    @media (max-width: 470px) {
+        body {
+            font-size: 16px;
+        }
+        #intro {
+            padding: 20px;
+        }
     }
     </style>
 </head>
 <body>
-    <div id="intro">
-        <h1>Etude</h1>
-        <p><strong>etude</strong>
+    <div id="intro" class="container">
+        <h1><img src="logo.png" alt="logo"> <div id="days-indicator">Scroll &rsaquo;</div></h1>
+        <p class="lead">
+            <strong>etude</strong>
             <br>noun <br>
             1. a short musical composition, typically for one instrument, designed as an exercise to improve the technique or demonstrate the skill of the player.
         </p>
+        <p>This is a personal project of mine wherein I will create a new script/program for every day of the year. Any theme, concept or functionality, but something new, every day.</p>
     </div>
-    <h3>My "programming etudes":</h3>
-    <ul>
-        <li>&ldquo;Hyperactive Squares&rdquo; <a href="10-21-2013/index.html" class="btn">View</a></li>
+    <ul id="days">
+        <li>
+            <a href="10-21-2013/index.html" class="">
+                <span class="date"><span class="day">Monday</span> <span class="day-digit">21 <sup>st</sup></span> <br><span class="year">2013</span></span>
+                <span class="title">&ldquo;Hyperactive Squares&rdquo;</span>
+            </a>
+        </li>
     </ul>
 </body>
 </html>
