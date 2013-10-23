@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #444;
+        background-color: #c4f79a;
+        padding: 20px;
+        margin: 0;
+    }
+    section {
+        display: block;
+    }
+    sup {
+        font-size: 40%;
+    }
+    body, input {
+        font-size: 20px;
+    }
+    input {
+        padding: 10px 20px;
+        border:1px solid #ccc;
+        border-radius: 4px;
+        width: 200px;
+        display: block;
+    }
+    input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+    }
+    input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: #444;
+        color: #f1f1f1;
+    }
+    #form {
+        margin: 0 auto 100px auto;
+        width: 35%;
+        float: left;
+    }
+    #words {
+        width: 65%;
+        float: right;
+        padding-left: 20px;
+    }
+    .notice {
+        width: 100%;
+        display: block;
+        font-size: 11px;
+        clear: both;
+        margin-top: 100px;
+    }
+    #workspace p {
+        display: inline-block;
+        float: left;
+        width: auto;
+        margin: 0 10px 10px 0;
+        padding: 10px 15px;
+        border:2px solid #fff;
+        font-size: 16px;
+        height: 45px;
+        line-height: 25px;
+        border-radius: 5px;
+    }
+    @media handheld, (max-width: 600px) {
+        #words, #form {
+            float: none;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <form novalidate role="form" id="form">
+        <h1>Random <br>word maker <br>thing. <sup>TM</sup></h1>
+        <label for="name">Enter your name, or whatever.</label>
+        <input id="name" type="text" value="" placeholder="e.g. Marty McFly">
+        <br>
+        <label for="count">Total words to create</label>
+        <input type="number" min="1" max="1000" id="count">
+        <br>
+        <input type="submit" value="Randomize it.">
+    </form>
+    <div id="words">
+        <section id="workspace"></section>
+    </div>
+
+    <p class="notice">Random background color from: <a href="http://randomcolour.com/" target="_blank" title="random colour">http://randomcolour.com/</a></p>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="texty.js"></script>
+</body>
+</html>
