@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-23-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    .letter {
+        text-align: center;
+        font-size: 10em;
+        padding: 10px;
+        height: 40%;
+        width: 20%;
+        line-height: 150%;
+        min-height: 300px;
+        margin: 0;
+        float: left;
+        display: inline-block;
+        overflow: hidden;
+    }
+    @media handheld, (max-width: 600px) {
+        .letter {
+            font-size: 5em;
+            min-height: 200px;
+            line-height: 200%;
+            width: 30%;
+            height: 30%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="workspace"></section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="magic.js"></script>
+</body>
+</html>
