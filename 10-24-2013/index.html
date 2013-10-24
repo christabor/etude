@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-23-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @keyframes wacky {
+        0% {
+            transform: scale(0.4);
+            text-shadow: 0 200px 2px rgba(255, 255, 255, 0.2);
+        }
+        20% {
+            transform: scale(0.6);
+            text-shadow: -200px 0 2px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+            transform: scale(0.8);
+            text-shadow: 0 -200px 2px rgba(255, 255, 255, 0.2);
+        }
+        75% {
+            transform: scale(0.6);
+            text-shadow: 200px 0 2px rgba(255, 255, 255, 0.2);
+        }
+        100% {
+            transform: scale(0.4);
+            text-shadow: 0 200px 2px rgba(255, 255, 255, 0.2);
+        }
+    }
+    @-webkit-keyframes wacky {
+        0% {
+            -webkit-transform: scale(0.4);
+            text-shadow: 0 200px 2px rgba(255, 255, 255, 0.2);
+        }
+        20% {
+            -webkit-transform: scale(0.6);
+            text-shadow: -200px 0 2px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+            -webkit-transform: scale(0.8);
+            text-shadow: 0 -200px 2px rgba(255, 255, 255, 0.2);
+        }
+        75% {
+            -webkit-transform: scale(0.6);
+            text-shadow: 200px 0 2px rgba(255, 255, 255, 0.2);
+        }
+        100% {
+            -webkit-transform: scale(0.4);
+            text-shadow: 0 200px 2px rgba(255, 255, 255, 0.2);
+        }
+    }
+    @keyframes fader {
+        0% {
+            background-color: red;
+        }
+        20% {
+            background-color: green;
+        }
+        40% {
+            background-color: yellow;
+        }
+        60% {
+            background-color: blue;
+        }
+        80% {
+            background-color: orange;
+        }
+        100% {
+            background-color: purple;
+        }
+    }
+    @-webkit-keyframes fader {
+        0% {
+            background-color: red;
+        }
+        20% {
+            background-color: green;
+        }
+        40% {
+            background-color: yellow;
+        }
+        60% {
+            background-color: blue;
+        }
+        80% {
+            background-color: orange;
+        }
+        100% {
+            background-color: purple;
+        }
+    }
+    #bg {
+        opacity: 0.3;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url(texture.png);
+    }
+    #refresh {
+        font-family: 'Lucida Grande', Helvetica, san-serif;
+        text-transform: uppercase;
+        color:#fff;
+        text-shadow: 0 1px 1px #444;
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    body {
+        text-align: center;
+        font-family: 'Amatic SC', cursive;
+        -moz-animation: fader 20s linear infinite;
+        -webkit-animation: fader 20s linear infinite;
+        animation: fader 20s linear infinite;
+        padding: 100px;
+    }
+    h1 {
+        width: 50%;
+        margin: 10% auto;
+        font-size: 160px;
+        -moz-animation: wacky 6s linear infinite;
+        -webkit-animation: wacky 6s linear infinite;
+        animation: wacky 6s linear infinite;
+    }
+    @media handheld, (max-width: 900px) {
+        h1 {
+            font-size: 110px;
+        }
+    }
+    @media handheld, (max-width: 600px) {
+        h1 {
+            width: 100%;
+            font-size: 60px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p id="refresh">(refresh for more)</p>
+    <div id="bg"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="split.js"></script>
+</body>
+</html>
