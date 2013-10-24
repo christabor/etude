@@ -1,6 +1,6 @@
 ;(function(){
     function rnd(num) {
-        return Math.round(Math.random() * num);
+        return Math.floor(Math.random() * num);
     }
     function rand() {
         return rnd(255) + ', ' + rnd(255) + ', ' + rnd(255);

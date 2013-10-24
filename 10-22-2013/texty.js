@@ -17,7 +17,7 @@ $(document).ready(function(){
     }
 
     function randomizeLetter() {
-        return letters[Math.round(Math.random() * getLength(letters))];
+        return letters[Math.floor(Math.random() * getLength(letters))];
     }
 
     function randomizeWord(word) {

@@ -29,15 +29,15 @@ $(document).ready(function(){
     ];
 
     function randLetter() {
-        return letters[Math.round(Math.random() * letters.length)];
+        return letters[Math.floor(Math.random() * letters.length)];
     }
 
     function randFont() {
-        return font_stacks[Math.round(Math.random() * font_stacks.length)];
+        return font_stacks[Math.floor(Math.random() * font_stacks.length)];
     }
 
     function randClr() {
-        return 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
+        return 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
     }
 
     function generateGrid() {
