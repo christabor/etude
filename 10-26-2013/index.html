@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-26-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Underdog' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ceb68a;
+        font-family: 'Underdog', cursive;
+        font-size: 20px;
+        line-height: 40px;
+        overflow: hidden;
+    }
+    #controls strong,
+    h1, h2, h3 {
+        font-family: 'Fredericka the Great', cursive;
+    }
+    #intro {
+        text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+    }
+    h1 {
+        color: #7A4315;
+    }
+    #workspace {
+        padding-left: 140px;
+    }
+    #go {
+        display: none;
+    }
+    #intro {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        padding: 100px 20%;
+    }
+    #start-game {
+        background-color: #210303;
+        border-bottom: 4px solid #a0836a;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        color: #fff;
+        display: block;
+        width: 300px;
+        margin: 10px auto;
+    }
+    #start-game:hover {
+        background-color: #510808;
+    }
+    #controls {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color:#210303;
+        padding: 10px;
+        z-index: 998;
+        border-radius: 0 0 5px 0;
+        display: none;
+    }
+    #game-end {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #210303;
+        color: #fff;
+        padding: 40px;
+        text-align: center;
+        display: none;
+        z-index: 999;
+    }
+    #game-end h3 {
+        color: #ddab45;
+        text-shadow: 0 2px 3px #000;
+        line-height: 150px;
+        font-size: 100px;
+    }
+    #timeleft,
+    #scorecard {
+        color: #fff;
+        width: 100px;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    #controls strong {
+        color: #e25656;
+    }
+    .overlay-title {
+        font-size: 200px;
+        font-weight: bold;
+        color: #bf1616;
+        position: fixed;
+        text-shadow: 0 2px 2px #fff;
+        top: 100px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        z-index: 0;
+        display: none;
+        text-align: center;
+    }
+    .overlay-title span {
+        font-size: 60px;
+    }
+    input {
+        padding: 6px;
+        border:1px solid #ddab45;
+        background-color: #b79251;
+    }
+    input.exploding {
+        border: 2px solid #bf1616;
+        background-color: #bf1616;
+    }
+    @media handheld, (max-width: 600px) {
+        a,
+        #start-game {
+            width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h2 class="overlay-title" id="final-countdown"></h2>
+    <h2 class="overlay-title" id="go">Go! <br><br><span>Move your mouse!</span></h2>
+    <div id="controls">
+        <p id="timeleft"><strong>Time Left:</strong><br> <span class="time">1:00</span> seconds</p>
+        <p id="scorecard"><strong>Score:</strong> <br><span class="score">60</span></p>
+    </div>
+    <div id="game-end">
+        <h3>Holy hell!</h3>
+        <p>Dang kid, that was fantastic! You scored <span class="final-score"></span> big ones!</p>
+    </div>
+    <div id="intro">
+        <h1>DESTROY ALL INPUTS</h1>
+        <p>Tired of inputs and collection forms? Tired of always giving away information on the internet? How about trying a little <strong>input destruction</strong> for a change! <a href="#" id="start-game">Start Game</a></p>
+    </div>
+    <div id="workspace"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="doot.js"></script>
+</body>
+</html>
