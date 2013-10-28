@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-27-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @keyframes zoom {
+        0% {
+            -webkit-transform: scale(1);
+        }
+        50% {
+            -webkit-transform: scale(1.1);
+        }
+        100% {
+            -webkit-transform: scale(1);
+        }
+    }
+    @-webkit-keyframes zoom {
+        0% {
+            -webkit-transform: scale(1);
+        }
+        50% {
+            -webkit-transform: scale(1.1);
+        }
+        100% {
+            -webkit-transform: scale(1);
+        }
+    }
+    body {
+        background-color: #000;
+        color: #65ff1d;
+        font-size: 20px;
+        overflow: hidden;
+        -moz-animation: zoom 8s linear infinite;
+        -webkit-animation: zoom 8s linear infinite;
+        animation: zoom 8s linear infinite;
+    }
+    div {
+        display: inline-block;
+        padding: 20px;
+        width: 50px;
+        overflow: hidden;
+        text-align: center;
+        float: left;
+        height: 100%;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        text-shadow: 0 0 20px #65ff1d, 0 0 20px #65ff1d;
+    }
+    div p:first-of-type {
+        opacity: 0.5;
+    }
+    div p:nth-of-type(1) {
+        opacity: 0.7;
+    }
+    div p:last-of-type {
+        color: #fff;
+    }
+    @media handheld, (max-width: 600px) {}
+    </style>
+</head>
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="matrix.js"></script>
+</body>
+</html>
