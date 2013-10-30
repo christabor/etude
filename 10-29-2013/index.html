@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Etude - 10-29-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=ABeeZee:400,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
     * {
         -moz-box-sizing: border-box;
@@ -9,35 +10,60 @@
         box-sizing: border-box;
     }
     body {
-        background-color: #222;
-        color: #000;
-    }
-    h3 {
+        font-family: 'ABeeZee', sans-serif;
+        background-color: #2f3449;
+        color: #fff;
+        font-size: 24px;
+        line-height: 50px;
     }
     #loader {
-        background-color: #fff;
         border-radius: 10px;
         padding: 40px;
         width: 50%;
         text-align: center;
         margin: 100px auto;
     }
+    h1 {
+        font-weight: bold;
+        font-size: 80px;
+    }
+    ul {
+        color: #7995bf;
+    }
+    .meta {
+        border-top: 1px solid #7995bf;
+        font-size: 60%;
+        width: 50%;
+        margin: 0 auto;
+        line-height: 30px;
+        opacity: 0.6;
+    }
     @media handheld, (max-width: 600px) {}
     </style>
 </head>
 <body>
     <div id="loader">
-        <p>loading...</p>
+        <h1>SimLoader</h1>
+        <ul class="spline-loader">
+            <li>Loading widgets...</li>
+            <li>Reticulating strong...</li>
+            <li>Maximizing throughput...</li>
+            <li>Categorizing hotdogs...</li>
+            <li>Alphabetizing ducks...</li>
+            <li>Obfuscating pictograms...</li>
+            <li>Projecting flatulence dissipators...</li>
+            <li>Diffusing osmotic flavonoids...</li>
+            <li>Masticating chewing gum...</li>
+            <li>Obliterating dangerous subsequences...</li>
+        </ul>
         <p><strong>A SimCity style loader for showing fun messages in sequence. Easily degradable fallback, semantic, micro-sized, intelligent defaults.</strong></p>
-        <div class="loading-phrases">
-            <ul>
-                <li>Loading widgets...</li>
-                <li>Reticulating splines...</li>
-                <li>Maximizing throughput...</li>
-                <li>Categorizing hotdogs...</li>
-                <li>Alphabetizing ducks...</li>
-                <li>Obfuscating cryptographs...</li>
-            </ul>
+        <div class="meta">
+            <h3>Options:</h3>
+            <p>
+                <strong>[delay]</strong> / default: 1000 <br>
+                <strong>[transition]</strong> / default: 1000, <br>
+                <strong>[loop]</strong> / default: true
+            </p>
         </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
