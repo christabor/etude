@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-30-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Lato', sans-serif;
+        background-color: #2f3449;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+    }
+    #intro {
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+    #results {
+        background-color: #333;
+        padding: 50px 0;
+        border-bottom: 5px solid #333;
+    }
+    #results h2 {
+        font-size: 80px;
+        line-height: 120px;
+        margin: 0;
+        display: inline-block;
+        text-transform: capitalize;
+        text-shadow: 0 2px 2px #333;
+        width: 60%;
+    }
+    #results .btn {
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 80%;
+        text-decoration: none;
+    }
+    #results .btn:hover {
+        border-color: #222;
+        color: #222;
+    }
+    #results h2 span {
+        text-transform: uppercase;
+        opacity: 0.8;
+        font-size: 40%;
+    }
+    .container {
+        display: block;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    #results .version {
+        font-size: 80%;
+        opacity: 0.8;
+    }
+    footer {
+        position: absolute;
+        bottom: 2%;
+        width: 100%;
+        padding: 10px;
+        font-size: 70%;
+        opacity: 0.5;
+    }
+    footer  a {
+        color: #fff;
+    }
+    @media handheld, (max-width: 600px) {
+        #results h2 {
+            font-size: 50px;
+        }
+        footer {
+            position: static;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro">
+        <h4>JavaScript library name generator</h4>
+    </div>
+    <section id="results">
+        <div class="container">
+            <h2></h2>
+            <aside class="description">
+                <dl>
+                    <dt></dt>
+                    <dd></dd>
+                </dl>
+                <p class="version"></p>
+                <p class="details"></p>
+                <a href="#" class="btn" target="_blank">Check GitHub availability</a>
+            </aside>
+        </div>
+    </section>
+    <footer>
+        <p>Something for everyone! Solve problems that don't exist! Make a hot new thing! Get mad street cred, yo! <br> Random colors by <a href="http://www.colr.org/json/schemes/random/">colr</a>, definitions by <a href="https://duckduckgo.com/">DuckDuckGo</a>. Adjective list taken from: <a href="https://github.com/baliw/words">baliw</a></p>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="everything.js"></script>
+</body>
+</html>
