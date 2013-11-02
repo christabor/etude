@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 11-01-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-size: 20px;
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+    }
+    canvas {
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        z-index: 10;
+    }
+    video {
+        position: absolute;
+        top: 0;
+        left: -9999px;
+        width: 400px;
+        height: 400px;
+        z-index: 99;
+    }
+    #white-flasher {
+        background-color: #fff;
+        display: block;
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        bottom: 0;
+        display: none;
+        z-index: 1;
+        -webkit-transition: all 0.2s ease-in-out;
+    }
+    #white-flasher p {
+        position: fixed;
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        bottom: 50px;
+        right: 50px;
+        width: 300px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .info {
+        font-size: 80%;
+        margin-top: 10px;
+        display: block;
+    }
+    #canvas-holder {
+        width: 30%;
+        height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        position: absolute;
+        z-index: 2;
+    }
+    </style>
+</head>
+<body>
+    <div id="white-flasher">
+        <p>
+            <span class="level"></span>
+            <span class="info">Huh? The 'brightness' level is really the ambient brightness of the camera, being picked up and shown through the video stream. It's amplified by having this bright strip of white (it works best in low light).</span>
+        </p>
+    </div>
+
+    <video></video>
+    <div id="canvas-holder">
+        <canvas id="c-1"></canvas>
+        <canvas id="c-2"></canvas>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="architect.js"></script>
+</body>
+</html>
