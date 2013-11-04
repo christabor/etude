@@ -17,3 +17,21 @@ function doSomethingABunch(thing, times, context) {
     }
     return;
 }
+
+function getLocation(success, error) {
+    // set some options to pass in
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+
+    // check if enabled
+    if (navigator.geolocation) {
+        coords = navigator.geolocation.getCurrentPosition(success, error, options);
+    }
+    else {
+        alert('Geolocation is not supported by this browser.');
+    }
+    return coords;
+}

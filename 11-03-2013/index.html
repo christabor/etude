@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href='http://fonts.googleapis.com/css?family=Share+Tech|Jolly+Lodger' rel='stylesheet' type='text/css'>
+    <title>Etude - 11-03-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        background-color: #000;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Jolly Lodger', cursive;
+        text-align: center;
+    }
+    #message {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        background-color: #222;
+        font-family: 'Share Tech', sans-serif;
+        opacity: 0.9;
+        text-transform: uppercase;
+        width: 300px;
+        height: 400px;
+        z-index: 99;
+        margin-left: -150px;
+        color: red;
+        padding: 30px;
+        display: none;
+        text-shadow: 0 2px 1px #000;
+        border-bottom: 10px solid red;
+    }
+    #message hr {
+        border: 1px solid #333;
+    }
+    #message strong {
+        font-size: 120%;
+    }
+    #message span {
+        margin-bottom: 10px;
+        display: block;
+    }
+    #message .zombies {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        font-size: 30px;
+        color: #fff;
+    }
+    #controls {
+        display: none;
+        background-color: red;
+        color: #fff;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 60px;
+        z-index: 99;
+        left: 0;
+    }
+    #infection-warning {
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        display: block;
+        z-index: 999;
+        color: #fff;
+        font-size: 90px;
+        text-shadow: 0 4px 4px red;
+    }
+    #controls:hover {
+        background-color: #000;
+    }
+    #map-canvas {
+        position: absolute;
+        top: 60px;
+        height: 100%;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <a href="#" id="controls">Cause infection!</a>
+    <div id="message">
+        <span class="messages"></span>
+        <span>Total Zombies:</span>
+        <span class="zombies">0</span>
+    </div>
+    <div id="map-canvas"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w&sensor=false"></script>
+    <script src="../js/utils.js"></script>
+    <script src="zombies.js"></script>
+</body>
+</html>
