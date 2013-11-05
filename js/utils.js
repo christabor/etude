@@ -1,6 +1,12 @@
 // Some reusable functions that have
 // been abstracted from individual days
 
+var global_config = {
+
+    // only works on my domain, throttled.
+    GOOGLE_API_KEY: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w'
+};
+
 function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }

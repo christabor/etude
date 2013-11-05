@@ -1,0 +1,3 @@
+[submodule "typey"]
+	path = typey
+	url = https://github.com/christabor/typey.git
