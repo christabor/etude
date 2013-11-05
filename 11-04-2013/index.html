@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-03-2013</title>
+    <link rel="stylesheet" href="../typey/jquery.typey.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        background-color: #000;
+        padding: 20px 40px 100px 40px;
+        font-size: 30px;
+        line-height: 40px;
+        color: #fff;
+    }
+    h2 {
+        margin: 0;
+        position: fixed;
+        font-size: 100px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    @media handheld, (max-width: 600px) {}
+}
+</style>
+</head>
+<body>
+    <p><strong>Type Compare</strong></p>
+    <p>A tool to compare two fonts and their geometric shapes.</p>
+
+    <h2 id="font-one-text" class="typer">
+        Font One
+        <ul class="fonts"></ul>
+    </h2>
+    <h2 id="font-two-text" class="typer">
+        Font Two
+        <ul class="fonts"></ul>
+    </h2>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../typey/jquery.typey.js"></script>
+    <script src="fonty.js"></script>
+</body>
+</html>
