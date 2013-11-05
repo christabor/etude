@@ -22,6 +22,9 @@
         font-family: 'Jolly Lodger', cursive;
         text-align: center;
     }
+    #message, #controls {
+        text-shadow: 0 2px 1px #000;
+    }
     #message {
         position: absolute;
         top: 80px;
@@ -31,13 +34,11 @@
         opacity: 0.9;
         text-transform: uppercase;
         width: 300px;
-        height: 400px;
         z-index: 99;
         margin-left: -150px;
         color: red;
         padding: 30px;
         display: none;
-        text-shadow: 0 2px 1px #000;
         border-bottom: 10px solid red;
     }
     #message hr {
@@ -51,11 +52,6 @@
         display: block;
     }
     #message .zombies {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        margin-left: -50%;
-        width: 100%;
         font-size: 30px;
         color: #fff;
     }
@@ -93,6 +89,16 @@
         top: 60px;
         height: 100%;
         width: 100%;
+    }
+    @media handheld, (max-width: 600px) {
+        #map-canvas,
+        #controls,
+        #message {
+            position: static;
+            width: 100%;
+            margin: 0;
+            display: block;
+        }
     }
     </style>
 </head>

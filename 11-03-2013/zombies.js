@@ -11,6 +11,7 @@ total_zombies = 0,
 marker;
 
 function getLocationError(coords) {
+    // a generic required error for native getLocation method
     return 'Error, location couldn\'t be found';
 }
 
@@ -26,10 +27,12 @@ function setMapEvents(map, marker) {
 }
 
 function getLocationSuccess(coords) {
-    $('#controls').slideToggle(500).on('click', function(){
+    // add controls and events
+    $('#controls').fadeIn(500).on('click', function(){
         spreadInfection(map, coords, 5);
     });
 
+    // get canvas element and setup coords
     canvas = document.getElementById("map-canvas");
     coords = {
         lat: coords.coords.latitude,
@@ -90,7 +93,7 @@ function getLocationSuccess(coords) {
     message.find('.messages')
     .html('Zombie invasion <br />has begun on <br /><strong><hr />' + new Date() + '</strong> at: <br /><hr />Latitude: ' + coords.lat + ' <br />Longitude: ' + coords.lng + '<hr />')
     .parent()
-    .slideToggle(200)
+    .show(200)
     .delay(1200)
     .animate({'left': '200px'}, 1000);
 
@@ -98,14 +101,6 @@ function getLocationSuccess(coords) {
 randomizeCoords(coords);
 
 return;
-}
-
-function randomCoords() {
-    var is_negative = (Math.random() * 10) > 5 ? true: false;
-    return {
-        lat: is_negative ? '-' : '' + Math.random() * 90,
-        lng: is_negative ? '-' : '' + Math.random() * 180
-    };
 }
 
 function updateZombies() {
@@ -126,7 +121,7 @@ function triggerInfectionWarning() {
     var warning = $('<div id="infection-warning"></div>').text('The infection has spread!');
     $('body').append(warning);
 
-    // remove after a bit
+    // remove after a bit, a simple alert type message
     setTimeout(function(){
         $('body')
         .find('#infection-warning')
@@ -138,7 +133,10 @@ function triggerInfectionWarning() {
 }
 
 function adjustZoom(level) {
+    // adjust global zoom level
     zoom_level = level;
+
+    // defer to zoom level and set in google maps
     map.setZoom(zoom_level);
     return;
 }
@@ -194,8 +192,10 @@ function randomizeCoord(coord) {
 }
 
 function randomizeCoords(coords) {
-    var lat = randomizeCoord(coords.lat);
-    var lng = randomizeCoord(coords.lng);
+    // defer to individual randomize method
+    // to make lat/lng coords
+    var lat = randomizeCoord(coords.lat),
+    lng = randomizeCoord(coords.lng);
 
     coords = {
         lat: lat,
@@ -205,6 +205,7 @@ function randomizeCoords(coords) {
 }
 
 function addMapImageMarker(map, img, coords) {
+    // add actual image icon using maps api
     var map_coords = new google.maps.LatLng(coords.lat, coords.lng),
     marker = new google.maps.Marker({
         position: map_coords,
@@ -212,13 +213,20 @@ function addMapImageMarker(map, img, coords) {
         map: map,
         icon: img
     });
+    // update zombie count and check if it's gone
+    // to the next threshold
     updateZombies();
     return;
 }
 
 function spreadInfection(map, coords, amount) {
+    // add zombie icons @amount times and semi-randomize
+    // the last few digits so it clusters around the target zone
     for(var i = 0; i <= amount; i++) {
         (function(i){
+
+            // time out so that it doesn't
+            // all happen at once, a cooler effect
             setTimeout(function(){
                 addMapImageMarker(map, 'zombie-icon.png', randomizeCoords(coords));
 
@@ -231,6 +239,7 @@ function spreadInfection(map, coords, amount) {
 }
 
 function initialize() {
+    // trigger geolocation api
     getLocation(getLocationSuccess, getLocationError);
     return;
 }
