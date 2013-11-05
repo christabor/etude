@@ -1,7 +1,7 @@
 var canvas,
 message = $('#message'),
 coords = [],
-mapOptions = {},
+map_options = {},
 style = [],
 styled_map,
 map,
@@ -69,7 +69,7 @@ function getLocationSuccess(coords) {
     });
 
     // set roadmap options
-    mapOptions = {
+    map_options = {
         center: new google.maps.LatLng(coords.lat, coords.lng),
         zoom: zoom_level,
         disableDefaultUI: true,
@@ -78,7 +78,7 @@ function getLocationSuccess(coords) {
 
     // update map
     google.maps.visualRefresh = true;
-    map = new google.maps.Map(canvas, mapOptions);
+    map = new google.maps.Map(canvas, map_options);
     marker = new google.maps.Marker({
         position: map.getCenter(),
         map: map,
