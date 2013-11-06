@@ -13,10 +13,10 @@ $(document).ready(function(){
 
 					// randomly choose if redacted or not
 					if(Math.random() * 10 > 5) {
-						redacted += '<span class="redacted"> ' + block + ' </span>';
+						redacted += ' <span class="redacted">' + block + '</span> ';
 					}
 					else {
-						redacted += block;
+						redacted += ( ' ' + block + ' ');
 					}
 				});
 			});
