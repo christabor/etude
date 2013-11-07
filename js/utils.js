@@ -15,6 +15,18 @@ function log(msg) {
     return console.log(msg);
 }
 
+function rando(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function stretchCanvas(canvas) {
+    // makes canvas stretch across whole window size
+    $(canvas)
+    .height($(window).height())
+    .width($(window).width());
+    return;
+}
+
 function doSomethingABunch(thing, times, context) {
     // generic repeater
     if(times > 0) {
