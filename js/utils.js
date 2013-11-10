@@ -36,6 +36,31 @@ function doSomethingABunch(thing, times, context) {
     return;
 }
 
+function multiCopyToString(times, string, delimiter) {
+    var copied = '';
+    for(var i = 1; i <= times; i++) {
+        copied += string + delimiter;
+    }
+    return copied;
+}
+
+function triggerLoading(on) {
+    if(on) {
+        $('body').css('cursor', 'progress');
+    } else {
+        $('body').css('cursor', 'auto');
+    }
+    return;
+}
+
+function multiCopyToArray(times, string) {
+    var copied = [];
+    for(var i = 1; i <= times; i++) {
+        copied.push(string);
+    }
+    return copied;
+}
+
 function getLocation(success, error) {
     // set some options to pass in
     var options = {
