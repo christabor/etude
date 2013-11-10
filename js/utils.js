@@ -11,8 +11,8 @@ function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }
 
-function randomColor() {
-    return 'rgb(' + rando(255) + ',' + rando(255) + ',' + rando(255) + ')';
+function randomColor(max) {
+    return 'rgb(' + rando(max) + ',' + rando(max) + ',' + rando(max) + ')';
 }
 
 function log(msg) {

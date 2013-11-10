@@ -19,7 +19,7 @@ $(document).ready(function(){
             e.preventDefault();
             e.stopImmediatePropagation();
 
-            current_key.css('background-color', randomColor());
+            current_key.clearQueue().css('background-color', randomColor(100));
             setTimeout(function(){
                 current_key.css('background-color', 'white');
             }, 100);
