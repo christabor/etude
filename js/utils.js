@@ -11,6 +11,10 @@ function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }
 
+function randomColor() {
+    return 'rgb(' + rando(255) + ',' + rando(255) + ',' + rando(255) + ')';
+}
+
 function log(msg) {
     return console.log(msg);
 }

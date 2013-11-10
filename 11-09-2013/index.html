@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-09-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: white;
+        padding: 20px;
+        margin: 0;
+        font-size: 18px;
+        line-height: 24px;
+        background-color: #222;
+        text-align: center;
+    }
+    #keys {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border: 1px solid #999;
+        background-color: #444;
+        padding: 20px 10px;
+        border-radius: 10px;
+        border-bottom: 10px solid #333;
+        box-shadow: 0 10px 20px lightgreen;
+    }
+    #keys li {
+        font-family: Monaco, Consolas, "Lucida Console", monospace;
+        -webkit-transition: all .15s ease-in-out;
+        -moz-transition: all .15s ease-in-out;
+        -ms-transition: all .15s ease-in-out;
+        -o-transition: all .15s ease-in-out;
+        transition: all .15s ease-in-out;
+        display: inline-block;
+        padding: 2px;
+        background-color: #fff;
+        margin: 4px;
+        width: 5%;
+        color: #444;
+        text-shadow: 0 -1px 1px #999;
+        border-bottom: 3px solid #999;
+        border-radius: 4px;
+        box-shadow: 0 2px 1px #000, 0 1px 4px #999;
+    }
+    @media handheld, (min-width: 1200px) {
+        #keys li {
+            font-size: 24px;
+            height: 50px;
+            line-height: 50px;
+        }
+    }
+    @media handheld, (max-width: 600px) {
+        #keys li {
+            width: 10%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="keyboard">
+        <h2>Keyboarder&mdash; type something!</h2>
+        <ul id="keys"></ul>
+        <div id="output">
+            <h3>You typed</h3>
+            <p></p>
+        </div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="kbd.js"></script>
+</body>
+</html>
