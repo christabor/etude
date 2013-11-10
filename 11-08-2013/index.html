@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-08-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Average+Sans|Trykker' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    :hover {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #fff;
+        padding: 20px;
+        margin: 0;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: 'Average Sans', sans-serif;
+        background-color: #081608;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Trykker', serif;
+        color: #fdffb4;
+    }
+    section {
+        width: 50%;
+        padding-right: 30px;
+        float: left;
+        margin: 0 auto;
+    }
+    ul,
+    li {
+        line-height: 30px;
+        list-style: square;
+    }
+    form button,
+    textarea {
+        padding: 20px;
+        display: block;
+        width: 100%;
+    }
+    textarea {
+        min-height: 500px;
+    }
+    code,
+    textarea {
+        padding: 20px;
+        background-color: #000;
+        color: #b8eec1;
+        display: block;
+        text-indent: 0;
+        white-space: pre;
+        margin: 10px 0;
+        font-size: 90%;
+        width: 100%;
+        overflow: scroll;
+        border:none;
+        border-radius: 10px;
+    }
+    .btn {
+        border: none;
+        font-size: 100%;
+        background-color: #b8eec1;
+        color: #444;
+        display: inline-block;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: center;
+        padding: 20px;
+        text-decoration: none;
+        clear: both;
+        text-shadow: 0 1px 1px white;
+        border-radius: 5px;
+    }
+    .btn:hover {
+        cursor: pointer;
+        color: white;
+        text-shadow: 0 1px 1px black;
+        background-color: #7fa586;
+    }
+    .match {
+        display: inline-block;
+        width: auto;
+        font-size: 80%;
+        background-color: #fff;
+        color: #444;
+        padding: 6px;
+        margin:2px;
+        border-radius: 5px;
+    }
+    .bap {
+        background-color: orange;
+    }
+    .bep {
+        background-color: green;
+    }
+    .bip {
+        background-color: purple
+    }
+    .bop {
+        background-color: yellow;
+    }
+    .bup {
+        background-color: blue;
+    }
+    .baap {
+        background-color: red;
+    }
+    .beep {
+        background-color: darkGreen;
+        color: #fff;
+    }
+    .biip {
+        background-color: darkPurple;
+    }
+    .boop {
+        background-color: lightgoldenrodyellow;
+    }
+    .buup {
+        background-color: darkBlue;
+    }
+    @media handheld, (max-width: 600px) {
+        section {
+            float: none;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h2>PROGRAM AS MUSIC</h2>
+    <section id="explanation">
+        <p> Nonsense(?) Theory: Can translating a program from it's linguistic form to an abstracted form (audio, spatial, geometric) form allow us insight and make our programs better through intuition? By mapping our program statements as unique keys that represent sounds (or in other cases, geometric shapes, distances for spatial reasoning, etc...) we can see patterns in ways that may not be so obvious. Whether or not this is useful remains to be seen, but in the same spirit of "mini-maps" or macro code structures, we can reason about a program from a completely different perspective. Plus, it looks cool! Pattern matching is easier when we translate the medium into something where emergence is more obvious. Linguistic patterns are a much newer concept than visible or audible patterns, therefore it stands to reason that we are more attuned to see them better.
+            <strong>Note: this is a proof of concept, and as such has not been refined.</strong>
+        </p>
+        <section>
+            <h3><strong>Grammar &amp; Translation</strong></h3>
+            <ul>
+                <li>
+                    IF CLAUSE / <br>
+                    [ if(something) {} => 0 ]
+                </li>
+                <li>
+                    ELSE CLAUSE <br>
+                    [ elseif() {} => 1 ]
+                </li>
+                <li>
+                    ELSE TERMINATOR <br>
+                    [ else {} => 2 ]
+                </li>
+                <li>
+                    FOR LOOP <br>
+                    [ for(var i =...) {} => 3 ]
+                </li>
+                <li>
+                    WHILE LOOP/DO LOOP <br>
+                    [ while() {} => 4 ]
+                </li>
+                <li>
+                    RETURN CONTROL <br>
+                    [ return X => 5 ]
+                </li>
+                <li>
+                    VARIABLE DECLARATION <br>
+                    [ var x => 6 ]
+                </li>
+                <li>
+                    SWITCH <br>
+                    [ switch(case) => 7 ]
+                </li>
+                <li>
+                    FUNCTION EXECUTION <br>
+                    [ fn(args) => 8 ]
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Mapping rules</h3>
+            <p>
+                Starts (A, E, I, O, U ,AA, EE, II, OO, UU), each subsequent sound adds the sequential vowel one more time, lengthening the sound itself. E.g:
+            </p>
+            <ul>
+                <li>
+                    0 => BAP <br>
+                </li>
+                <li>
+                    1 => BEP <br>
+                </li>
+                <li>
+                    2 => BIP <br>
+                </li>
+                <li>
+                    3 => BOP <br>
+                </li>
+                <li>
+                    4 => BUP <br>
+                </li>
+                <li>
+                    5 => BAAP <br>
+                </li>
+                <li>
+                    6 => BEEP <br>
+                </li>
+                <li>
+                    7 => BIIP <br>
+                </li>
+                <li>
+                    8 => BOOP <br>
+                </li>
+            </ul>
+        </section>
+        <p>
+            ...X => BIIIIIIIIIIP, etc..<br>
+            Chances are we won't get that far. <br>
+            Example: <br>
+            INPUT:
+        </p>
+        <pre>
+            <code>function addTwo(first, second)  <br>return first + second; <br>// OUTPUT: <br> [8,5] <br>// TRANSLATION: <br>[BOOP,BAAP];
+            </code>
+        </pre>
+    </section>
+    <section>
+        <form action="" novalidate autofill="false">
+            <h3>Enter your code here</h3>
+            <textarea name="code" id="" cols="30" rows="10">/* elements */
+
+                $(document).ready(function(){
+                var result_html = $('#result').find('p');
+                var play_btn = $('#play-music');
+                var matches = {};
+                var timeline = [];
+                var sound_root = 'sounds/';
+                var music = {
+                'bap': new Howl({ urls: [sound_root + 'bap.mp3']}),
+                'bep': new Howl({ urls: [sound_root + 'bep.mp3']}),
+                'bip': new Howl({ urls: [sound_root + 'bip.mp3']}),
+                'bop': new Howl({ urls: [sound_root + 'bop.mp3']}),
+                'bup': new Howl({ urls: [sound_root + 'buup.mp3']}),
+                'baap': new Howl({ urls: [sound_root + 'baap.mp3']}),
+                'beep': new Howl({ urls: [sound_root + 'beep.mp3']}),
+                'biip': new Howl({ urls: [sound_root + 'biip.mp3']}),
+                'boop': new Howl({ urls: [sound_root + 'boop.mp3']})
+            };
+            var grammars = {
+            'bap': 'if\\(', // if statement
+            'bep': 'else if\\(', // else if
+            'bip': 'else\\(', // else
+            'bop': 'for\\(', // for loop
+            'BUP': 'while\\(', // while loop
+            'baap': 'return', // return
+            'beep': 'var', // variable
+            'biip': 'switch\\(', // switch
+            'boop': 'function\\(' // function()
+        };
+
+        function createTimeline() {
+        // take original array, translate to new array,
+        // then flatten, preserving quantity and order
+        for(var match in matches) {
+        timeline.push(matches[match]);
+    }
+    timeline = _.flatten(timeline);
+    return;
+}
+
+function resetAll() {
+// reset matches and timeline
+timeline = [];
+matches = {};
+
+// reset html
+$('form').find('button').show();
+result_html.html('');
+play_btn.hide();
+return;
+}
+
+function playMusic() {
+// loop through timeline and
+// play corresponding audio files
+$(timeline).each(function(k, note){
+setTimeout(function(){
+music[note].play();
+}, k * 100);
+});
+resetAll();
+}
+
+function createSequence() {
+// add note indicators for
+// visual correspondence to sound
+for(var match in matches) {
+for(var seq in match) {
+result_html.append('<span class="match ' + match + '">' + match + '</span>');
+}
+}
+
+// unload
+triggerLoading(false);
+return;
+}
+
+function matchGrammar(code) {
+// loop through grammar,
+// looking for matches
+for(var grammar in grammars) {
+
+// create regex from object
+var regex = new RegExp(grammars[grammar], 'gi');
+var match = code.match(regex);
+if(match) {
+matches[grammar] = multiCopyToArray(match.length, grammar);
+}
+}
+return;
+}
+
+play_btn.on('click', function(e){
+e.preventDefault();
+e.stopImmediatePropagation();
+createTimeline();
+playMusic();
+}).hide();
+
+$('form').on('submit', function(e){
+triggerLoading(true);
+var code = $(this).find('textarea').val().toLowerCase();
+$(this).find('button').hide();
+e.preventDefault();
+e.stopImmediatePropagation();
+matchGrammar(code);
+createSequence();
+play_btn.show();
+});
+});
+
+
+</textarea>
+<button class="btn">Parse into Grammar</button>
+</form>
+<audio src="sounds/"></audio>
+<div id="result">
+    <h3>Your musical composition: </h3>
+    <p></p>
+    <a href="#" id="play-music" class="btn">Play Composition</a>
+</div>
+</section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.min.js"></script>
+<script src="howler.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="decoder.js"></script>
+</body>
+</html>
