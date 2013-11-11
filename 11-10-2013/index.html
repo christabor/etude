@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-09-2013</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        background-color: #222;
+        color: #fff;
+    }
+    @media handheld, (max-width: 600px) {
+    }
+    .row {
+        margin: 20px 0;
+    }
+    .row > div {
+        padding: 20px;
+    }
+    .subdued {
+        opacity: 0.6;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Random Grid System generator</h3>
+                <p class="subdued">Using Bootstrap. Refresh at will</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="socket"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="site.js"></script>
+</body>
+</html>

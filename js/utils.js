@@ -41,9 +41,22 @@ function doSomethingABunch(thing, times, context) {
 }
 
 function multiCopyToString(times, string, delimiter) {
+    // copy a string multiple times
+    // - similar to Pythons operator overloading
+    // e.g. cat * 3 => catcatcat
     var copied = '';
     for(var i = 1; i <= times; i++) {
         copied += string + delimiter;
+    }
+    return copied;
+}
+
+function multiCopyToArray(times, string) {
+    // similar to string copy, but sends to array a number of times
+    // e.g. fn(10, 'cat') => [cat, cat]
+    var copied = [];
+    for(var i = 1; i <= times; i++) {
+        copied.push(string);
     }
     return copied;
 }
@@ -55,14 +68,6 @@ function triggerLoading(on) {
         $('body').css('cursor', 'auto');
     }
     return;
-}
-
-function multiCopyToArray(times, string) {
-    var copied = [];
-    for(var i = 1; i <= times; i++) {
-        copied.push(string);
-    }
-    return copied;
 }
 
 function getLocation(success, error) {
