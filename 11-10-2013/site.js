@@ -29,7 +29,9 @@ $(document).ready(function(){
         // generate the class name and random color
         var row = '<div class="row">';
         for(var column in col_count) {
-            row += '<div style="background-color:' + randomColor(255) + '" class="col-md-' + col_count[column] + '">' + generateHeading(rando(6)) + generateParagraph() + '</div>';
+            var col = col_count[column];
+            var cols = 'col-md-' + col + ' col-sm-' + col + ' col-xs-' + col;
+            row += '<div style="background-color:' + randomColor(255) + '" class="' + cols + '">' + generateHeading(rando(6)) + generateParagraph() + '</div>';
         }
         row += '</div>';
         return row;

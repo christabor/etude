@@ -17,6 +17,9 @@
     // add elements
     for(var i = 0; i <= 20; i++) {
         canvas.add(new fabric.Rect({
+            hasControls: false,
+            hasBorders: false,
+            selectable: false,
             fill: 'red',
             width: i,
             height: i,
