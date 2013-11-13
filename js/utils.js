@@ -12,7 +12,23 @@ function getKey(arr) {
 }
 
 function randomColor(max) {
+    if(isNaN(max)) {
+        max = 255;
+    }
     return 'rgb(' + rando(max) + ',' + rando(max) + ',' + rando(max) + ')';
+}
+
+function randomColorScheme(color_count, max) {
+    // return an array of random colors @color_count long
+    var colors = [];
+    for(var i = 0; i <= color_count; i++) {
+        colors[i] = randomColor(max);
+    }
+    return colors;
+}
+
+function exportCanvas(canvas) {
+    window.open(canvas.toDataURL());
 }
 
 function log(msg) {
