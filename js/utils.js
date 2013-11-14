@@ -35,6 +35,12 @@ function log(msg) {
     return console.log(msg);
 }
 
+function uuid() {
+    // random unique identifier in the form 0000-0000-0000-0000
+    var uid = (function(){ return rando(9999); });
+    return [uid(), uid(), uid(), uid()].join('-');
+}
+
 function rando(max) {
     return Math.floor(Math.random() * max);
 }
