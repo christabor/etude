@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-12-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #fff;
+        background-color: black;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    body.inverted {
+        background-color: white;
+    }
+    body.inverted h1 {
+        color: black;
+    }
+    h1 {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        display: block;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        margin-left: -50%;
+        text-shadow:
+        0 10px 10px rgba(200, 200, 200, 0.5),
+        0 20px 20px rgba(200, 200, 200, 0.5),
+        0 40px 40px rgba(200, 200, 200, 0.5);
+        z-index: 1;
+        filter:blur(2);
+    }
+    #notice {
+        background-color: #333;
+        position: fixed;
+        z-index: 99;
+        color: #999;
+        width: 250px;
+        display: block;
+        text-align: center;
+        padding: 20px 30px;
+    }
+    .subdued {
+        text-transform: uppercase;
+    }
+    @media handheld, (max-width: 600px) {
+    }
+    </style>
+</head>
+<body>
+    <div id="notice"><p></p><span class="subdued">Move your mouse</span></div>
+    <h1>Pulsars <br> are <br> really <br> cool</h1>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="pulsar.js"></script>
+</body>
+</html>
