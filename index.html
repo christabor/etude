@@ -41,13 +41,26 @@
         background-color: #999;
         opacity: 0.3;
     }
-    #days-indicator {
-        color: #5c5f93;
-        padding: 5px 10px;
-        text-align: right;
-        float: right;
-        font-size: 30px;
-        margin-top: 20px;
+    ul:last-of-type li:last-of-type {
+        background-color: #2d2d52;
+        border-color: #fff;
+        display: block;
+        color: #fff;
+    }
+    ul:last-of-type li:last-of-type a {
+        border:none;
+    }
+    ul:last-of-type li:last-of-type:after {
+        content: 'Today';
+        display: block;
+        position: absolute;
+        top: 130px;
+        width: 100%;
+        left: 50%;
+        margin-left: -50%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10px;
     }
     .lead {
         font-size: 150%;
@@ -59,20 +72,16 @@
     #intro {
         padding: 40px 60px;
         width: 60%;
+        margin: 0 auto;
+        text-align: center;
     }
-    #days {
-        position: absolute;
+    .days {
         overflow-x: hidden;
         overflow-y: scroll;
-        width: auto;
         margin: 0;
-        width: 450px;
-        top: 0;
-        min-height: 100%;
-        height: 150%;
-        right: 5%;
+        width: 100%;
         background-color: #0f0f19;
-        padding: 40px 30px;
+        padding: 20px;
     }
     li {
         border:1px solid #5c5f93;
@@ -84,11 +93,52 @@
         border-radius: 5px;
         text-align: center;
         display: inline-block;
-        width: 100%;
+        width: 15%;
+        margin-right: 1%;
         height: 220px;
+        float: left;
         text-align: center;
         padding: 20px;
         position: relative;
+    }
+    .list-title {
+        border:none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        height: auto;
+        margin: 20px 0;
+        padding: 0;
+        font-family: 'Stint Ultra Expanded', cursive;
+    }
+    .list-title:hover {
+        background-color: transparent;
+    }
+    .year-title {
+        font-size: 60px;
+    }
+    .month-title {
+        color: #5c5f93;
+        opacity: 0.6;
+        text-transform: uppercase;
+    }
+    .month-title:before,
+    .month-title:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        width: 40%;
+        top: 10px;
+        border-top:1px solid #5c5f93;
+    }
+    .month-title:after {
+        right: 0;
+    }
+    .month-title:hover a {
+        cursor: default;
+        background-color: none;
     }
     li a {
         text-decoration: none;
@@ -108,7 +158,7 @@
     }
     li .date .day {
         font-family: 'Stint Ultra Expanded', cursive;
-        font-size: 36px;
+        font-size: 20px;
         margin-bottom: 10px;
     }
     li .date .day-digit {
@@ -156,31 +206,29 @@
         }
     }
     @media (max-width: 1173px) {
-        #days-indicator {
-            display: none;
+        li .date .day {
+            font-size: 30px;
         }
-        #days {
-            right: 0;
-            width: 400px;
+        li {
+            width: 32%;
         }
     }
     @media (max-width: 900px) {
-        #days,
+        .month-title:before,
+        .month-title:after {
+            display: none;
+        }
+        .days,
         #intro {
-            position: static;
             width: 100%;
         }
-        #days li {
+        .days li {
             width: 100%;
-        }
-        #days {
-            right: 0;
         }
     }
     @media (max-width: 470px) {
-        #days,
+        .days,
         #intro {
-            position: static;
             width: 100%;
         }
         body {
@@ -194,7 +242,7 @@
 </head>
 <body>
     <div id="intro" class="container">
-        <h1><img src="logo.png" alt="logo"> <div id="days-indicator">Scroll &rsaquo;</div></h1>
+        <h1><img src="logo.png" alt="logo"></h1>
         <p class="lead">
             <strong>&eacute;&middot;tude</strong>
             <br><em>noun</em> <br>
@@ -204,7 +252,9 @@
         <hr>
         <p class="subdued">All <strong>non external-library code</strong> released under Apache v2 license. See repo and license for details. Third-party libraries have different licenses, please see them for details.</p>
     </div>
-    <ul id="days">
+    <ul class="days">
+        <li class="year-title list-title">2013</li>
+        <li class="month-title list-title">October</li>
         <li>
             <a href="10-21-2013/index.html">
                 <span class="date"><span class="day">Monday</span> <span class="day-digit">21 <sup>st</sup></span> <br><span class="year">2013</span></span>
@@ -260,6 +310,9 @@
                 <span class="date"><span class="day">Thursday</span> <span class="day-digit">31 <sup>st</sup></span> <br><span class="year">2013</span></span>
             </a>
         </li>
+    </ul>
+    <ul class="days">
+        <li class="month-title list-title">November</li>
         <li>
             <a href="11-01-2013/index.html">
                 <span class="date"><span class="day">Friday</span> <span class="day-digit">01 <sup>st</sup></span> <br><span class="year">2013</span></span>
@@ -318,6 +371,11 @@
         <li>
             <a href="11-12-2013/index.html">
                 <span class="date"><span class="day">Tuesday</span> <span class="day-digit">12 <sup>th</sup></span> <br><span class="year">2013</span></span>
+            </a>
+        </li>
+        <li>
+            <a href="11-13-2013/index.html">
+                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">13 <sup>th</sup></span> <br><span class="year">2013</span></span>
             </a>
         </li>
     </ul>
