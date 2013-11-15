@@ -27,6 +27,13 @@ function randomColorScheme(color_count, max) {
     return colors;
 }
 
+function getDocumentDimensions() {
+    return {
+        'height': $(document).height() || window.screen.availHeight,
+        'width': $(document).width() || window.screen.width
+    };
+}
+
 function exportCanvas(canvas) {
     window.open(canvas.toDataURL());
 }
