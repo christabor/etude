@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-13-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="jquery.tiltShift.css">
+    <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: #fff;
+        background-color: black;
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+        font-family: 'Sonsie One', cursive;
+    }
+    a:before {
+        display: block;
+        content: '';
+    }
+    a {
+        margin-top: 20px;
+        color: #fff;
+        font-family: 'Lato', Helvetica, arial, sans-serif;
+        display: block;
+    }
+    img, div {
+        margin:10px 0;
+        border-radius: 1000px;
+    }
+    img:hover,
+    div:hover {
+        -webkit-filter:sepia(100%);
+    }
+    </style>
+</head>
+<body>
+    <h3>Sepia toned tilt-shifted kittens.</h3>
+    <img src="" width="100%" class="tiltshift" data-position="5" data-blur="1" data-focus="5" data-falloff="10" data-direction="y">
+    <img src="" width="100%" class="tiltshift" data-position="10" data-blur="5" data-focus="10" data-falloff="30" data-direction="x">
+    <img src="" width="100%" class="tiltshift" data-position="25" data-blur="10" data-focus="25" data-falloff="60" data-direction="y">
+    <a href="http://www.noeltock.com/tilt-shift-css3-jquery-plugin/">tiltShift plugin by Noel Tock</a>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.tiltshift.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="kittentilt.js"></script>
+</body>
+</html>
