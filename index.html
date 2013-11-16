@@ -10,7 +10,8 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    :hover, :focus {
+    :hover,
+    :focus {
         -webkit-transition: all .25s ease-in-out;
         -moz-transition: all .25s ease-in-out;
         -ms-transition: all .25s ease-in-out;
@@ -82,29 +83,38 @@
         width: 100%;
         background-color: #0f0f19;
         padding: 20px;
+        list-style-type: none;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex: 1;
+        flex-start: stretch;
+        align-items: stretch;
+        align-content: stretch;
+        flex-wrap: wrap;
     }
     li {
         border:1px solid #5c5f93;
         border-bottom: 10px solid #5c5f93;
+        list-style-type: none;
         color: #fff;
         text-decoration: none;
-        padding: 5px 10px;
-        margin: 10px 0;
+        margin-top: 10px;
+        height: 180px;
+        margin-right: 10px;
         border-radius: 5px;
         text-align: center;
-        display: inline-block;
-        width: 15%;
-        margin-right: 1%;
-        height: 220px;
-        float: left;
-        text-align: center;
-        padding: 20px;
+        justify-content: center;
+        flex-basis: 24%;
+        padding: 10px 0 30px 0;
         position: relative;
     }
     .list-title {
         border:none;
         display: block;
-        width: 100%;
+        flex-basis: 100%;
         text-align: center;
         height: auto;
         margin: 20px 0;
@@ -147,21 +157,21 @@
         height: 100%;
         color: #fff;
     }
-    li .title {
+    .title {
         display: none;
     }
     li span {
         display: inline-block;
     }
-    li .date {
+    .date {
         width: 100%;
     }
-    li .date .day {
+    .date .day {
         font-family: 'Stint Ultra Expanded', cursive;
         font-size: 20px;
         margin-bottom: 10px;
     }
-    li .date .day-digit {
+    .date .day-digit {
         font-size: 24px;
         border: 2px solid #4C3E57;
         padding: 10px;
@@ -173,7 +183,7 @@
         margin: 0 auto;
         text-shadow: 0 1px 1px #444;
     }
-    li .date .year {
+    .date .year {
         font-size: 16px;
         color: #74697c;
         position: absolute;
@@ -189,7 +199,7 @@
     li:hover a .day-digit {
         color: #d8d6b8;
     }
-    li .date .day-digit sup {
+    .date .day-digit sup {
         font-weight: normal;
         font-size: 50%;
         text-transform: uppercase;
@@ -205,31 +215,30 @@
             font-size: 24px;
         }
     }
-    @media (max-width: 1173px) {
-        li .date .day {
-            font-size: 30px;
-        }
-        li {
-            width: 32%;
-        }
-    }
-    @media (max-width: 900px) {
+    @media handheld, (max-width: 900px) {
         .month-title:before,
         .month-title:after {
             display: none;
         }
-        .days,
         #intro {
             width: 100%;
         }
-        .days li {
-            width: 100%;
+        .date .day-digit {
+            width: 80%;
+        }
+        li {
+            flex-basis: 32%;
         }
     }
-    @media handheld, (max-width: 470px) {
-        .days,
+    @media handheld, (max-width: 600px) {
         #intro {
             width: 100%;
+        }
+        .date .day-digit {
+            width: 80%;
+        }
+        li {
+            flex-basis: 100%;
         }
         body {
             font-size: 16px;
@@ -257,57 +266,57 @@
         <li class="month-title list-title">October</li>
         <li>
             <a href="10-21-2013/index.html">
-                <span class="date"><span class="day">Monday</span> <span class="day-digit">21 <sup>st</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Monday</span> <span class="day-digit">21 <sup>st</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-22-2013/index.html">
-                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">22 <sup>nd</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">22 <sup>nd</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-23-2013/index.html">
-                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">23 <sup>rd</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">23 <sup>rd</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-24-2013/index.html">
-                <span class="date"><span class="day">Thursday</span> <span class="day-digit">24 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Thursday</span> <span class="day-digit">24 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-25-2013/index.html">
-                <span class="date"><span class="day">Friday</span> <span class="day-digit">25 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Friday</span> <span class="day-digit">25 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-26-2013/index.html">
-                <span class="date"><span class="day">Saturday</span> <span class="day-digit">26 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Saturday</span> <span class="day-digit">26 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-27-2013/index.html">
-                <span class="date"><span class="day">Sunday</span> <span class="day-digit">27 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Sunday</span> <span class="day-digit">27 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-28-2013/index.html">
-                <span class="date"><span class="day">Monday</span> <span class="day-digit">28 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Monday</span> <span class="day-digit">28 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-29-2013/index.html">
-                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">29 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">29 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-30-2013/index.html">
-                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">30 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">30 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="10-31-2013/index.html">
-                <span class="date"><span class="day">Thursday</span> <span class="day-digit">31 <sup>st</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Thursday</span> <span class="day-digit">31 <sup>st</sup></span></span>
             </a>
         </li>
     </ul>
@@ -315,69 +324,70 @@
         <li class="month-title list-title">November</li>
         <li>
             <a href="11-01-2013/index.html">
-                <span class="date"><span class="day">Friday</span> <span class="day-digit">01 <sup>st</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Friday</span> <span class="day-digit">01 <sup>st</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-02-2013/index.html">
-                <span class="date"><span class="day">Saturday</span> <span class="day-digit">02 <sup>nd</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Saturday</span> <span class="day-digit">02 <sup>nd</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-03-2013/index.html">
-                <span class="date"><span class="day">Sunday</span> <span class="day-digit">03 <sup>rd</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Sunday</span> <span class="day-digit">03 <sup>rd</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-04-2013/index.html">
-                <span class="date"><span class="day">Monday</span> <span class="day-digit">04 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Monday</span> <span class="day-digit">04 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-05-2013/index.html">
-                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">05 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">05 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-06-2013/index.html">
-                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">06 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">06 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-07-2013/index.html">
-                <span class="date"><span class="day">Thursday</span> <span class="day-digit">07 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Thursday</span> <span class="day-digit">07 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-08-2013/index.html">
-                <span class="date"><span class="day">Friday</span> <span class="day-digit">08 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Friday</span> <span class="day-digit">08 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-09-2013/index.html">
-                <span class="date"><span class="day">Saturday</span> <span class="day-digit">09 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Saturday</span> <span class="day-digit">09 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-10-2013/index.html">
-                <span class="date"><span class="day">Sunday</span> <span class="day-digit">10 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Sunday</span> <span class="day-digit">10 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-11-2013/index.html">
-                <span class="date"><span class="day">Monday</span> <span class="day-digit">11 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Monday</span> <span class="day-digit">11 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-12-2013/index.html">
-                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">12 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Tuesday</span> <span class="day-digit">12 <sup>th</sup></span></span>
             </a>
         </li>
         <li>
             <a href="11-13-2013/index.html">
-                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">13 <sup>th</sup></span> <br><span class="year">2013</span></span>
+                <span class="date"><span class="day">Wednesday</span> <span class="day-digit">13 <sup>th</sup></span></span>
             </a>
         </li>
     </ul>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </body>
 </html>
