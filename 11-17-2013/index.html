@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-17-2013</title>
+    <link href='//fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Bad Script', cursive;
+        color: #fff;
+        background-color: #121212;
+        padding: 100px;
+        overflow: hidden;
+        text-align: center;
+        margin: 0;
+    }
+    a {
+        color: white;
+    }
+    h3 {
+        color: #777;
+    }
+    #words {
+        font-size: 60px;
+    }
+    .subdued {
+        bottom:0;
+        padding: 10px 0;
+        font-family: Helvetica, arial, sans-serif;
+    }
+    @media handheld, (max-width: 900px) {
+        #words {
+            font-size: 40px;
+        }
+    }
+    @media handheld, (max-width: 600px) {
+        body {
+            padding:20px;
+        }
+        #words {
+            font-size: 24px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h3>Your Sun Tzu wisdom for today...</h3>
+    <p id="words"></p>
+    <p class="subdued abs-fullwidth">Original content from <a href="http://www.fas.org/man/artofwar.htm">fas.org</a>| JSON conversion tool by <a href="http://json.fastfrag.org/">json.fastfrag</a></p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="leet.js"></script>
+</body>
+</html>

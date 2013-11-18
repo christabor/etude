@@ -2,3 +2,9 @@
 	font-size: 70%;
 	opacity: 0.5;
 }
+.abs-fullwidth {
+	position: absolute;
+	width: 100%;
+	margin-left: -50%;
+	left: 50%;
+}
