@@ -21,6 +21,21 @@ function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }
 
+function randomFixedString(count) {
+    var tokens = 'abcdefghijklmopqrstuvwxyz'.split('');
+    var str = '';
+    for(var i = 0; i <= count; i++) {
+        str += tokens[rando(tokens.length)];
+    }
+    return str;
+}
+
+function randomStringLength(max) {
+    // Returns a random string using
+    // separate method, of random (MAX) characters
+    return randomFixedString(rando(100));
+}
+
 function randomColor(max) {
     if(isNaN(max)) {
         max = 255;
