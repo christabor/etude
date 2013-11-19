@@ -7,6 +7,16 @@ var global_config = {
     GOOGLE_API_KEY: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w'
 };
 
+function initGoogleFonts() {
+    window.myTypeLibrary = fonTypey({
+
+        // public, limited access only for github.com/christabor
+        api_key: global_config.GOOGLE_API_KEY
+    });
+    myTypeLibrary.initAllFeatures('body');
+    return;
+}
+
 function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }
