@@ -54,8 +54,8 @@ function randomColorScheme(color_count, max) {
 
 function getDocumentDimensions() {
     return {
-        'height': $(document).height() || window.screen.availHeight,
-        'width': $(document).width() || window.screen.width
+        'height': window.screen.availHeight || $(document).height(),
+        'width': window.screen.width || $(document).width()
     };
 }
 
