@@ -28,7 +28,7 @@ var ring = svg.selectAll("g")
 
 function ringInit(d, i) {
     var n = Math.floor(4 * Math.PI * d.radius / d.width * Math.SQRT1_2);
-    var k = 360 / n;
+    var k = rando(360) / n;
 
     d3.select(this).selectAll('g')
     .data(d3
