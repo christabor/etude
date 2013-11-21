@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Days+One|Doppio+One' rel='stylesheet' type='text/css'>
+    <title>Etude - 11-20-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    @keyframes zoom {
+        0% {
+            transform: rotate(0) scale(1);
+        }
+        50% {
+            transform: rotate(180deg) scale(1);
+        }
+        100% {
+            transform: rotate(0) scale(1);
+        }
+    }
+    @-webkit-keyframes zoom {
+        0% {
+            -webkit-transform: rotate(0) scale(1);
+        }
+        50% {
+            -webkit-transform: rotate(180deg) scale(1);
+        }
+        100% {
+            -webkit-transform: rotate(0) scale(1);
+        }
+    }
+    @-webkit-keyframes starfield {
+        0% {
+            background-size: 100%;
+        }
+        50% {
+            background-size: 300%;
+        }
+        100% {
+            background-size: 100%;
+        }
+    }
+    body {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background: url(starfield.jpg);
+        background-size: 100%;
+        font-family: 'Doppio One', sans-serif;
+        border-top: 10px solid #51B0E5;
+        text-shadow: 0 1px 2px #0e0921;
+        -moz-animation: starfield 100s linear infinite;
+        -webkit-animation: starfield 100s linear infinite;
+        animation: starfield 100s linear infinite;
+    }
+    .panel {
+        background-color: #51B0E5;
+        width: 300px;
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+        color: black;
+        padding: 10px 20px;
+        line-height: 20px;
+        box-shadow: 0 0 40px #51B0E5;
+        border:2px solid white;
+        color: #fff;
+    }
+    h1, h2, h3, h4, h5, h6, input {
+        font-family: 'Days One', sans-serif;
+    }
+    h3 {
+        text-transform: uppercase;
+    }
+    .indicator-detail {
+        font-size: 40px;
+    }
+    .indicator-detail sub {
+        position: relative;
+        top: -20px;
+        opacity: 0.5;
+        font-size: 50%;
+    }
+    .panel-left {
+        left: 100px;
+        border-radius: 10% 20%;
+        -webkit-transform: perspective(180px) rotateY(10deg);
+        border-left:20px solid #1B74A5;
+    }
+    .panel-left:hover {
+        -webkit-transform: perspective(200px) rotateY(15deg);
+    }
+    .panel-right {
+        right: 100px;
+        border-radius: 20% 10%;
+        -webkit-transform: perspective(180px) rotateY(-10deg);
+        border-right:20px solid #1B74A5;
+    }
+    .panel-right:hover {
+        -webkit-transform: perspective(200px) rotateY(-15deg);
+    }
+    .panel-top {
+        top: 40px;
+        bottom: auto;
+        font-size: 40%;
+        padding: 5px;
+        height: auto;
+    }
+    #reticle {
+        border:2px dotted #51B0E5;
+        box-shadow: inset 0 0 40px #51B0E5;
+        border-radius: 100%;
+        width: 300px;
+        margin-left: -150px;
+        left: 50%;
+        top: 32%;
+        height: 300px;
+        z-index: 99;
+        position: absolute;
+    }
+    #reticle:hover {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+    #reticle:hover span {
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        border:1px solid white;
+    }
+    #reticle span {
+        -moz-animation: zoom 2s linear infinite;
+        -webkit-animation: zoom 2s linear infinite;
+        animation: zoom 2s linear infinite;
+        border:13px dashed #fff;
+        border-radius: 100%;
+        height: 100px;
+        width: 100px;
+        margin: 32% auto;
+        display: block;
+    }
+    #reticle:after {
+        content: 'Scanning...';
+        display: block;
+        text-transform: uppercase;
+        font-size: 10px;
+        padding-top: 40px;
+        text-align: center;
+    }
+    .dials {
+        position: absolute;
+        bottom: -54px;
+        left: 50%;
+        margin-left: -140px;
+        width: 280px;
+        text-align: center;
+    }
+    .dials.dials-top {
+        top: 40px;
+    }
+    .dials .dial-container {
+        display: inline-block;
+        height: 100px;
+        margin: 0 2px;
+        position: relative;
+    }
+    .dials .dial-title {
+        font-size: 11px;
+        position: absolute;
+        text-transform: uppercase;
+        text-align: center;
+        bottom: -20px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+    }
+    @media handheld, (max-width: 1000px) {
+        .panel {
+            -webkit-transform: perspective(0) rotateY(0);
+            position: static;
+            border:none;
+            margin:10px 0;
+            width: 100%;
+            border-radius: 0;
+        }
+        .panel.panel-top.panel-left {
+            margin-top: 240px;
+        }
+        #reticle {
+            display: none;
+        }
+    }
+}
+</style>
+</head>
+<body style="display:none;">
+    <div id="gui-overlay">
+        <div class="dials dials-top">
+            <div class="dial-container">
+                <input type="text" value="52.3" class="dial">
+                <span class="dial-title">Firing rate</span>
+            </div>
+            <div class="dial-container">
+                <input type="text" value="90" class="dial">
+                <span class="dial-title">Thermics</span>
+            </div>
+            <div class="dial-container">
+                <input type="text" value="20" class="dial">
+                <span class="dial-title">Asteroids (m)</span>
+            </div>
+        </div>
+        <div class="dials">
+            <div class="dial-container">
+                <input type="text" value="52.3" class="dial">
+                <span class="dial-title">Pressure</span>
+            </div>
+            <div class="dial-container">
+                <input type="text" value="90" class="dial">
+                <span class="dial-title">Radiation</span>
+            </div>
+            <div class="dial-container">
+                <input type="text" value="20" class="dial">
+                <span class="dial-title">Gravity</span>
+            </div>
+        </div>
+        <div id="reticle">
+            <span></span>
+        </div>
+        <div class="panel panel-top panel-left">
+            <h3>Max Acceleration</h3>
+            <span class="indicator-detail"><span>2,000</span> <sub>km/s</sub></span>
+        </div>
+        <div class="panel panel-left">
+            <h3>Cruising Speed</h3>
+            <span class="indicator-detail"><span>100</span> <sub>km/s</sub></span>
+        </div>
+        <div class="panel panel-top panel-right">
+            <h3>Nearest Port</h3>
+            <span class="indicator-detail"><span>301</span> <sub>km/s</sub></span>
+        </div>
+        <div id="panel-right" class="panel panel-right">
+            <h3>Distance</h3>
+            <span class="indicator-detail"><span>1,000</span> <sub>ym</sub></span>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.knob.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="spiral.js"></script>
+</body>
+</html>
