@@ -1,3 +1,5 @@
+hasJS();
+
 var ul    = $('.unstyled-list');
 var total = ul.find('li').length;
 var prev  = $('#prev');
@@ -21,9 +23,12 @@ function togglePrev(event) {
     event.preventDefault();
     var prev  = ul.find('.active').prev();
     var idx   = prev.index();
-    if(idx > -1) {
+    if(idx !== -1) {
         ul.find('.active').removeClass('active');
         prev.addClass('active');
+    } else {
+        ul.find('li').eq(total - 1).addClass('active');
+        ul.find('li').eq(0).removeClass('active');
     }
     return;
 }

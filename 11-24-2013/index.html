@@ -54,6 +54,12 @@
         margin-bottom: 40px;
         height: 200px;
     }
+    .no-js .unstyled-list li {
+        display: inline-block;
+    }
+    .no-js a {
+        display: none;
+    }
     .unstyled-list li.active {
         display: inline-block;
     }
@@ -115,7 +121,7 @@
     }
     </style>
 </head>
-<body>
+<body class="no-js">
     <section id="top">
         <h3>Dieter Rams&rsquo; <br>10 Principles of Design</h3>
         <nav id="navigation">
@@ -156,6 +162,7 @@
         </li>
     </ul>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
     <script src="principles.js"></script>
 </body>
 </html>

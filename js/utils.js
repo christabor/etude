@@ -17,6 +17,13 @@ function initGoogleFonts() {
     return;
 }
 
+function hasJS() {
+    // remove no-js classes for
+    // compatibility and enhancement
+    $('body').removeClass('no-js');
+    return;
+}
+
 function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
 }
