@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 11-25-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Bangers' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        color: #fff;
+        background-color: orange;
+        color: black;
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 60px;
+        font-family: 'Bangers', cursive;
+    }
+    h2 {
+        font-size: 100%;
+    }
+    h2,
+    #translated p {
+        font-family: 'Annie Use Your Telescope', cursive;
+    }
+    #translated h4 {
+        margin: 0;
+        color: white;
+        text-shadow: 0 2px 1px #333;
+    }
+    #translated p {
+        font-size: 50%;
+    }
+    #info {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px dashed #fff;
+        font-size: 30%;
+        opacity: 0.5;
+    }
+    form {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+    a {
+        color: black;
+    }
+    input {
+        border:2px solid #ccc;
+    }
+    label {
+        position: relative;
+        top: 8px;
+        margin: 0 20px 0 0;
+    }
+    form {
+        font-size: 60%;
+    }
+    input,
+    .btn-plain {
+        font-size: 40%;
+        padding: 10px;
+    }
+    button:hover {
+        background-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <h2>Random Yahoo! Answers!</h2>
+    <div id="translated">
+        <h4></h4>
+        <p></p>
+    </div>
+    <div id="info"></div>
+    <form action="">
+        <label for="query">Enter your own:</label>
+        <input id="query" name="query" type="text" value="" placeholder="submit query...">
+        <button class="btn-plain btn-basic">Submit</button>
+    </form>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="random.js"></script>
+</body>
+</html>

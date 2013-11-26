@@ -34,7 +34,6 @@ $(document).ready(function(){
 
     function loadColorScheme(scheme) {
         var colors = scheme.schemes[0].colors;
-        log(colors);
         if(colors) {
             $('body').css('background-color', '#' + colors[0]);
             results.css('background-color', '#' + colors[2]);

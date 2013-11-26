@@ -14,3 +14,24 @@
 	margin: 0;
 	list-style: none;
 }
+input {
+	border-radius: 4px;
+}
+.btn-basic {
+	border:none;
+	padding: 4px 8px;
+	display: inline-block;
+	border-radius: 4px;
+}
+.btn-basic:hover {
+	cursor: pointer;
+}
+.btn-basic.btn-plain {
+	border-bottom: 2px solid #444;
+	background-color: #444;
+	color: white;
+}
+.btn-basic.btn-plain:hover {
+	background-color: #000;
+	color: white;
+}
