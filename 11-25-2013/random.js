@@ -29,7 +29,7 @@
 		if(answers.query.results) {
 			$(answers.query.results.Question).each(loadAnswer);
 		} else {
-			translated.find('h4').html('Awww, No answers... trying in 4 seconds...');
+			translated.find('h4').html('Awww, No answers... please try again.');
 			translated.find('p').html('');
 		}
 		return;
