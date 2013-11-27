@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 11-26-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        overflow: hidden;
+        font-family: Helvetica, sans-serif;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+    }
+    #pics {
+        position: fixed;
+        background-color: #333;
+        color: white;
+        border-radius: 8px;
+        top: 10px;
+        left: 10px;
+        padding: 5px;
+        width: 120px;
+        height: auto;
+        z-index: 999;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    #pics img {
+        width: 100px;
+        height: 100px;
+        margin: 4px 0;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px #ccc;
+    }
+    #pics img:hover {
+        padding: 3px;
+    }
+    </style>
+</head>
+<body>
+    <div id="pics">
+        <p>Choose</p>
+        <a href="#"><img src="imgs/cat.jpg" alt=""></a>
+        <a href="#"><img src="imgs/dog.jpg" alt=""></a>
+        <a href="#"><img src="imgs/worldmap.jpg" alt=""></a>
+        <a href="#"><img src="imgs/hellokitty.gif" alt=""></a>
+        <a href="#"><img src="imgs/otter.jpg" alt=""></a>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/three.min.js"></script>
+    <script src="../js/vendor/dat.gui.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="displaced.js"></script>
+</body>
+</html>

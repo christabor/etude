@@ -35,3 +35,17 @@ input {
 	background-color: #000;
 	color: white;
 }
+#global-loader {
+	background-color: #444;
+	color: #fff;
+	font-family: 'Lato', Helvetica, sans-serif;
+	text-align: center;
+	width: 100%;
+	font-size: 20px;
+	height: 100%;
+	z-index: 99999;
+	padding: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

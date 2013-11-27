@@ -7,6 +7,20 @@ var global_config = {
     GOOGLE_API_KEY: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w'
 };
 
+var globalLoader = {
+    load_speed: 1000,
+    load: function(message) {
+        $('body').prepend('<div id="global-loader">' + (message || 'Loading...') + '</div>').fadeIn(globalLoader.load_speed);
+        return;
+    },
+    unload: function() {
+        $('body').find('#global-loader').fadeOut(globalLoader.load_speed, function(){
+            $(this).remove();
+        });
+        return;
+    }
+};
+
 function initGoogleFonts() {
     window.myTypeLibrary = fonTypey({
 
