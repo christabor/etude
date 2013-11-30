@@ -11,6 +11,13 @@
 	var url        = '';
 	var answers;
 	var subject;
+	var loader     = {
+		msg: 'Loading yahoo answer',
+		css: {
+			'background-color': 'black',
+			'font-size': '40px'
+		}
+	};
 
 
 	function loadAnswer(key, answer) {
@@ -29,14 +36,17 @@
 		if(answers.query.results) {
 			$(answers.query.results.Question).each(loadAnswer);
 		} else {
-			translated.find('h4').html('Awww, No answers... please try again.');
-			translated.find('p').html('');
+			var fail_msg = 'Awww, No answers... please try again.';
+			translated.find('h4').html(fail_msg);
+			translated.find('p').empty();
 		}
+		globalLoader.unload();
 		return;
 	}
 
 	function triggerForm() {
 		$('form').on('submit', function(e){
+			globalLoader.load(loader);
 			e.preventDefault();
 			var val = $(this).find('input').val();
 			query = $.trim(val);
@@ -51,12 +61,12 @@
 		word    = $.ajax(word_ajax);
 		answers = $.getJSON(url);
 
-		log(url);
 		$.when(answers).done(loadAnswers);
 		return;
 	}
 
 	function loadWordFromRandom() {
+		globalLoader.load(loader);
 		$.when(word).done(function(word){
 			loadWord(word.Word);
 		});

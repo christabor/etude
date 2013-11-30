@@ -14,8 +14,10 @@
 	margin: 0;
 	list-style: none;
 }
-input {
+input,
+textarea {
 	border-radius: 4px;
+	padding: 4px;
 }
 .btn-basic {
 	border:none;
@@ -43,9 +45,10 @@ input {
 	width: 100%;
 	font-size: 20px;
 	height: 100%;
+	min-height: 100vh;
 	z-index: 99999;
 	padding: 100px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 }

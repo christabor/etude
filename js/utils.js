@@ -8,13 +8,23 @@ var global_config = {
 };
 
 var globalLoader = {
-    load_speed: 1000,
-    load: function(message) {
-        $('body').prepend('<div id="global-loader">' + (message || 'Loading...') + '</div>').fadeIn(globalLoader.load_speed);
+    load_speed: 200,
+    load: function(opts) {
+        var loader = $('<div id="global-loader"></div>');
+        loader
+        .css(opts.css)
+        .text(opts.msg || 'Loading...');
+
+        $('body')
+        .prepend(loader)
+        .hide()
+        .fadeIn(globalLoader.load_speed);
         return;
     },
     unload: function() {
-        $('body').find('#global-loader').fadeOut(globalLoader.load_speed, function(){
+        $('body')
+        .find('#global-loader')
+        .fadeOut(globalLoader.load_speed, function(){
             $(this).remove();
         });
         return;
@@ -155,7 +165,9 @@ function getLocation(success, error) {
 
     // check if enabled
     if (navigator.geolocation) {
-        coords = navigator.geolocation.getCurrentPosition(success, error, options);
+        coords = navigator
+        .geolocation
+        .getCurrentPosition(success, error, options);
     }
     else {
         alert('Geolocation is not supported by this browser.');

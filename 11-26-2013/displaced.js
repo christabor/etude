@@ -1,5 +1,11 @@
 // declare all vars
-var loader        = document.getElementById('loader');
+var loader        = {
+    msg: 'Loading image map...',
+    css: {
+        'background-color': 'black',
+        'font-size': '40px'
+    }
+};
 var scene         = new THREE.Scene();
 var SCENE_FOV_MIN = 1;
 var SCENE_FOV_MAX = 1000;
@@ -70,7 +76,7 @@ function initDOMControls() {
     // init image picker, reload map on click
     var pics = $('#pics');
     pics.on('click', 'a', function(e){
-        globalLoader.load('Loading image map...');
+        globalLoader.load(loader);
         e.preventDefault();
 
         // re-init image map with new texture since points
@@ -168,7 +174,7 @@ function initControls() {
 
 window.onload = function() {
     // load all the first time on windowload
-    globalLoader.load('Loading image map...');
+    globalLoader.load(loader);
 
     // init all controls
     initDOMControls();
