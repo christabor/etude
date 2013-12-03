@@ -33,20 +33,19 @@ var particle_material     = new THREE.ParticleBasicMaterial({
     map: particle_texture,
     transparent: true,
     opacity: 0.8,
-    size: 20
+    size: 30
 });
 var particle_system       = new THREE.ParticleSystem(particles, particle_material);
 var max_particles         = 4000;
 var particle_speed        = 0.1;
 
 
-controls.userZoom = controls.userRotate = false;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 0.01;
+controls.autoRotateSpeed = 5;
 
 renderer.setSize(width, height);
 document.body.appendChild(renderer.domElement);
-camera.position.set(width / 2, height / 2, height / 2);
+camera.position.set(10, 0, 1000);
 
 function initGeometries() {
     eye_material.color        = new THREE.Color(0x000000);
@@ -87,6 +86,8 @@ function init() {
     scene.add(particle_system);
     scene.add(light);
 
+    particle_system.position.set(-width, 0, 0);
+
     snowman.meshes.eye_l.position.set(35, snowball_small + 210, snowball_small / 2);
     snowman.meshes.eye_r.position.set(35, snowball_small + 210, -snowball_small / 2);
     snowman.meshes.nose.position.set(snowball_small + 13, snowball_small + 200, 0);
@@ -101,8 +102,7 @@ function init() {
 function renderLoop() {
     controls.update();
     particle_system.position.y -= particle_speed;
-    particle_system.rotation.z += particle_speed * 0.006;
-    camera.rotation.z += 0.0001;
+    particle_system.rotation.z -= particle_speed * 0.006;
     return;
 }
 
