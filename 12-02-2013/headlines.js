@@ -23,6 +23,16 @@ $(document).ready(function(){
     '<span>Hundreds Killed</span><span>In Brutal</span><span>Pro-Something-Anti-Something</span> <span>Clash</span>',
     '<span>Why Are All</span> <span>The Good Guys</span> <span>Always Taken,</span> <span>Gay,</span> <span>Dead,</span> <span>Or Available?</span>'
     ];
+    var loader   = {
+        msg: 'Loading headline...',
+        css: {
+            'background-color': 'white',
+            'color': 'orange',
+            'font-family': 'Averia Serif Libre\', cursive;',
+            'font-size': '40px'
+        }
+    };
+    globalLoader.load(loader);
 
     function slabify() {
         var text = headlines[rando(headlines.length)];
@@ -47,10 +57,11 @@ $(document).ready(function(){
         return;
     }
 
+    try_again.on('click', slabify);
+    slabify();
+    globalLoader.unload();
     sidebar.css('left', '-400px').animate({
         'left': '0'
     }, 500);
-    try_again.on('click', slabify);
-    slabify();
     return;
 });
