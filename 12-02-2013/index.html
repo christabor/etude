@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700|Titan+One|Chewy|Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <title>Etude - 12-02-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Averia Serif Libre', cursive;
+        text-align: center;
+        background-color: #f1f1f1;
+        color: #444;
+    }
+    a {
+        color: #333;
+    }
+    p {
+        border-bottom: 1px solid #fff;
+        padding: 20px;
+        display: block;
+        position: fixed;
+        margin: 0;
+        width: 200px;
+        text-align: left;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+    }
+    #headlines {
+        text-shadow: 0 4px 4px #fff,
+        0 6px 4px #999;
+        width: 50%;
+        margin: 50px auto;
+        text-transform: uppercase;
+    }
+    .slabtexted .slabtext{
+        display:-moz-inline-box;
+        white-space:nowrap
+    }
+    .slabtextinactive .slabtext {
+        display:inline;
+        white-space:normal;
+        font-size:1em !important;
+        letter-spacing:inherit !important;
+        word-spacing:inherit !important;
+        *letter-spacing:0 !important;
+        *word-spacing:0 !important;
+    }
+    .slabtextdone .slabtext {
+        display:block;
+        line-height:0.9;
+    }
+    .btn {
+        border:2px double #444;
+        padding: 10px 20px;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 80%;
+    }
+    .slabtextdone > span {
+        margin:10px 0;
+        padding:5px;
+    }
+    span:nth-of-type(even) {
+        font-weight: normal;
+    }
+    .btn:hover {
+        color: orange;
+        border-color: orange;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        p {
+            width: 100%;
+            text-align: center;
+            position: static;
+        }
+        #headlines {
+            width: 90%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p id="sidebar">Random <strong>Onion.com</strong> articles from today, with <a target="_blank" href="http://freqdec.github.io/slabText/">SlabText</a> plugin applied.
+        <br><a href="#" id="again" class="btn">New Headline</a>
+    </p>
+    <section>
+        <h1 id="headlines"></h1>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.slabtext.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="headlines.js"></script>
+</body>
+</html>
