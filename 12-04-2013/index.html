@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 12-04-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Electrolize', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0 2px 3px black;
+        background-color: black;
+        font-size: 24px;
+    }
+    #video-cover,
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        opacity: 0.5;
+    }
+    iframe {
+        -webkit-filter: grayscale(1) blur(3px);
+    }
+    #video-cover {
+        background-color: black;
+    }
+    h1 {
+        z-index: 9999;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        padding: 40px;
+        font-size: 200px;
+        display: block;
+        width: 90%;
+        margin:0 auto;
+        margin-left: -45%;
+        color: orange;
+        left: 50%;
+        text-align: center;
+        border-bottom: 1px solid orange;
+        opacity: 0.9;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+    }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div id="video-cover"></div>
+    <iframe width="100%" height="100%" src="//www.youtube.com/embed/-22tna7KHzI?rel=0&amp;disablekb=1&amp;autoplay=1&amp;showinfo=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="atomic.js"></script>
+</body>
+</html>
