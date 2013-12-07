@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Averia+Libre' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <title>Etude - 12-05-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    h2 {
+        font-weight: normal;
+        color: white;
+    }
+    body {
+        padding: 20px;
+        margin: 0;
+        background-color: #2c114d;
+        text-transform: capitalize;
+        font-size: 24px;
+        color: #d6ef47;
+        line-height: 40px;
+    }
+    html,
+    body, h1, h2, h3, h4, h5, h6,
+    ul, li, p,
+    form,
+    button, .btn {
+        text-align: center;
+        font-family: 'Averia Libre', cursive;
+    }
+    img {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        box-shadow: 0 10px 12px #222;
+    }
+    img:hover {
+        -webkit-transform:rotate(-2deg);
+        transform:rotate(-2deg);
+        box-shadow: 0 10px 30px #d6ef47;
+    }
+    #container {
+        width: 90%;
+        margin: 20px auto;
+        border-radius: 10px;
+        border:4px solid #3b126a;
+        border-bottom-width: 10px;
+        padding: 40px;
+        background-color: #130923;
+    }
+    .pure-button,
+    #number {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    .pure-button {
+        background-color: #d6ef47;
+    }
+    #output p {
+        text-align: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="pure-g-r">
+            <div class="pure-u-1-2">
+                <img src="cthulu.jpg" alt="" width="503" height="372">
+            </div>
+            <div class="pure-u-1-2">
+                <h2>Cthulu or Constitution? <br>You decide.</h2>
+                <form id="retry" class="pure-form">
+                    <input class="pure-input-1" id="number" type="number" value="50" min="5" max="1134">
+                    <button class="pure-input-1 pure-button">Retry</button>
+                </form>
+            </div>
+            <div class="pure-u-1">
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/markov.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="bender.js"></script>
+</body>
+</html>
