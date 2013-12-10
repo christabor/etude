@@ -77,17 +77,32 @@
         -webkit-transform: perspective(40px) rotateY(-5deg) translateZ(0px);
         top: 0;
     }
+    @media handheld, screen and (max-width: 500px) {
+        input.message {
+            -webkit-transform: perspective(0) rotateY(0) translateZ(0px);
+            display: block;
+            position: static;
+            width: 90%;
+            height: auto;
+            margin: 10px auto;
+        }
+        #headspace {
+            margin: 10px 0;
+            width: 100%;
+            min-width: 100%;
+        }
+    }
     </style>
 </head>
 <body>
     <div id="container">
         <div id="headspace">
-            <input type="text" name="type1" placeholder="...">
-            <input type="text" name="type2" placeholder="...">
-            <input type="text" name="type3" placeholder="...">
-            <input type="text" name="type4" placeholder="...">
-            <input type="text" name="type5" placeholder="...">
-            <input type="text" name="type6" placeholder="...">
+            <input type="text" name="type1" placeholder="..." class="message">
+            <input type="text" name="type2" placeholder="..." class="message">
+            <input type="text" name="type3" placeholder="..." class="message">
+            <input type="text" name="type4" placeholder="..." class="message">
+            <input type="text" name="type5" placeholder="..." class="message">
+            <input type="text" name="type6" placeholder="..." class="message">
         </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
