@@ -31,6 +31,27 @@ var globalLoader = {
     }
 };
 
+function simpleLetterSequence(opts) {
+    for(var i = 0; i <= opts.len; i++) {
+        (function(i){
+            setTimeout(function(){
+                var letter = opts.word[i];
+                var block = '<span>' + letter + '</span>';
+                opts.container
+                .append(block)
+                .find('span')
+                .last()
+                .hide()
+                .css(opts.css_before)
+                .fadeIn(opts.fade, function(){
+                    $(this).css(opts.css_after);
+                });
+            }, i * opts.timing);
+        })(i);
+    }
+    return;
+}
+
 function initGoogleFonts() {
     window.myTypeLibrary = fonTypey({
 
