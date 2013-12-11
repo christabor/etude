@@ -113,6 +113,15 @@
     .ui-slider-handle:hover {
         cursor: pointer;
     }
+    .ui-slider-handle,
+    .ui-slider-handle:hover,
+    .ui-slider-handle:active {
+        -webkit-transition: all 0 ease-in-out;
+        -moz-transition: all 0 ease-in-out;
+        -ms-transition: all 0 ease-in-out;
+        -o-transition: all 0 ease-in-out;
+        transition: all 0 ease-in-out;
+    }
     #imgs-picker img:hover {
         box-shadow: 0 0 20px #000;
         transform:scale(1.2);
