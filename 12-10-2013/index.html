@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-10-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin:0;
+        font-family: 'Exo 2', sans-serif;
+        text-transform: uppercase;
+        text-shadow: 0 2px 2px #ccc, 0 2px 2px #fff;
+        background-color: #f1f1f1;
+        color: black;
+    }
+    #instructions {
+        z-index: 999;
+        background-color: #eee;
+        box-shadow: 0 -5px 20px #ccc;
+        color: #222;
+        padding: 35px 0 5px 0;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    #instructions span {
+        background-color: #666;
+        color: white;
+        padding: 8px;
+        font-size: 80%;
+        text-shadow: 0 0 0;
+        position: absolute;
+        border-radius: 0 0 50% 50%;
+        border-bottom: 4px solid #fff;
+        top: 0;
+        right: 0;
+        width: 200px;
+        left: 50%;
+        margin-left: -100px;
+    }
+    </style>
+</head>
+<body>
+    <div id="instructions">
+        <p>Click the page to add some more! <span></span></p>
+    </div>
+    <script src="../js/vendor/three.min.js"></script>
+    <script src="../js/vendor/tween.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="popping.js"></script>
+</body>
+</html>
