@@ -95,6 +95,20 @@ function randomColor(max) {
     return 'rgb(' + rando(max) + ',' + rando(max) + ',' + rando(max) + ')';
 }
 
+function randomColorArray(max) {
+    // assumed to always be RGB, though since it's
+    // random it doesn't matter
+    return [rando(max), rando(max), rando(max)];
+}
+
+function randomColorObject(max) {
+    return {
+        r: rando(max),
+        g: rando(max),
+        b: rando(max)
+    };
+}
+
 function randomColorScheme(color_count, max) {
     // return an array of random colors @color_count long
     var colors = [];
