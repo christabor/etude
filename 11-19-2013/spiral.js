@@ -1,6 +1,5 @@
-var c = getDocumentDimensions();
-var w = c.width;
-var h = c.height;
+var w = window.screen.availWidth;
+var h = window.screen.availHeight;
 var start = Date.now();
 var rings = [];
 
