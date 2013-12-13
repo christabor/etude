@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alike+Angular' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Etude - 12-11-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background: #3c91d1 url(gridme.png);
+        text-align: center;
+        font-family: 'Alike Angular', serif;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 10px;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    #container {
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        flex: 1;
+    }
+    #intro {
+        background: #3c91d1 url(concrete_wall.png);
+        color: #fff;
+        border-radius: 10px 0 0 0;
+    }
+    #linear {
+        background-color: #b3ffda;
+    }
+    #exponential {
+        border-radius: 0 10px 0 0;
+        background-color: #8af4c4;
+    }
+    h2 {
+        color: #f4cf32;
+    }
+    h5 {
+        text-transform: uppercase;
+        text-shadow: 0 2px 1px white;
+    }
+    .col {
+        padding: 40px;
+        flex: 0 50%;
+        border-bottom: 10px solid #000;
+    }
+    .growth-indicator {
+        text-align: center;
+        border-radius: 100%;
+        margin: 30px auto;
+        padding: 1px;
+    }
+    .growth-bar {
+        min-height: 100vh;
+        max-height: 100vh;
+        width: 50px;
+        height: 100%;
+        padding: 2px;
+        border-radius: 4px;
+        border:1px solid #555;
+        background-color: #333;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .growth-bar-progress {
+        background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #f4cf32),
+            color-stop(1, #a88e24)
+            );
+        background-image: -o-linear-gradient(bottom, #f4cf32 0%, #a88e24 100%);
+        background-image: -moz-linear-gradient(bottom, #f4cf32 0%, #a88e24 100%);
+        background-image: -webkit-linear-gradient(bottom, #f4cf32 0%, #a88e24 100%);
+        background-image: -ms-linear-gradient(bottom, #f4cf32 0%, #a88e24 100%);
+        background-image: linear-gradient(to bottom, #f4cf32 0%, #a88e24 100%);
+        width: 100%;
+    }
+    .subdued {
+        display: inline-block;
+        margin: 0 auto;
+    }
+    #stop-running {
+        border:2px solid #f4cf32;
+        color: #f4cf32;
+        padding: 5px 10px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    #stop-running:hover {
+        border-color: #fff;
+    }
+    @media handheld, screen and (max-width: 470px) {
+        body {
+            padding: 2px;
+            line-height: 30px;
+            font-size: 18px;
+        }
+        .col {
+            display: block;
+            padding:10px;
+        }
+        #container {
+            display: block;
+            padding: 2px;
+        }
+        .growth-bar {
+            width: 100%;
+        }
+        #linear,
+        #exponential {
+            width: 50%;
+            float: left;
+            display: inline-block;
+        }
+        #stop-running {
+            width: 100%;
+            font-size: 80%;
+            text-overflow:ellipsis;
+            display: block;
+            white-space: pre-wrap;
+            overflow: hidden;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <section id="intro" class="col">
+            <h2>Linear Growth vs. Exponential Growth</h2>
+            <p class="lead">Note: Linear growth, in this case, iterates <strong>faster</strong> than exponential, but the growth factor is much higher for exponential. In short, it pans out to be almost the same, until exponential growth blows it completely out of the water.</p>
+            <p>The <strong>Linear</strong> growth iterates at <strong>1 cycle every 1/500th of a second, growing at 1 unit (pixel) each time.</strong></p>
+            <p>The <strong>Exponential</strong> growth iterates at <strong>1 cycle a second, growing at N<sup>2</sup> units (pixel) each time.</strong> The linear iteration step is 500x faster, but you can see how exponential growth still wins.</p>
+            <p><a href="#" id="stop-running" class="btn btn-small">Stop running</a></p>
+        </section>
+        <section id="linear" class="col">
+            <h5>Linear</h5>
+            <div class="growth-indicator">0</div>
+            <div class="growth-bar">
+                <div class="growth-bar-progress"></div>
+            </div>
+        </section>
+        <section id="exponential" class="col">
+            <h5>Exponential</h5>
+            <div class="growth-indicator">0</div>
+            <div class="growth-bar">
+                <div class="growth-bar-progress"></div>
+            </div>
+        </section>
+    </div>
+    <p class="subdued">Patterns by: <a href="http://subtlepatterns.com/">Subtle Patterns</a></p>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/ghostwriter.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="creation.js"></script>
+</body>
+</html>
