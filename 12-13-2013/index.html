@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700|Belleza' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <title>Etude - 12-13-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @-webkit-keyframes stars {
+        from {
+            background-position: 2% 2%
+        }
+        to {
+            background-position: 1200% 400%
+        }
+    }
+    body {
+        font-family: 'Belleza', sans-serif;
+        font-size: 20px;
+        color: white;
+        line-height: 30px;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        background-image: url(imgs/space.jpg);
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: stars;
+        -webkit-animation-duration: 2000s;
+        -webkit-animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: stars;
+        animation-duration: 2000s;
+        animation-direction: alternate;
+        border-top: 20px solid #ff800c;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .civ-type {
+        width: 100%;
+        padding: 50px 0;
+        background-color: rgba(60, 151, 219, 0.3);
+        height: auto;
+        height: 660px;
+        overflow: hidden;
+    }
+    blockquote {
+        opacity: 0.8;
+        border:none;
+        background-color: #222;
+        padding: 30px;
+    }
+    blockquote:hover {
+        opacity: 1;
+    }
+    blockquote span {
+        font-size: 400%;
+        position: relative;
+        top: 20px;
+        opacity: 0.4;
+    }
+    a {
+        color: white;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    }
+    a:hover {
+        color: #ff800c;
+        border-color: #ff800c;
+        text-decoration: none;
+    }
+    h1 {
+        font-size: 65px;
+    }
+    h2 {
+        color: #70b6fa;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 90%;
+        border-left: 4px solid #ff800c;
+        text-indent: 10px;
+        color: #ff800c;
+    }
+    h4 {
+        color: #3c97db;
+        margin-top: 10px;
+    }
+    .container {
+        width: 90%;
+    }
+    figcaption {
+        text-align: center;
+        margin-top: 10px;
+        padding: 3px;
+        font-size: 80%;
+    }
+    iframe,
+    img {
+        padding: 6px;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow:0 2px 20px #000;
+    }
+    #type-0,
+    #type-2,
+    #type-4 {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .nav-tabs {
+        font-family: 'Exo 2', sans-serif;
+    }
+    .nav-tabs {
+        text-transform: uppercase;
+        font-size: 90%;
+    }
+    .nav-tabs>li a {
+        background-color: #222;
+        border:1px solid #444;
+    }
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:hover,
+    .nav-tabs>li.active>a:focus {
+        border-color: #444;
+        background-color: #111;
+        color: white;
+        border-bottom-color: black;
+    }
+    .nav>li {
+        margin-left: 5px;
+    }
+    .nav>li>a:hover,
+    .nav>li>a:focus {
+        background-color: #111;
+        color: white;
+        border-color: #444;
+        border-bottom-color: black;
+    }
+    .tab-content {
+        padding: 20px;
+        border:1px solid #444;
+        background-color: #111;
+        border-top: none;
+        overflow: hidden;
+    }
+    .nav.nav-tabs {
+        border-color: #333;
+    }
+    .nav.nav-tabs,
+    .tab-content {
+        width: 90%;
+    }
+    .subdued {
+        padding: 10px;
+        text-align: center;
+        margin: 10px 0 20px 0;
+    }
+    #intro {
+        border-bottom: 10px solid #222;
+    }
+    @media handheld, screen and (max-width: 470px) {
+        body {
+            font-size: 16px;
+            line-height: 30px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        .civ-type {
+            padding: 10px;
+            min-height: auto;
+            max-height: auto;
+            height: auto;
+            overflow: visible;
+        }
+        blockquote {
+            padding: 15px;
+        }
+        section {
+            height: auto;
+        }
+        iframe,
+        img {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+        .nav.nav-tabs,
+        .tab-content,
+        .container {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <section id="intro" class="civ-type">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h1>The <br>Kardashev <br>scale</h1>
+                        <h2>An exploration with the famous scale for developed civilizations. Content in <strong>quotes</strong> taken from <a href="http://en.wikipedia.org/wiki/Kardashev_scale">Wikipedia</a></h2>
+                    </div>
+                    <div class="col-md-7">
+                        <blockquote>
+                            <span>&ldquo;</span>
+                            The Kardashev scale is a method of measuring a civilization's level of technological advancement, based on the amount of energy a civilization is able to utilize. The scale has three designated categories called Type I, II, and III. A Type I civilization uses all available resources impinging on its home planet, Type II harnesses all the energy of its star, and Type III of its galaxy. The scale is only hypothetical, but it puts energy consumption in a cosmic perspective. It was first proposed in 1964 by the Soviet astronomer Nikolai Kardashev. Various extensions of the scale have been proposed since, from a wider range of power levels (types 0, IV and V) to the use of metrics other than pure power.
+                            <span>&rdquo;</span>
+                            <br>
+                            <cite>&mdash;Wikipedia</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="civ-type" id="type-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#video-0" data-toggle="tab">Video</a></li>
+                            <li><a href="#characteristics-0" data-toggle="tab">Examples</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="video-0">
+                                <iframe width="520" height="415" src="//www.youtube.com/embed/ECLvFLkvY7Y?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="tab-pane" id="characteristics-0">
+                                <h4>Examples</h4>
+                                <ul>
+                                    <li>Cyberpunk novels</li>
+                                    <li>Our current status: Earth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 data-0="text-indent:100px;opacity:0.1;" data-450="text-indent:0;opacity:1;">Type 0 Civilization</h2>
+                        <h3 data-0="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-450="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>0-15</sup> W)</strong></h3>
+                        <p data-0="font-size:80%;line-height:30px;" data-450="font-size:100%;line-height:40px;">&ldquo;A Type 0 civilization extracts its energy, information, raw-materials from crude organic-based sources (i.e. food/wood/fossil fuel/books/oral tradition); pressures via natural disaster, selection, and societal collapse creates extreme (99.9%) risk of extinction; it's capable of orbital spaceflight; in fiction, societies that fail to improve social, environmental and medical understanding concurrently with other advancements, frequently accelerated their own extinction.&rdquo;</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="civ-type" id="type-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 data-500="text-indent:-100px;opacity:0.1;" data-1200="text-indent:0;opacity:1;">Type 1 Civilization</h2>
+                        <h3 data-500="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-1200="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>16</sup> W)</strong></h3>
+                        <p data-500="font-size:80%;line-height:30px;" data-1200="font-size:100%;line-height:40px;">&ldquo;A Type I civilization extracts its energy, information, and raw-materials from fusion power, hydrogen, and other "high-density" renewable-resources; is capable of interplanetary spaceflight, interplanetary communication, megascale engineering, and colonization, medical and technological singularity, planetary engineering, world government, trade and defense, and stellar system-scale influence; but are still vulnerable to extinction.&rdquo;</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#video-1" data-toggle="tab">Video</a></li>
+                            <li><a href="#characteristics-1" data-toggle="tab">Examples</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="video-1">
+                                <iframe width="520" height="336" src="//www.youtube.com/embed/Qi9fUzxIXfU?rel=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <div class="tab-pane" id="characteristics-1">
+                                <h4>Examples</h4>
+                                <ul>
+                                    <li>Many popular Sci-Fi novels</li>
+                                    <li>Down and Out in the Magic Kingdom</li>
+                                    <li>Gears of War</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="civ-type" id="type-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#video-2" data-toggle="tab">Video</a></li>
+                        <li><a href="#characteristics-2" data-toggle="tab">Examples</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="video-2">
+                            <figure>
+                                <img src="imgs/sphere.jpg" alt="Dyson Sphere" width="420">
+                                <figcaption>Credit: <a href="http://en.wikipedia.org/wiki/Dyson_sphere">Wikipedia</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="tab-pane" id="characteristics-2">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Star Trek</li>
+                                <li>Halo Universe: UNSC Enterprise</li>
+                                <li>Mass Effect: Asari, Salarians, Turians</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 data-1200="text-indent:100px;opacity:0.1;" data-1900="text-indent:0;opacity:1;">Type 2 Civilization</h2>
+                    <h3 data-1200="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-1900="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>26</sup> W)</strong></h3>
+                    <p data-1200="font-size:80%;line-height:30px;" data-1900="font-size:100%;line-height:40px;">&ldquo;A Type II civilization extracts fusion energy, information, and raw-materials from multiple solar systems; it is capable of evolutionary intervention, interstellar travel, interstellar communication, stellar engineering, and star cluster-scale influence; the resulting proliferation and diversification would theoretically negate the probability of extinction.&rdquo;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="civ-type" id="type-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 data-1900="text-indent:-100px;opacity:0.1;" data-2600="text-indent:0;opacity:1;">Type 3 Civilization</h2>
+                    <h3 data-1900="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-2600="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>36</sup> W)</strong></h3>
+                    <p data-1900="font-size:80%;line-height:30px;" data-2600="font-size:100%;line-height:40px;">&ldquo;A Type III civilization extracts fusion energy, information, and raw-materials from all possible star-clusters; it's capable of intergalactic travel via wormholes, intergalactic communication, galactic engineering and galaxy-scale influence.&rdquo;</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#video-3" data-toggle="tab">Video</a></li>
+                        <li><a href="#characteristics-3" data-toggle="tab">Examples</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="video-3">
+                            <iframe width="520" height="415" src="//www.youtube.com/embed/4Imd_0iCucg?rel=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="tab-pane" id="characteristics-3">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Star Wars Universe</li>
+                                <li>Star Maker (Olaf Stapledon)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="civ-type" id="type-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#video-4" data-toggle="tab">Video</a></li>
+                        <li><a href="#characteristics-4" data-toggle="tab">Examples</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="video-4">
+                            <figure>
+                                <img src="imgs/galaxy-mmo.JPG" alt="Galaxy power" width="520">
+                                <figcaption>Credit: Star Wars <a href="http://starwars.wikia.com/wiki/Star_Wars:_The_Old_Republic">Wiki</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="tab-pane" id="characteristics-4">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Commonwealth/Void Saga</li>
+                                <li>The Dancers at the End of Time</li>
+                                <li>Doctor Who</li>
+                                <li>Star Trek Universe: Q Continuum</li>
+                                <li>Lexx</li>
+                                <li>Bionicle Universe</li>
+                                <li>DC Comics: Guardians of the Universe</li>
+                                <li>Xeelee</li>
+                                <li>Halo Forerunners</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 data-2600="text-indent:-100px;opacity:0.1;" data-3200="text-indent:0;opacity:1;">Type 4 Civilization</h2>
+                    <h3 data-2600="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-3200="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>46</sup> W)</strong></h3>
+                    <p data-2600="font-size:80%;line-height:30px;" data-3200="font-size:100%;line-height:40px;">&ldquo;A Type IV civilization extracts energy, information, and raw-materials from all possible galaxies; it's effectively immortal and omnipotent with universal-scale influence, possessing the ability of theoretical time travel and instantaneous matter-energy transformation and teleportation (their apparent abilities may include moving entire asteroid belts and stars, creating alternate timelines, and affecting universal states of nature such as the gravitational constant); in fiction, these civilizations may be perceived as omnipresence/omnipotent gods.&rdquo;</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="civ-type" id="type-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 data-3200="text-indent:-100px;opacity:0.1;" data-3870="text-indent:0;opacity:1;">Beyond Type 4...</h2>
+                    <h3 data-3200="-webkit-transform:scale(1.4);transform:scale(1.4);opacity:0;" data-3870="-webkit-transform:scale(1);transform:scale(1);opacity:1;">Energy requirements: <strong>(10<sup>????</sup> W)</strong></h3>
+                    <p data-3200="font-size:80%;line-height:30px;" data-3870="font-size:100%;line-height:40px;">&ldquo;Such hypothetical civilizations have either transcended their universe of origin or arose within a multiverse or other higher-order membrane of existence, and are capable of universe-scale manipulation of individual discrete universes from an external frame of reference. In fiction, their "god-like" artifacts or endowed abilities (such as monolith) find their way into the hands of relatively juvenile "Type 0" civilizations (such as humanity).&rdquo;</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#video-5" data-toggle="tab">Video</a></li>
+                        <li><a href="#characteristics-5" data-toggle="tab">Examples</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="video-5">
+                            <figure>
+                                <img src="http://s2.quickmeme.com/img/3c/3c19c7fe14ba3b5f0914dbdde5f0a4713892c840f84a758d5180950b18a6c2bf.jpg" alt="heaven type 5 meme" width="520">
+                                <figcaption>Credit: <a href="http://www.quickmeme.com/meme/3qfi2a">QuickMeme</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="tab-pane" id="characteristics-5">
+                            <h4>Examples</h4>
+                            <ul>
+                                <li>Magic the Gathering: Infinite Consortium</li>
+                                <li>Downstreamers: [Manifold: Time]</li>
+                                <li>Half Life: Combine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="subdued">Built with <a href="http://prinzhorn.github.io/skrollr/">Skrollr</a>, <a href="http://getbootstrap.com">Twitter Bootstrap</a> and <a href="http://wikipedia.org">Wikipedia</a>. Patterns courtesy of <a href="http://www.jpl.nasa.gov/spaceimages">NASA</a>.</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js"></script>
+    <script src="kardashev.js"></script>
+</body>
+</html>

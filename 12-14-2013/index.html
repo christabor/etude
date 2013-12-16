@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Etude - 12-14-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin:0;
+        font-family: monospace;
+    }
+    div:hover,
+    canvas:hover {
+        cursor: pointer;
+    }
+    p {
+        text-align: center;
+        padding: 10px;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        #global-loader {
+            padding: 20px 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p class="subdued">Click to generate more. Images from <a href="http://subtlepatterns.com/">Subtle Pattnerns</a></p>
+    <canvas id="canvas" width="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="faceoff.js"></script>
+</body>
+</html>
