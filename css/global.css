@@ -55,3 +55,9 @@ textarea {
 	top: 0;
 	left: 0;
 }
+.dg.ac * {
+	/* fix issue with dat.gui colorpicker */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}

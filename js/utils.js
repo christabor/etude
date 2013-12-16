@@ -69,8 +69,14 @@ function hasJS() {
     return;
 }
 
+/********************* Random *********************/
+
 function getKey(arr) {
     return Math.floor(Math.random() * arr.length);
+}
+
+function rando(max) {
+    return Math.floor(Math.random() * max);
 }
 
 function randomFixedString(count) {
@@ -99,6 +105,12 @@ function randomColorArray(max) {
     // assumed to always be RGB, though since it's
     // random it doesn't matter
     return [rando(max), rando(max), rando(max)];
+}
+
+function randomColorHex(is_octal) {
+    // Creds: http://www.paulirish.com/2009/random-hex-color-code-snippets/
+    var color = Math.floor(Math.random()*16777215).toString(16);
+    return is_octal ? '0x'+color : '#'+color;
 }
 
 function randomColorObject(max) {
@@ -137,10 +149,6 @@ function uuid() {
     // random unique identifier in the form 0000-0000-0000-0000
     var uid = (function(){ return rando(9999); });
     return [uid(), uid(), uid(), uid()].join('-');
-}
-
-function rando(max) {
-    return Math.floor(Math.random() * max);
 }
 
 function stretchCanvas(canvas) {
@@ -220,3 +228,34 @@ window.requestAnimFrame = (function(){
     window.setTimeout(callback, 1000 / 60);
 };
 })();
+
+/********************* THREE.js *********************/
+
+function createTween(opts) {
+    if(!TWEEN) return;
+    log(opts);
+    // create tweening classes
+    var new_tween = new TWEEN.Tween(opts.from)
+    .to(opts.to, opts.duration || 1000)
+    .easing(opts.easing)
+    .onUpdate(opts.onUpdate)
+    .onComplete(opts.onComplete);
+
+    // start
+    new_tween.start();
+    return;
+}
+
+function addTHREEStats() {
+    if(!Stats) return;
+
+    // construct new stats
+    // obj and add to DOM
+    // scope is global, so it has
+    // a more unique namespace
+    three_stats = new Stats();
+    three_stats.domElement.style.position = 'absolute';
+    three_stats.domElement.style.top = '0px';
+    container.appendChild(three_stats.domElement);
+    return;
+}
