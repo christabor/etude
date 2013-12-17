@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Etude - 12-15-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 30px;
+        margin:0;
+        font-size: 18px;
+        font-family: 'Exo 2', sans-serif;
+        background-color: #370126;
+        color: white;
+    }
+    #controls {
+        position: fixed;
+        background-color: #26001a;
+        top: 0;
+        height: 100%;
+        left: 0;
+        width: 300px;
+        padding: 20px;
+    }
+    .slider-container,
+    .slider-label {
+        margin: 20px auto;
+        color: #afa5d2;
+    }
+    .ui-widget-content,
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default {
+        border:none;
+        background: none;
+        background-color: #afa5d2;
+    }
+    .ui-state-default,
+    .ui-widget-content .ui-state-default,
+    .ui-widget-header .ui-state-default {
+        background-color: white;
+    }
+    p {
+        margin-bottom: 40px;
+    }
+    tr {
+        opacity: 0.8;
+    }
+    tr:nth-of-type(odd) {
+        opacity: 0.4;
+    }
+    td {
+        background-color: #810159;
+    }
+    tr td span {
+        display: block;
+        width: 20%;
+        text-align: center;
+    }
+    tr td span:first-of-type {
+        float: left;
+    }
+    tr td span:last-of-type {
+        float: right;
+    }
+    #helix {
+        width: 70%;
+        margin: 0 auto;
+        color: black;
+        float: right;
+    }
+    .T {
+        background-color: #eacf36;
+    }
+    .C {
+        background-color: #ffe13a;
+    }
+    .A {
+        background-color: #d2b930;
+    }
+    .G {
+        background-color: #bba529;
+    }
+    @media handheld, screen and (max-width: 850px) {
+        body {
+            padding: 0;
+        }
+        #controls {
+            position: static;
+            width: 100%;
+        }
+        #helix {
+            width: 95%;
+            margin-top: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h3>DNA Table</h3>
+        <p>A table made of table tags</p>
+        <div class="slider-container">
+            <div class="slider-label">Degree rotation</div>
+            <div class="slider" data-min="0" data-value="4" data-step="0.1" data-max="20" data-func="spiral"></div>
+        </div>
+        <div class="slider-container">
+            <div class="slider-label">Base Pair count</div>
+            <div class="slider" data-min="0" data-value="4" data-max="100" data-func="add_more"></div>
+        </div>
+    </div>
+    <table id="helix"></table>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="../js/vendor/tween.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="tcag.js"></script>
+</body>
+</html>
