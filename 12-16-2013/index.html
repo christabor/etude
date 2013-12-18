@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Etude - 12-16-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin:0;
+        font-size: 18px;
+        font-family: 'Exo 2', sans-serif;
+        background-color: #f1f1f1;
+        background-size: cover;
+        color: #333;
+    }
+    a {
+        color: #333;
+    }
+    a:hover {
+        color: white;
+    }
+    a:active {
+        position: relative;
+        top: 1px;
+    }
+    #scary-bar {
+        width: 100%;
+        background-color: red;
+        text-align: center;
+        border-bottom: 2px solid #930b19;
+        z-index: 0;
+        opacity: 0.9;
+    }
+    #outro {
+        display: none;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: #222;
+        color: red;
+    }
+    #stats {
+        top: 100px;
+        left: 100px;
+    }
+    #stats > div {
+        margin-bottom: 40px;
+    }
+    #outro h1 {
+        margin-top: 100px;
+    }
+    .number {
+        font-size: 50px;
+    }
+    .posab {
+        position: absolute;
+        z-index: 1;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        #stats {
+            padding: 10px;
+            top: 10px;
+            left: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="stats" class="posab">
+        <div id="intro">
+            <p>1/10th of a second = 1 day.</p>
+        </div>
+        <div id="species"></div>
+        <div id="main-counter"></div>
+        <div id="credits">
+            <p>
+                Original figures from <br>
+                <a href="http://www.motherjones.com/environment/2013/12/climate-scientist-environment-apocalypse-human-extinction">
+                    &ldquo;What These Climate Scientists Said About Earth's Future Will Terrify You&rdquo;
+                </a>
+            </p>
+        </div>
+    </div>
+    <div id="outro" class="posab">
+        <h1>Good Bye, Humanoid</h1>
+    </div>
+    <div id="scary-bar" class="posab"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="goodbye.js"></script>
+</body>
+</html>
