@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 12-17-2013</title>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @-webkit-keyframes flash {
+        0% {
+            color: white;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 0;
+        }
+        85% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            color: red;
+            opacity: 1;
+        }
+    }
+    @keyframes flash {
+        0% {
+            color: white;
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 0;
+        }
+        85% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 0;
+        }
+        100% {
+            color: red;
+            opacity: 1;
+        }
+    }
+    body {
+        background-color: #f1f1f1;
+        background-size: cover;
+        border: 30px solid #222;
+        border-left: none;
+        border-right: none;
+        color: #333;
+        margin:0;
+        padding: 0;
+    }
+    h1,
+    #timer {
+        display: block;
+        left: 50%;
+        margin-left: -50%;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+    #timer {
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        top: 400px;
+    }
+    h1 {
+        font-family: monospace;
+        font-size: 50px;
+        text-shadow:0 2px 2px white;
+        top: 200px;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: flash;
+        animation-name: flash;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            overflow: hidden;
+        }
+        h1  {
+            top: 20px;
+        }
+        #timer {
+            top: auto;
+            bottom: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="pixl.js"></script>
+</body>
+</html>
