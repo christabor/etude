@@ -54,7 +54,7 @@ function init() {
 }
 
 function calculateDisplacementMap() {
-    // separete displacement map values into a
+    // separate displacement map values into a
     // for isolated updates and computation
     uniforms['enableDisplacement'].value = true;
     uniforms['enableDiffuse'].value      = true;
