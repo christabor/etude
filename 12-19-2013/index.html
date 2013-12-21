@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-19-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @-webkit-keyframes scroller {
+        0% {
+            top: 0px;
+        }
+        100% {
+            top: -100%;
+        }
+    }
+    @keyframes scroller {
+        0% {
+            top: 0px;
+        }
+        100% {
+            top: -100%;
+        }
+    }
+    @-webkit-keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    }
+    @keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    }
+    .error {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: red;
+        color: black;
+        padding: 100px;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        color: red;
+        font-size: 20px;
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        border-top: 20px solid #222;
+    }
+    a {
+        color: white;
+    }
+    a:hover {
+        color: red;
+    }
+    canvas,
+    .canvas {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+    }
+    #gui-overlay {
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        min-height: 100%;
+    }
+    #gui-overlay,
+    #gui-overlay > div {
+        z-index: 11;
+    }
+    #c_small {
+        z-index: 99;
+        width: 300px;
+        height: 300px;
+        top: 50px;
+        left: 50px;
+        border:2px solid red;
+        border-bottom-width: 10px;
+    }
+    .gui-fragment {
+        position: absolute;
+    }
+    .title {
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+    #random-sequence {
+        top: 50px;
+        left: 380px;
+        width: 100px;
+        font-size: 30px;
+    }
+    #box-container {
+        min-width: 1000px;
+        min-height: 1000px;
+        margin: 10px;
+        padding: 10px;
+        border: 4px dashed red;
+        opacity: 0.8;
+        border-left: none;
+        left: 50%;
+        border-radius: 100%;
+        margin-left: -45%;
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-name: rotate;
+        animation-name: rotate;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    #letter-sequence {
+        width: 40%;
+        max-width: 500px;
+        opacity: 0.5;
+        padding: 12px;
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 18px;
+        display: block;
+        -webkit-animation-duration: 100s;
+        animation-duration: 100s;
+        -webkit-animation-name: scroller;
+        animation-name: scroller;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    #letter-sequence span {
+        padding: 1px;
+        display: inline-block;
+    }
+    .subdued {
+        color: #999;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        text-align: center;
+        display: block;
+        z-index: 999;
+    }
+    .subdued a {
+        color: #999;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        .gui-fragment,
+        div,
+        div * {
+            position: static;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="c_small" class="canvas"></div>
+    <div id="gui-overlay">
+        <div id="box-container" class="gui-fragment"></div>
+        <div id="random-sequence" class="gui-fragment">
+            <p class="title">Subject</p>
+            <span></span>
+        </div>
+        <div id="letter-sequence" class="gui-fragment"></div>
+    </div>
+    <div id="c_large" class="canvas"></div>
+    <p class="subdued">Credits to 43081j for the
+        <a href="https://github.com/43081j/funky">Funky library.</a>
+    </p>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/funky.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="watcher.js"></script>
+</body>
+</html>

@@ -33,6 +33,10 @@ var globalLoader = {
 };
 
 function simpleLetterSequence(opts) {
+    // animate a sequence of letters,
+    // allow for transition from one css state
+    // to another, which allows for all
+    // kinds of possibilities
     for(var i = 0; i <= opts.len; i++) {
         (function(i){
             setTimeout(function(){
@@ -73,6 +77,8 @@ function hasJS() {
 /********************* Random *********************/
 
 function getKey(arr) {
+    // get a random key by the length
+    // of a given array
     return Math.floor(Math.random() * arr.length);
 }
 
@@ -81,10 +87,22 @@ function rando(max) {
 }
 
 function randomFixedString(count) {
+    // generate a random string
+    // of fixed length
     var tokens = 'abcdefghijklmopqrstuvwxyz'.split('');
     var str = '';
     for(var i = 0; i <= count; i++) {
         str += tokens[rando(tokens.length)];
+    }
+    return str;
+}
+
+function randomBinary(max) {
+    // generate some random binary of
+    // @max size (e.g. 0101010101)
+    var str = '';
+    for(var i = 0; i <= max; i++) {
+        str += rando(10) > 5 ? '0' : '1';
     }
     return str;
 }
@@ -96,6 +114,8 @@ function randomStringLength(max) {
 }
 
 function randomColor(max) {
+    // return a random color,
+    // in rgba format
     if(isNaN(max)) {
         max = 255;
     }
@@ -111,10 +131,14 @@ function randomColorArray(max) {
 function randomColorHex(is_octal) {
     // Creds: http://www.paulirish.com/2009/random-hex-color-code-snippets/
     var color = Math.floor(Math.random()*16777215).toString(16);
+
+    // added a custom is_octal flag to determine if using
+    // octal or not (useful in libraries like THREE.js)
     return is_octal ? '0x'+color : '#'+color;
 }
 
 function randomColorObject(max) {
+    // return an RGB object
     return {
         r: rando(max),
         g: rando(max),
@@ -132,6 +156,8 @@ function randomColorScheme(color_count, max) {
 }
 
 function getDocumentDimensions() {
+    // return a simple dimensions object
+    // of the screen width and height
     return {
         'height': window.screen.availHeight,
         'width': window.screen.width
@@ -219,16 +245,20 @@ function getLocation(success, error) {
     return coords;
 }
 
+/********************* SHIMS *********************/
+
 window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame    ||
-  window.oRequestAnimationFrame      ||
-  window.msRequestAnimationFrame     ||
-  function(/* function */ callback, /* DOMElement */ element){
-    window.setTimeout(callback, 1000 / 60);
-};
+    return  window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    window.oRequestAnimationFrame      ||
+    window.msRequestAnimationFrame     ||
+    function(/* function */ callback, /* DOMElement */ element){
+        window.setTimeout(callback, 1000 / 60);
+    };
 })();
+
+navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
 
 /********************* THREE.js *********************/
 
