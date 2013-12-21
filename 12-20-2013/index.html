@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-20-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        font-size: 30px;
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        color: white;
+        text-align: center;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    span {
+        font-size: 14px;
+        text-transform: uppercase;
+        opacity: 0.5;
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+        padding: 6px;
+        border-radius: 5px;
+        border:1px solid #ccc;
+    }
+    code {
+        tab-size: 0;
+        margin: 0 auto;
+        display: block;
+        font-size: 70%;
+        box-shadow: inset 0 1px 10px black;
+        background: black url(../img/escheresque_ste.png);
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+    #container {
+        display: flex;
+        flex: 1;
+    }
+    #intro,
+    #sequences {
+        padding: 20px 40px;
+        position: relative;
+    }
+    #intro {
+        flex: 0 30%;
+        background: #333 url(../img/wild_oliva.png);
+        color: white;
+        border-bottom: 10px solid #222;
+    }
+    #intro h2 strong {
+        color: #c8d33d;
+    }
+    #sequences {
+        flex: 0 70%;
+        color: #333;
+        background: #f1f1f1 url(../img/pw_pattern.png);
+    }
+    #timer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #999;
+        color: white;
+        padding: 10px;
+    }
+    #sequences [data-succession] {
+        font-size: 60px;
+        display: none;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        #intro,
+        #sequences {
+            flex: 0 50%;
+        }
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            font-size: 24px;
+        }
+        #container {
+            display: block;
+        }
+        #intro,
+        #sequences {
+            padding: 10px 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <section id="intro">
+            <h2><strong>Succession:</strong><br> a plugin to sequence any amount of text, <br><em>declaratively.</em></h2>
+            <code>
+                // add `data-start="00:01"`
+                and `data-stop="00:04"`
+                to configure.
+            </code>
+        </section>
+        <section id="sequences">
+            <div id="timer"></div>
+            <h4>Quotes by Nietzche</h4>
+            <p data-start="00:01" data-stop="00:06" data-succession>He who seeks intelligence lacks intelligence.</p>
+            <p data-start="00:07" data-stop="00:12" data-succession>It is not when it is dangerous to tell the truth that its advocates are hardest to find, but when it is boring.</p>
+            <p data-start="00:14" data-stop="00:16" data-succession>Everything good is the transmutation of something evil: every god has a devil for a father.</p>
+            <p data-start="00:20" data-stop="00:24" data-succession>One has observed life poorly, if one has not also witnessed the hand that mercifully &mdash; kills.</p>
+            <p data-start="00:25" data-stop="00:28" data-succession>The snake that cannot shed its skin perishes. Likewise those spirits who are prevented from changing their opinions; they cease to be spirits.</p>
+            <p data-start="00:29" data-stop="00:40" data-succession>To predict the behavior of ordinary people in advance, you only have to assume that they will always try to escape a disagreeable situation with the smallest possible expenditure of intelligence.</p>
+            <p data-start="00:41" data-stop="00:44" data-succession>What is the strongest cure? Victory.</p>
+            <p data-start="00:45" data-stop="00:50" data-succession>Contentment even protects against colds. Has any woman who knew herself to be well dressed ever caught a cold? I am assuming that she was barely dressed.</p>
+            <p data-start="00:51" data-stop="01:01" data-succession>I fear animals regard man as a creature of their own kind which has in a highly dangerous fashion lost its healthy animal reason &amp; as the mad animal, as the laughing animal, as the weeping animal, as the unhappy animal.</p>
+        </section>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="watcher.js"></script>
+</body>
+</html>
