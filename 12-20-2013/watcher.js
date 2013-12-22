@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     // testing/demo
-    var timer = $('#timer');
-    var time = 0;
+    var timer  = $('#timer');
+    var time   = 0;
     var titles = $('#sequences [data-succession]');
 
     // update for demo
@@ -16,7 +16,7 @@ $(document).ready(function(){
         var _text = $(text);
         var speed = 100;
         var start = _text.data('start').replace(':', '');
-        var end = _text.data('stop').replace(':', '');
+        var end   = _text.data('stop').replace(':', '');
 
         // set timeout for starting point
         setTimeout(function(){
