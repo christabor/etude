@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-22-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Rufina:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background: transparent url(../img/subtle_dots.png);
+        font-size: 18px;
+        overflow-x: hidden;
+        font-family: 'Rufina', serif;
+    }
+    #progress {
+        padding: 10px 0;
+    }
+    section {
+        padding: 10px 20px;
+    }
+    .bar {
+        height: 20px;
+        background-color: #81b758;
+        border-radius: 6px;
+    }
+    #intro {
+        color: white;
+        background-color: #222;
+        text-align: center;
+    }
+    #job-types {
+        background-color: #270063;
+        color: white;
+    }
+    #job-types li {
+        line-height: 40px;
+        list-style-type: square;
+    }
+    #job-types a {
+        color: white;
+    }
+    #final {
+        background-color: orange;
+        display: none;
+    }
+    .automated {
+        text-decoration: line-through;
+    }
+    @media handheld, screen and (max-width: 600px) {
+        .btn,
+        #modes {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <section id="intro">
+        <h1>State of Automation</h1>
+        <div id="progress">
+            <div class="bar"></div>
+            <span class="percentage"></span>
+        </div>
+    </section>
+    <section id="final">
+        <h3>Automation complete.</h3>
+        <p>If you&rsquo;re a pessimist, go freak out! If you&rsquo;re an optimist, go have a drink!</p>
+    </section>
+    <section id="job-types">
+        <h3>Job types</h3>
+        <ul>
+            <li><a href="#">Management occupations</a></li>
+            <li><a href="#">Business and financial operations occupations</a></li>
+            <li><a href="#">Computer and mathematical occupations</a></li>
+            <li><a href="#">Architecture and engineering occupations</a></li>
+            <li><a href="#">Life, physical, and social science occupations</a></li>
+            <li><a href="#">Community and social services occupations</a></li>
+            <li><a href="#">Legal occupations</a></li>
+            <li><a href="#">Education, training, and library occupations</a></li>
+            <li>
+                <a href="#">Arts</a>,
+                <a href="#">design</a>,
+                <a href="#">entertainment</a>,
+                <a href="#">sports</a>, and
+                <a href="#">media occupations</a>
+            </li>
+            <li><a href="#">Healthcare practitioners and technical occupations</a></li>
+            <li><a href="#">Healthcare support occupations</a></li>
+            <li><a href="#">Protective service occupations</a></li>
+            <li><a href="#">Food preparation and serving related occupations</a></li>
+            <li><a href="#">Building and grounds cleaning and maintenance occupations</a></li>
+            <li><a href="#">Personal care and service occupations</a></li>
+            <li><a href="#">Sales and related occupations</a></li>
+            <li><a href="#">Office and administrative support occupations</a></li>
+            <li><a href="#">Farming, fishing, and forestry occupations</a></li>
+            <li><a href="#">Construction and extraction occupations</a></li>
+            <li><a href="#">Installation, maintenance, and repair occupations</a></li>
+            <li><a href="#">Production occupations</a></li>
+            <li><a href="#">Transportation and material moving occupations</a></li>
+            <li><a href="#">Military specific occupations</a></li>
+        </ul>
+    </section>
+
+    <section id="inspired" class="subdued">
+        <h3>Inspired</h3>
+        <p>Categories painstakingly copy-pasted from <a href="http://en.wikipedia.org/wiki/Standard_Occupational_Classification_System">Job classification</a>
+        </p>
+        <p>Original study: <a href="http://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf">Automation report</a></p>
+    </section>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="splitzie.js"></script>
+</body>
+</html>
