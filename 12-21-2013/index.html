@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-21-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Rufina:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background: transparent url(../img/subtle_dots.png);
+        font-size: 22px;
+        overflow-x: hidden;
+        font-family: 'Rufina', serif;
+        text-align: center;
+    }
+    h1 {
+        color: #f7fdbd;
+    }
+    h1,
+    .btn,
+    .cell-info {
+        font-family: 'Dosis', sans-serif;
+    }
+    p {
+        padding: 10px;
+    }
+    #zone {
+        padding: 10px;
+        margin: 0 auto;
+    }
+    #split {
+        font-size: 120%;
+        background-color: #660ace;
+    }
+    .cell {
+        background-color: #f4decd;
+        border: 2px solid #f1f1f1;
+        padding: 10px;
+        margin: 5px;
+        width: 40px;
+        height: 45px;
+        border-radius: 85% 100%;
+        display: inline-block;
+        position: relative;
+    }
+    .cell-info,
+    .cell-info:hover {
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .cell-info {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        margin-left: -150px;
+        min-width: 300px;
+        background-color: #95cfdb;
+        border-bottom: 3px solid #719fa8;
+        color: white;
+        text-shadow: 0 1px 2px #719fa8;
+        border-radius: 6px;
+        opacity: 0;
+        padding: 10px;
+    }
+    .cell:hover .cell-info {
+        opacity: 1;
+        z-index: 999;
+    }
+    .cell .nucleus {
+        padding: 3px;
+        width: 20px;
+        height: 25px;
+        margin: 0 auto;
+        border: 2px solid white;
+        opacity: 0.9;
+        color: black;
+        position: relative;
+        top: -4px;
+        left: 50%;
+        margin-left: -10px;
+        border-radius: 100%;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-name: rotate;
+        animation-name: rotate;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    section {
+        padding: 20px;
+    }
+    #intro {
+        background: #999 url(../img/moulin.png);
+        color: white;
+    }
+    #controls {
+        background: #222 url(../img/struckaxiom.png);
+        color: black;
+    }
+    #warning {
+        display: none;
+        background-color: #dd271c;
+        color: white;
+    }
+    #modes {
+        display: inline-block;
+        font-size: 80%;
+    }
+    @media handheld, screen and (max-width: 600px) {
+        .btn,
+        #modes {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1>Cell Division ...maker!</h1>
+        <p>Mouse over a cell after it's been split to see details about it.</p>
+    </section>
+    <section id="warning">
+        <p>Splits after this point are browser intensive and have been disabled.</p>
+    </section>
+    <section id="controls">
+        <div id="modes">
+            <p>Modes:
+                <a href="#" id="exponential" class="btn btn-basic btn-plain">Exponential (realistic)</a>
+                or
+                <a href="#" id="two_x" class="btn btn-basic btn-plain">2x (N * 2)</a>
+            </p>
+        </div>
+        <a href="#" id="split" class="btn btn-basic btn-plain">Split again</a>
+        <div id="counter">Current cell count: <strong class="count"></strong> Generation: <strong class="generation"></strong></div>
+    </section>
+    <section id="zone"></section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="splitzie.js"></script>
+</body>
+</html>
