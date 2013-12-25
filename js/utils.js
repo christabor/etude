@@ -67,6 +67,22 @@ function initGoogleFonts() {
     return;
 }
 
+function disableForMobile() {
+    // disable all scripts
+    // before they load
+    var html = [
+    '<h1>Sorry, but this page does not work well in mobile browsers.</h1>',
+    '<p>Please try again with a desktop device. <333</p>'
+    ].join('');
+
+    // add message to dom
+    // replace original content
+    document
+    .querySelector('body')
+    .innerHTML = html;
+    return;
+}
+
 function hasJS() {
     // remove no-js classes for
     // compatibility and enhancement
