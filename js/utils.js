@@ -106,13 +106,17 @@ function randomCSSColorAttr(elem, props, color_max) {
     if(multiple) {
         for (var i = 0, len = props.length; i < len; i++) {
             multi_map[props[i]] = randomColor(color_max);
-            log(multi_map);
             elem.css(multi_map);
         }
     } else {
         elem.css(props, randomColor(color_max));
     }
     return;
+}
+
+function randomHTMLInput() {
+    var inputs = ['type', 'radio', 'text', 'number', 'date', 'range'];
+    return '<input type="' + inputs[rando(inputs.length)] + '">';
 }
 
 function randomBinary(max) {
@@ -282,7 +286,7 @@ navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia
 
 function createTween(opts) {
     if(!TWEEN) return;
-    log(opts);
+
     // create tweening classes
     var new_tween = new TWEEN.Tween(opts.from)
     .to(opts.to, opts.duration || 1000)
