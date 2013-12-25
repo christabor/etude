@@ -104,15 +104,18 @@ $(document).ready(function(){
         var len;
         var list;
 
+        // empty out ul specifically
+        ul.empty();
+
         // populate multiple sequences
         doSomethingABunch(function(){
+
             // add a bunch of list items
             // programmatically, then
             // update each with inputs
             var li;
             ul.append('<li></li>');
             li = ul.find('li').last();
-
             populateArea(li, 20);
         }, 30);
 
@@ -121,6 +124,7 @@ $(document).ready(function(){
         len = list.length;
 
         setInterval(function(){
+
             // play forward then reverse
             // by inversing the boolean
             // set interval that loops
