@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-24-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @-webkit-keyframes dance {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    @keyframes dance {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        50% {
+            -webkit-transform: scale(3) rotate(180deg);
+            transform: scale(3) rotate(180deg);
+        }
+        100% {
+            -webkit-transform: scale(1) rotate(0deg);
+            transform: scale(1) rotate(0deg);
+        }
+    }
+    @keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        50% {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        100% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+    body {
+        background-color: #106e2d;
+        color: white;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-shadow: 0 1px 2px #09411b;
+    }
+    #presents {
+        background-color: red;
+        border-bottom: 6px solid #900a1e;
+        border-radius: 10px;
+        box-shadow: 0 2px 100px #1bea47;
+        display: block;
+        left: 50%;
+        margin-left: -150px;
+        padding: 10px;
+        position: absolute;
+        top: 40px;
+        -moz-transition: all .1s linear;
+        -ms-transition: all .1s linear;
+        -o-transition: all .1s linear;
+        -webkit-transition: all .1s linear;
+        transition: all .1s linear;
+        width: 300px;
+        z-index: 9999;
+    }
+    .present {
+        position: absolute;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: dance;
+        animation-name: dance;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    .spin {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-name: spin;
+        animation-name: spin;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    .lid {
+        border-radius: 5px 5px 0 0;
+    }
+    .lid:before {
+        content: '';
+        display: block;
+        width: 20%;
+        min-width: 20px;
+        background-color: white;
+        height: 20px;
+        position: relative;
+        top: -22px;
+        border-bottom: 2px solid #444;
+        margin: 0 auto;
+        border-radius: 100%;
+    }
+    .bottom {
+        border-radius: 0 0 5px 5px;
+    }
+    .bottom:after {
+        content: '';
+        display: block;
+        width: 30%;
+        min-width: 10px;
+        background-color: red;
+        border-right: 2px solid #91000a;
+        height: 100%;
+        min-height: 100%;
+        margin: 0 auto;
+    }
+    .present:hover div {
+        cursor: pointer;
+        box-shadow: 0 2px 100px #1bea47;
+    }
+    .present:after {
+        background-color: red;
+        height: 100px;
+        left: 0;
+        position: relative;
+        top: 0;
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h1 id="presents"></h1>
+    <section id="present-holder"></section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="presents.js"></script>
+</body>
+</html>
