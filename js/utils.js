@@ -97,6 +97,24 @@ function randomFixedString(count) {
     return str;
 }
 
+function randomCSSColorAttr(elem, props, color_max) {
+    // only works on color related
+    // css properties
+    var multiple = $.isArray(props);
+    var multi_map = {};
+
+    if(multiple) {
+        for (var i = 0, len = props.length; i < len; i++) {
+            multi_map[props[i]] = randomColor(color_max);
+            log(multi_map);
+            elem.css(multi_map);
+        }
+    } else {
+        elem.css(props, randomColor(color_max));
+    }
+    return;
+}
+
 function randomBinary(max) {
     // generate some random binary of
     // @max size (e.g. 0101010101)
