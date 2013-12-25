@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-23-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        overflow-x: hidden;
+        text-align: center;
+        font-family: 'PT Sans Narrow', sans-serif;
+        text-shadow: 0 1px 2px black;
+    }
+    body,
+    #intro {
+        background: #000 url(../img/wild_oliva.png);
+    }
+    section {
+        background-color: #f1f1f1;
+        color: white;
+        padding: 20px 40px;
+    }
+    h1,
+    h2 {
+        text-transform: uppercase;
+    }
+    button {
+        position: relative;
+        top: -5px;
+    }
+    .workspace {
+        margin: 10px auto;
+    }
+    #falling ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    #falling li {
+        display: inline-block;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-bottom-width: 4px;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 0 1px;
+    }
+    #falling li input {
+        display: block;
+    }
+    #off {
+        background-color: #1798bf;
+    }
+    #off:hover {
+        background-color: #1ab8e7;
+    }
+
+    /* section bgs */
+
+    #intro {
+        color: white;
+    }
+    #falling {
+        background-color: #20c4f6;
+    }
+    #loader {
+        background-color: #20b4e3;
+    }
+    #random {
+        background-color: #1e9ec7;
+    }
+
+    @media handheld, screen and (max-width: 500px) {
+        section {
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1><em>Check</em> me out!</h1>
+        <p>Abusing html forms for fun and <del>profit</del></p>
+        <p><a href="#" id="off" class="btn btn-basic btn-plain">Turn off background animation!</a></p>
+    </section>
+    <section id="falling">
+        <h2>Falling <button class="btn btn-basic btn-plain">Play</button></h2>
+        <div class="workspace">
+            <ul></ul>
+        </div>
+    </section>
+    <section id="loader">
+        <h2>Loader <button class="btn btn-basic btn-plain">Play</button></h2>
+        <div class="workspace"></div>
+    </section>
+    <section id="random">
+        <h2>Random <button class="btn btn-basic btn-plain">Play</button></h2>
+        <div class="workspace"></div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="checkmeout.js"></script>
+</body>
+</html>
