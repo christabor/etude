@@ -32,16 +32,52 @@ var globalLoader = {
     }
 };
 
+function successionPlugin(container, advance_speed) {
+    // move to plugin format
+    // at some point
+    var successions = $(container).find('[data-succession]');
+
+    successions
+    .hide()
+    .each(function(k, succession){
+        var _text = $(succession);
+        var speed = _text.data('fade-speed');
+        var start = _text.data('start');
+        var end   = _text.data('stop');
+
+        // set timeout for starting point
+        setTimeout(function(){
+            _text.fadeIn(speed);
+        }, start * advance_speed);
+
+        // set timeout for ending point
+        setTimeout(function(){
+            _text.fadeOut(speed);
+        }, end * advance_speed);
+    });
+    return;
+}
+
 function simpleLetterSequence(opts) {
     // animate a sequence of letters,
     // allow for transition from one css state
     // to another, which allows for all
     // kinds of possibilities
-    for(var i = 0; i <= opts.len; i++) {
+    // Parameters:
+    // @opts.container [DOM element]
+        // the container to append items to
+    // @opts.word
+    // @opts.css_before [Object] initial css state
+    // @opts.css_after [Object] final css state
+    // @opts.len [Number] indicating length (optional)
+    // @opts.fade [Number] fade speed
+    // @opts.timing [Number] delay timeout
+    var len = opts.len || (opts.word.length - 1);
+    for(var i = 0; i <= len; i++) {
         (function(i){
             setTimeout(function(){
                 var letter = opts.word[i];
-                var block = '<span>' + letter + '</span>';
+                var block  = '<span>' + letter + '</span>';
                 opts.container
                 .append(block)
                 .find('span')
@@ -58,9 +94,12 @@ function simpleLetterSequence(opts) {
 }
 
 function initGoogleFonts() {
+    // defters to type library:
+    // github.com/christabor/typey
     window.myTypeLibrary = fonTypey({
 
-        // public, limited access only for github.com/christabor
+        // public, limited access only
+        // for github.com/christabor
         api_key: global_config.GOOGLE_API_KEY
     });
     myTypeLibrary.initAllFeatures('body');
@@ -245,7 +284,8 @@ function multiCopyToString(times, string, delimiter) {
 }
 
 function multiCopyToArray(times, string) {
-    // similar to string copy, but sends to array a number of times
+    // similar to string copy,
+    // but sends to array a number of times
     // e.g. fn(10, 'cat') => [cat, cat]
     var copied = [];
     for(var i = 1; i <= times; i++) {
@@ -281,6 +321,22 @@ function getLocation(success, error) {
         alert('Geolocation is not supported by this browser.');
     }
     return coords;
+}
+
+function show(elem) {
+    // more human-readable show
+    elem.show();
+
+    // make chainable
+    return elem;
+}
+
+function hide(elem) {
+    // more human-readable hide
+    elem.hide();
+
+    // make chainable
+    return elem;
 }
 
 /********************* SHIMS *********************/
