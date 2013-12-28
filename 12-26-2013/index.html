@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-26-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    div {
+        width: auto;
+        padding: 4px;
+        margin: 4px;
+        display: inline-block;
+        border-radius: 6px;
+        background-color: #27162c;
+    }
+    div input:first-of-type {
+        border-radius: 6px 0 0 0;
+    }
+    div input:nth-of-type(2) {
+        border-radius: 0 6px 0 0;
+    }
+    div input:nth-of-type(5) {
+        border-radius: 0 0 0 6px;
+    }
+    div input:last-of-type {
+        border-radius: 0 0 6px 0;
+    }
+    input {
+        border: none;
+        width: 45%;
+        display: inline-block;
+        padding: 8px;
+        margin: 2px;
+        border-radius: 0;
+        font-size: 16px;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        input {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h2>Trapped in inputs</h2>
+    <section id="input-container"></section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="trapped-inputs.js"></script>
+</body>
+</html>

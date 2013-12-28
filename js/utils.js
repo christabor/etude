@@ -131,6 +131,10 @@ function hasJS() {
 
 /********************* Random *********************/
 
+function randomArrayValue(arr) {
+    return arr[getKey(arr)];
+}
+
 function getKey(arr) {
     // get a random key by the length
     // of a given array
@@ -187,7 +191,7 @@ function randomBinary(max) {
 function randomStringLength(max) {
     // Returns a random string using
     // separate method, of random (MAX) characters
-    return randomFixedString(rando(100));
+    return randomFixedString(rando(max));
 }
 
 function randomColor(max) {
@@ -243,6 +247,7 @@ function getDocumentDimensions() {
 
 function exportCanvas(canvas) {
     window.open(canvas.toDataURL());
+    return;
 }
 
 function log(msg) {
