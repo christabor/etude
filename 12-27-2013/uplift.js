@@ -1,17 +1,17 @@
 $(document).ready(function(){
     'use strict';
-    var dims = getDocumentDimensions();
-    var form = $('#add-thing');
-    var character = $('#character');
-    var add = $('#add');
-    var balloons = $('#balloons');
-    var noshadows = false;
+    var dims         = getDocumentDimensions();
+    var form         = $('#add-thing');
+    var character    = $('#character');
+    var add          = $('#add');
+    var balloons     = $('#balloons');
+    var noshadows    = false;
     var noshadow_btn = $('#disable-shadows');
-    var input = form.find('input');
-    var examples = [
+    var input        = form.find('input');
+    var examples     = [
     'I like to make my friends happy.',
-    'I am good at doing cartwheels',
-    'I helped an old lady cross the road'
+    'I am good at doing cartwheels.',
+    'I helped an old lady cross the road.'
     ];
 
     function initGame(event){
@@ -23,14 +23,15 @@ $(document).ready(function(){
 
     function checkShadowOption() {
         // toggle shadow
-        if(noshadows) {
+        if(!noshadows) {
             noshadow_btn.text('Enable shadows (slower)');
             balloons.addClass('no-shadow');
 
         } else {
-            noshadow_btn.text('Disable shadows (faster)')
+            noshadow_btn.text('Disable shadows (faster)');
             balloons.removeClass('no-shadow');
         }
+
         // invert
         noshadows = !noshadows;
         return;
@@ -44,8 +45,8 @@ $(document).ready(function(){
 
     function addItem(event){
         event.preventDefault();
-        var balloon = $('<div class="balloon animated bounceInUp"></div>');
-        var thing = input.val();
+        var balloon = $('<div class = "balloon animated bounceInUp"></div>');
+        var thing   = input.val();
 
         // don't input empty value
         if(!thing) return;
