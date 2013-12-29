@@ -41,6 +41,10 @@ textarea {
 	background-color: #000;
 	color: white;
 }
+.btn.btn-basic:active {
+	position: relative;
+	top: 1px;
+}
 #global-loader {
 	background-color: #444;
 	color: #fff;

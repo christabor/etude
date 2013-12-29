@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-27-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Delius|Satisfy' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    @-webkit-keyframes bob {
+        0% {
+            margin-left: 0;
+        }
+        50% {
+            margin-top: -10px;
+        }
+        100% {
+            margin-left: 10px;
+        }
+    }
+    @keyframes bob {
+        0% {
+            margin-left: 0;
+        }
+        50% {
+            margin-top: -10px;
+        }
+        100% {
+            margin-left: 10px;
+        }
+    }
+    body {
+        background-color: #ffd6e4;
+        padding: 20px;
+        font-size: 26px;
+        text-align: center;
+    }
+    html,
+    body,
+    .btn {
+        text-shadow: 0 2px 2px white,
+        0 -1px 1px #ae657e;
+    }
+    .btn:hover {
+        text-shadow: 0 1px 1px black,
+        0 -1px 1px #ae657e;
+    }
+    html,
+    body,
+    form,
+    input,
+    .btn {
+        font-family: 'Delius', cursive;
+        text-align: center;
+    }
+    .btn.btn-basic {
+        background-color: #ceb1ee;
+        border-bottom: 4px solid #7c297e;
+        height: auto;
+        color: black;
+    }
+    .btn.btn-basic:hover {
+        background-color: #7c297e;
+        border-color: #f7d06e;
+    }
+    h1 {
+        font-size: 120px;
+        color: #ff93b9;
+        font-family: 'Satisfy', cursive;
+    }
+    #character .btn {
+        font-size: 140%;
+        padding: 20px 40px;
+    }
+    #character,
+    #add {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        display: block;
+        height: 100%;
+        margin-left: -40%;
+        left: 50%;
+    }
+    #disable-shadows {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 50%;
+        padding: 10px;
+        line-height: 20px;
+    }
+    #add {
+        display: none;
+    }
+    .balloon {
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-name: bob;
+        animation-name: bob;
+        position: absolute;
+        padding: 30px 15px;
+        background-color: #444;
+        width: 120px;
+        display: inline-block;
+        height: 140px;
+        line-height: 24px;
+        font-size: 14px;
+        color: white;
+        margin: 4px;
+        text-shadow: 0 1px 1px #222;
+        border-radius: 50% 50% 50% 50%;
+        -moz-transition: all .1s linear;
+        -ms-transition: all .1s linear;
+        -o-transition: all .1s linear;
+        -webkit-transition: all .1s linear;
+        transition: all .1s linear;
+        opacity: 0.9;
+        box-shadow: 0 10px 40px #834c5f,
+        0 300px 40px rgba(0, 0, 0, 0.2);
+    }
+    #balloons.no-shadow .balloon,
+    #balloons.no-shadow .balloon:hover {
+        box-shadow: 0 0 0;
+    }
+    .balloon:hover {
+        box-shadow: 0 20px 40px #834c5f,
+        0 400px 40px rgba(0, 0, 0, 0.2);
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1;
+        z-index: 9999;
+    }
+    .balloon:before {
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        width: 32px;
+        height: 50px;
+        background-color: white;
+        display: block;
+        content: '';
+        opacity: 0.3;
+        border-radius: 150% 20%;
+    }
+    .balloon:after {
+        position: absolute;
+        bottom: -100px;
+        width: 2px;
+        height: 100px;
+        background-color: black;
+        display: block;
+        content: '';
+        left: 50%;
+        margin-left: -1px;
+    }
+    .character {
+        width: 24%;
+        display: inline-block;
+        padding: 4px;
+        border-radius: 10px;
+        border: 2px solid #444;
+    }
+    form {
+        border:1px solid #caaab4;
+        padding: 20px;
+        background-color: #f3ccd9;
+        border-bottom-width: 6px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 30px;
+        width: 80%;
+        margin-left: -40%;
+        left: 50%;
+        z-index: 999;
+    }
+    input,
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        height: 60px;
+        margin: 10px 0;
+        border-radius: 10px;
+        line-height: 35px;
+        font-size: 30px;
+    }
+    input {
+        width: 80%;
+    }
+    button {
+        width: 20%;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 80px;
+        }
+        h1,
+        h2 {
+            padding: 10px;
+        }
+        #add,
+        #character {
+            width: 100%;
+            margin-left: -50%;
+        }
+        form {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            margin: 0;
+            left: 0;
+            border-radius: 0;
+        }
+        input, button {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="character">
+        <h1>Uplift!</h1>
+        <h2>A fun game to lift your spirits</h2>
+        <a href="#" class="btn btn-basic btn-plain">Try it</a>
+    </section>
+    <section id="add">
+        <a href="#" class="btn btn-basic btn-plain subdued" id="disable-shadows">Disable shadows (faster)</a>
+        <section id="balloons">
+            <div class="balloon">I am playing this fun game</div>
+        </section>
+        <form action="" id="add-thing">
+            <label for="thing">Add something positive about yourself:</label>
+            <input type="text" id="thing" value="" placeholder="">
+            <button class="btn btn-basic btn-plain">Add it!</button>
+        </form>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="uplift.js"></script>
+</body>
+</html>
