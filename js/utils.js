@@ -173,6 +173,48 @@ function randomCSSColorAttr(elem, props, color_max) {
     return;
 }
 
+/********************* Fabric.JS *********************/
+
+function randomCommandValues(iterations, max) {
+    // generates the numerical
+    // values separate of a given command type
+    var values = [];
+    for (var i = 0; i < iterations; i++) {
+        values.push(rando(max));
+    }
+    return values.join('-');
+}
+
+function randomCommandPair(iterations, max) {
+    // adds command type and numerical combination
+    return randomCommand() + randomCommandValues(iterations, max);
+}
+
+function randomCommand() {
+    // M = moveto
+    // L = lineto
+    // H = horizontal lineto
+    // V = vertical lineto
+    // C = curveto
+    // S = smooth curveto
+    // Q = quadratic Bézier curve
+    // T = smooth quadratic Bézier curveto
+    // A = elliptical Arc
+    // Z = closepath
+    var commands = ['M', 'L', 'H', 'V', 'C', 'S', 'Q', 'T', 'A', 'Z'];
+
+    // adds random the command type
+    return randomArrayValue(commands);
+}
+
+function randomPath(max, max_size) {
+    var paths = [];
+    for (var i = 0; i < max; i++) {
+        paths.push(randomCommandPair(i, max_size));
+    }
+    return paths.join('');
+}
+
 function randomHTMLInput() {
     var inputs = ['type', 'radio', 'text', 'number', 'date', 'range'];
     return '<input type="' + inputs[rando(inputs.length)] + '">';

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 12-29-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    #pathdata {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 30%;
+        height: 100%;
+        z-index: 999;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        opacity: 0.6;
+    }
+    #pathdata p {
+        font-size: 12px;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        #pathdata {
+            display: none;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="pathdata">
+        <h1>Generating random paths with Fabric.JS</h1>
+        <h3>Path data:</h3>
+        <p></p>
+    </div>
+    <canvas id="canvas" width="100%"></canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="bezier.js"></script>
+</body>
+</html>
