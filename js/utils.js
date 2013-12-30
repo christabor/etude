@@ -227,6 +227,44 @@ function randomColorObject(max) {
     };
 }
 
+function randomGradientObj(max_stops) {
+    var gradients   = [];
+    var color_stops = 'bottom, ';
+    var step        = '';
+    var webkit;
+    var o;
+    var moz;
+    var ms;
+    var noprefix;
+
+    // divide each color stop
+    // by the max stops and add the color
+    for (var i = max_stops; i > 0; i--) {
+        if(i === max_stops) {
+            // always start at 1%
+            step = '1%, ';
+        }
+        else if(i === 1) {
+            // remove trailing
+            // comma on last color-step
+            step = Math.round(100 / i) + '%';
+        } else {
+            step = Math.round(100 / i) + '%, ';
+        }
+        color_stops += randomColorHex() + ' ' + step;
+    }
+    color_stops += ')';
+
+    // add all color stops and prefixes - ugh
+    // pretty ugly, needs reworking
+    gradients.push('-webkit-linear-gradient(' + color_stops);
+    gradients.push('-ms-linear-gradient(' + color_stops);
+    gradients.push('-o-linear-gradient(' + color_stops);
+    gradients.push('-moz-linear-gradient(' + color_stops);
+    gradients.push('linear-gradient(' + color_stops);
+    return gradients;
+}
+
 function randomColorScheme(color_count, max) {
     // return an array of random colors @color_count long
     var colors = [];
