@@ -101,7 +101,7 @@ textarea {
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 }
-.slabtexted .slabtext{
+.slabtexted .slabtext {
 	display:-moz-inline-box;
 	white-space:nowrap
 }
@@ -117,16 +117,6 @@ textarea {
 .slabtextdone .slabtext {
 	display:block;
 	line-height:0.9;
-}
-.btn {
-	border:2px double #444;
-	padding: 10px 20px;
-	margin: 10px;
-	text-decoration: none;
-	border-radius: 100%;
-	display: inline-block;
-	text-align: center;
-	font-size: 80%;
 }
 .slabtextdone > span {
 	margin:10px 0;
