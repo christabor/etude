@@ -2,6 +2,15 @@
 	font-size: 70%;
 	opacity: 0.5;
 }
+.subdued.credits {
+	position: fixed;
+	bottom: 0;
+}
+.subdued.credits.centered {
+	width: 100%;
+	left: 50%;
+	margin-left: -50%;
+}
 .lead {
 	font-size: 120%;
 }
@@ -60,12 +69,6 @@ textarea {
 	top: 0;
 	left: 0;
 }
-.dg.ac * {
-	/* fix issue with dat.gui colorpicker */
-	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	box-sizing: content-box;
-}
 
 /* CSS3 Animations */
 
@@ -87,5 +90,55 @@ textarea {
 	100% {
 		-webkit-transform: rotate(90deg);
 		transform: rotate(90deg);
+	}
+}
+
+/* Vendor stuff */
+
+.dg.ac * {
+	/* fix issue with dat.gui colorpicker */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.slabtexted .slabtext{
+	display:-moz-inline-box;
+	white-space:nowrap
+}
+.slabtextinactive .slabtext {
+	display:inline;
+	white-space:normal;
+	font-size:1em !important;
+	letter-spacing:inherit !important;
+	word-spacing:inherit !important;
+	*letter-spacing:0 !important;
+	*word-spacing:0 !important;
+}
+.slabtextdone .slabtext {
+	display:block;
+	line-height:0.9;
+}
+.btn {
+	border:2px double #444;
+	padding: 10px 20px;
+	margin: 10px;
+	text-decoration: none;
+	border-radius: 100%;
+	display: inline-block;
+	text-align: center;
+	font-size: 80%;
+}
+.slabtextdone > span {
+	margin:10px 0;
+	padding:5px;
+}
+
+/* Media Queries */
+
+@media handheld, screen and (max-width: 400px) {
+	.subdued.credits,
+	.subdued.credits.centered {
+		position: static;
+		margin: 0;
 	}
 }
