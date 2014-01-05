@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-02-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        text-align: center;
+        font-family: 'Cardo', serif;
+        background: black;
+        color: white;
+    }
+    a {
+        color: #f1f1f1;
+    }
+    #edit {
+        width: 80%;
+        padding: 10px;
+        margin: 20px auto;
+        display: block;
+        background-color: transparent;
+        border:none;
+        color: white;
+        font-size: 30px;
+    }
+    .verse {
+        text-transform: uppercase;
+        font-family: 'Homenaje', sans-serif;
+        font-size: 50%;
+    }
+    [data-succession] {
+        position: absolute;
+        width: 100%;
+        font-size: 200%;
+        left: 50%;
+        text-align: center;
+        display: block;
+        margin-left: -50%;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        [data-succession] {
+            font-size: 100%;
+            padding: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="edit">
+        <p>&ldquo;0x0d2c&rdquo;<br>
+            <span class="subdued"><em>Author: <a href="http://www.poppyfields.net/filks/00001.html">Bill Mitchell</em></a></span>
+        </p>
+        <p data-start="01" data-stop="30" data-succession>May all your signals trap</p>
+        <p data-start="31" data-stop="60" data-succession>May your references be bounded</p>
+        <p data-start="61" data-stop="90" data-succession>All memory aligned</p>
+        <p data-start="91" data-stop="120" data-succession>Floats to ints be rounded</p>
+        <p data-start="121" data-stop="130" data-succession>Remember.... Nonzero is TRUE</p>
+        <p data-start="131" data-stop="160" data-succession>++ adds one</p>
+        <p data-start="161" data-stop="190" data-succession>Arrays start with [0]</p>
+        <p data-start="191" data-stop="220" data-succession>NULL points to none</p>
+        <p class="verse" data-start="222" data-stop="230" data-succession><em>Verse two</em></p>
+        <p data-start="231" data-stop="260" data-succession>For octal use zero</p>
+        <p data-start="261" data-stop="290" data-succession>0x means in hex</p>
+        <p data-start="291" data-stop="320" data-succession>use = to set</p>
+        <p data-start="321" data-stop="350" data-succession>and == for a test</p>
+        <p class="verse" data-start="352" data-stop="360" data-succession><em>Verse three</em></p>
+        <p data-start="361" data-stop="390" data-succession>Use -> for a pointer</p>
+        <p data-start="391" data-stop="420" data-succession>a dot if it's not</p>
+        <p data-start="421" data-stop="450" data-succession>?: is confusing</p>
+        <p data-start="451" data-stop="480" data-succession>use this a lot</p>
+        <p class="verse" data-start="482" data-stop="490" data-succession><em>Verse four (almost done)</em></p>
+        <p data-start="491" data-stop="520" data-succession>a.out is your program</p>
+        <p data-start="521" data-stop="550" data-succession>there's no 'u' in foobar</p>
+        <p data-start="551" data-stop="580" data-succession>and char (*(*x())[])() is</p>
+        <p data-start="581" data-stop="620" data-succession>a function returning a pointer</p>
+        <p data-start="621" data-stop="650" data-succession>to an array of pointers</p>
+        <p data-start="651" data-stop="680" data-succession>to functions returning a char</p>
+        <p data-start="682" data-stop="700" data-succession><em>fin.</em></p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="poem.js"></script>
+</body>
+</html>

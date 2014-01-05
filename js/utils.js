@@ -32,7 +32,7 @@ var globalLoader = {
     }
 };
 
-function successionPlugin(container, advance_speed) {
+function successionPlugin(container, advance_speed, callback) {
     // move to plugin format
     // at some point
     var successions = $(container).find('[data-succession]');
@@ -52,7 +52,11 @@ function successionPlugin(container, advance_speed) {
 
         // set timeout for ending point
         setTimeout(function(){
-            _text.fadeOut(speed);
+            _text.fadeOut(speed, function(){
+                if(callback) {
+                    callback();
+                }
+            });
         }, end * advance_speed);
     });
     return;
@@ -300,14 +304,14 @@ function randomGradientObj(max_stops) {
     // add all color stops and prefixes - ugh
     // pretty ugly, needs reworking
     gradients.push('-webkit-linear-gradient(' + color_stops);
-    gradients.push('-ms-linear-gradient(' + color_stops);
-    gradients.push('-o-linear-gradient(' + color_stops);
-    gradients.push('-moz-linear-gradient(' + color_stops);
-    gradients.push('linear-gradient(' + color_stops);
-    return gradients;
-}
+        gradients.push('-ms-linear-gradient(' + color_stops);
+            gradients.push('-o-linear-gradient(' + color_stops);
+                gradients.push('-moz-linear-gradient(' + color_stops);
+                    gradients.push('linear-gradient(' + color_stops);
+                        return gradients;
+                    }
 
-function randomColorScheme(color_count, max) {
+                    function randomColorScheme(color_count, max) {
     // return an array of random colors @color_count long
     var colors = [];
     for(var i = 0; i <= color_count; i++) {
