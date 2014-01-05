@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-01-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        font-family: 'Cardo', serif;
+        background: black url(bokeh.jpg) no-repeat 0 0;
+        background-size: cover;
+        color: #f2e4ae;
+        margin: 0;
+        min-height: 2000px;
+        text-shadow: 4px 4px 0 #342f24;
+        text-align: center;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: panBg;
+        -webkit-animation-duration: 10s;
+        -webkit-animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: panBg;
+        animation-duration: 10s;
+        animation-direction: alternate;
+    }
+    a {
+        color: white;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    a:hover {
+        background-color: white;
+        color: black;
+    }
+    hr {
+        margin: 10px 0;
+        border:1px dotted #8d8464;
+    }
+    .subdued {
+        margin-top: 100px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+    #bigtext {
+        width: 70%;
+        text-transform: uppercase;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px 40px;
+    }
+    #bigtext div {
+        margin: 4px 0;
+        color: white;
+    }
+    #bigtext div:nth-of-type(odd) {
+        color: black;
+        background-color: #f2e4ae;
+        text-shadow: 4px 4px 0 white;
+        font-family: 'Homenaje', sans-serif;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #bigtext {
+            width: 100%;
+            padding: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="bigtext">
+        <div><h2><em>Top 10</em></h2></div>
+        <div>new year's resolutions</div>
+        <div><hr></div>
+        <div><hr></div>
+    </section>
+    <p class="subdued"><em>Source</em>:
+        <a href="http://content.time.com/time/specials/packages/completelist/0,29569,2040218,00.html">Top 10 Commonly Broken New Year's Resolutions</a>.
+        Bokeh background from <a href="http://joannastar-stock.deviantart.com/art/Bokeh-Pack-5-Preview-128599679">DeviantArt</a>.
+    </p>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/bigtext.min.js"></script>
+    <script src="../js/vendor/smartresize.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="resolutions.js"></script>
+</body>
+</html>
