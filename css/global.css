@@ -116,6 +116,14 @@ textarea {
 		transform: rotate(90deg);
 	}
 }
+@-webkit-keyframes panBg {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 50% 50%;
+	}
+}
 
 /* Vendor stuff */
 
