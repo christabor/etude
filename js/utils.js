@@ -189,6 +189,88 @@ function randomCommandValues(iterations, max) {
     return values.join('-');
 }
 
+function randomSVGMoveTo(max) {
+    // M = absolute, m = relative
+    // produces something like:
+    // M100,50
+    var pathdata = '';
+    if(rando(10) > 5) {
+        pathdata += 'M';
+    } else {
+        pathdata += 'm';
+    }
+    pathdata += rando(max) + ',' + rando(max);
+    return pathdata;
+}
+
+function randomSVGLineTo(max) {
+    // L = absolute, l = relative
+    // produces something like:
+    // L50,50
+    var pathdata = '';
+    if(rando(10) > 5) {
+        pathdata += 'L';
+    } else {
+        pathdata += 'l';
+    }
+    pathdata += rando(max) + ',' + rando(max);
+    return pathdata;
+}
+
+function randomSVGCurveTo(max) {
+    // Q = absolute, q = relative
+    // produces something like:
+    // Q cx,cy x,y" or "q dcx,dcy, dx, dy"
+    var pathdata = '';
+    var cx = rando(max);
+    var cy = rando(max);
+    var x  = rando(max);
+    var y  = rando(max);
+    if(rando(10) > 5) {
+        pathdata += 'Q';
+    } else {
+        pathdata += 'q';
+    }
+    pathdata += [cx, cy, x, y].join(',');
+    return pathdata;
+}
+
+function randomSVGArcTo(max) {
+    // A = absolute, a = relative
+    // produces something like:
+    // A rx,ry xAxisRotate LargeArcFlag, SweepFlag x,y
+    var pathdata    = '';
+    var rx          = rando(max);
+    var ry          = rando(max);
+    var axis_rotate = rando(360);
+    var x           = rando(max);
+    var y           = rando(max);
+    var arc_flag    = (rando(10) > 5 ? 1: 0);
+    var sweep_flag  = (rando(10) > 5 ? 1: 0);
+
+    if(rando(10) > 5) {
+        pathdata += 'A';
+    } else {
+        pathdata += 'a';
+    }
+    pathdata += [rx, ry, axis_rotate, arc_flag, sweep_flag, x, y].join(',');
+    return pathdata;
+}
+
+function randomPrecisePath(max) {
+    // Combine all effects
+    // in a relatively normal order
+    // with more precise formatting than
+    // randomPath() produces something like
+    // "M73,4,l26,70,q29,22,97,6,a2,42,88,1,0,43,67"
+    return [
+    randomSVGMoveTo(max),
+    randomSVGLineTo(max),
+    randomSVGCurveTo(max),
+    randomSVGArcTo(max)
+    ].join(',');
+}
+
 function randomCommandPair(iterations, max) {
     // adds command type and numerical combination
     return randomCommand() + randomCommandValues(iterations, max);
