@@ -27,15 +27,18 @@
         bottom: 0;
         background-color: #333;
         color: white;
+        display: flex;
+    }
+    #time-indicator p:first-of-type {
+        flex: 2;
     }
     #time-indicator p {
+        flex: 1;
         display: inline-block;
-        width: 150px;
         border-radius: 4px;
         background-color: black;
         padding: 10px;
-        margin: 2px 10px;
-        margin: 10px;
+        margin: 2px;
     }
     #time-indicator span {
         display: block;
@@ -43,6 +46,7 @@
     @media handheld, screen and (max-width: 500px) {
         #time-indicator {
             position: static;
+            display: block;
         }
         #time-indicator p {
             width: 100%;
@@ -58,10 +62,11 @@
 <body>
     <!--Today is my birthday, so I will make a clock.-->
     <div id="time-indicator">
+        <p>Time scales are intentionally off (approximations) by orders of magnitude, as the animation has to be slowed down to even animate properly.</p>
         <p id="hours">Hours <span>0</span></p>
         <p id="minutes">Minutes <span>0</span></p>
         <p id="seconds">Seconds <span>0</span></p>
-        <p id="milliseconds">Milliseconds <span>0</span></p>
+        <p id="milliseconds">Milliseconds (approx.)<span>0</span></p>
         <p id="microseconds">Microseconds (approx.) <span>0</span></p>
     </div>
     <canvas id="canvas"></canvas>
