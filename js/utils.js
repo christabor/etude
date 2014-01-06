@@ -411,6 +411,13 @@ function getDocumentDimensions() {
     };
 }
 
+function getViewportDimensions() {
+    return {
+        'height': document.documentElement.clientHeight,
+        'width': document.documentElement.clientWidth
+    };
+}
+
 function exportCanvas(canvas) {
     window.open(canvas.toDataURL());
     return;
