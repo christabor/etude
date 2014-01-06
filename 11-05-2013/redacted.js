@@ -3,7 +3,6 @@ $(document).ready(function(){
     been_redacted = false;
 
     function reredact() {
-        log('re-redacting');
         // redact a second time, skip some unnecessary steps.
         message.find('span').each(function(k, span){
             if(Math.random() * 10 > 5) {
@@ -16,7 +15,6 @@ $(document).ready(function(){
     }
 
     function redact() {
-        log('redacting');
         message.find('p').each(function(){
             // split each paragraph by newline
             var redacted = '',

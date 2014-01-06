@@ -41,7 +41,6 @@ $(document).ready(function(){
 
     function finalCountdown() {
         $('#final-countdown').fadeIn(200).text(timer).fadeOut(800);
-        console.log('final countdown called');
         return;
     }
 

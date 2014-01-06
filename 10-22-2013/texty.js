@@ -32,7 +32,6 @@ $(document).ready(function(){
                 text += word[letter] || '';
             }
         }
-        console.log(text);
         return text;
     }
 

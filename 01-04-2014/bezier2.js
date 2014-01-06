@@ -58,7 +58,6 @@ window.onload = function() {
         });
 
         setInterval(function(){
-            log(curr_iterations);
             checkIterations();
 
             // add a random amount

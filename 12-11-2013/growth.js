@@ -16,7 +16,6 @@ $(document).ready(function () {
     var exponential_interval  = setInterval(exponential_fn, EXPONENTIAL_STEP);
 
     function linear_fn(){
-        log('linear:' + linear_count);
         linear_count = linear_count + 1;
         linear_indicator.text(linear_count);
         updateBar(linear_bar, linear_count);
@@ -31,7 +30,6 @@ $(document).ready(function () {
 
     function exponential_fn(){
         if(exponential_count === Infinity) return;
-        log('exp:' + exponential_count);
         exponential_count = exponential_count * exponential_count;
         exponential_indicator.text(exponential_count);
         updateBar(exponential_bar, exponential_count);

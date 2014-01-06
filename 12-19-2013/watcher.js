@@ -8,7 +8,6 @@ var gui     = $('#gui-overlay');
 var reticle = $('#box-container');
 
 function addGuiElements() {
-    log('Adding GUI interface...');
     simpleLetterSequence({
         container: letters,
         word: text,

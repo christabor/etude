@@ -52,11 +52,9 @@ function addMesh(times) {
                 scale: 100
             }, 1000)
             .onUpdate(function(){
-                log(mesh);
                 mesh.scale = this.scale;
             })
             .onComplete(function(){
-                log('done animating!');
             })
             .start();
 

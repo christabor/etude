@@ -20,7 +20,6 @@ $(document).ready(function () {
   function initAutoComplete(key, input) {
     var data = datasets[key];
     var timeout = ((key + 1) * 1000) * 0.5 * data.length;
-    console.log(timeout);
     setTimeout(function() {
       haunt(input, data);
     }, timeout);

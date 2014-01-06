@@ -52,7 +52,6 @@ function addWord(word, container) {
 }
 
 function pigLatinize(word) {
-    log(word);
     var postfix       = $('#postfix').val();
     var piggified     = '';
     var length        = word.length;

@@ -121,9 +121,6 @@ function init() {
         camera.position.z = this.pos;
         camera.position.x = this.pos;
     })
-    .onComplete(function(){
-        log('done animating!');
-    })
     .start();
 
     // loop render --
