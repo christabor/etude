@@ -24,10 +24,11 @@ window.onload = function() {
     }
 
     function addPath() {
-        var pathdata = randomPrecisePath(rando(dims.width));
+        var pathdata = smartPath(rando(100));
         path = new fabric.Path(pathdata);
         path.set({
             opacity: rando(10) * 0.1,
+            stroke: randomColor(255),
             fill: randomColor(255),
             left: rando(dims.width / 2),
             top: rando(dims.height / 2),
