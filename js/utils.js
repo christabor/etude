@@ -519,8 +519,16 @@ function hide(elem) {
 
 /********************* SHIMS *********************/
 
+function hasGetUserMedia() {
+    // http://www.html5rocks.com/en/tutorials/getusermedia/intro/
+    return !!(navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia);
+}
+
 window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame ||
+    return window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame    ||
     window.oRequestAnimationFrame      ||
