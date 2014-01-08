@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-07-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #fefae8;
+        overflow: hidden;
+        font-size: 14px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    #coords {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 300px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 300px;
+        right: auto !important;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="coords"></div>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">About</li>
+            <li class="subtitle">Recursion</li>
+            <li>
+                <p>Using recursion, circles are generated each time the mouse moves. <br> <strong>What's recursion?</strong> <br> Generally, recursion means <em>self-similar</em>. It's found everyone in nature, and is a fundamental property of nearly everything. In this case, it's calling the same function over and over, but with slightly decreasing values, until some finite limit is reached. Drawing circles over and over, each time slicing the radius in half. <a href="http://en.wikipedia.org/wiki/Recursion" title="Wikipedia on Recursion" target="_blank">Wikipedia on Recursion.</a></p>
+                </li>
+            </ul>
+            <label class="mobile-left mobmenu-toggle" for="mobile-menu-toggle">+</label>
+        </nav>
+        <canvas id="canvas"></canvas>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+        <script src="../js/utils.js"></script>
+        <script src="recursion.js"></script>
+    </body>
+    </html>
