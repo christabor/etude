@@ -60,6 +60,11 @@ var funcs = {
     wat2: function(x) {
         return ((x * x) / x) * Math.PI * (x / x * 0.5);
     },
+    window: function(x) {
+        // from Steven Wittens' lecture.
+        // http://youtu.be/Zkx1aKv2z8o?t=33m55s
+        return 0.5 + 0.5 * Math.cos(Math.max(-Math.PI, Math.min(Math.PI, x)));
+    }
 };
 
 function addContainers() {
@@ -84,7 +89,7 @@ function init() {
     doSomethingABunch(function(){
         nums.push(accumulator);
         accumulator += 1;
-    }, 100);
+    }, 25);
 
     // run each demo
     for(var key in nums) {
