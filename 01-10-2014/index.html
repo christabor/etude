@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-10-2013</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        text-shadow: 0 2px 2px black;
+        background-color: #333;
+        font-family: 'Homenaje', sans-serif;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+    }
+    p {
+        font-size: 80%;
+    }
+    a {
+        color: #6fc8c6;
+    }
+    #intro {
+        font-size: 200%;
+        background: #444 url(../img/type.png);
+        color: white;
+        padding: 10px 100px;
+        display: block;
+        width: 100%;
+        border-bottom: 12px solid black;
+        margin-bottom: 5px;
+    }
+    h1 {
+        color: #e2223b;
+    }
+    h1 em {
+        color: #ff565b;
+    }
+    h3 {
+        color: #ff565b;
+        text-transform: capitalize;
+    }
+    a:active {
+        position: relative;
+        top: 1px;
+    }
+    .container {
+        background-color: #222;
+        border: 2px solid #444;
+        border-bottom-width: 4px;
+        color: white;
+        padding: 5px;
+        overflow: hidden;
+        display: inline-block;
+        border-radius: 4px;
+        width: 46%;
+    }
+    .container ul {
+        list-style-type: square;
+        -moz-column-count:2; /* Firefox */
+        -webkit-column-count:2; /* Safari and Chrome */
+        column-count:2;
+        text-align: left;
+    }
+    .container ul li {
+        border-bottom: 1px solid #444;
+        padding: 2px;
+        margin: 1px;
+    }
+    .container ul li span {
+        opacity: 0.4;
+        padding-right: 4px;
+        font-size: 70%;
+        font-weight: normal;
+    }
+    code {
+        background-color: #333;
+        color: #87f9f6;
+        display: block;
+        padding: 2px;
+        margin: 4px;
+        font-size: 70%;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            font-size: 16px;
+        }
+        body,
+        .container {
+            display: block;
+        }
+        #intro {
+            padding: 10px;
+        }
+        .container {
+            width: 100%;
+        }
+        .container ul {
+            -moz-column-count:1; /* Firefox */
+            -webkit-column-count:1; /* Safari and Chrome */
+            column-count:1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1>Practicing <em>f(x);</em></h1>
+        <p>I just finished watching <a href="https://www.youtube.com/watch?v=Zkx1aKv2z8o" title="Steven Wittens: Maths on YouTube">Steven Wittens talk</a> about <strong>fun with Maths</strong>, and I really, really like his teaching style and examples. In particular, his breakdown of simply using some value x as an input, and returning a unique value with a transformation function across a range of values, really stuck with me as a simple way to understand and achieve very complex behavior.</p>
+        <p>I decided to recreate some examples of my own random f(x), where each function returns something different. A range of values is given, as well as the results as each key is modified by the function.</p>
+    </section>
+    <div id="results"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="returnofx.js"></script>
+</body>
+</html>
