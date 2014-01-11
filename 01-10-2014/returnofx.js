@@ -13,7 +13,7 @@ var funcs = {
         return x;
     },
     cos: function(x) {
-        return Math.sin(x);
+        return Math.cos(x);
     },
     acos: function(x) {
         return Math.acos(x * 0.01);
