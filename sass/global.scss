@@ -1,3 +1,5 @@
+/* Typography */
+
 .subdued {
 	font-size: 70%;
 	opacity: 0.5;
@@ -163,6 +165,16 @@ textarea {
 		position: static;
 		margin: 0;
 	}
+}
+
+/* Layout */
+
+.flexer {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 }
 
 /* Components */
