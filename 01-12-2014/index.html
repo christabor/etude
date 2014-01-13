@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-12-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        font-size: 14px;
+        font-family: 'Homenaje', sans-serif;
+    }
+    #coords {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 4px;
+        display: block;
+        color: white;
+        z-index: 999;
+        text-transform: uppercase;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .active {
+        text-indent: 30px;
+    }
+    a {
+        color: #63686a;
+    }
+    li {
+        text-transform: capitalize;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-right {
+        width: 200px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-right {
+        right: 200px;
+        left: auto !important;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        #coords {
+            position: static;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="coords">Coords: <span>x: 0, y: 0</span></div>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-right">
+            <li class="title">Recursion</li>
+            <li class="subtitle">Function Types</li>
+        </ul>
+        <label class="mobile-right mobmenu-toggle toggle-right" for="mobile-menu-toggle">+</label>
+    </nav>
+    <canvas id="canvas"></canvas>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="xy.js"></script>
+</body>
+</html>
