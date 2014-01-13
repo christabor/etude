@@ -47,7 +47,7 @@ window.onload = function() {
             var pos_x = data.e.clientX;
             var pos = Math.round((pos_y / pos_x) * 200);
             var amt = rando(20);
-            coords.innerText = ['Amount: ', amt, 'Position:', pos, 'X: ', pos_y, 'Y:', pos_x].join(' ');
+            coords.innerText = ['Amount: ', amt, 'Position:', pos, 'X: ', pos_x, 'Y:', pos_y].join(' ');
             recursionDraw(amt, pos);
         });
     }

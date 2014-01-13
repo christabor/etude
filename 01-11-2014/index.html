@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-11-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #effdff;
+        overflow: hidden;
+        font-size: 14px;
+        font-family: 'Homenaje', sans-serif;
+    }
+    a {
+        color: #63686a;
+    }
+    #intro {
+        margin: 0;
+        position: absolute;
+        top: 30px;
+        left:30px;
+        width: 200px;
+        z-index: 999;
+    }
+    #plain-menu {
+        overflow: visible;
+    }
+    h1 {
+        margin: 0;
+    }
+    li {
+        position: relative;
+        text-transform: capitalize;
+    }
+    .flyout {
+        font-size: 80%;
+        position: absolute;
+        top: 0;
+        display: none;
+        left: -400px;
+        width: 400px;
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 10px 0 0 10px;
+        background-color: #222;
+        opacity: 0.8;
+        z-index: 999;
+    }
+    li:hover .flyout {
+        display: inline-block;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-right {
+        width: 200px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-right {
+        right: 200px;
+        left: auto !important;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        #intro {
+            position: static;
+            padding: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>Playing with <strong>trigonometric functions</strong></h1>
+        <p>Based on my <a href="../01-10-2014/">previous</a> example, but applied to x and y coordinates, using trigonometric functions.</p>
+        <h3>Choose an example from the right! &rarr;</h3>
+    </div>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-right">
+            <li class="title">Function(x)</li>
+            <li class="subtitle">Function Types</li>
+        </ul>
+        <label class="mobile-right mobmenu-toggle toggle-right" for="mobile-menu-toggle">+</label>
+    </nav>
+    <canvas id="canvas"></canvas>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="xy.js"></script>
+</body>
+</html>
