@@ -97,26 +97,28 @@ window.onload = function() {
         el.addClass('active');
     }
 
+    function drawFn() {
+        canvas.clear();
+        resetBtns($(this));
+        canvas.on('mouse:move', addEffectMouse);
+        clearInterval(interval);
+    }
+
+    function autoFn() {
+        canvas.clear();
+        resetBtns($(this));
+        interval = setInterval(addEffectAutopilot, 50);
+        canvas.off('mouse:move');
+    }
+
     function init() {
         canvas_elem.width  = width;
         canvas_elem.height = height;
         canvas             = new fabric.Canvas('canvas');
         canvas.selection   = false;
-        $draw_btn.on('click', function(){
-            canvas.clear();
-            resetBtns($(this));
-            canvas.on('mouse:move', function(data){
-                addEffectMouse(data);
-            });
-            clearInterval(interval);
-        });
-        $auto_btn.on('click', function(){
-            canvas.clear();
-            resetBtns($(this));
-            interval = setInterval(addEffectAutopilot, 50);
-            canvas.off('mouse:move');
-        });
-        $auto_btn.click();
+        $draw_btn.on('click', drawFn);
+        $auto_btn.on('click', autoFn)
+        .click();
     }
     init();
 };
