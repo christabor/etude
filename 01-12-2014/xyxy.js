@@ -5,7 +5,7 @@ window.onload = function() {
     var width       = dims.width;
     var coords      = $('#coords').find('span');
     var menu        = $('#plain-menu');
-    var tecniques   = {}
+    var techniques  = {}
     var tau         = Math.PI * 2;
     var active;
     tecniques       = {
@@ -78,7 +78,7 @@ window.onload = function() {
             }
         }
     };
-    active = tecniques.original;
+    active = techniques.original;
 
     function addShape(radius, x, y) {
         var color = 'rgb(' + rando(radius / 3) + ',' + rando(radius / 2)+ ',' + rando(radius + 50) + ')';
@@ -136,13 +136,13 @@ window.onload = function() {
         canvas             = new fabric.Canvas('canvas');
         canvas.selection   = false;
 
-        populateMenu(menu, tecniques);
+        populateMenu(menu, techniques);
         menu.find('.fn').on('click', function(e){
             var title = $(this).attr('id');
             e.preventDefault();
             menu.find('.fn').removeClass('active');
             $(this).addClass('active');
-            active = tecniques[title];
+            active = techniques[title];
         });
         menu.find('.fn').first().click();
         canvas.on('mouse:move', function(data){
