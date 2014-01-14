@@ -8,7 +8,7 @@ window.onload = function() {
     var techniques  = {}
     var tau         = Math.PI * 2;
     var active;
-    tecniques       = {
+    techniques       = {
         original: function(data) {
             canvas.clear();
             var times = 4;
