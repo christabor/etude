@@ -133,7 +133,7 @@ function hasJS() {
     return;
 }
 
-/********************* Random *********************/
+/********************* Misc. *********************/
 
 function randomArrayValue(arr) {
     return arr[getKey(arr)];
@@ -158,6 +158,10 @@ function randomFixedString(count) {
         str += tokens[rando(tokens.length)];
     }
     return str;
+}
+
+function convertPxToNum(str) {
+    return parseInt(str.replace('px', ''), 10);
 }
 
 function randomCSSColorAttr(elem, props, color_max) {

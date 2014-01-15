@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-14-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 24px;
+        font-family: 'Homenaje', sans-serif;
+    }
+    body {
+        padding: 0;
+        background-color: #222;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        height: 100%;
+        max-height: 100%;
+        margin: 0;
+    }
+    input,
+    label,
+    select,
+    button,
+    textarea {
+        display: inline-block;
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+    }
+    p {
+        padding: 4px 8px;
+        display: inline-block;
+        font-size: 90%;
+    }
+    p.subdued {
+        margin-top: 100px;
+    }
+    p.subdued,
+    p.subdued a {
+        font-size: 14px;
+    }
+    span p {
+        border: 1px solid white;
+        padding: 10px;
+        margin: 4px;
+    }
+    button {
+        background-color: #d3d92f;
+        border-bottom: 4px solid #b7bb28;
+        color: black;
+    }
+    button:hover {
+        background-color: #a5a924;
+        border-color: #868a1c;
+        cursor: pointer;
+    }
+    a {
+        color: #2f3a3d;
+    }
+    a:hover {
+        color: black;
+    }
+    section {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 10px;
+    }
+    #main {
+        padding: 20px 10px;
+        top: auto;
+        bottom: 0;
+        width: 80%;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 25% 25% 0 0;
+        margin-left: -40%;
+        left: 50%;
+        box-shadow: 0 0 40px #000;
+    }
+    #main fieldset {
+        border-color: rgba(255, 255, 255, 0.1);
+        width: 70%;
+        margin: 0 auto;
+    }
+    #main input,
+    #main button {
+        height: 50px;
+    }
+    #main input {
+        width: 70%;
+        height: 50px;
+        position: relative;
+        top: 2px;
+    }
+    #internet-life {
+        z-index: 999;
+        top: 140px;
+        left: 30px;
+        background: #45484d; /* Old browsers */
+        background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #45484d 0%,#000000 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #45484d 0%,#000000 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #45484d 0%,#000000 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+        position: absolute;
+    }
+    .bar-container {
+        overflow: hidden;
+    }
+    #internet-life,
+    .bar-container,
+    #internet-life .life-inner {
+        width: 30px;
+        position: absolute;
+        border-radius: 10px;
+        height: 400px;
+    }
+    #internet-life .life-inner {
+        padding: 10px;
+        height: 400px;
+        margin: 0 auto;
+        left: 0;
+        bottom: 0;
+        background: #e6f0a3; /* Old browsers */
+        background: -moz-linear-gradient(top, #e6f0a3 0%, #d2e638 22%, #c3d825 54%, #69aa2f 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(22%,#d2e638), color-stop(54%,#c3d825), color-stop(100%,#69aa2f)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #e6f0a3 0%,#d2e638 22%,#c3d825 54%,#69aa2f 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #e6f0a3 0%,#d2e638 22%,#c3d825 54%,#69aa2f 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #e6f0a3 0%,#d2e638 22%,#c3d825 54%,#69aa2f 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #e6f0a3 0%,#d2e638 22%,#c3d825 54%,#69aa2f 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0a3', endColorstr='#69aa2f',GradientType=0 ); /* IE6-9 */
+    }
+    #internet-life .control-label {
+        position: absolute;
+        bottom: -60px;
+        left: -8px;
+        color: #999;
+        text-align: center;
+    }
+    #internet-health {
+        font-size: 130%;
+        color: #e6f0a3;
+    }
+    #scores {
+        position: absolute;
+        right: 0;
+        list-style-type: none;
+        margin: 0 20px 0 0;
+        padding: 0;
+    }
+    #attackspace h2 {
+        margin-top: 230px;
+        border: 1px solid #333;
+        width: auto;
+        display: inline-block;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 50px;
+        color: #e6f0a3;
+    }
+    #scores li,
+    #scores li strong {
+        width: 100%;
+        display: block;
+    }
+    #scores li {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin: 0 0 10px 0;
+    }
+    .netword {
+        position: absolute;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 40px;
+        text-shadow:0 2px 2px black;
+    }
+    #message-box {
+        text-align: center;
+        padding: 40px;
+        height: 100%;
+        width: 100%;
+        font-size: 100px;
+        color: black;
+        text-shadow:0 2px 2px white;
+        display: none;
+        background-color: #d2e638;
+        z-index: 9999;
+    }
+    .mobmenu-toggle {
+        border-radius: 0;
+        background-color: #d1d82a;
+        color: black;
+    }
+    .mobmenu-toggle:hover {
+        background-color: #f2fa31;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 400px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 400px;
+        right: auto !important;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    #plain-menu {
+        z-index: 10000;
+        box-shadow: 0 0 40px #000;
+    }
+    </style>
+</head>
+<body>
+    <section id="message-box"></section>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">Net Neutrality</li>
+            <li class="subtitle">... under attack! Some articles:</li>
+            <li>
+                <a href="http://www.latimes.com/business/hiltzik/la-fi-mh-net-neutrality-20140114,0,522106.story#axzz2qSQFHgkC">LA Times</a>
+            </li>
+            <li>
+                <a href="http://www.savetheinternet.com/net-neutrality-101">Net Neutrality 101</a>
+            </li>
+            <li>
+                <a href="http://www.wired.com/threatlevel/2014/01/court-kills-net-neutrality/">Wired</a>
+            </li>
+        </ul>
+        <label class="mobile-left mobmenu-toggle toggle-left" for="mobile-menu-toggle">?</label>
+    </nav>
+    <section id="controls">
+        <div id="internet-life">
+            <div class="bar-container">
+                <span class="life-inner"></span>
+            </div>
+            <span class="control-label">Internet
+                <span id="internet-health">100%</span>
+            </span>
+        </div>
+        <ul id="scores">
+            <li id="highscore">
+                <strong>High Score</strong>
+                <span class="score">0</span>
+            </li>
+            <li id="longest-word">
+                <strong>Longest word</strong>
+                <span class="score">0 letters</span>
+            </li>
+            <li id="level">
+                <strong>Level</strong>
+                <span class="score">0</span>
+            </li>
+        </ul>
+    </section>
+    <section id="intro">
+        <h1>Net Neutrality is under attack!! <br>
+            <small class="subdued">Type matchings words to fight for your right to fair internet!</small>
+        </h1>
+    </section>
+    <section id="attackspace"></section>
+    <section id="main">
+        <form role="form">
+            <fieldset>
+                <legend>Type here!</legend>
+                <input type="text" placeholder="type!">
+                <button class="btn">Add!</button>
+            </fieldset>
+        </form>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="netneutrality.js"></script>
+</body>
+</html>
