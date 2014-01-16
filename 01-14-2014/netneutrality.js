@@ -1,7 +1,6 @@
 var health_interval;
 var interval;
 var dims            = getViewportDimensions();
-var current_speed   = 10;
 var width           = dims.width;
 var height          = dims.height;
 var message_box     = $('#message-box');
@@ -17,14 +16,16 @@ var healthbar       = $('#internet-life').find('#internet-health');
 var main            = $('#main');
 var form            = main.find('form');
 var input           = form.find('input');
+var current_speed   = 10;
+var SPEED_INCREASE  = 70;
 var point_value     = 10;
 var attack_value    = 10;
+var health          = 100;
+var attack_speed    = 900;
 var highscore       = 0;
 var longest         = 0;
-var health          = 100;
 var uncleared_words = 0;
 var current_level   = 0;
-var attack_speed    = 500;
 var phases          = {
     '1': [
     'net',
@@ -85,7 +86,9 @@ function checkForMatches(typed) {
         if(typed === text) {
             matches = true;
             uncleared_words -= 1;
-            $(this).remove();
+            $(this).css('background-color', 'red').fadeOut(100, function(){
+                $(this).remove();
+            });
             return false;
         }
     });
@@ -93,20 +96,25 @@ function checkForMatches(typed) {
 }
 
 function checkHealth() {
+    log('checking health...');
+    log(health);
     // update bars
     if(health > 0) {
         internet_bar.css('height', health + '%');
         healthbar.text(health + '%');
         $highscore.text(highscore);
     } else {
+        internet_bar.css('height', '0%');
+        healthbar.text('0%');
+        $highscore.text(0);
         endGame();
     }
 }
 
 function endGame() {
-    triggerMsg('You did great, but you lost!');
     clearInterval(health_interval);
     clearInterval(interval);
+    triggerMsg('You did great, but you lost!');
     attackspace.html('<h2>You did great! <br /><strong>Now, go fight for Net Neutrality!</strong></h2>');
 }
 
@@ -132,6 +140,23 @@ function updateLongest(word) {
     longest_bar.text(longest + ' letters');
 }
 
+function checkForCollision(top, word) {
+    // remove the word and subtract points
+    // if it's gone below the screen
+    if(top > height) {
+        uncleared_words -= 1;
+        updatePoints(point_value, 'subtract');
+        $(this).css('background-color', 'red').fadeOut(100, function(){
+            $(this).remove();
+        });
+        return false;
+    } else {
+
+        // otherwise keep animating
+        $(word).css('top', (top + 10) + 'px');
+    }
+}
+
 function animateWords() {
     var words   = attackspace.find('.netword');
     var matches = false;
@@ -144,20 +169,7 @@ function animateWords() {
 
         $.each(words, function(k, word){
             var top  = convertPxToNum($(word).css('top'));
-            var left = convertPxToNum($(word).css('left'));
-
-            // remove the word and subtract points
-            // if it's gone below the screen
-            if(top > height) {
-                uncleared_words -= 1;
-                updatePoints(point_value, 'subtract');
-                $(this).remove();
-                return false;
-            } else {
-
-                // otherwise keep animating
-                $(word).css('top', (top + 10) + 'px');
-            }
+            checkForCollision(top, word);
         });
     }, attack_speed);
 }
@@ -201,7 +213,7 @@ function updateLevel() {
 
     // update the speed,
     // set the animation up again.
-    updateSpeed(attack_speed - 100);
+    updateSpeed(attack_speed - SPEED_INCREASE);
     animateWords();
 }
 
@@ -210,7 +222,7 @@ function addWord(text) {
     word.addClass('netword')
     .css({
         'background-color': randomColor(255),
-        'top': '0px',
+        'top': '-50px',
         'left': rando(width) + 'px'
     })
     .text(text);
@@ -232,6 +244,9 @@ function checkWords(event) {
     var matched;
     var text = input.val();
 
+    // check the interval
+    // and check if all words
+    // have been cleared
     checkInterval();
 
     // check for the collision
