@@ -96,8 +96,6 @@ function checkForMatches(typed) {
 }
 
 function checkHealth() {
-    log('checking health...');
-    log(health);
     // update bars
     if(health > 0) {
         internet_bar.css('height', health + '%');
