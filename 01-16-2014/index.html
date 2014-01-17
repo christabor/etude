@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-16-2014</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link href='../typey/jquery.typey.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 24px;
+        padding: 0;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #311e2e;
+        color: white;
+        margin: 0;
+    }
+    a {
+        color: white;
+    }
+    blockquote {
+        border-left: 2px solid #edbad9;
+        margin: 40px 0;
+        padding: 0 30px;
+        color: #edbad9;
+        font-size: 140%;
+    }
+    p[data-typey-editable] {
+        line-height: 40px;
+        margin: 2em 0;
+    }
+    [data-typey-editable]:activem
+    body:active * {
+        /*
+        disable annoying text selection on clicks
+        */
+        -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+        -moz-user-select: none; /* mozilla browsers */
+        -khtml-user-select: none; /* webkit (konqueror) browsers */
+        -ms-user-select: none; /* IE10+ */
+    }
+    [data-typey-editable]:hover {
+        color: #fff786;
+    }
+    .color {
+        border:2px solid white;
+        box-shadow: 0 2px 4px black;
+        padding: 10px;
+        border-radius: 2px;
+        margin:0 2px;
+        display: inline-block;
+    }
+    #viewer h1,
+    #viewer h4 {
+        text-align: center;
+    }
+    #viewer h1 {
+        display: block;
+        width: 100%;
+        font-size: 300%;
+        color: #f1e967;
+    }
+    h1, blockquote {
+        font-family: serif;
+    }
+    .excerpt {
+        text-align: center;
+        display: block;
+    }
+    #viewer {
+        padding: 20px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .results .result {
+        padding: 10px;
+        font-size: 80%;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        background-color: #111;
+        border-radius: 10px;
+        border-bottom: 1px solid black;
+        display: inline-block;
+    }
+    .mobile-toggleable-menu {
+        text-indent: 0;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 200px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 200px;
+        right: auto !important;
+    }
+    #options .mobmenu-toggle.mobile-left {
+        width: 50px !important;
+    }
+    .mobile-toggleable-menu {
+        font-size: 60%;
+        background-color: #6a4164;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 12px;
+    }
+    .mobile-toggleable-menu li>form, .mobile-toggleable-menu li>p {
+        padding: 0;
+    }
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+    .mobile-toggleable-menu li a {
+        color: #f194e3;
+        display: inline-block;
+    }
+    .mobile-toggleable-menu li a.button {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        margin: 5px 0;
+        border:1px solid rgba(255, 255, 255, 0.4);
+        padding: 4px;
+    }
+    .mobile-toggleable-menu li a.button:hover {
+        background-color: none;
+        border-color: rgba(255, 255, 255, 1);
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">Tools</li>
+            <li class="subtitle">Experimental editing tools</li>
+            <li id="tools">
+                <p>Click on any element to change it&rsquo;s color, mouse-over to play with fonts. <strong>Double-click</strong> to change the background Font library is from my project <a target="_blank" href="http://christabor.github.io/typey" title="typey library">typey</a></p>
+                <a href="#" class="button" data-toggle="modal" data-typey-font-exporter data-target="#exported-css">export fonts!</a>
+                <a href="#" class="button" id="color-scheme">Random color scheme</a>
+                <a href="#" class="button" id="random-button" data-typey-randomize-fonts>Random fonts</a>
+            </li>
+            <li class="results">
+                <code data-typey-font-export class="result">
+                    exported css will appear here.
+                </code>
+                <div id="colors-holder" class="result">
+                    colors will be appear here.
+                </div>
+            </li>
+        </ul>
+        <label class="mobile-left mobmenu-toggle toggle-left" for="mobile-menu-toggle">?</label>
+    </nav>
+    <section id="viewer">
+        <small class="subdued excerpt typer" data-typey-editable>
+            <ul class="fonts" data-typey-font-list></ul>
+            An excerpt from a current book I&rsquo;m reading &mdash; also available for free online at <a target="_blank" href="http://www.gutenberg.org/files/1329/1329-h/1329-h.htm" title="Project Gutenberg">Project Gutenberg.</a>
+        </small>
+        <h1 data-typey-editable>
+            Chapter 12. SPADEVIL<ul class="fonts" data-typey-font-list></ul>
+        </h1>
+        <h4 data-typey-editable>&ldquo;A Voyage to Arcturus&rdquo; &ndash; by <cite>David Lindsay</cite><ul class="fonts" data-typey-font-list></ul></h4>
+        <blockquote class="typer" data-typey-editable>
+            <ul class="fonts" data-typey-font-list></ul>
+            &ldquo;The men of other countries,&rdquo; said Spadevil,&ldquo;are the slaves of pleasure and desire, knowing it. But the men of my country are the slaves of pleasure and desire, not knowing it.&rdquo;
+        </blockquote>
+        <p class="typer" data-typey-editable>
+            &ldquo;And yet that proud pleasure, which rejoices in self-torture, has something noble in it.&rdquo;
+        </p>
+        <p class="typer" data-typey-editable>
+           &ldquo;He who studies himself at all is ignoble. Only by despising soul as well as body can a man enter into true life.&rdquo; &ldquo;On what grounds do they reject women?&rdquo;
+           &ldquo;Inasmuch as a woman has ideal love, and cannot live for herself. Love for another is pleasure for the loved one, and therefore injurious to him."
+           &ldquo;A forest of false ideas is waiting for your axe," said Maskull.&ldquo;But will they allow it?&rdquo;
+       </p>
+       <p class="typer" data-typey-editable>
+           &ldquo;Spadevil knows, Maskull,&rdquo; said Tydomin,&ldquo;that be it today or be it tomorrow, love can't be kept out of a land, even by the disciples of Hator.&rdquo;
+           &ldquo;Beware of love&mdash;beware of emotion!&rdquo; exclaimed Spadevil.&ldquo;Love is but pleasure once removed. Think not of pleasing others, but of serving them.&rdquo;
+           &ldquo;Forgive me, Spadevil, if I am still feminine.&rdquo;
+       </p>
+
+       <p class="typer" data-typey-editable>
+           &ldquo;Right has no sex. So long, Tydomin, as you remember that you are a woman, so long you will not enter into divine apathy of soul.&rdquo;
+           &ldquo;But where there are no women, there are no children,&rdquo; said Maskull.&ldquo;How came there to be all these generations of Hator men?&rdquo;
+           &ldquo;<em>Life breeds passion, passion breeds suffering, suffering breeds the yearning for relief from suffering.</em> Men throng to Sant from all parts, in order to have the scars of their souls healed.&rdquo;
+       </p>
+       <p class="typer" data-typey-editable>
+           &ldquo;In place of hatred of pleasure, which all can understand, what simple formula do you offer?&rdquo;
+           <em>&ldquo;Iron obedience to duty,&rdquo;</em> answered Spadevil.
+           &ldquo;And if they ask 'How far is this consistent with hatred of pleasure?' what will your pronouncement be?&rdquo;
+       </p>
+       <p class="typer" data-typey-editable>
+           &ldquo;I do not answer them, but I answer you, Maskull, who ask the question. Hatred is passion, and all passion springs from the dark fires of self. Do not hate pleasure at all, but pass it by on one side, calm and undisturbed.&rdquo;
+           &ldquo;What is the criterion of pleasure? How can we always recognise it, in order to avoid it?&rdquo;
+       </p>
+       <p class="typer" data-typey-editable>
+           &ldquo;Rigidly follow duty, and such questions will not arise.&rdquo;
+           Later in the afternoon, Tydomin timidly placed her fingers on Spadevil's arm.
+           &ldquo;Fearful doubts are in my mind,&rdquo; she said.&ldquo;This expedition to Sant may turn out badly. I have seen a vision of you, Spadevil, and myself lying dead and covered in blood, but Maskull was not there.&rdquo;
+       </p>
+       <blockquote class="typer" data-typey-editable>
+        <ul class="fonts" data-typey-font-list></ul>
+        &ldquo;We may drop the torch, but it will not be extinguished, and others will raise it.&rdquo;
+    </blockquote>
+</section>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="../js/vendor/tinycolor-min.js"></script>
+<script src="../typey/jquery.typey.js"></script>
+<script src="../js/utils.js"></script>
+<script src="typography.js"></script>
+</body>
+</html>
