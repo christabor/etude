@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-19-2013</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-family: 'Nunito', sans-serif;
+        color: red;
+    }
+    canvas,
+    .canvas {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-right {
+        width: 400px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-right {
+        right: 400px;
+        left: auto !important;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    @media handheld, screen and (max-width: 500px) {
+    }
+    </style>
+</head>
+<body>
+    <nav id="options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-right">
+            <li class="title">Camera effects</li>
+            <li class="subtitle">Choose one:</li>
+        </ul>
+        <label class="mobile-right mobmenu-toggle toggle-right" for="mobile-menu-toggle">+</label>
+    </nav>
+    <div id="clarge" class="canvas"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/funky.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="watcher.js"></script>
+</body>
+</html>
