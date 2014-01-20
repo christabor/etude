@@ -168,6 +168,30 @@ function init() {
                 data[i + 3] = data[i + 3 + divider];
             }
             callback();
+        },
+        alien_face_melter: function(image, callback) {
+            var data = image.data;
+            var pivot = 100;
+            var amt = pivot / 2;
+            for(var i = 0, len = data.length; i <= len; i += 4) {
+                data[i] = (data[i] > pivot ? Math.abs(data[i] / amt) : data[i]);
+                data[i + 1] = (data[i + 1] > pivot ? Math.abs(data[i + 1] / amt) : data[i + 1]);
+                data[i + 2] = (data[i + 2] > pivot ? Math.abs(data[i + 2] / amt) : data[i + 2]);
+                data[i + 3] = 200;
+            }
+            callback();
+        },
+        alien_face_melter_2: function(image, callback) {
+            var data = image.data;
+            var pivot = 100;
+            var amt = pivot / 2;
+            for(var i = 0, len = data.length; i <= len; i += 4) {
+                data[i] = (data[i] > pivot ? Math.abs(data[i] / amt) : data[i]);
+                data[i + 1] = (data[i + 1] > pivot ? Math.abs(data[i + 1]) : data[i + 1]);
+                data[i + 2] = (data[i + 2] > pivot ? Math.abs(data[i + 2] / amt) : data[i + 2]);
+                data[i + 3] = 200;
+            }
+            callback();
         }
     };
 
