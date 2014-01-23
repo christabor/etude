@@ -174,6 +174,13 @@ function addText(text, fontsize) {
 function init() {
     var func;
     var seed           = 0;
+    globalLoader.load({
+        css: {
+            'background-color': '#222',
+            'font-size': '40px'
+        },
+        msg: 'Loading new image...'
+    });
     canvas_elem.width  = width;
     canvas_elem.height = height;
     canvas             = new fabric.Canvas('canvas');
@@ -186,6 +193,7 @@ function init() {
         canvas.renderAll();
         exportCanvas(canvas);
     });
+    setTimeout(globalLoader.unload, 100);
 }
 
 $(document).ready(init);
