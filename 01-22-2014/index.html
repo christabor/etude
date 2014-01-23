@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-22-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #28436b;
+        font-size: 22px;
+    }
+    h1, h2, h3,
+    .nav-tabs {
+        font-family: 'Nunito', sans-serif;
+    }
+    p,
+    blockquote {
+        font-weight: 400;
+    }
+    h1 {
+        color: white;
+        text-align: right;
+    }
+    #container {
+        width: 80%;
+        margin: 40px auto;
+    }
+    #tabs {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 5px 5px #111;
+    }
+    .nav {
+        border: none;
+    }
+    .nav.nav-tabs {
+        background-color: #444;
+    }
+    .nav.nav-tabs a {
+        border: none;
+        color: white;
+        border-radius: 0;
+    }
+    .nav.nav-tabs a:hover {
+        background-color: black;
+        border-radius: 0;
+        border: none;
+    }
+    .tab-pane {
+        padding: 20px;
+    }
+    .tab-pane > div {
+        width: 45%;
+        display: inline-block;
+    }
+    .tab-pane div {
+        background-color: #4778c1;
+        color: black;
+        padding: 20px;
+        margin: 10px;
+        border-bottom: 4px solid #385e98;
+        text-align: center;
+        color: white;
+    }
+    .tab-pane .code {
+        background-color: #f1f1f1;
+        color: black;
+        border-bottom-color: #444;
+    }
+    .code {
+        padding: 10px;
+        border-radius: 4px;
+        margin: 0 5px;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            font-size: 16px;
+        }
+        #container {
+            text-align: center;
+            width: 100%;
+        }
+        small {
+            display: block;
+        }
+        .nav-tabs li {
+            float: none;
+            display: block;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+        }
+        #tabs .tab-pane div {
+            display: block;
+            padding: 10px;
+            float: none;
+            width: 100%;
+            margin: 2px 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Playing with L-Systems
+            <small>Because emergence is cool.</small>
+        </h1>
+        <div id="tabs">
+            <ul class="nav nav-tabs">
+                <li><a href="#intro" data-toggle="tab">What?</a></li>
+                <li><a href="#example1" data-toggle="tab">L-System Original</a></li>
+                <li><a href="#example2" data-toggle="tab">L-System 4</a></li>
+                <li><a href="#example3" data-toggle="tab">L-System 4 alt</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="intro">
+                    <h3>What's an L-System?</h3>
+                    <p><em>From <cite><a href="http://en.wikipedia.org/wiki/L-system">Wikipedia</a></cite>:</em></p>
+                    <blockquote>
+                        An <strong>L-system or Lindenmayer system</strong> is a parallel rewriting system and a type of formal grammar. An L-system consists of an alphabet of symbols that can be used to make strings, a collection of production rules that expand each symbol into some larger string of symbols, an initial "axiom" string from which to begin construction, and a mechanism for translating the generated strings into geometric structures. L-systems were introduced and developed in 1968 by Aristid Lindenmayer, a Hungarian theoretical biologist and botanist at the University of Utrecht. Lindenmayer used L-systems to describe the behaviour of plant cells and to model the growth processes of plant development. L-systems have also been used to model the morphology of a variety of organisms and can be used to generate self-similar fractals such as iterated function systems.
+                    </blockquote>
+                    <p><strong>In other words,</strong> it's a set of rules that allow complex behavior to emerge, by using a simple grammar and some constraints.</p>
+                </div>
+                <div class="tab-pane clearfix" id="example1">
+                    <h3>L-System Original</h3>
+                    <div class="code pull-left">
+                        <h4>Rules:</h4>
+                        <p>
+                            A => BA <br>
+                            B => A
+                        </p>
+                    </div>
+                    <div class="results pull-right"></div>
+                </div>
+                <div class="tab-pane clearfix" id="example2">
+                    <h3>L-System four setting</h3>
+                    <div class="code pull-left">
+                        <h4>Rules</h4>
+                        <p>
+                            A => AB <br>
+                            B => AC <br>
+                            C => DA <br>
+                            D => BA
+                        </p>
+                    </div>
+                    <div class="results pull-right"></div>
+                </div>
+                <div class="tab-pane clearfix" id="example3">
+                    <h3>L-System four setting alt</h3>
+                    <div class="code pull-left">
+                        <h4>Rules</h4>
+                        <p>
+                            A => CA <br>
+                            B => BD <br>
+                            C => AA <br>
+                            D => DA
+                        </p>
+                    </div>
+                    <div class="results pull-right"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="lsys.js"></script>
+</body>
+</html>
