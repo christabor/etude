@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-23-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #0c3e2c;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        font-family: 'Nunito';
+    }
+    span {
+        background-color: white;
+        padding: 10px;
+        margin: 10px 4px;
+        display: inline-block;
+        color: #0c3e2c;
+        border-radius: 4px;
+    }
+    span:nth-of-type(even) {
+        background-color: #23be87;
+    }
+    #top {
+        display: block;
+        width: 100%;
+        color: white;
+        background-color: #0f5139;
+        padding: 20px;
+        margin: 0;
+        text-align: center;
+    }
+    #container > .block {
+        width: 22%;
+        margin: 20px;
+        display: inline-block;
+        padding: 0 0 40px 0;
+        border-bottom: 2px solid #147251;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #container > .block {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Ordered sets stepping from 0-100</h1>
+        <h4>Each set from 1-N, is multiplied by itself up to N, producing a unique series for each.</h4>
+        <p>e.g: 0 * 0 = 0, 1 * 0 = 1... etc</p>
+    </div>
+    <section id="container"></section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="ordered.js"></script>
+</body>
+</html>
