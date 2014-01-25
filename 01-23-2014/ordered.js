@@ -22,7 +22,7 @@ function init() {
         var current;
         sequenceSet(start, count);
         current = container.find('.block').last();
-        current.prepend('<p>Start ' + start + '</p>');
+        current.prepend('<p>' + start + ' * N...15</p>');
         start += 1;
     }, max);
 }
