@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-27-2014</title>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background: #f1f1f1 url(../img/pyramid.png);
+        text-align: center;
+        font-family: monospace;
+        font-size: 20px;
+    }
+    section {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    fieldset {
+        border-color: #ccc;
+    }
+    legend {
+        padding: 10px;
+    }
+    input {
+        font-size: 22px;
+        padding: 10px;
+    }
+    h1 {
+        color: #999;
+    }
+    #example {
+        margin: 10px auto;
+        padding: 20px;
+        font-size: 150%;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            font-size: 16px;
+        }
+        section {
+            width: 95%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="main">
+        <h1>Playing with Algebra</h1>
+        <form action="" role="form">
+            <fieldset>
+                <legend>Variables:</legend>
+                <label for="xval">X value:</label>
+                <input id="xval" type="number" min="1" max="20" value="1">
+                <label for="yval">Y value:</label>
+                <input id="yval" type="number" min="1" max="20" value="1">
+                <label for="zval">Z value:</label>
+                <input id="zval" type="number" min="1" max="20" value="1">
+                <label for="power">Exponent (power):</label>
+                <input id="power" type="number" min="1" max="10" value="2">
+            </fieldset>
+        </form>
+        <div id="example">
+            <p>Output:</p>
+            <h2>
+                <span id="xchar">x</span>
+                <sup class="pow">2</sup> + <span id="ychar">y</span>!
+                <sup class="pow">2</sup> * <span id="zchar">z</span>
+                <sup class="pow">2</sup> = <span id="result">???</span>
+            </h2>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="heartrun.js"></script>
+</body>
+</html>
