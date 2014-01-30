@@ -9,10 +9,6 @@ function addEl(el, input, count) {
     el.append('<p><small class="subdued">' + count + '</small> ' + input + '</p>');
 }
 
-function getLastOf(input) {
-    return input.substr(input.length - 1, input.length);
-}
-
 function init() {
     systems = {
         lSystemSimple: function(el, input, count) {

@@ -62,6 +62,29 @@ function successionPlugin(container, advance_speed, callback) {
     return;
 }
 
+function populateMenu(list, menu, el) {
+    // populates a menu with an array
+    // or object, into another dom element
+    // also allows you to pass in an el,
+    // so it can be used for anything,
+    // e.g. <li> or <select> or <p>.
+    $.each(list, function(k, v) {
+        var value = ($.isArray(list) ? v : k);
+        var item = $(el);
+        item.html(value);
+        menu.append(item);
+    });
+}
+
+function getLastOf(input) {
+    // returns the last char
+    // of a given string
+    if(typeof input !== 'string') {
+        return input;
+    }
+    return input.substr(input.length - 1, input.length);
+}
+
 function simpleLetterSequence(opts) {
     // animate a sequence of letters,
     // allow for transition from one css state
