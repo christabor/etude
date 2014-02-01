@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 01-30-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link href='../typey/jquery.typey.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 24px;
+        padding: 0;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #d3f1d6;
+        margin: 0;
+    }
+    a {
+        color: #222;
+    }
+    blockquote {
+        border-left: 2px solid black;
+        margin: 40px 0;
+        padding: 0 30px;
+        font-size: 140%;
+    }
+    p {
+        line-height: 40px;
+        margin: 2em 0;
+    }
+    #viewer h1 {
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-size: 230%;
+    }
+    #random {
+        text-align: center;
+        display: inline-block;
+    }
+    #viewer {
+        padding: 20px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    #viewer [data-typey-font-list] {
+        display: none;
+    }
+    .dropcap {
+        font-size: 150%;
+        display: inline-block;
+        float: left;
+        padding: 0 10px 0 0;
+        margin: 0 10px 0 0 ;
+    }
+    [data-typey-editable] {
+        position: relative;
+    }
+    [data-typey-editable]:hover {
+        background-color: yellow;
+    }
+    .font-name {
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        min-width: 200px;
+        width: auto;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+        z-index: 998;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+    [data-typey-editable]:hover .font-name {
+        display: inline-block;
+    }
+    .dropcap.boxy {
+        background-color: #222;
+        padding: 10px;
+        color: white;
+    }
+    .dropcap.underline {
+        padding: 4px;
+        border-bottom: 4px solid black;
+    }
+    .dropcap.boxy2 {
+        padding: 4px;
+        border: 4px solid black;
+        border-left: none;
+        border-top: none;
+    }
+    .dropcap.rounded {
+        background-color: #222;
+        padding: 10px;
+        color: white;
+        border-radius: 100%;
+    }
+    .dropcap.corners {
+        background-color: #222;
+        padding: 10px;
+        color: white;
+        border-radius: 20% 50%;
+    }
+    </style>
+</head>
+<body>
+    <section id="viewer">
+        <h1>
+            Drop-cap style generator
+        </h1>
+        <a href="#" class="btn btn-plain toggle" id="random" data-typey-randomize-fontss>New style</a>
+        <p>
+            <span class="dropcap">T</span>
+            <span class="post-dropcap">
+                iramisu brownie candy. Applicake caramels caramels. Lollipop macaroon jujubes fruitcake jelly jelly beans tart. Lemon drops chocolate dessert chocolate jelly-o cupcake unerdwear.com ice cream chupa chups. Bear claw bear claw tart pudding dessert oat cake tart sweet. Applicake macaroon apple pie wafer sweet roll brownie. Chupa chups topping sugar plum caramels brownie.
+            </span>
+        </p>
+        <p>
+            <span class="dropcap">A</span>
+            <span class="post-dropcap">
+                pple pie oat cake oat cake chocolate bar dessert. Jujubes macaroon apple pie apple pie carrot cake sugar plum. Apple pie chocolate jelly-o caramels croissant donut fruitcake cupcake gummies. Sweet roll marzipan chocolate halvah wafer. Wafer halvah gummies liquorice. Icing donut topping.
+            </span>
+        </p>
+        <blockquote>
+            Chupa chups topping sugar plum caramels brownie. Apple pie oat cake oat cake chocolate bar dessert. Jujubes macaroon apple pie apple pie carrot cake sugar plum.
+        </blockquote>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../typey/jquery.typey.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="typography.js"></script>
+</body>
+</html>
