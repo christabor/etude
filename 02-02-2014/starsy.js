@@ -6,21 +6,27 @@ window.onload = function() {
     var formula     = [];
     var total       = 50;
     var current     = 0;
+    var swapped     = false;
     var fg = '';
     var bg = '';
+
+    function swapColors() {
+        // swap colors
+        if(swapped) {
+            fg = '#43B02A';
+            bg = '#213D5A';
+        } else {
+            fg = '#213D5A';
+            bg = '#43B02A';
+        }
+        swapped = !swapped;
+    }
 
     function addGroup(seed_x, seed_y) {
         if(current === total) {
             canvas.clear();
             current = 0;
             addText();
-
-            // swap colors
-            bg = '#213D5A';
-            fg = '#43B02A';
-        } else {
-            fg = '#213D5A';
-            bg = '#43B02A';
         }
         for(var i = 0; i <= 8; i++) {
             var circ = new fabric.Circle({
@@ -34,12 +40,12 @@ window.onload = function() {
             canvas.add(circ);
             circ.animate({
                 radius: rando(width / 4),
-                duration: 100,
+                duration: 50,
                 onChange: canvas.renderAll.bind(canvas),
                 onComplete: function() {
                     circ.animate({
                         radius: rando(50),
-                        duration: 100,
+                        duration: 50,
                         onChange: canvas.renderAll.bind(canvas)
                     });
                 }
@@ -53,6 +59,7 @@ window.onload = function() {
         var x = rando(width);
         var y = rando(height)
         addGroup(x, y);
+        swapColors();
         canvas.renderAll();
     }
     function addText() {
