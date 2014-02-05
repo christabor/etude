@@ -12,6 +12,11 @@ function updateSet() {
     viz.find('.set')
     .find('p')
     .hide();
+
+    viz.find('.set')
+    .find('p')
+    .first()
+    .show();
 }
 
 function init() {
@@ -19,20 +24,23 @@ function init() {
     data = $('#data').find('span');
     funcs = {
         0: {
-            0: function(eq) {
-                viz.find('p').show();
-            },
+            0: function(eq) {},
             1: function(eq) {},
             2: function(eq) {
-                viz.find('span')
+                viz.find('.set')
+                .eq(curr_set)
+                .find('span')
                 .first()
                 .hide()
                 .text('sliced')
-                .fadeIn(200);
+                .fadeIn(1000);
 
-
-                viz.find('p').eq(eq).find('.highlight').find('span')
-                .fadeOut(200);
+                viz.find('.set')
+                .eq(curr_set)
+                .find('p').first()
+                .find('.highlight')
+                .find('span')
+                .fadeOut(1000);
             }
         },
         1: {
