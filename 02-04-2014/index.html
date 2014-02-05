@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-04-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        text-align: center;
+        padding: 50px 0;
+        margin: 0;
+        font-size: 20px;
+        background: url(../img/wild_oliva.png);
+        color: white;
+        font-family: 'PT Sans', sans-serif;
+    }
+    code {
+        background-color: white;
+        font-size: 80%;
+        padding: 2px 5px;
+        margin: 0 4px;
+        border-radius: 5px;
+        display: inline-block;
+        color: #d41e42;
+    }
+    section {
+        color: black;
+        flex: 1;
+        background: #f1f1f1 url(../img/noisy_grid.png);
+        margin: 2px;
+        padding: 30px;
+        text-align: center;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        margin: 30px 0;
+    }
+    .highlight {
+        background-color: #fefbae;
+        padding: 4px;
+    }
+    #viz span {
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .set {
+        display: none;
+    }
+    a {
+        background-color: #444;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    a:hover {
+        background-color: black;
+    }
+    </style>
+</head>
+<body>
+    <h1>Interactive visualization of array methods</h1>
+    <p>Sometimes understanding how data structures work is not intuitive, this is an experiment to see if simple guides and visualization are useful.</p>
+    <div id="container" class="flexer">
+        <section id="data">
+            <h3>Instructions</h3>
+            <span>
+                <div class="set">
+                    <ul>
+                        <li>
+                            given our array to the right,
+                            let's <strong>slice</strong> a piece of it off.
+                            <a href="#">Continue</a>
+                        </li>
+                        <li>
+                            let's grab the first two <strong>keys</strong> by <strong>slicing</strong> our array into a <strong>new one</strong>.
+                            <a href="#">Continue</a>
+                        </li>
+                        <li>
+                            So we'll do <code>var sliced = arr.slice(0, 1);</code>.
+                            <a href="#">Slice</a>
+                        </li>
+                        <li>
+                            Giving us our new slice! How about that? <a href="#" class="next">Continue</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="set">
+                    <ul>
+                        <li>How about <strong>pushing</strong>?
+                            <a href="#">Continue</a>
+                        </li>
+                        <li>
+                            <strong>Pushing</strong> is exactly what it sounds like &mdash; pushing another item into an array. We&rsquo;ll do:
+                            <code>arr.push(20);</code>
+                            <a href="#">Push</a>
+                        </li>
+                        <li>
+                            And voila! The array now has a new item added to it.
+                        </li>
+                    </ul>
+                </div>
+            </span>
+        </section>
+        <section id="viz">
+            <h3>Visualization</h3>
+            <span>
+                <div class="set">
+                    <p>
+                        var <span>arr</span> = <span class="highlight">[1, 2<span>, 3, 4, 5</span>];</span>
+                    </p>
+                </div>
+                <div class="set">
+                    <p>var arr = <span class="highlight">[1, 2, 3]</span>;</p>
+                    <p>[1, 2, 3, <span class="highlight">20</span>]</p>
+                </div>
+            </span>
+        </section>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="steps.js"></script>
+</body>
+</html>
