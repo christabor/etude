@@ -429,6 +429,25 @@ function randomGradientObj(max_stops) {
     return colors;
 }
 
+function bootstrapCanvas(callback) {
+    // a reusable function for bootstrapping
+    // some common canvas inits. Also provides
+    // a callback so everything is defined in order.
+    window.dims           = getDocumentDimensions();
+    window.height         = dims.height;
+    window.width          = dims.width;
+    window.canvas_elem    = document.querySelector('canvas');
+    // var dims           = getDocumentDimensions();
+    // var height         = dims.height;
+    // var width          = dims.width;
+    // var canvas_elem    = document.querySelector('canvas');
+    canvas_elem.width  = width;
+    canvas_elem.height = height;
+    canvas             = new fabric.Canvas('canvas');
+    canvas.selection   = false;
+    callback();
+}
+
 function getDocumentDimensions() {
     // return a simple dimensions object
     // of the screen width and height
