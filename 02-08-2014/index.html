@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <title>Etude - 02-08-2013</title>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Exo 2', sans-serif;
+        padding: 0;
+        font-size: 14px;
+        overflow: hidden;
+    }
+    input {
+        display: inline-block;
+        width: 50%;
+    }
+    #controls {
+        overflow: scroll;
+        height: 100%;
+        padding: 10px 30px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        background: #222;
+        opacity: 0.7;
+        color: white;
+    }
+    #controls:hover {
+        opacity: 0.9;
+    }
+    #controls > div {
+        width: 200px;
+        margin: 20px 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h3>Math is cool.</h3>
+        <h4>Transformation</h4>
+        Scale
+        <div id="divider"></div>
+        X stretch
+        <div id="xstretch"></div>
+        Y stretch
+        <div id="ystretch"></div>
+        Threshold
+        <div id="threshold"></div>
+        Complexity
+        <div id="complexity"></div>
+        Iterations
+        <div id="iterations"></div>
+        Multiplier
+        <div id="multiplier"></div>
+        <h4>Types</h4>
+
+        <p>
+            <label for="r1">Normal</label>
+            <input id="r1" type="radio" name="type" value="normal">
+        </p>
+
+        <p>
+            <label for="r2">PI</label>
+            <input id="r2" type="radio" name="type" value="pi">
+        </p>
+
+        <p>
+            <label for="r3">Tau</label>
+            <input id="r3" type="radio" name="type" value="tau">
+        </p>
+
+        <p>
+            <label for="r4">Tan</label>
+            <input id="r4" type="radio" name="type" value="tan">
+        </p>
+
+        <p>
+            <label for="r5">Atan</label>
+            <input id="r5" type="radio" name="type" value="atan">
+        </p>
+
+        <p>
+            <label for="r6">Cosine</label>
+            <input id="r6" type="radio" name="type" value="cos">
+        </p>
+        <p>
+            <label for="r7">Sine</label>
+            <input id="r7" type="radio" name="type" value="sin">
+        </p>
+        <h4>Color</h4>
+        Green
+        <div id="green"></div>
+        Blue
+        <div id="blue"></div>
+    </div>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="pixl.js"></script>
+</body>
+</html>
