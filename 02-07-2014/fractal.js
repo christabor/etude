@@ -11,7 +11,6 @@ var MAX_ITERATIONS  = 100;
 var size_division   = 2;
 var curr_blue       = rando(255);
 var multiplier      = rando(10);
-var locked          = false;
 var canvas_data;
 var x_multiplier    = 2;
 var y_multiplier    = 2;
@@ -76,9 +75,6 @@ function redraw() {
         setTimeout(updateData, i * 10);
         i += 1;
     }, max_times);
-    setTimeout(function(){
-        locked = false;
-    }, timeout);
 }
 
 function init() {
