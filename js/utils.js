@@ -437,10 +437,6 @@ function bootstrapCanvas(callback) {
     window.height         = dims.height;
     window.width          = dims.width;
     window.canvas_elem    = document.querySelector('canvas');
-    // var dims           = getDocumentDimensions();
-    // var height         = dims.height;
-    // var width          = dims.width;
-    // var canvas_elem    = document.querySelector('canvas');
     canvas_elem.width  = width;
     canvas_elem.height = height;
     canvas             = new fabric.Canvas('canvas');
