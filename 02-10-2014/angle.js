@@ -1,5 +1,5 @@
 window.onload = function() {
-    var dims        = getDocumentDimensions();
+    var dims        = getViewportDimensions();
     var height      = dims.height;
     var width       = dims.width;
     var canvas_elem = document.querySelector('canvas');
