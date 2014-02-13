@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-12-2014</title>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 20px;
+        margin: 0;
+        background-color: #4d9099;
+        text-align: center;
+        font-family: monospace;
+        color: white;
+    }
+    p {
+        background-color: #45838b;
+        padding: 10px;
+        width: 40%;
+        display: inline-block;
+        margin: 0;
+        border-radius: 10px;
+    }
+    canvas {
+        display: block;
+        margin: 100px auto;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        p {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Simple Cellular Automata</h1>
+    <p>Step: <span id="step-count"></span> / <label for="type">Select a type:</label><select id="type"></select></p>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="auto2.js"></script>
+</body>
+</html>
