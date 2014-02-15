@@ -133,6 +133,8 @@ window.onload = function() {
         clearInterval(interval);
         seeding = true;
         resetInterval();
+        count = 0;
+        step.text('Generation: ' + count);
     }
 
     function init() {
