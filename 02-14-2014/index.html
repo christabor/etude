@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-14-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Miniver' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Miniver', cursive;
+        padding: 0;
+        background: url(img/heartsbg.jpg);
+        background-size: 100%;
+        overflow: hidden;
+        margin: 0;
+    }
+    img {
+        position: absolute;
+    }
+    #stringrow1,
+    #stringrow2 {
+        -webkit-animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-name: bob;
+    }
+    #stringrow1 {
+        width: 100%;
+        margin: 0;
+        top: -20px;
+    }
+    #stringrow2 {
+        width: 90%;
+        left: 100px;
+        top: -30px;
+        opacity: 0.4;
+    }
+    #bigheart1,
+    #bigheart2 {
+        -webkit-animation-direction: alternate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-name: move;
+    }
+    #bigheart1 {
+        top: -100px;
+        left: 200px;
+    }
+    #bigheart2 {
+        top: -40px;
+        right: 200px;
+    }
+    #bgrow,
+    #fgrow {
+        width: 100%;
+        top: 80px;
+    }
+    .text {
+        -webkit-animation-direction: alternate;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-name: pulse;
+        text-align: center;
+        font-size: 100px;
+        color: white;
+        width: 100%;
+        display: block;
+        position: absolute;
+        text-shadow: 0 2px 20px black;
+    }
+    @-webkit-keyframes pulse {
+        0% {
+            opacity: 0.2;
+            text-shadow: 0 0 10px black;
+        }
+        100% {
+            opacity: 1;
+            text-shadow: 0 0 40px red;
+        }
+    }
+    @keyframes pulse {
+        0% {
+            opacity: 0.2;
+            text-shadow: 0 0 10px black;
+        }
+        100% {
+            opacity: 1;
+            text-shadow: 0 0 40px red;
+        }
+    }
+    @-webkit-keyframes bob {
+        0% {
+            top: -30px;
+        }
+        100% {
+            top: -60px;
+        }
+    }
+    @keyframes bob {
+        0% {
+            top: -30px;
+        }
+        100% {
+            top: -60px;
+        }
+    }
+    @-webkit-keyframes move {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+    }
+    @keyframes move {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+    }
+    #text1 {
+        top: 200px;
+        color: white;
+    }
+    #text2 {
+        top: 300px;
+        color: #ff95ce;
+    }
+    #text3 {
+        color: #ffb7db;
+        top: 400px;
+    }
+    </style>
+</head>
+<body>
+    <ul id="scene">
+        <li class="layer rotate" data-depth="1.50"><img id="bigheart1" src="img/bigheart.png"></li>
+        <li class="layer" data-depth="1.25"><img id="bigheart2" src="img/bigheart.png"></li>
+        <li class="layer" data-friction-y="0" data-depth="1"><img id="stringrow1" src="img/heartstring.png"></li>
+        <li class="layer" data-friction-y="0" data-depth="1.40"><img id="stringrow2" src="img/heartstring.png"></li>
+        <li class="layer" data-depth="1.0"><p class="text" id="text1">Happy</p></li>
+        <li class="layer" data-depth="1.2"><p class="text" id="text2">Valentines</p></li>
+        <li class="layer" data-depth="1.4"><p class="text" id="text3">Day!</p></li>
+    </ul>
+    <script src="../js/vendor/parallax.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="cellu.js"></script>
+</body>
+</html>
