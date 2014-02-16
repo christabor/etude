@@ -1,10 +1,10 @@
 var Box = function(x, y, width, height) {
-    var self = this;
-    this.x = x;
-    this.y = y;
-    this.width = width;
+    var self    = this;
+    this.x      = x;
+    this.y      = y;
+    this.width  = width;
     this.height = height;
-    self.size = self.width * 0.02;
+    self.size   = self.width * 0.02;
     self.offset = self.size / 2;
 
     // setup corner points
