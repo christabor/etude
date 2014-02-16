@@ -28,7 +28,11 @@ var Box = function(x, y, width, height) {
     this.line = function(x1, y1, x2, y2) {
         ctx.beginPath();
         ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
+        if(window.use_quadratic) {
+            ctx.quadraticCurveTo(x1, y2, x2, y2);
+        } else {
+            ctx.lineTo(x2, y2);
+        }
         ctx.stroke();
     }
 
@@ -141,11 +145,13 @@ function boxCeption() {
 function init() {
     bootstrapCanvas(null, false);
     window.maxsize = 100;
+    window.use_quadratic = false;
     var interval;
     var active_fn;
     var random = $('#random');
     var uniform = $('#uniform');
     var boxception = $('#boxception');
+    var quadratic = $('#quadratic');
 
     $('.slider').slider({
         min: 20,
@@ -154,6 +160,10 @@ function init() {
             window.maxsize = ui.value;
             drawCanvas(active_fn);
         }
+    });
+    quadratic.on('click', function(){
+        window.use_quadratic = $(this).is(':checked') ? true : false;
+        drawCanvas(active_fn);
     });
     random.on('click', function() {
         active_fn = addRandom;
