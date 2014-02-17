@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-16-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Russo+One|Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        background-color: #131e33;
+        color: white;
+        font-family: 'Varela Round', sans-serif;
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+    }
+    h1 {
+        font-family: 'Russo One', sans-serif;
+    }
+    small {
+        font-family: 'Varela Round', sans-serif;
+    }
+    #canvii {
+        background-color: #22375f;
+        padding: 20px;
+        margin: 10px 0;
+    }
+    #restart-all {
+        padding: 10px;
+        color: #f78f47;
+    }
+    #restart-all:hover {
+        color: white;
+    }
+    .btn {
+        color: #22375f;
+        border-radius: 10px;
+        border: 2px solid white;
+        padding: 4px 8px;
+        font-size: 80%;
+        display: inline-block;
+    }
+    .btn:hover {
+        cursor: pointer;
+        background-color: #f78f47;
+        color: white;
+        text-decoration: none;
+    }
+    .canvas {
+        color: #22375f;
+        border:2px solid black;
+        border-bottom-width: 4px;
+        padding: 4px;
+        margin: 10px;
+        display: inline-block;
+        background-color: white;
+    }
+}
+</style>
+</head>
+<body>
+    <div id="info">
+        <h1>Exploring more Cellular Automata. <br><small class="subdued">Experimenting with different variations.</small></h1>
+        <a class="btn" href="#" id="restart-all">Restart All</a>
+    </div>
+    <div id="canvii">
+        <!-- "Canvii" - plural of canvas. You saw it here first.-->
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+        <canvas width="100%" height="100%"></canvas>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="box.js"></script>
+</body>
+</html>
