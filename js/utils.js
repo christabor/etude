@@ -434,8 +434,8 @@ function bootstrapCanvas(callback, is_fabric) {
     // some common canvas inits. Also provides
     // a callback so everything is defined in order.
     window.dims        = getViewportDimensions();
-    window.height      = dims.height / 4;
-    window.width       = dims.width / 4;
+    window.height      = dims.height;
+    window.width       = dims.width;
     window.canvas_elem = document.querySelector('canvas');
     canvas_elem.width  = width;
     canvas_elem.height = height;
