@@ -173,6 +173,8 @@ var CanvasAutomota = function() {
         self.stopPlaying();
         self.clearCanvas();
         self.states = [];
+        self.generation = 0;
+        self.gen.text('Generation: ' + self.generation);
         self.seedAll();
         self.startPlaying();
     }
