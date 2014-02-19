@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-17-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        background-color: white;
+        color: #555;
+        font-family: 'Droid Sans', sans-serif;
+        margin: 0;
+        letter-spacing: -0.05em;
+        text-align: center;
+        font-size: 24px;
+        line-height: 2em;
+    }
+    h1 {
+        color: #d9442d;
+        font-weight: bold;
+    }
+    #new-message {
+        background-color: #d9442d;
+        padding: 10px 20px;
+        color: white;
+        margin: 2px 0;
+        border-radius: 4px;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        border:1px solid #c55d51;
+        border-bottom-width: 2px;
+    }
+    #new-message:hover {
+        background-color: #c13b27;
+    }
+    #message {
+        text-align: left;
+        background-color: #f5f5f5;
+        border: 1px solid #e4e4e4;
+        color: black;
+    }
+    #message,
+    .disclaimer {
+        padding: 30px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+</style>
+</head>
+<body>
+    <div id="info">
+        <h1>Generic Developer Recruiter <br> Spam Message Generator.
+            <small class="subdued">(GDRSMG)</small>
+        </h1>
+        <a href="#" id="new-message">New message</a>
+    </div>
+    <h3>Sound familiar?</h3>
+    <div id="message"></div>
+    <p class="subdued disclaimer">
+        <strong>Note: </strong> I have no hard feelings against recruiters, but I find the constant barrage of emails pretty funny, particularly considering the cookie-cutter style I usually see them in, or the blatant disregard for reading profile skills or job interests.
+    </p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="recruiting.js"></script>
+</body>
+</html>
