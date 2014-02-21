@@ -20,25 +20,25 @@ var cool = (function(){
         }
     };
     var subheadings = [
-        'exciting',
-        'expansion',
-        'good vibes',
-        'free spirit',
-        'philosophy',
-        'live life',
-        'dead end',
-        'we are one',
-        'mother nature'
+    'exciting',
+    'expansion',
+    'good vibes',
+    'free spirit',
+    'philosophy',
+    'live life',
+    'dead end',
+    'we are one',
+    'mother nature'
     ];
     var phrases = [
-        'infinite love',
-        'we are sacred geometry',
-        'into the void',
-        'the mind is a tool',
-        'live to the fullest',
-        'question authority',
-        'are you feeling it?',
-        'this is not over'
+    'infinite love',
+    'we are sacred geometry',
+    'into the void',
+    'the mind is a tool',
+    'live to the fullest',
+    'question authority',
+    'are you feeling it?',
+    'this is not over'
     ];
 
     function addGroup(x, y) {
@@ -149,11 +149,7 @@ var cool = (function(){
         .append('<div class="font-name"></div>')
         .attr('data-typey-editable', '')
         .addClass('typer');
-        myTypeLibrary = fonTypey({
-            // public, limited access only for github.com/christabor
-            api_key: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w'
-        });
-        myTypeLibrary.initAllFeatures('body');
+        initGoogleFonts();
 
         // add events and position text
         text.css('margin-top', dims.height / 4);
