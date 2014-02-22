@@ -72,30 +72,30 @@ var coolArts = (function(){
         }
     }
 
-    function generate() {
+    function addAll() {
         canvas.clear();
-        globalLoader.load(load_opts);
-        setTimeout(function(){
-            canvas.backgroundColor = randomColor(255);
-            doSomethingABunch(function(){
-                var color      = randomColor(255);
-                var size       = 100;
-                var times      = 10;
-                var distorted  = rando(10) > 5 ? true : false;
-                var use_stroke = rando(10) > 5 ? randomColor(255) : false;
-                addGroup(width, height);
-                drawTriangleWave(
-                    rando(width / 2),
-                    rando(height / 2),
-                    use_stroke,
-                    color, size, times, distorted,
-                    'rgba(' + rando(255) + ', ' + rando(255) + ', ' + rando(255) + ', 0.5) 10px 10px 10px');
-                addSpirograph(400, 400, 10, randomColor(100), true);
-                addChaoticPath(2, width, height, 10);
-                globalLoader.unload(100);
-            }, 2);
-            canvas.renderAll();
-        }, 200);
+        doSomethingABunch(function(){
+            var color      = randomColor(255);
+            var size       = 100;
+            var times      = 10;
+            var distorted  = rando(10) > 5 ? true : false;
+            var use_stroke = rando(10) > 5 ? randomColor(255) : false;
+            addGroup(width, height);
+            drawTriangleWave(
+                rando(width / 2),
+                rando(height / 2),
+                use_stroke,
+                color, size, times, distorted,
+                'rgba(' + rando(255) + ', ' + rando(255) + ', ' + rando(255) + ', 0.5) 10px 10px 10px');
+            addSpirograph(400, 400, 10, randomColor(100), true);
+            addChaoticPath(2, width, height, 10);
+        }, 2);
+    }
+
+    function generate() {
+        canvas.backgroundColor = randomColor(255);
+        addAll();
+        canvas.renderAll();
     }
 
     function init() {
