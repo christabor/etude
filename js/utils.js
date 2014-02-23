@@ -11,10 +11,10 @@ var global_config = {
 var globalLoader = {
     load_speed: 200,
     load: function(opts) {
-        var loader = $('<div id="global-loader"></div>');
+        var loader = $('<div id="global-loader"><span class="text fade"></span></div>');
         loader
         .css(opts.css)
-        .text(opts.msg || 'Loading...');
+        .find('.text').text(opts.msg || 'Loading...');
 
         $('body')
         .prepend(loader)
@@ -340,6 +340,16 @@ function randomBinary(max) {
     for(var i = 0; i <= max; i++) {
         str += rando(10) > 5 ? '0' : '1';
     }
+    return str;
+}
+
+function randomAlternatingString(chars, max) {
+    // @chars: an array of values
+    // @max: number of times to run
+    var str = '';
+    doSomethingABunch(function(){
+        str += randomArrayValue(chars);
+    }, max);
     return str;
 }
 
