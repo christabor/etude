@@ -94,6 +94,18 @@ textarea {
 	position: fixed;
 	top: 0;
 	left: 0;
+	.text.fade {
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-name: fadeInOut;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-name: fadeInOut;
+		animation-duration: 1s;
+		animation-direction: alternate;
+	}
 }
 
 /* CSS3 Animations */
@@ -118,12 +130,36 @@ textarea {
 		transform: rotate(90deg);
 	}
 }
+@keyframes panBg {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 50% 50%;
+	}
+}
 @-webkit-keyframes panBg {
 	from {
 		background-position: 0 0;
 	}
 	to {
 		background-position: 50% 50%;
+	}
+}
+@keyframes fadeInOut {
+	from {
+		opacity: 0.2;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadeInOut {
+	from {
+		opacity: 0.2;
+	}
+	to {
+		opacity: 1;
 	}
 }
 
