@@ -5,6 +5,42 @@ Dependencies: utils.js, fabric.js
 
 */
 
+function randomFabricGradient(opts, max_stops) {
+    var stops        = {};
+    var stop_counter = 0;
+    doSomethingABunch(function(){
+        stops[stop_counter] = randomColor(255);
+        stop_counter += 1 * 0.1;
+    }, max_stops);
+    return {
+        x1: opts.x1 || 0,
+        y1: opts.y1 || 100,
+        x2: opts.x2 || 50,
+        y2: opts.y2 || 100,
+        colorStops: stops
+    };
+}
+
+function randomPolygonCoords(max_x, max_y) {
+    // returns a single object containing
+    // x and y coords
+    return {
+        x: rando(max_x),
+        y: rando(max_y)
+    };
+}
+
+function randomPolygon(max_iterations, x_distance, y_distance) {
+    // returns an array of objects containing
+    // points for a polygon
+    var points = [];
+    max_iterations = clamp(max_iterations, 3, 100);
+    doSomethingABunch(function(){
+        points.push(randomPolygonCoords(x_distance, y_distance));
+    }, max_iterations);
+    return points;
+}
+
 function addCircleGroup(x, y, fill, size, direction, times) {
     if(!x && !y) {
         var dims = getViewportDimensions();
@@ -234,4 +270,117 @@ function spiralRepeater(opts) {
         opts.x += opts.size / 8;
         opts.y += opts.size / 4;
     }, opts.max);
+}
+
+function addRandomColorBricks(opts) {
+    // adds an initial full-width strip,
+    // then adds smaller width strips within
+    doSomethingABunch(function(){
+        canvas.add(new fabric.Rect({
+            width: opts.width,
+            height: opts.height,
+            selectable: false,
+            opacity: opts.opacity,
+            shadow: opts.shadow || 'none',
+            fill: randomColor(255),
+            top: opts.top,
+            left: rando(width)
+        }));
+        opts.width = rando(opts.width - opts.decrease_increment);
+    }, opts.max);
+}
+
+function addFullSizeColorBricks(opts) {
+    // adds a bunch of bands uniformly,
+    // adding up to the screen height
+    doSomethingABunch(function(){
+        addRandomColorBricks(opts);
+        opts.top += opts.height;
+        opts.width = width;
+    }, opts.max_lines);
+}
+
+function addRandomPolygons(opts) {
+    doSomethingABunch(function(){
+        var points = randomPolygon(opts.poly_points, width, height);
+        var poly = new fabric.Polygon(points, {
+            selectable: false,
+            left: opts.left || rando(width),
+            top: opts.top || rando(height),
+            shadow: opts.shadow || 'none',
+            stroke: opts.outline,
+            strokeWidth: opts.thickness || 0,
+            fill: opts.no_fill ? 'none' : (opts.fill || randomColor(255))
+        });
+        if(opts.use_gradients) {
+            poly.setGradient('fill', randomFabricGradient({
+                x1: 0,
+                y1: rando(height),
+                x2: rando(width),
+                y2: rando(height)
+            }, opts.gradient_steps || 4));
+        }
+        canvas.add(poly);
+    }, opts.max);
+}
+
+function addRandomLinesBG(opts) {
+    doSomethingABunch(function(){
+        canvas.add(new fabric.Line([rando(90), 0, 0, height * 2], {
+            top: 0,
+            strokeWidth: opts.thickness,
+            selectable: false,
+            opacity: opts.opacity,
+            left: rando(width),
+            stroke: randomColor(255)
+        }));
+    }, opts.max_lines);
+}
+
+/* Typographic oriented */
+
+function addShiftedText(opts) {
+    var text = (opts.vertical ? opts.text.split('').join('\n') : opts.text);
+    opts.selectable = false;
+    opts.fontFamily = opts.fontFamily || 'Arial';
+    opts.fontSize   = opts.fontSize || 50;
+    canvas.add(new fabric.Text(text, opts));
+    opts.left = opts.left + 8;
+    opts.top = opts.top + 4;
+    opts.fill = randomColor(255, 0.7);
+    canvas.add(new fabric.Text(text, opts));
+}
+
+function addRandomAngledCharacters(opts) {
+    var increment = 100;
+    var x = rando(width);
+    var y = rando(height);
+    doSomethingABunch(function(){
+        canvas.add(new fabric.Text(randomStringLength(1), {
+            top: y,
+            left: x,
+            angle: rando(90),
+            selectable: false,
+            fontSize: opts.fontSize || 50,
+            fill: opts.color || randomColor(255),
+            fontFamily: randomArrayValue(global_config.basic_fonts)
+        }));
+        if(opts.reverse) {
+            if(opts.vertical) {
+                x -= increment;
+                y -= increment / 4;
+            } else {
+                x -= increment / 4;
+                y -= increment;
+            }
+        } else {
+            if(opts.vertical) {
+                x += increment;
+                y += increment / 4;
+            } else {
+                x += increment / 4;
+                y += increment;
+            }
+        }
+    }, opts.max)
 }
