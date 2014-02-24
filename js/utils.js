@@ -494,7 +494,7 @@ function log(msg) {
 
 function uuid() {
     // random unique identifier in the form 0000-0000-0000-0000
-    var uid = (function(){ return rando(9999); });
+    var uid = function(){ return rando(9999); };
     return [uid(), uid(), uid(), uid()].join('-');
 }
 
