@@ -5,7 +5,16 @@ var global_config = {
 
     // only works on my domain, throttled.
     GOOGLE_API_KEY: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w',
-    is_mobile: /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())
+    is_mobile: /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()),
+    basic_fonts: [
+        'Lato',
+        'Georgia',
+        'Consolas',
+        'Arial',
+        'Helvetica',
+        'Lucida',
+        'Courier New'
+    ]
 };
 
 var globalLoader = {
@@ -62,6 +71,8 @@ function successionPlugin(container, advance_speed, callback) {
     return;
 }
 
+/* UI / DOM related */
+
 function populateMenu(list, menu, el) {
     // populates a menu with an array
     // or object, into another dom element
@@ -74,6 +85,20 @@ function populateMenu(list, menu, el) {
         item.html(value);
         menu.append(item);
     });
+}
+
+function addCanvasUI(generate) {
+    // adds some common reusable
+    // elements to the DOM
+    // expects the ids to exist;
+    // expects a reference to the generating
+    // function to be passed in
+    var export_btn   = $('#export-btn');
+    var generate_btn = $('#generate-btn');
+    export_btn.on('click', function(){
+        exportCanvas(canvas);
+    });
+    generate_btn.on('click', generate);
 }
 
 function getLastOf(input) {
@@ -132,6 +157,8 @@ function initGoogleFonts() {
     myTypeLibrary.initAllFeatures('body');
     return;
 }
+
+
 
 function disableForMobile() {
     // disable all scripts
@@ -359,13 +386,21 @@ function randomStringLength(max) {
     return randomFixedString(rando(max));
 }
 
-function randomColor(max) {
+function randomColor(max, opacity) {
     // return a random color,
     // in rgba format
     if(isNaN(max)) {
         max = 255;
     }
-    return 'rgb(' + rando(max) + ',' + rando(max) + ',' + rando(max) + ')';
+    if(opacity) {
+        return ['rgba(', rando(max), ',', rando(max), ',', rando(max), ',', clamp(opacity, 0, 1), ')'].join('');
+    } else {
+        return ['rgb(', rando(max), ',', rando(max), ',', rando(max), ')'].join('');
+    }
+}
+
+function randomRGBA(max) {
+    return randomColor(max);
 }
 
 function randomColorArray(max) {
@@ -564,6 +599,10 @@ function getLocation(success, error) {
         alert('Geolocation is not supported by this browser.');
     }
     return coords;
+}
+
+function clamp(number, min, max) {
+    return Math.min(Math.max(number, min), max);
 }
 
 function show(elem) {
