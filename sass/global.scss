@@ -13,6 +13,12 @@
 		margin-left: -50%;
 	}
 }
+.absolute-center {
+	text-align: center;
+	width: 100%;
+	left: 50%;
+	margin-left: -50%;
+}
 .lead {
 	font-size: 120%;
 }
@@ -381,4 +387,30 @@ textarea {
 	font-size: 110%;
 	padding: 4px 10px 0;
 	margin: 0;
+}
+
+/* Canvas UI */
+
+#generate-btn {
+	border-radius: 0 6px 0 0;
+	left: 0;
+}
+#export-btn {
+	border-radius: 6px 0 0 0;
+	right: 0;
+}
+@media screen and (max-width: 800px) {
+	body {
+		font-size: 18px;
+	}
+	#generate-btn,
+	#export-btn {
+		border-radius: 0;
+		width: 100%;
+		padding: 10px;
+	}
+	#generate-btn {
+		top: 0;
+		bottom: auto;
+	}
 }
