@@ -102,6 +102,18 @@ function addCircleGrid(x, y, fill, size, direction, times) {
     }, times);
 }
 
+function addPath(pathdata) {
+    path = new fabric.Path(pathdata);
+    path.set({
+        opacity: 0.5,
+        fill: randomColor(255),
+        left: rando(width),
+        top: rando(height),
+        selectable: false
+    });
+    canvas.add(path);
+}
+
 function smartPath(seed, maxsize) {
     var data = [];
     data.push(randomSVGMoveTo(seed));
