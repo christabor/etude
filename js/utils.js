@@ -474,18 +474,18 @@ function randomGradientObj(max_stops) {
     return colors;
 }
 
-function bootstrapCanvas(callback, is_fabric) {
+function bootstrapCanvas(callback, is_fabric, canvas_el) {
     // a reusable function for bootstrapping
     // some common canvas inits. Also provides
     // a callback so everything is defined in order.
     window.dims        = getViewportDimensions();
     window.height      = dims.height;
     window.width       = dims.width;
-    window.canvas_elem = document.querySelector('canvas');
+    window.canvas_elem = document.querySelector(canvas_el || 'canvas');
     canvas_elem.width  = width;
     canvas_elem.height = height;
     if(is_fabric) {
-        canvas = new fabric.Canvas('canvas');
+        canvas = new fabric.Canvas(canvas_el || 'canvas');
         canvas.selection = false;
     } else {
         window.ctx = canvas_elem.getContext('2d');
