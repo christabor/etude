@@ -19,6 +19,12 @@
 	left: 50%;
 	margin-left: -50%;
 }
+.noselect {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+}
 .lead {
 	font-size: 120%;
 }
