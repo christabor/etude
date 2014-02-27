@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-26-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    #video {
+        width: 300px;
+        position: absolute;
+        right: 20px;
+        padding: 10px;
+    }
+    #info,
+    #video {
+        z-index: 999;
+        top: 20px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        position: absolute;
+    }
+    #info {
+        padding: 10px;
+        left: 20px;
+        width: 200px;
+        font-size: 12px;
+    }
+    #info ul {
+        list-style-type: square;
+        margin: 0;
+    }
+    #canvas-video {
+        display: none;
+    }
+    #headtrackerMessage {
+        font-size: 20px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div id="info"></div>
+    <video id="video" autoplay loop></video>
+    <canvas id="canvas-video"></canvas>
+    <canvas id="canvas-art" width="100%" height="100%"></canvas>
+    <script src="../js/vendor/headtrackr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+
+    <script src="typeart.js"></script>
+</body>
+</html>
