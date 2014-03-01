@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-28-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        overflow: hidden;
+        background-color: #f2e9e4;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        text-shadow: 0 1px 1px white;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+    }
+    a {
+        color: #ada6a3;
+    }
+    #controls {
+        padding: 20px;
+    }
+    #check {
+        color: white;
+        display: inline-block;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        padding: 40px;
+        font-size: 120%;
+        margin-left: -50%;
+        width: 100px;
+        background-color: #c8c1bd;
+        color: black;
+    }
+    #check:hover {
+        color: white;
+        background-color: #ada6a3;
+        text-shadow: 0 1px 1px black;
+    }
+    #game p {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+        font-size: 80px;
+        display: inline-block;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px 0;
+        background-color: white;
+        color: black;
+        width: 80%;
+    }
+    @media handheld, screen and (min-width: 400px) {
+        #controls {
+            width: 100%;
+            position: static;
+        }
+        #check {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="controls">
+        <h1>Cognitive dissonance, aka the <a href="http://en.wikipedia.org/wiki/Stroop_effect">&ldquo;Stroop Effect&rdquo;</a></h1>
+    </section>
+    <section id="game">
+        <p>None</p>
+    </section>
+    <a href="#" id="check">Generate a new one</a>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="stroop.js"></script>
+</body>
+</html>
