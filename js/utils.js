@@ -158,8 +158,6 @@ function initGoogleFonts() {
     return;
 }
 
-
-
 function disableForMobile() {
     // disable all scripts
     // before they load

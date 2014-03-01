@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 02-27-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        overflow: hidden;
+        background-color: #250027;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        font-size: 14px;
+    }
+    #video {
+        top: 40px;
+    }
+    #info,
+    #video {
+        width: 300px;
+        position: absolute;
+        padding: 10px;
+        z-index: 999;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+        right: 20px;
+        position: absolute;
+        background-color: #410044;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+    }
+    #info {
+        bottom: 40px;
+    }
+    #canvas-video {
+        display: none;
+    }
+    #headtrackerMessage {
+        font-size: 20px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p>Pull your head back and forth!</p>
+        <p id="speed">Speed: 0</p>
+    </div>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <video id="video" autoplay loop></video>
+    <canvas id="canvas-video"></canvas>
+    <canvas id="canvas-art" width="100%" height="100%"></canvas>
+    <script src="../js/vendor/headtrackr.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="facebox.js"></script>
+</body>
+</html>
