@@ -27,6 +27,7 @@
         overflow-x: hidden;
         overflow-y: scroll;
         background-color: #1c1d28;
+        text-shadow: 0 2px 2px black;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Stint Ultra Expanded', cursive;
@@ -81,7 +82,7 @@
         overflow-y: scroll;
         margin: 0;
         width: 100%;
-        background-color: #0f0f19;
+        background-color: #151523;
         padding: 20px;
         list-style-type: none;
         display: -webkit-box;
@@ -99,6 +100,10 @@
         -webkit-flex-wrap: wrap;
         -webkit-align-items: stretch;
         -webkit-align-content: stretch;
+        border-bottom: 2px solid #3f3c6a;
+    }
+    .days:nth-of-type(even) {
+        background-color: #000000;
     }
     li {
         border:1px solid #5c5f93;
@@ -135,6 +140,7 @@
     }
     .year-title {
         font-size: 60px;
+        color: #d8d6b8;
     }
     .month-title {
         color: #5c5f93;
@@ -217,7 +223,10 @@
     }
     .subdued {
         font-size: 60%;
-        opacity: 0.5;
+        opacity: 0.7;
+    }
+    .quotes {
+        font-family: serif;
     }
     @media (min-width: 1173px) {
         body {
@@ -270,8 +279,8 @@
         <h1><img src="logo.png" alt="logo"></h1>
         <p class="lead">
             <strong>&eacute;&middot;tude</strong>
-            <br><em>noun</em> <br>
-            1. a short musical composition, typically for one instrument, designed as an exercise to improve the technique or demonstrate the skill of the player.
+            &ndash; <em>noun</em> <br>
+            1. <span class="quotes">&ldquo;</span>A short musical composition, typically for one instrument, designed as an exercise to improve the technique or demonstrate the skill of the player.<span class="quotes">&rdquo;</span>
         </p>
         <p>This is a personal project of mine wherein I will create a new script/program for every day of the year. Any theme, concept or functionality, but something new, every day.</p>
         <hr>
@@ -946,6 +955,14 @@
         <li>
             <a href="02-28-2014/index.html">
                 <span class="date"><span class="day">Friday</span> <span class="day-digit">28 <sup>th</sup></span></span>
+            </a>
+        </li>
+    </ul>
+    <ul class="days">
+        <li class="month-title list-title">March</li>
+        <li>
+            <a href="03-01-2014/index.html">
+                <span class="date"><span class="day">Saturday</span> <span class="day-digit">01 <sup>st</sup></span></span>
             </a>
         </li>
     </ul>

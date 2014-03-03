@@ -396,3 +396,50 @@ function addRandomAngledCharacters(opts) {
         }
     }, opts.max)
 }
+
+/* Simple specific shapes/objects */
+
+function basicFlower(opts) {
+    var color = randomColor(255);
+    var curr_angle = 0;
+    var angle = 360 / opts.petals;
+    var group = [];
+    var items;
+    doSomethingABunch(function(){
+        group.push(new fabric.Ellipse({
+            rx: opts.radius / opts.division || 4,
+            ry: opts.radius,
+            selectable: false,
+            opacity: opts.opacity || 0.4,
+            left: opts.x,
+            top: opts.y,
+            fill: opts.stroke ? 'none' : opts.color || color,
+            strokeWidth: opts.stroke ? opts.thickness : 'none',
+            stroke: opts.stroke ? opts.color || color : 'none',
+            angle: curr_angle
+        }));
+        curr_angle += angle;
+    }, opts.petals);
+
+    // add an optional center piece
+    // with inner outer circles
+    if(opts.center) {
+        var center_opts = {
+            radius: opts.radius / 4,
+            selectable: false,
+            opacity: opts.opacity || 0.4,
+            left: opts.x,
+            top: opts.y,
+            fill: randomColor(255),
+        };
+        group.push(new fabric.Circle(center_opts));
+        center_opts.radius = opts.radius / 8;
+        group.push(new fabric.Circle(center_opts));
+    }
+    canvas.add(new fabric.Group(group, {
+        selectable: false,
+        top: opts.y,
+        left: opts.x,
+        scale: opts.radius
+    }));
+}
