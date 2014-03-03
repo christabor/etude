@@ -443,3 +443,10 @@ function basicFlower(opts) {
         scale: opts.radius
     }));
 }
+
+function complexFlower(opts) {
+    doSomethingABunch(function(){
+        basicFlower(opts);
+        opts.radius += opts.increment || 100;
+    }, opts.total);
+}
