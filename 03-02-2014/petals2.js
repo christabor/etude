@@ -21,22 +21,6 @@ var petalArt = (function(){
         });
     }
 
-    function animate() {
-        el.animate({
-            angle: angle,
-        }, {
-            onChange: canvas.renderAll.bind(canvas),
-            duration: 50,
-            easing: fabric.util.ease.easeIn,
-        });
-    }
-
-    function animateAll() {
-        $(canvas._objects).each(function(k, group){
-            animate(group, 100);
-        });
-    }
-
     function init() {
         bootstrapCanvas(null, true);
         addCanvasUI();
@@ -44,7 +28,6 @@ var petalArt = (function(){
             var amt = e.e.clientX / 10;
             generate(amt);
             angle = amt;
-            animate();
         });
     }
 
