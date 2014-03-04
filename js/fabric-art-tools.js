@@ -450,3 +450,100 @@ function complexFlower(opts) {
         opts.radius += opts.increment || 100;
     }, opts.total);
 }
+
+/*  More instructional */
+
+function addCoords(options) {
+    var line_width    = options.line_width || 1;
+    var block_size    = options.block_size;
+    var quadrants     = [];
+    var quad_width    = width / 2;
+    var quad_height   = height / 2;
+    var offset        = block_size - line_width;
+    var grid_spaces_x = width / offset;
+    var grid_spaces_y = height / offset;
+
+    // split these in half to get negative and positive values
+    var pos_count_x   = -Math.floor(grid_spaces_x / 2);
+    var pos_count_y   = Math.floor(grid_spaces_y / 2);
+    var opts          = {
+        fill: 'black',
+        selectable: false,
+        angle: 0,
+        top: height / 2,
+        left: (width / 2) + (line_width / 2),
+        width: line_width,
+        height: height
+    };
+    var quadrant_opts = {
+        width: quad_width,
+        height: quad_height,
+        selectable: false
+    };
+    var text_opts     = {
+        fontFamily: 'Lato, sans-serif',
+        selectable: false,
+        fontSize: 9,
+        fill: 'red'
+    };
+    canvas.add(new fabric.Rect(opts));
+    opts.angle = 90;
+    opts.height = width - (line_width / 2);
+    canvas.add(new fabric.Rect(opts));
+
+    // add subtle grid background
+    // add y
+    opts.top     = offset - line_width * 2;
+    opts.opacity = 0.1;
+    doSomethingABunch(function(){
+        text_opts.top = opts.top - offset;
+        text_opts.left = opts.left + 10;
+        canvas.add(new fabric.Rect(opts));
+        canvas.add(new fabric.Text(
+            String(Math.floor(pos_count_y)), text_opts));
+        opts.top += offset;
+        pos_count_y -= 1;
+    }, grid_spaces_y);
+
+    // add x
+    opts.top   = height / 2;
+    opts.left  = offset - line_width * 2;
+    opts.angle = 0;
+    doSomethingABunch(function(){
+        text_opts.top = opts.top + 10;
+        text_opts.left = opts.left - offset;
+        canvas.add(new fabric.Rect(opts));
+        canvas.add(new fabric.Text(
+            String(Math.floor(pos_count_x)), text_opts));
+        opts.left += offset;
+        pos_count_x += 1;
+    }, grid_spaces_x);
+
+    // add quadrants
+    if(options.use_quadrant) {
+        quadrant_opts.opacity = 0.2;
+        quadrant_opts.fill = opts.quadrant_color || randomColor(255);
+        quadrant_opts.top = quad_height / 2;
+        quadrant_opts.left = quad_width / 2;
+        quadrants[0] = new fabric.Rect(quadrant_opts);
+
+        quadrant_opts.top = quad_height / 2;
+        quadrant_opts.left = quad_width + quad_width / 2;
+        quadrant_opts.opacity = 0.4;
+        quadrants[1] = new fabric.Rect(quadrant_opts);
+
+        quadrant_opts.top = quad_height + quad_height / 2;
+        quadrant_opts.left = quad_width / 2;
+        quadrant_opts.opacity = 0.2;
+        quadrants[2] = new fabric.Rect(quadrant_opts);
+
+        quadrant_opts.top = quad_height + quad_height / 2;
+        quadrant_opts.left = quad_width + quad_width / 2;
+        quadrant_opts.opacity = 0.4;
+        quadrants[3] = new fabric.Rect(quadrant_opts);
+
+        for(var quadrant in quadrants) {
+            canvas.add(quadrants[quadrant]);
+        }
+    }
+}
