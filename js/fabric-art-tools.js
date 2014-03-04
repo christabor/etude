@@ -481,10 +481,10 @@ function addCoords(options) {
         selectable: false
     };
     var text_opts     = {
-        fontFamily: 'Lato, sans-serif',
+        fontFamily: opts.font_family || 'Lato, sans-serif',
         selectable: false,
-        fontSize: 9,
-        fill: 'red'
+        fontSize: opts.font_size || 9,
+        fill: opts.text_color || 'red'
     };
     canvas.add(new fabric.Rect(opts));
     opts.angle = 90;
@@ -509,6 +509,7 @@ function addCoords(options) {
     opts.top   = height / 2;
     opts.left  = offset - line_width * 2;
     opts.angle = 0;
+    opts.height = height;
     doSomethingABunch(function(){
         text_opts.top = opts.top + 10;
         text_opts.left = opts.left - offset;
