@@ -459,13 +459,18 @@ function addCoords(options) {
     var quadrants     = [];
     var quad_width    = width / 2;
     var quad_height   = height / 2;
+    var bg_opacity    = 0.1;
+    var current       = 0;
     var offset        = block_size - line_width;
-    var grid_spaces_x = width / offset;
-    var grid_spaces_y = height / offset;
+    var grid_spaces_x = Math.floor(width / offset);
+    var grid_spaces_y = Math.floor(height / offset);
+    var midway_x      = Math.floor(grid_spaces_x / 2);
+    var midway_y      = Math.floor(grid_spaces_y / 2);
 
-    // split these in half to get negative and positive values
-    var pos_count_x   = -Math.floor(grid_spaces_x / 2);
-    var pos_count_y   = Math.floor(grid_spaces_y / 2);
+    // split these in half to get
+    // negative and positive values to loop over
+    var pos_count_x   = -grid_spaces_x / 2;
+    var pos_count_y   = grid_spaces_y / 2;
     var opts          = {
         fill: 'black',
         selectable: false,
@@ -486,37 +491,47 @@ function addCoords(options) {
         fontSize: opts.font_size || 9,
         fill: opts.text_color || 'red'
     };
-    canvas.add(new fabric.Rect(opts));
     opts.angle = 90;
     opts.height = width - (line_width / 2);
-    canvas.add(new fabric.Rect(opts));
 
     // add subtle grid background
     // add y
-    opts.top     = offset - line_width * 2;
-    opts.opacity = 0.1;
+    opts.top     = offset;
+    opts.opacity = bg_opacity;
     doSomethingABunch(function(){
-        text_opts.top = opts.top - offset;
-        text_opts.left = opts.left + 10;
+        text_opts.top = opts.top;
+        text_opts.left = (width / 2) + (offset / 2);
+        opts.opacity = current === midway_y ? 1 : bg_opacity;
         canvas.add(new fabric.Rect(opts));
-        canvas.add(new fabric.Text(
-            String(Math.floor(pos_count_y)), text_opts));
+        if(pos_count_y !== 0) {
+            canvas.add(new fabric.Text(
+                String(Math.floor(pos_count_y)), text_opts));
+        }
         opts.top += offset;
+        current += 1;
         pos_count_y -= 1;
     }, grid_spaces_y);
 
     // add x
+    current = 0;
     opts.top   = height / 2;
     opts.left  = offset - line_width * 2;
     opts.angle = 0;
     opts.height = height;
+    text_opts.left = 0;
     doSomethingABunch(function(){
-        text_opts.top = opts.top + 10;
-        text_opts.left = opts.left - offset;
+        text_opts.top = (height / 2) + (offset / 2);
+        text_opts.left += offset;
+        // slight tweak to offset by 1
+        // for the lack of a 0 on y-axis
+        if(current !== 0) {
+            canvas.add(new fabric.Text(
+                String(Math.floor(pos_count_x)), text_opts));
+        }
+        opts.opacity = current === midway_x ? 1 : bg_opacity;
         canvas.add(new fabric.Rect(opts));
-        canvas.add(new fabric.Text(
-            String(Math.floor(pos_count_x)), text_opts));
         opts.left += offset;
+        current += 1;
         pos_count_x += 1;
     }, grid_spaces_x);
 
