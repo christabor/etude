@@ -10,8 +10,12 @@ var global_config = {
         'Lato',
         'Georgia',
         'Consolas',
+        'Verdana',
+        'Tahoma',
         'Arial',
         'Helvetica',
+        'Lucida Sans',
+        'Lucida Console',
         'Lucida',
         'Courier New'
     ]
