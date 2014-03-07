@@ -85,21 +85,6 @@
         background-color: #151523;
         padding: 20px;
         list-style-type: none;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        flex: 1;
-        flex-start: stretch;
-        flex-wrap: wrap;
-        align-items: stretch;
-        align-content: stretch;
-        -webkit-flex: 1;
-        -webkit-flex-start: stretch;
-        -webkit-flex-wrap: wrap;
-        -webkit-align-items: stretch;
-        -webkit-align-content: stretch;
         border-bottom: 2px solid #3f3c6a;
     }
     .days:nth-of-type(even) {
@@ -111,14 +96,12 @@
         list-style-type: none;
         color: #fff;
         text-decoration: none;
-        margin-top: 10px;
+        margin: 0.4em 0.5%;
         height: auto;
-        margin-right: 10px;
         border-radius: 5px;
         text-align: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        min-width: 32%;
+        min-width: 24%;
+        float: left;
         position: relative;
     }
     li a {
@@ -127,8 +110,6 @@
     .list-title {
         border:none;
         display: block;
-        -webkit-flex-basis: 100%;
-        flex-basis: 100%;
         text-align: center;
         height: auto;
         margin: 20px 0;
@@ -145,6 +126,8 @@
     .month-title {
         color: #5c5f93;
         opacity: 0.6;
+        clear: both;
+        width: 100%;
         text-transform: uppercase;
     }
     .month-title:before,
