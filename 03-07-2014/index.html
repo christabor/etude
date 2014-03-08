@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-07-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 30px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .btn {
+        position: absolute;
+        background-color: #f1f1f1;
+        color: #222;
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+        border-bottom: none;
+        width: 300px;
+        bottom: 0;
+        z-index: 999;
+    }
+    .btn:hover {
+        background-color: #111;
+        color: white;
+        border-top-color: #333;
+    }
+    #test-content {
+        position: absolute;
+        z-index: 999;
+        top: 100px;
+        left: 50%;
+        width: 80%;
+        padding: 40px;
+        border: 10px solid black;
+        margin-left: -40%;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        line-height: 2em;
+        display: inline-block;
+    }
+    a {
+        border-radius: 4px;
+        display: inline-block;
+        background-color: #444;
+        padding: 10px 20px;
+        color: white;
+        border-bottom: 2px solid black;
+    }
+    a:hover {
+        color: black;
+        text-shadow: 0 1px 2px white;
+    }
+    #canvas {
+        opacity: 0.8;
+    }
+    #home {
+        background-color: #e5bd10;
+    }
+    #contact {
+        background-color: #60be78;
+    }
+    #about {
+        background-color: #ad48a0;
+    }
+    </style>
+</head>
+<body>
+    <section id="test-content">
+        <h1>Welcome to my &ldquo;site&rdquo;</h1>
+        <p>This is an experimental background and site combination. Mouse over links to see more! <strong>Note: the links are fake, meant only as a demonstration.</strong></p>
+        <ul>
+            <li><a href="#" id="home" data-color="#e5bd10">Home</a></li>
+            <li><a href="#" id="contact" data-color="#60be78">Contact</a></li>
+            <li><a href="#" id="about" data-color="#890e82">About</a></li>
+        </ul>
+    </section>
+    <a href="#" class="btn" id="export-btn">Export image</a>
+    <a href="#" class="btn" id="generate-btn">Generate again</a>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/tinycolor-min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+    <script src="polyanim.js"></script>
+</body>
+</html>
