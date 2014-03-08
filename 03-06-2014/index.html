@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-06-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .btn {
+        position: absolute;
+        background-color: #f1f1f1;
+        color: #222;
+        text-align: center;
+        padding: 25px 10px;
+        box-shadow: 0 0 4px #111;
+        border-top: 2px solid #ccc;
+        text-decoration: none;
+        border-bottom: none;
+        width: 300px;
+        bottom: 0;
+        z-index: 999;
+    }
+    .btn:hover {
+        background-color: #111;
+        color: white;
+        border-top-color: #333;
+    }
+    </style>
+</head>
+<body>
+    <a href="#" class="btn" id="export-btn">Export image</a>
+    <a href="#" class="btn" id="generate-btn">Generate again</a>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/tinycolor-min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+    <script src="coords.js"></script>
+</body>
+</html>

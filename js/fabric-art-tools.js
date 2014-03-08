@@ -349,6 +349,39 @@ function addRandomLinesBG(opts) {
     }, opts.max_lines);
 }
 
+function zigZag(opts) {
+    var poly;
+    var points       = [];
+    var increment    = opts.increment || 4;
+    var x            = 0;
+    var y            = increment;
+    var first_state  = true;
+    var prev_largest = 0
+    var counter      = 0;
+    var max          = opts.max || 100;
+    doSomethingABunch(function(){
+        var update = increment * counter;
+        // push points into array
+        // but alternate the sizes
+        // between x and y so it will zigzag
+        points.push({
+            x: x,
+            y: y
+        });
+        first_state ? (x += update) : (y += update);
+        first_state = !first_state;
+        counter += 1;
+    }, max);
+    poly = new fabric.Polyline(points, {
+        left: opts.left || rando(width),
+        top: opts.top || rando(height),
+        selectable: false,
+        opacity: opts.opacity || 0,
+        fill: opts.fill || randomColor(255)
+    });
+    return poly;
+}
+
 /* Typographic oriented */
 
 function addShiftedText(opts) {
@@ -469,8 +502,8 @@ function addCoords(options) {
 
     // split these in half to get
     // negative and positive values to loop over
-    var pos_count_x   = -grid_spaces_x / 2;
-    var pos_count_y   = grid_spaces_y / 2;
+    var pos_count_x   = -Math.floor(grid_spaces_x / 2);
+    var pos_count_y   = Math.floor(grid_spaces_y / 2);
     var opts          = {
         fill: 'black',
         selectable: false,
