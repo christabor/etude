@@ -253,14 +253,14 @@ function spiralRepeater(opts) {
         var pathdata;
         var path;
         var args  = {
-            width: opts.size,
-            height: opts.size / (opts.stretch || 1),
-            opacity : 0.8,
+            width: opts.size || rando(width),
+            height: (opts.size || rando(width)) / (opts.stretch || 1),
+            opacity: opts.opacity || 0.8,
             stroke: opts.stroke || 'rgba(0,0,0,1)',
             selectable: false,
-            strokeWidth: opts.thickness || 1,
-            angle: angle,
-            fill: randomColor(255),
+            strokeWidth: opts.thickness || 0,
+            angle: opts.angle || angle,
+            fill: opts.fill || randomColor(255),
             top: opts.y,
             left: opts.x
         };
@@ -292,10 +292,10 @@ function addRandomColorBricks(opts) {
             width: opts.width,
             height: opts.height,
             selectable: false,
-            opacity: opts.opacity,
+            opacity: opts.opacity || 1,
             shadow: opts.shadow || 'none',
             fill: randomColor(255),
-            top: opts.top,
+            top: opts.top || 0,
             left: rando(width)
         }));
         opts.width = rando(opts.width - opts.decrease_increment);
@@ -359,16 +359,32 @@ function zigZag(opts) {
     var prev_largest = 0
     var counter      = 0;
     var max          = opts.max || 100;
+    var xfunc        = opts.xfunc || null;
+    var yfunc        = opts.yfunc || null;
     doSomethingABunch(function(){
         var update = increment * counter;
         // push points into array
         // but alternate the sizes
         // between x and y so it will zigzag
+        // also allow any arbitrary x/y
+        // transformation function to be passed in
         points.push({
             x: x,
             y: y
         });
-        first_state ? (x += update) : (y += update);
+        if(first_state) {
+            if(opts.xfunc) {
+                x += opts.xfunc(x);
+            } else {
+                x += update;
+            }
+        } else {
+            if(opts.yfunc) {
+                x += opts.yfunc(y);
+            } else {
+                y += update;
+            }
+        }
         first_state = !first_state;
         counter += 1;
     }, max);
