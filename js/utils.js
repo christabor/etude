@@ -7,41 +7,41 @@ var global_config = {
     GOOGLE_API_KEY: 'AIzaSyAM4K04yxd6F2-M6w8rEm4p97PMN6y2r0w',
     is_mobile: /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()),
     basic_fonts: [
-        'Lato',
-        'Georgia',
-        'Consolas',
-        'Verdana',
-        'Tahoma',
-        'Arial',
-        'Helvetica',
-        'Lucida Sans',
-        'Lucida Console',
-        'Lucida',
-        'Big Caslon',
-        'Book Antiqua',
-        'Palatino Linotype',
-        'Bodoni MT',
-        'Didot',
-        'Didot LT STD',
-        'Hoefler Text',
-        'Garamond',
-        'Calisto MT',
-        'Bookman Old Style',
-        'Bookman',
-        'Goudy Old Style',
-        'Bitstream Charter',
-        'Optima',
-        'Segoe',
-        'Candara',
-        'Geneva',
-        'Futura',
-        'Trebuchet MS',
-        'Franklin Gothic Medium',
-        'ITC Franklin Gothic',
-        'Gill Sans',
-        'Calibri',
-        'Baskerville old face',
-        'Courier New'
+    'Lato',
+    'Georgia',
+    'Consolas',
+    'Verdana',
+    'Tahoma',
+    'Arial',
+    'Helvetica',
+    'Lucida Sans',
+    'Lucida Console',
+    'Lucida',
+    'Big Caslon',
+    'Book Antiqua',
+    'Palatino Linotype',
+    'Bodoni MT',
+    'Didot',
+    'Didot LT STD',
+    'Hoefler Text',
+    'Garamond',
+    'Calisto MT',
+    'Bookman Old Style',
+    'Bookman',
+    'Goudy Old Style',
+    'Bitstream Charter',
+    'Optima',
+    'Segoe',
+    'Candara',
+    'Geneva',
+    'Futura',
+    'Trebuchet MS',
+    'Franklin Gothic Medium',
+    'ITC Franklin Gothic',
+    'Gill Sans',
+    'Calibri',
+    'Baskerville old face',
+    'Courier New'
     ]
 };
 
@@ -57,15 +57,15 @@ var globalLoader = {
         .prepend(loader)
         .hide()
         .fadeIn(globalLoader.load_speed);
-        return;
     },
-    unload: function() {
-        $('body')
-        .find('#global-loader')
-        .fadeOut(globalLoader.load_speed, function(){
-            $(this).remove();
-        });
-        return;
+    unload: function(opts) {
+        setTimeout(function(){
+            $('body')
+            .find('#global-loader')
+            .fadeOut(globalLoader.load_speed, function(){
+                $(this).remove();
+            });
+        }, opts.delay || 0);
     }
 };
 
@@ -116,17 +116,29 @@ function populateMenu(list, menu, el) {
 }
 
 function addCanvasUI(generate) {
+    var export_btn;
+    var generate_btn;
     // adds some common reusable
     // elements to the DOM
     // expects the ids to exist;
     // expects a reference to the generating
     // function to be passed in
-    var export_btn   = $('#export-btn');
-    var generate_btn = $('#generate-btn');
-    export_btn.on('click', function(){
-        exportCanvas(canvas);
-    });
-    generate_btn.on('click', generate);
+    try {
+        export_btn   = $('#export-btn');
+        generate_btn = $('#generate-btn');
+        export_btn.on('click', function(){
+            exportCanvas(canvas);
+        });
+        generate_btn.on('click', generate);
+    } catch(e) {
+        // ReferenceError
+        export_btn   = document.getElementById('export-btn');
+        generate_btn = document.getElementById('generate-btn');
+        export_btn.addEventListener('click', function(){
+            exportCanvas(canvas);
+        });
+        generate_btn.addEventListener('click', generate);
+    }
 }
 
 function getLastOf(input) {
@@ -519,6 +531,13 @@ function bootstrapCanvas(callback, is_fabric, canvas_el) {
     if(callback) {
         callback();
     }
+}
+
+function setCanvasSize(canvas, factor) {
+    // sets canvas based on existing
+    // width or height attributes
+    canvas.height = height * factor;
+    canvas.width  = width * factor;
 }
 
 function clearCanvas() {
