@@ -26,14 +26,6 @@ var anim = (function(){
             fill: randomArrayValue(complements).toHexString()
         });
         animate(zigzag, 400);
-        doSomethingABunch(function(){
-            canvas.add(new fabric.Circle({
-                radius: radius,
-                left: width / 2,
-                top: height / 2,
-                fill: randomArrayValue(complements).toHexString()
-            }));
-        });
         canvas.add(zigzag);
     }
 
