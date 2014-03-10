@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-05-2014</title>
+    <link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link rel='stylesheet' href='../css/global.css' >
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        font-family: 'Lato', Arial, "Helvetica Neue", Helvetica, sans-serif;
+        text-align: center;
+    }
+    #info {
+        background-color: #f1f1f1;
+        color: black;
+        padding: 30px;
+        margin: 10px;
+        font-size: 90%;
+    }
+    #info h4 {
+        text-transform: capitalize;
+        font-size: 18px;
+        margin: 10px 0 0 0 ;
+    }
+    #info p {
+        text-align: center;
+    }
+    a {
+        margin: 1px;
+        color: #999;
+    }
+    a:hover {
+        color: #444;
+    }
+    #generate {
+        padding: 4px 8px;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 4px;
+        border:1px solid rgba(0, 0, 0, 0.4);
+        background-color: white;
+    }
+    #generate:hover {
+        background-color: #222;
+        color: white;
+    }
+    p {
+        line-height: 2em;
+        margin-bottom: 0.5em;
+    }
+    p,
+    ul {
+        text-align: left;
+    }
+    ul {
+        list-style-type: square;
+        font-size: 90%;
+    }
+    li {
+        line-height: 2.3em;
+        margin-left: 2em;
+    }
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 1em;
+        font-size: 200%;
+    }
+    .color-scheme {
+        background-color: white;
+        padding: 2px;
+        margin: 4px 0;
+        display: block;
+    }
+    .color {
+        border:1px solid #ccc;
+        padding: 10px;
+        height: 10px;
+        width: 10px;
+        display: inline-block;
+        margin: 10px 4px;
+    }
+    .color:hover {
+        cursor: pointer;
+    }
+    .btn {
+        padding: 10px;
+        border:2px solid #444;
+        margin: 2em 0.4em;
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 10px;
+        opacity: 0.7;
+    }
+    .btn:hover {
+        opacity: 1;
+        border-color: black;
+    }
+    #swatches {
+        margin: 20px 0;
+    }
+    #layout-gen {
+        border:4px solid white;
+    }
+    #layout-gen.active {
+        border-color: #da6f33;
+    }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <section id="info">
+                    <p>A random color scheme generator, with complementary FG/BG combos. <strong>Drag</strong> colors to apply them to in a cycle container. Complements will be generated automatically.
+                    </p>
+                    <a href="#" id="generate">Generate new scheme</a>
+                    <div id="swatches"></div>
+                </section>
+            </div>
+            <div class="col-md-9">
+              <div class="row" id="layout-gen">
+                <div class="col-md-12">
+                    <h2>
+                        Candy canes pudding pie muffin.
+                    </h2>
+                    <p>
+                        Marzipan oat cake cheesecake jelly beans unerdwear.com sesame snaps. Applicake tiramisu toffee bonbon tart. Liquorice jelly cupcake chocolate cake. Chocolate bar ice cream tiramisu marshmallow pie chocolate cake brownie jelly powder. Unerdwear.com topping wafer. Brownie tootsie roll unerdwear.com powder caramels sugar plum tootsie roll. Danish tiramisu jelly beans carrot cake bonbon lemon drops jelly-o applicake.
+                    </p>
+                    <p>
+                        Gummi bears muffin cheesecake pastry halvah sesame snaps. Apple pie lemon drops cookie fruitcake. Chocolate bar bonbon muffin pudding chocolate bar fruitcake jelly-o carrot cake. Fruitcake chocolate dessert marshmallow wafer carrot cake sweet. Carrot cake applicake biscuit. Jelly sesame snaps gummies liquorice. Carrot cake macaroon bonbon liquorice dessert sesame snaps pastry candy marshmallow. Oat cake danish pudding.
+                    </p>
+                    <a href="#" class="btn">
+                        Facepalm aww yeah.
+                    </a>
+                    <a href="#" class="btn">
+                        Derpina russia female.
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            Cotton candy unerdwear.com cupcake jujubes
+                        </li>
+                        <li>Sweet roll pie. Sweet roll jelly-o macaroon</li>
+                        <li>Toffee tart halvah jelly beans sugar plum fruitcake</li>
+                        <li>
+                            Lollipop bonbon muffin jujubes powder toffee jujubes
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            Chocolate bar bonbon muffin pudding chocolate bar fruitcake
+                        </li>
+                        <li>
+                            Chocolate cake powder lollipop oat cake donut candy canes sugar plum marzipan.
+                        </li>
+                        <li>
+                            Gummies jelly-o croissant muffin. Chupa chups chocolate macaroon gingerbread.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/vendor/jquery-ui.min.js"></script>
+<script src="../js/vendor/tinycolor-min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="dropcolors.js"></script>
+</body>
+</html>
