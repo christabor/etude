@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>{{ job.title }}</h3>
+			<ol class="breadcrumb">
+				<li>
+					<a href="#/">Home</a>
+				</li>
+				<li>
+					<a href="#/careers">Careers</a>
+				</li>
+				<li class="active">{{ job.title }}</li>
+			</ol>
+		</div>
+		<div class="col-md-8">
+			<p>{{ job.desc }}</p>
+			<a href="#" class="btn btn-primary">Click here to apply.</a>
+		</div>
+		<div class="col-md-4">
+			<p>
+				<strong>Location</strong>
+				{{ job.location }}
+				<br>
+				Keywords:
+				<span ng-repeat="keyword in job.keywords">
+					<span class="badge">{{ keyword }}</span>
+				</span>
+			</p>
+			<hr>
+			<p>Learn more about Chemporium. <a href="#">Learn</a></p>
+		</div>
+	</div>
+</div>

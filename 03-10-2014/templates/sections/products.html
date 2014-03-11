@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Products</h3>
+			<ol class="breadcrumb">
+				<li>
+					<a href="#/">Home</a>
+				</li>
+				<li class="active">Products</li>
+			</ol>
+		</div>
+		<div class="col-md-3">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<p><strong>Filter products by:</strong></p>
+				</li>
+				<li class="list-group-item">
+					<input id="filter" class="form-control" placeholder="keywords..." ng-model="search.$">
+				</li>
+				<li class="list-group-item">
+					Order by:
+					<select ng-model="orderProp">
+						<option value="" selected>----</option>
+						<option value="sale">On sale?</option>
+						<option value="title">Alphabetical</option>
+						<option value="price">Price</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<div ng-repeat="product in products | filter:search.sale |filter:search.$ | orderBy:orderProp">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						{{ product.title }}
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-2 centered">
+								<h4><sub>$</sub><strong>{{ product.price }}</strong></h4>
+								<a href="#/products/{{ product.id }}" class="btn btn-primary">View details</a>
+							</div>
+							<div class="col-md-10">
+								<p>{{ product.desc }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

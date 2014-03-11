@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="ChemApp">
+<head>
+    <meta charset="utf-8">
+    <title>Chemporium - Tomorrow&rsquo;s solutions, today!</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Enriqueta:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/nprogress.css">
+    <link rel="stylesheet" href="../css/vendor/typeplate.css">
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+    <section data-ng:include src="'templates/partials/header.html'"></section>
+    <section role="main" data-ng-view="main-content">
+        <div>Version: <span app-version></span></div>
+    </section>
+    <section data-ng:include src="'templates/partials/footer.html'"></section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../js/vendor/nprogress.js"></script>
+    <script src="../js/vendor/angular.min.js"></script>
+    <script src="../js/vendor/angular-route.min.js"></script>
+    <script src="js/app/ui-tools.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/services.js"></script>
+    <script src="js/app/controllers.js"></script>
+    <script src="js/app/filters.js"></script>
+    <script src="js/app/directives.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Careers</h3>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+                <li class="active">Careers</li>
+            </ol>
+        </div>
+        <div class="col-md-8">
+            <div ng-repeat="job in jobs">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ job.title }}</div>
+                    <div class="panel-body">
+                        <p><strong>Description: </strong><br>
+                            {{ job.desc }}
+                        </p>
+                        <a href="#/careers/{{ job.id }}" class="btn btn-primary">View job &rarr;</a>
+                        <hr>
+                        <p>
+                            <strong>Location</strong>
+                            {{ job.location }}
+                            <br>
+                            Keywords:
+                            <span ng-repeat="keyword in job.keywords">
+                                <span class="badge">{{ keyword }}</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <strong>Our cutting edge lab </strong>
+                is located in the brisk, icy winds of Antarctica.
+            </p>
+            <img class="thumbnail" src="http://maps.googleapis.com/maps/api/staticmap?center=-79.9557284,6.0644594&amp;zoom=1&amp;size=300x900&amp;sensor=false">
+        </div>
+    </div>
+</div>

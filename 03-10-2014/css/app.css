@@ -1,0 +1,147 @@
+body {
+	font-family: 'Lato', sans-serif;
+	background: #eee url(../../img/tiny_grid.png);
+}
+.block {
+	padding: 50px;
+}
+.block h1,
+.block h2,
+.block h3,
+.block h4,
+.block h5,
+.block h6
+.block .btn.centered {
+	text-align: center;
+}
+.centered {
+	text-align: center;
+}
+h4 .btn {
+	font-size: 110%;
+}
+.centered img {
+	margin: 0 auto;
+	display: block;
+}
+.badge {
+	border-radius: 3px;
+}
+.block h1,
+.block h2 {
+	color: #555;
+}
+.block:first-of-type {
+	margin-top: -30px;
+}
+.block:nth-of-type(odd) h1,
+.block:nth-of-type(odd) h2 {
+	color: #e9e05b;
+}
+.block:nth-of-type(odd) {
+	background: #333 url(../../img/escheresque_ste.png);
+	color: white;
+}
+.block:nth-of-type(odd) h3,
+.block:nth-of-type(odd) h4 {
+	color: #e9e2aa;
+}
+input {
+	width: 100%;
+}
+.lead {
+	font-size: 130%;
+	line-height: 2.2em;
+}
+.subdued {
+	font-size: 90%;
+	opacity: 0.7;
+}
+.breadcrumb {
+	padding: 4px 10px;
+	font-size: 90%;
+	opacity: 0.6;
+	background-color: white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.breadcrumb:hover {
+	opacity: 1;
+}
+a {
+	color: #9951A0;
+}
+a:hover {
+	color: #6f3b74;
+}
+.btn-primary {
+	background-color: #9951A0;
+	border-color: #9951A0;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+	background-color: #6f3b74;
+	border-color: #6f3b74;
+}
+p {
+	line-height: 2em;
+}
+ul,
+li {
+	list-style-type: square;
+	line-height: 2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Enriqueta', serif;
+}
+#header-container {
+	background-color: #333;
+	border-bottom: 4px solid #444;
+	color: white;
+	margin-bottom: 30px;
+}
+#header-container .nav #logo {
+	padding: 0;
+}
+#header-container .nav li {
+	padding: 20px 20px 0 20px;
+}
+#header-container a {
+	display: inline-block;
+	color: white;
+}
+#filter {
+	width: 100%;
+}
+#nprogress .spinner-icon {
+	border-top-color: #e9e05b;
+	border-left-color: #e9e05b;
+}
+#nprogress .bar {
+	background-color: #e9e05b;
+	height: 5px;
+}
+#home {
+	background: #222 url(../img/header-bg.png);
+}
+@media handheld, screen and (max-width: 400px) {
+	#header-container .nav li {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		border-bottom: 1px dotted #111;
+		margin: 10px 0;
+	}
+	#header-container .nav li:last-of-type {
+		border: none;
+	}
+	.block {
+		padding: 5px;
+	}
+}
