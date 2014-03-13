@@ -44,3 +44,4 @@ compass
 /tmp
 /node_modules
 /generators
+/remote-libs
