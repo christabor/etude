@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-13-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #312f2f;
+        color: black;
+        color: white;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 0;
+    }
+    #main {
+        padding: 20px 10px;
+        background-color: #757070;
+    }
+    #form {
+        padding: 10px;
+    }
+    h1 {
+        color: #ffab11;
+    }
+    input,
+    label,
+    button,
+    textarea {
+        display: block;
+        text-align: center;
+        margin: 0 auto 5px auto;
+        padding: 8px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+    }
+    button {
+        margin-top: 30px;
+        padding: 20px;
+    }
+    button {
+        background-color: #ffab11;
+        border-bottom: 4px solid #b97313;
+        color: white;
+        font-size: 16px;
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: #ee9419;
+    }
+    a {
+        color: #d98818;
+    }
+    a:hover {
+        color: black;
+    }
+    #words,
+    code {
+        display: inline-block;
+        margin: 5px;
+        background-color: #444;
+        opacity: 0.9;
+        padding: 0;
+        padding: 20px;
+        border-radius: 10px;
+        border-top: 2px solid #666;
+        border-bottom: 4px solid #222;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        input,
+        label,
+        button,
+        #words {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section id="main" class="col-md-6">
+                <h1>Sublime snippet generator!</h1>
+                <code>
+                    // format: <br>
+                    &lt;snippet&gt; <br>
+                    &lt;content&gt;&lt;![CDATA[Some code snippet:${1:1.10.2}]]&gt;&lt;/content&gt; <br>
+                    &lt;tabTrigger&gt;pdb&lt;/tabTrigger&gt; <br>
+                    &lt;scope>source.extension&lt;/scope&gt; <br>
+                    &lt;description>My Snippet Description&lt;/description&gt; <br>
+                    &lt;/snippet&gt;
+                </code>
+                <form id="form" role="form">
+                    <label for="content">Content to add</label>
+                    <textarea type="text" name="content" id="content" cols="10" rows="4">add(2, 3);</textarea>
+                    <label for="tabTrigger">tabTrigger</label>
+                    <input type="text" id="tabTrigger" name="tabTrigger" placeholder="add2">
+                    <label for="scope">Scope (type of documents)</label>
+                    <input type="text" id="scope" name="scope" placeholder="source.js">
+                    <label for="description">Description</label>
+                    <textarea type="text" id="description" name="description" cols="10" rows="4">My ridiculous function</textarea>
+                    <button class="btn">Generate snippet!</button>
+                </form>
+            </section>
+            <section id="results" class="col-md-6">
+                <h4>Your new snippet:</h4>
+                <section id="words">
+                    ...
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="snippet.js"></script>
+</body>
+</html>

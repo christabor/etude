@@ -28,6 +28,7 @@ function init() {
     });
 
     form.on('submit', function(e) {
+        container.empty();
         e.preventDefault();
         var words;
         var word;
