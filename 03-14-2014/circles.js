@@ -4,7 +4,6 @@ var circle = (function(){
     var width          = dims.width;
     var canvas_elem    = document.querySelector('canvas');
     var info           = document.getElementById('info');
-    var color          = randomColor(100);
 
     function generate(left, top, x, y) {
         canvas.add(new fabric.Ellipse({
@@ -14,8 +13,8 @@ var circle = (function(){
             left: left,
             top: top,
             fill: 'none',
-            strokeWidth: 1,
-            stroke: color,
+            strokeWidth: 2,
+            stroke: randomColor(255),
         }));
     }
 
