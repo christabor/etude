@@ -134,10 +134,14 @@ function addCanvasUI(generate) {
         // ReferenceError
         export_btn   = document.getElementById('export-btn');
         generate_btn = document.getElementById('generate-btn');
-        export_btn.addEventListener('click', function(){
-            exportCanvas(canvas);
-        });
-        generate_btn.addEventListener('click', generate);
+        if(export_btn) {
+            export_btn.addEventListener('click', function(){
+                exportCanvas(canvas);
+            });
+        }
+        if (generate_btn) {
+            generate_btn.addEventListener('click', generate);
+        }
     }
 }
 
