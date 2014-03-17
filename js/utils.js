@@ -101,15 +101,18 @@ function successionPlugin(container, advance_speed, callback) {
 
 /* UI / DOM related */
 
-function populateMenu(list, menu, el) {
+function populateMenu(list, menu, el, use_both) {
     // populates a menu with an array
     // or object, into another dom element
     // also allows you to pass in an el,
     // so it can be used for anything,
     // e.g. <li> or <select> or <p>.
+    // @use_both: Boolean - allows both
+    // k and v to be added with a colon
     $.each(list, function(k, v) {
         var value = ($.isArray(list) ? v : k);
         var item = $(el);
+        value = use_both ? (list[k] + ' ' + value) : value;
         item.html(value);
         menu.append(item);
     });
@@ -229,6 +232,25 @@ function hasJS() {
 
 function randomArrayValue(arr) {
     return arr[getKey(arr)];
+}
+
+function randomObjValue(obj) {
+    if(!Object.keys) return;
+
+    // get the random "key" as integer
+    var counter = 0;
+    var rand    = rando(Object.keys(obj).length);
+    var el      = {};
+    $.each(obj, function(k, v){
+        // see if the current key
+        // matches the random integer
+        if(counter === rand) {
+            el[k] = v;
+        }
+        counter += 1;
+    });
+    if(!el) return obj;
+    return el;
 }
 
 function getKey(arr) {
