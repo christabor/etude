@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-15-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: 'Cardo', serif;
+    }
+    body {
+        font-size: 30px;
+        padding: 0;
+        background-color: #ebc0a3;
+        color: #68472e;
+        text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
+        text-align: center;
+        margin: 0;
+    }
+    section {
+        padding: 20px;
+    }
+    ul {
+        padding: 0;
+        font-size: 14px;
+        margin: 0 auto;
+        display: inline-block;
+        list-style-type: none;
+    }
+    li {
+        line-height: 2.2em;
+    }
+    p.subdued {
+        margin-top: 50px;
+    }
+    p.subdued,
+    p.subdued a {
+        font-size: 14px;
+    }
+    .generated {
+        font-family: 'Cardo', serif;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 5px 15px;
+        margin: 4px auto;
+        color: #3950a2;
+        font-weight: bold;
+        text-transform: capitalize;
+        width: auto;
+        display: inline-block;
+    }
+    #btn,
+    #maxcount {
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 20px;
+    }
+    #maxcount {
+        max-width: 80px;
+    }
+    #btn {
+        background-color: #3950a2;
+        border-bottom: 4px solid #233267;
+        color: white;
+        text-decoration: none;
+    }
+    #btn:hover {
+        cursor: pointer;
+        background-color: #4f70e7;
+    }
+    a {
+        color: #3950a2;
+    }
+    a:hover {
+        color: white;
+    }
+    .line {
+        text-decoration: line-through;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            font-size: 20px;
+            padding: 5px;
+        }
+        #maxcount,
+        #btn {
+            max-width: 100%;
+            margin: 1em 0;
+            width: 100%;
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="words">
+        <h2>Slogan
+            <span class="line">maker</span> masher
+        </h2>
+        <p>Max iterations:
+            <input id="maxcount" type="number" min="2" max="20" value="5">
+            <a href="#" id="btn">Generate again!</a>
+        </p>
+        <span class="generated"></span>
+    </section>
+    <section id="all-slogans">
+        <h4>All slogans</h4>
+        <ul></ul>
+    </section>
+    <p class="subdued">Slogans' source: <a href="http://www.advergize.com/advertising/40-best-advertising-slogans-modern-brands/">Advergize</a></p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="slogan.js"></script>
+</body>
+</html>
