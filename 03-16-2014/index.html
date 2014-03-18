@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-16-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        color: black;
+        font-size: 18px;
+        font-family: 'Homenaje', sans-serif;
+    }
+    #controls {
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        z-index: 9999;
+        width: 200px;
+        left: 0;
+        height: 100%;
+        box-shadow: 0 0 10px #ccc;
+        overflow-y: scroll;
+    }
+    #svg {
+        clear: left;
+    }
+    a {
+        padding: 4px 8px;
+        margin: 4px;
+        border-radius: 4px;
+        background-color: #444;
+        color: white;
+        display: block;
+        text-align: center;
+        border-bottom: 4px solid #ccc;
+    }
+    a:hover {
+        border-color: #ff7c13;
+        background-color: orange;
+    }
+    .control-group {
+        display: inline-block;
+        width: auto;
+        padding: 0 10px;
+        float: left;
+    }
+    input {
+        margin: 0.4em 0;
+        width: 100%;
+    }
+    label {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div id="sliders">
+            <div class="control-group">
+                <label for="angle">Angle</label>
+                <input type="range" id="angle" min="-360" max="360" value="180">
+            </div>
+            <div class="control-group">
+                <label for="opacity">Opacity</label>
+                <input type="range" id="opacity" min="0" max="100" value="100">
+            </div>
+        </div>
+        <div id="svg">
+            <p>Add some robot heads!</p>
+            <a href="svg/head-0.svg">Head 0</a>
+            <a href="svg/head-1.svg">Head 1</a>
+            <a href="svg/head-2.svg">Head 2</a>
+            <a href="svg/head-3.svg">Head 3</a>
+            <a href="svg/head-4.svg">Head 4</a>
+            <label for="color">Background color</label>
+            <input id="color" type="color" value="#f1f1f1">
+            <a href="#" id="clear">Clear canvas</a>
+            <a href="#" id="export">Export canvas</a>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="robots.js"></script>
+</body>
+</html>
