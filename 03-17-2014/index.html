@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-17-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 16px;
+        padding: 10px;
+        background-color: black;
+        color: #00ff00;
+        text-align: center;
+        margin: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .cursor {
+        font-weight: bold;
+        margin-left: 2px;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: fadeInOut;
+        -webkit-animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: fadeInOut;
+        animation-duration: 0.4s;
+        -webkit-animation-duration: 0.4s;
+        animation-direction: alternate;
+    }
+    @media handheld, screen and (max-width: 500px) {
+
+    }
+    </style>
+</head>
+<body>
+    <span id="container"></span><span class="cursor">|</span>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="typary.js"></script>
+</body>
+</html>
