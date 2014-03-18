@@ -590,8 +590,13 @@ function getViewportDimensions() {
 }
 
 function exportCanvas(canvas) {
+    if(fabric) {
+        // remove outlines
+        // and select boxes
+        canvas.deactivateAll()
+        .renderAll();
+    }
     window.open(canvas.toDataURL());
-    return;
 }
 
 function log(msg) {
