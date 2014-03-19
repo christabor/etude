@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-18-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 16px;
+        font-family: 'Candal', sans-serif;
+        padding: 0;
+        margin: 0;
+        background: -moz-linear-gradient(-45deg, #ffffff 27%, #cecece 100%);
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(27%,#ffffff), color-stop(100%,#cecece));
+        background: -webkit-linear-gradient(-45deg, #ffffff 27%,#cecece 100%);
+        background: -o-linear-gradient(-45deg, #ffffff 27%,#cecece 100%);
+        background: -ms-linear-gradient(-45deg, #ffffff 27%,#cecece 100%);
+        background: linear-gradient(135deg, #ffffff 27%,#cecece 100%);
+
+        /* add long height for testing */
+        height: 2000px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 14px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0;
+    }
+    ::-webkit-scrollbar-track {
+        background-color:$light-green;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #444;
+        border-radius: 0;
+        box-shadow: 0 0 10px #444;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: black;
+    }
+
+    /* Global nav style */
+
+    .nav,
+    .nav ul,
+    .nav li,
+    .nav li a {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    .nav {
+        background-color: black;
+        width: 100%;
+        color: white;
+        display: block;
+        display: none;
+        box-shadow: 0 4px 10px #ccc;
+    }
+    .nav ul {
+        padding: 0;
+        margin: 0;
+    }
+    .nav li {
+        display: inline-block;
+        margin: 0;
+    }
+    .nav li a {
+        display: block;
+        margin: 0;
+        padding: 10px 20px;
+        border-right: 1px solid #777;
+        color: white;
+    }
+    .nav li a:hover {
+        background-color: #444;
+    }
+    .nav.subdue {
+        position: fixed;
+    }
+
+    /* One-off subdued items */
+
+    /* Nav 1 */
+    #nav1 li a {
+        padding: 20px;
+    }
+    #nav1.subdue {
+        padding: 2px;
+        background-color: orange;
+        top: 0;
+    }
+    #nav1.subdue li a {
+        padding: 5px;
+    }
+    #nav1.subdue li:hover,
+    #nav1.subdue li a:hover {
+        background-color: #cf620a;
+    }
+
+    /* Nav 2 */
+    #nav2.subdue {
+        background-color: #555;
+        width: 100px;
+        height: 100%;
+    }
+    #nav2.subdue li {
+        width: 100%;
+    }
+    #nav2.subdue li {
+        border-bottom: 1px solid #777;
+        font-family: monospace;
+    }
+
+    /* Nav 3 */
+    #nav3.subdue {
+        width: 100px;
+        height: 100%;
+        right: 0;
+        left: auto;
+    }
+    #nav3.subdue li {
+        width: 100%;
+    }
+    #nav3.subdue li {
+        border-bottom: 1px solid #777;
+    }
+
+    /* Nav 4 */
+    #nav4.subdue {
+        width: 100px;
+        bottom: 0;
+        top: auto;
+        width: 40%;
+        left: 50%;
+        margin-left: -20%;
+        text-align: center;
+    }
+
+    /* Nav 5 */
+    @-webkit-keyframes rotateSM {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+    }
+    @keyframes rotateSM {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+    }
+    #nav5.subdue {
+        border-radius: 30px;
+        width: 90%;
+        top: 60px;
+        left: 50%;
+        margin-left: -45%;
+        padding: 10px;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: rotateSM;
+        -webkit-animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: rotateSM;
+        animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+        animation-direction: alternate;
+    }
+    #nav5.subdue:hover {
+        box-shadow: 0 0 30px #444;
+    }
+    #nav5.subdue li a:hover {
+        padding: 10px;
+        background-color: #ebff6b;
+        color: black;
+        border-radius: 100%;
+    }
+
+    /* Controls */
+
+    #options {
+        position: fixed;
+        top: 200px;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    #options ul {
+        margin: 0;
+        padding: 0;
+    }
+    #options li {
+        display: inline-block;
+    }
+    #options li a {
+        display: inline-block;
+        color: #ccc;
+        text-decoration: none;
+        border:2px solid #ccc;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin: 5px;
+    }
+    #options li a.active {
+        border-color: green;
+        color: green;
+        box-shadow: 0 0 10px green;
+    }
+    #options li a:hover {
+        color: black;
+        border-color: black;
+    }
+
+    @media handheld, screen and (max-width: 500px) {
+    }
+    </style>
+</head>
+<body>
+    <section id="options">
+        <h1>Scrolltasm</h1>
+        <p>Choose a nav below and then scroll to see it in action.</p>
+        <ul>
+            <li><a href="#nav1">nav 1</a></li>
+            <li><a href="#nav2">nav 2</a></li>
+            <li><a href="#nav3">nav 3</a></li>
+            <li><a href="#nav4">nav 4</a></li>
+            <li><a href="#nav5">nav 5</a></li>
+        </ul>
+    </section>
+    <section id="navs">
+        <div class="nav" id="nav1">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+        <div class="nav" id="nav2">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+        <div class="nav" id="nav3">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+        <div class="nav" id="nav4">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+        <div class="nav" id="nav5">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="scrolltasm.js"></script>
+</body>
+</html>
