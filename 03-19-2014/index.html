@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-19-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Buenard:400,700|Dorsa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        color: black;
+        font-weight: normal;
+        font-size: 18px;
+        font-family: 'Buenard', serif;
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 300%;
+        margin: 0;
+        font-family: 'Dorsa', sans-serif;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 120%;
+    }
+    ol {
+        font-size: 90%;
+    }
+    li {
+        line-height: 2em;
+    }
+    h1, p, #steps {
+        padding: 0 30px;
+    }
+    #controls {
+        opacity: 0.8;
+        width: 300px;
+        z-index: 999;
+        height: 100%;
+        background-color: #f1f1f1;
+        padding: 20px 0 40px 0;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        position: absolute;
+        top: 0
+        left: 0;
+        overflow-y: scroll;
+    }
+    .btn-plain {
+        width: 100%;
+        text-align: center;
+    }
+    textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+    #steps,
+    h1,
+    p {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <section id="controls">
+        <h1>Custom Sigil maker!</h1>
+        <p>A sigil is a type of magical instrument used to (supposedly) create spells that harness the users intentions, by encoding them into a visual abstraction that uh... looks cool!</p>
+        <div id="steps">
+            <form>
+                <textarea cols="30" rows="5">Enter your super awesome wish here!
+                </textarea>
+            </form>
+            <a href="#" class=".toggle btn-plain btn-basic" id="export">Export</a>
+            <h2>Steps: how it actually &ldquo;works&rdquo;</h2>
+            <ol>
+                <li>Write down what you want to wish for/have.</li>
+                <li>Take out all vowels</li>
+                <li>Remove all duplicate consonants</li>
+                <li>Make some weird art by re-arranging and resizing the letters! Fame and fortune, here we come!</li>
+            </ol>
+        </div>
+    </section>
+    <canvas id="canvas"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="sigil.js"></script>
+</body>
+</html>
