@@ -171,6 +171,7 @@ function simpleLetterSequence(opts) {
     // @opts.len [Number] indicating length (optional)
     // @opts.fade [Number] fade speed
     // @opts.timing [Number] delay timeout
+    // @opts.callback [Function] a callback to execute
     var len = opts.len || (opts.word.length - 1);
     for(var i = 0; i <= len; i++) {
         (function(i){
@@ -188,6 +189,11 @@ function simpleLetterSequence(opts) {
                 });
             }, i * opts.timing);
         })(i);
+    }
+    if(opts.callback) {
+        // add a callback that
+        // finishes after all loops
+        setTimeout(opts.callback, len * opts.timing);
     }
     return;
 }
