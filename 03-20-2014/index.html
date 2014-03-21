@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 03-20-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Buenard:400,700|Dorsa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/jquery-ui.min.css">
+    <style>
+    body {
+        font-family: 'Buenard', sans-serif;
+        background: #eee url(../../img/type.png);
+        padding: 10px 30px;
+        color: white;
+    }
+    .bar {
+        background-color: green;
+        margin: 2px;
+        padding: 30px;
+        font-size: 10px;
+        display: inline-block;
+    }
+    #charts {
+        margin: 10px 0;
+        font-family: 'Dorsa', sans-serif;
+    }
+    .ui-slider-handle:hover {
+        cursor: pointer;
+    }
+    .bar:hover {
+        background-color: #444;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            padding: 10px;
+        }
+        #charts {
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>D3.js is amazing!</h1>
+    <p>Experiments with <strong>D3</strong> and <strong>jquery-ui</strong>
+        <br>
+        Using linear interpolation scales with D3 and color bands for fun coloration.</p>
+        <div class="slider"></div>
+        <div id="info">
+            <p>Current value: 0</p>
+        </div>
+        <div id="charts"></div>
+        <script src="../js/utils.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../js/vendor/jquery-ui.min.js"></script>
+        <script src="../js/vendor/lodash.min.js"></script>
+        <script src="../js/vendor/d3.min.js"></script>
+        <script src="colorscale.js"></script>
+    </body>
+    </html>
