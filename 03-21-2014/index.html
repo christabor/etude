@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-21-2014</title>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #f6ffe2;
+    }
+    h1,
+    h2,
+    p {
+        margin: 0.2em 0;
+    }
+    h2,
+    #mobile {
+        display: none;
+    }
+    #svg,
+    svg {
+        width: 100%;
+        max-width: 100%;
+    }
+    #text-large {
+        display: block;
+    }
+    body {
+        font-family: monospace;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    svg,
+    svg g,
+    circle,
+    ellipse,
+    path {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    #Layer_2 {
+        display: none;
+    }
+    #svg {
+        width: 100%;
+        max-width: 100%;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        #text-large {
+            display: none;
+        }
+        #text-mid {
+            display: inline-block;
+        }
+        circle {
+            fill: orange;
+        }
+        ellipse {
+            fill: #de8e00;
+        }
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            background-color: #111;
+            color: white;
+        }
+        #text-mid,
+        #text-large {
+            display: none;
+        }
+        #text-small,
+        #mobile {
+            display: inline-block;
+        }
+        svg {
+            -webkit-transform: rotate(30deg);
+        }
+        #smile {
+            display: none;
+        }
+        #Layer_2 {
+            display: inline;
+        }
+        circle {
+            fill: red;
+        }
+        ellipse {
+            fill: #cb0000;
+        }
+        path {
+            fill: white;
+        }
+        #svg,
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Resize your window!</h1>
+    <p id="mobile">
+        (mobile users: the toggled state is on by default, view it on a desktop!)
+    </p>
+    <h2 id="text-large">What a nice day!</h2>
+    <h2 id="text-mid">It's getting warm in here...</h2>
+    <h2 id="text-small">Ahhh! you're squeezing me!</h2>
+    <div id="svg">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="900px"
+        height="900px" viewBox="0 0 900 900" enable-background="new 0 0 900 900" xml:space="preserve">
+        <g id="Layer_1">
+            <circle id="face" fill="#EDE329" cx="449.621" cy="436.097" r="397.127"/>
+            <ellipse fill="#DACD29" cx="230.029" cy="441.787" rx="153.918" ry="264.368"/>
+            <path id="smile" d="M139.768,555.503h619.705c0,0-96.866,186.487-290.062,186.487C276.213,741.99,139.768,555.503,139.768,555.503z"/>
+            <path d="M228.25,450.265c0,0,26.833-123.431,0-150.264S134.334,481.122,228.25,450.265z"/>
+            <path d="M685.75,459.655c0,0,26.833-123.43,0-150.263C658.918,282.559,591.834,490.514,685.75,459.655z"/>
+            <path d="M344.584,496.089c0,0,138.27,28.175,138.9,0c0.63-28.174-87.917-52.323-59.743-87.206
+            c28.175-34.883,23.196-201.855,23.196-201.855S338.089,416.293,419.591,461.92S344.584,496.089,344.584,496.089z"/>
+        </g>
+        <g id="Layer_2">
+            <path d="M198.332,685.809h478.383c0,0-74.775-143.959-223.914-143.96
+            C303.661,541.85,198.332,685.809,198.332,685.809z"/>
+        </g>
+    </svg>
+</div>
+<script src="../js/utils.js"></script>
+<script src="facequery.js"></script>
+</body>
+</html>
