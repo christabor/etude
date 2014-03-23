@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 03-22-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/typeplate.css">
+    <style>
+    body {
+        font-family: 'PT Serif', serif;
+        background: #eee url(../img/noisy_grid.png);
+        padding: 30px;
+        color: #111;
+    }
+    #container {
+        font-family: 'PT Sans', sans-serif;
+        padding: 10px;
+        border: 4px solid #ccc;
+    }
+    .el {
+        display: block;
+        margin-bottom: 1em;
+        background-color: rgba(255, 255, 0, 0.3);
+    }
+    .el:after {
+        content: '';
+        display: block;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>All html elements</h1>
+    <hr>
+    <p>Below is a javascript generated list of all current html elements for study and styling (except deprecated or <strong>&lt;style&gt;</strong>. Feel free to drag them around! [contenteditable] has been set for all elements, so you can edit them too. Content parsed from <a href="http://www.w3schools.com/tags/">W3schools.</a> Styling normalization provided by <a href="http://typeplate.com/">TypePlate.</a></p>
+    <div id="container"></div>
+    <script src="../js/utils.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="tags.js"></script>
+</body>
+</html>

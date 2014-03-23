@@ -615,6 +615,10 @@ function uuid() {
     return [uid(), uid(), uid(), uid()].join('-');
 }
 
+function makeHTMLTag(el, content) {
+    return ['<', el, '>', content, '</', el, '>'].join('');
+}
+
 function stretchCanvas(canvas) {
     // makes canvas stretch across whole window size
     $(canvas)
