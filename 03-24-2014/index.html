@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-24-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        font-family: 'PT Sans', sans-serif;
+        background: black url(../img/binding_dark.png);
+        padding: 10px;
+        font-size: 14px;
+        color: #1eff83;
+        text-align: center;
+    }
+    #content {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #container {
+        clear: both;
+    }
+    .job-type {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        display: inline-block;
+        padding: 10px;
+        background-color: #064020;
+        width: 29%;
+        height: auto;
+        margin: 10px 20px 10px 0;
+        border-radius: 4px;
+        border: 10px solid #0a5c2f;
+        box-shadow: 0 0 16px #0a5c2f;
+        border-left-width: 2px;
+        border-right-width: 2px;
+    }
+    .job-type p {
+        color: #0e9048;
+    }
+    .job-type.active {
+        background-color: #11ce66;
+        color: #0a5c2f;
+        min-height: 200px;
+        width: 100%;
+    }
+    .job-type.active:hover {
+        border-color: #13e370;
+        color: white;
+    }
+    .job-type:hover {
+        box-shadow: 0 0 20px #15ff7e;
+        border-right: 2px dotted white;
+        border-left: 2px dotted white;
+        cursor: pointer;
+        color: white;
+        background-color: #05351b;
+    }
+    .description {
+        width: 90%;
+        display: none;
+        margin: 1em auto;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    sup {
+        font-size: 50%;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #content {
+            padding: 10px;
+            width: 100%;
+        }
+        .job-type,
+        .job-type.active {
+            height: auto;
+            width: 90%;
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="content">
+        <h1>
+            Jobonator <sup>TM</sup> 2.0
+            <span class="subdued">Automated job program retrieval system.</span>
+        </h1>
+        <p>Please select a job program to load.</p>
+        <div id="container"></div>
+    </section>
+    <script src="../js/utils.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jobs.js"></script>
+</body>
+</html>
