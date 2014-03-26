@@ -41,12 +41,13 @@ textarea {
 }
 input[type="color"] {
 	padding: 1px;
+	min-width: 30px;
 }
 
 /* Buttons */
 
-.btn-basic {
-	border:none;
+.btn-basic,
+.btn {
 	padding: 4px 8px;
 	display: inline-block;
 	border-radius: 4px;
@@ -237,6 +238,9 @@ input[type="color"] {
 	left: -9999px;
 	position: absolute;
 	top: -9999px;
+	&:hover {
+		background-color: darkOrange;
+	}
 }
 .mobile-toggleable-menu {
 	background-color: #333;
@@ -245,31 +249,28 @@ input[type="color"] {
 	display: block;
 	width: 100%;
 	padding: 0;
-}
-.mobile-toggleable-menu li {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-}
-.mobile-toggleable-menu li > a {
-	height: 100%;
-	width: 100%;
-	display: inline-block;
-	border-bottom: 1px solid #444;
-	text-decoration: none;
-	color: #fff;
-}
-.mobile-toggleable-menu li > a:hover {
-	background-color: #222;
-	color: orange;
-}
-.mobile-toggleable-menu li > a:active {
-	position: relative;
-	top: 1px;
-	background-color: #111;
-}
-.mobmenu-toggle:hover {
-	background-color: darkOrange;
+	li {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+	li > a {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		border-bottom: 1px solid #444;
+		text-decoration: none;
+		color: #fff;
+	}
+	li > a:hover {
+		background-color: #222;
+		color: orange;
+	}
+	li > a:active {
+		position: relative;
+		top: 1px;
+		background-color: #111;
+	}
 }
 .mobmenu-toggle,
 .mobile-menu-toggle-button,
@@ -343,6 +344,9 @@ input[type="color"] {
 .mobile-toggleable-menu {
 	padding: 10px 0;
 	text-indent: 10px;
+	> li {
+		padding: 5px 10px;
+	}
 	li,
 	li > a,
 	form,
@@ -357,13 +361,35 @@ input[type="color"] {
 	li > a {
 		padding: 10px;
 	}
-	li > a.active {
-		background-color: orange;
-		color: black;
-	}
 	li > form,
 	li > p {
 		padding: 10px 15px;
+	}
+	.title {
+		text-align: right;
+		opacity: 0.5;
+		text-transform: uppercase;
+		font-size: 120%;
+		padding: 5px 20px;
+		margin: 10px 0;
+		border-left: 10px solid #999;
+		background-color: #222;
+		background-color: black;
+	}
+	.subtitle {
+		font-weight: bold;
+		opacity: 0.7;
+		font-size: 110%;
+		padding: 4px 10px 0;
+		margin: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+	}
+	.active,
+	.active:hover {
+		color: white;
+		background-color: orange;
+		text-shadow: 0 1px 1px black;
 	}
 }
 .mobile-menu-toggle-button:checked ~ .mobmenu-toggle {
@@ -373,23 +399,6 @@ input[type="color"] {
 }
 .mobile-toggleable-menu {
 	box-shadow: 2px 2px 20px #444;
-}
-.mobile-toggleable-menu .title {
-	text-align: right;
-	opacity: 0.5;
-	text-transform: uppercase;
-	font-size: 120%;
-	padding: 5px 20px;
-	margin: 10px 0;
-	border-left: 10px solid #999;
-	background-color: #222;
-}
-.mobile-toggleable-menu .subtitle {
-	font-weight: bold;
-	opacity: 0.7;
-	font-size: 110%;
-	padding: 4px 10px 0;
-	margin: 0;
 }
 
 /* Canvas UI */
