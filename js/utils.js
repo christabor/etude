@@ -101,6 +101,23 @@ function successionPlugin(container, advance_speed, callback) {
 
 /* UI / DOM related */
 
+function setActiveFn(els, funcs, el) {
+    // allows a map of functions to
+    // work with a map of DOM elements
+    // removing some boilerplate of setting
+    // up event handlers and setting/getting the right functions.
+    // @els: the DOM elements that need events bound to them.
+    // @funcs: the map of functions to reference
+    // @el: the scope of the element to call from (e.g: this)
+    els.removeClass('active');
+    // requires the text to be used as function name
+    // so it must match the map key name.
+    var fn = el.text();
+    el.addClass('active');
+    // assign the func
+    active_fn = funcs[fn];
+}
+
 function populateMenu(list, menu, el, use_both) {
     // populates a menu with an array
     // or object, into another dom element
@@ -130,7 +147,7 @@ function addCanvasUI(generate) {
         export_btn   = $('#export-btn');
         generate_btn = $('#generate-btn');
         export_btn.on('click', function(){
-            exportCanvas(canvas);
+            exportCanvas(canvas || canvas_elem);
         });
         generate_btn.on('click', generate);
     } catch(e) {
@@ -139,7 +156,7 @@ function addCanvasUI(generate) {
         generate_btn = document.getElementById('generate-btn');
         if(export_btn) {
             export_btn.addEventListener('click', function(){
-                exportCanvas(canvas);
+                exportCanvas(canvas || canvas_elem);
             });
         }
         if (generate_btn) {
@@ -596,12 +613,15 @@ function getViewportDimensions() {
 }
 
 function exportCanvas(canvas) {
-    if(fabric) {
-        // remove outlines
-        // and select boxes
-        canvas.deactivateAll()
-        .renderAll();
-    }
+    if(!canvas) return;
+    try {
+        if(fabric) {
+            // remove outlines
+            // and select boxes
+            canvas.deactivateAll()
+            .renderAll();
+        }
+    } catch(e) {}
     window.open(canvas.toDataURL());
 }
 
