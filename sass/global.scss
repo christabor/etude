@@ -56,12 +56,12 @@ input[type="color"] {
 		cursor: pointer;
 	}
 	&.btn-plain {
-		border-bottom: 2px solid #444;
+		border-bottom: 3px solid #222;
 		background-color: #444;
 		color: white;
 	}
 	&.btn-plain:hover {
-		background-color: #000;
+		background-color: #555;
 		color: white;
 	}
 	&:active {
@@ -87,6 +87,16 @@ input[type="color"] {
 		top: 6px;
 		box-shadow: inset 0 0 2px white;
 		border-bottom-width: 2px;
+	}
+	&.btn-primary {
+		$primary-bg: #ffab2d;
+		background-color: $primary-bg;
+		color: black;
+		border-bottom-color: darken($primary-bg, 20%);
+		&:hover {
+			background-color: lighten($primary-bg, 5%);
+			border-bottom-color: darken($primary-bg, 25%);
+		}
 	}
 }
 
@@ -225,15 +235,6 @@ input[type="color"] {
 
 /* Components */
 
-.mobmenu-toggle {
-	background-color: orange;
-	color: #fff;
-	font-size: 32px;
-	text-decoration: none;
-	text-align: center;
-	font-weight: bold;
-	display: none;
-}
 .mobile-menu-toggle {
 	left: -9999px;
 	position: absolute;
@@ -284,12 +285,20 @@ input[type="color"] {
 	transition: all 0.2s;
 }
 .mobmenu-toggle {
+	background-color: orange;
+	color: #fff;
+	font-size: 32px;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	display: none;
 	left: 0;
 	margin: 0;
 	display: inline-block;
 	width: 15%;
 	z-index: 999;
 	&:hover {
+		background-color: lighten(orange, 10%);
 		cursor: pointer;
 	}
 	&.toggle-right {
@@ -372,9 +381,8 @@ input[type="color"] {
 		font-size: 120%;
 		padding: 5px 20px;
 		margin: 10px 0;
-		border-left: 10px solid #999;
-		background-color: #222;
-		background-color: black;
+		border-left: 10px solid #666;
+		background-color: #111;
 	}
 	.subtitle {
 		font-weight: bold;
