@@ -16,7 +16,6 @@ function makeFuzzyGradient() {
     var size = 100;
     var max = size / width;
     var iter = 0;
-    log(distance);
 
     grd.addColorStop(0, randomColor(255));
     doSomethingABunch(function(){
