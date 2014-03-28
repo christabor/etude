@@ -101,7 +101,7 @@ function successionPlugin(container, advance_speed, callback) {
 
 /* UI / DOM related */
 
-function setActiveFn(els, funcs, el) {
+function setActiveFn(els, funcs, el, active_fn) {
     // allows a map of functions to
     // work with a map of DOM elements
     // removing some boilerplate of setting
@@ -116,6 +116,7 @@ function setActiveFn(els, funcs, el) {
     el.addClass('active');
     // assign the func
     active_fn = funcs[fn];
+    return active_fn;
 }
 
 function populateMenu(list, menu, el, use_both) {

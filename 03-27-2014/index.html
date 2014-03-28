@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 03-27-2013</title>
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        overflow: hidden;
+        font-family: 'Lato';
+        background-color: black;
+    }
+    #funcs a {
+        display: block;
+    }
+    #funcs a:hover {
+        cursor: pointer;
+        background-color: #444;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 200px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 200px;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    #funcs {
+        margin: 0;
+        padding: 0;
+    }
+    #nav-options label,
+    #nav-options input {
+        width: auto;
+        display: inline-block;
+    }
+    .indicator {
+        position: relative;
+        top: -5px;
+        padding-left:5px;
+        background-color: #444;
+        text-align: center;
+        padding:4px;
+        border-radius: 4px;
+    }
+    .btn {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <nav id="nav-options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">Backgrounds</li>
+            <li class="subtitle">Options</li>
+            <li>
+                <label for="distance">Pixel distance</label>
+                <input type="range" min="4" max="100" value="4" id="distance">
+                <span class="indicator">4</span>
+                <hr>
+                <label for="rotate">Rotate?</label>
+                <input type="checkbox" id="rotate">
+            </li>
+            <li class="subtitle">Functions</li>
+            <li>
+                <div id="funcs"></div>
+            </li>
+            <li class="subtitle">Other</li>
+            <li>
+                <a href="#" id="export-btn" class="btn-primary btn btn-plain btn-basic">Export canvas</a>
+            </li>
+        </ul>
+        <label class="mobile-left mobmenu-toggle toggle-left" for="mobile-menu-toggle">+</label>
+    </nav>
+    <div id="overlay"></div>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="zing.js"></script>
+</body>
+</html>
