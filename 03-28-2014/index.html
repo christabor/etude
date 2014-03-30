@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 03-28-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        font-size: 12px;
+    }
+    #funcs a {
+        display: block;
+    }
+    #funcs a:hover {
+        cursor: pointer;
+        background-color: #444;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 200px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 200px;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    #iterations {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #f1f1f1;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <div id="iterations">Degrees: <span>0</span></div>
+    <nav id="nav-options">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button">
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">Backgrounds</li>
+            <li class="subtitle">
+                <input type="range" min="10" max="1440" id="rotations">
+            </li>
+            <li class="subtitle">Functions</li>
+            <li>
+                <div id="funcs"></div>
+            </li>
+            <li class="subtitle">Other</li>
+            <li>
+                <a href="#" id="export-btn" class="btn-primary btn btn-plain btn-basic">Export canvas</a>
+            </li>
+        </ul>
+        <label class="mobile-left mobmenu-toggle toggle-left" for="mobile-menu-toggle">+</label>
+    </nav>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="spiral.js"></script>
+</body>
+</html>
