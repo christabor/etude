@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-29-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 20px;
+        padding: 0;
+        background-color: #75001b;
+        color: black;
+        color: white;
+        font-family: sans-serif;
+        text-shadow: 0 1px 2px black;
+        text-align: center;
+        margin: 0;
+    }
+    #quote {
+        box-shadow: inset 0 0 20px #580014;
+        border:1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px;
+        display: inline-block;
+        font-size: 40px;
+        margin: 1em 0;
+        width: 90%;
+    }
+    a {
+        color: white;
+    }
+    a:hover {
+        border: 1px dashed rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        padding: 10px;
+    }
+    a:active {
+        position: relative;
+        top: 1px;
+        border-color: rgb(255, 255, 255);
+    }
+    #container {
+        padding: 40px;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            font-size: 14px;
+        }
+        #container {
+            padding: 8px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Famous quotes, modernized. <br><small class="subdued">Lyke, totally.</small></h1>
+        <a href="#" id="generate">Again!</a>
+        <br>
+        <div id="quote">&ldquo;<span>...</span>&rdquo;</div>
+        <p id="original">...</p>
+        <p class="subdued credits centered">
+            Quotes from: <a href="http://litemind.com/best-famous-quotes/" target="_blank">http://litemind.com/best-famous-quotes/</a>
+        </p>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="quotz.js"></script>
+</body>
+</html>
