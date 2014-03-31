@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 03-30-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 12px;
+        font-family: monospace;
+        padding: 0;
+        overflow: hidden;
+        background: #111 url(../img/asfalt.png);
+        margin: 0;
+    }
+    @keyframes panAll {
+        0% {
+            bottom: 0;
+        }
+        50% {
+            bottom: -40px;
+        }
+        75% {
+            bottom: -200px;
+            padding: 10px;
+        }
+        100% {
+            bottom: 0;
+        }
+    }
+    @-webkit-keyframes panAll {
+        0% {
+            bottom: 0;
+        }
+        50% {
+            bottom: -40px;
+        }
+        75% {
+            bottom: -200px;
+            padding: 10px;
+        }
+        100% {
+            bottom: 0;
+        }
+    }
+    #container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0; /* reversed */
+    }
+    #container.bottom > .col-container {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .col-container {
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation: panAll 1s infinite;
+        -o-animation: panAll 1s infinite;
+        animation: panAll 1s infinite;
+        color: white;
+        padding: 4px;
+        display: inline-block;
+        text-align: center;
+        margin: 2px;
+        position: fixed;
+        bottom: 0;
+        border: 2px solid black;
+        border-top-width: 10px;
+    }
+    h1 {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        margin-left: -50%;
+        display: block;
+        width: 100%;
+        color: white;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>HtmlScapes! <br><span class="subdued">The vast landscape of html is shuffling along, dancing, constantly changing.</span></h1>
+    <section id="container" class="bottom">
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="htmlscape.js"></script>
+</body>
+</html>
