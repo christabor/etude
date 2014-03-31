@@ -3,6 +3,7 @@ var htmlscape = (function(){
     var interval;
     var dims = getViewportDimensions();
     var width = dims.width;
+    var height = dims.height;
     var tags;
     var max = 50;
 
@@ -13,7 +14,7 @@ var htmlscape = (function(){
             var tag = Object.keys(randomObjValue(tags))[0];
             var sentence = randomSentence(rando(20), rando(12));
             html += ['<div class="col-container"',
-            'style="opacity:' + rando(10) * 0.1 + ';padding:' + rando(20) + 'px;left:' + rando(width) + 'px;background-color: ' + randomColor(255) + '">',
+            'style="width:' + clamp(rando(height * 1.5), 400, height * 1.5) + 'px;opacity:' + rando(10) * 0.1 + ';padding:' + rando(20) + 'px;left:' + rando(width) + 'px;background-color: ' + randomColor(255) + '">',
             makeHTMLTag(tag, sentence),
             '</div>'].join('');
         }, max);
