@@ -29,7 +29,7 @@ var htmlz = (function(){
     }
 
     function init() {
-        var req = $.getJSON('html.json');
+        var req = $.getJSON('../fixtures/html-tags.json');
         $.when(req).then(loadTags);
     }
 
