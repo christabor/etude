@@ -474,6 +474,17 @@ function randomStringLength(max) {
     return randomFixedString(rando(max));
 }
 
+function randomSentence(word_count, max_length, delimiter) {
+    var words = [];
+    for(var i = 0; i <= word_count; i++) {
+        words.push(randomStringLength(max_length));
+    }
+    if(!delimiter) {
+        delimiter = ' ';
+    }
+    return words.join(delimiter);
+}
+
 function randomColor(max, opacity) {
     // return a random color,
     // in rgba format
