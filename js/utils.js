@@ -491,10 +491,17 @@ function randomColor(max, opacity) {
     if(isNaN(max)) {
         max = 255;
     }
-    if(opacity) {
-        return ['rgba(', rando(max), ',', rando(max), ',', rando(max), ',', clamp(opacity, 0, 1), ')'].join('');
+    return rgbString(rando(max), rando(max), rando(max), opacity);
+}
+
+function rgbString(r, g, b, a) {
+    r = r || 0;
+    g = g || 0;
+    b = b || 0;
+    if(a) {
+        return ['rgba(', r, ',', g, ',', b, ',', clamp(a, 0, 1), ')'].join('');
     } else {
-        return ['rgb(', rando(max), ',', rando(max), ',', rando(max), ')'].join('');
+        return ['rgb(', r, ',', g, ',', b, ')'].join('');
     }
 }
 
