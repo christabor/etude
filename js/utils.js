@@ -59,13 +59,20 @@ var globalLoader = {
         .fadeIn(globalLoader.load_speed);
     },
     unload: function(opts) {
+        var delay;
+        try {
+            delay = opts.delay;
+        }
+        catch(e) {
+            delay = 0;
+        }
         setTimeout(function(){
             $('body')
             .find('#global-loader')
             .fadeOut(globalLoader.load_speed, function(){
                 $(this).remove();
             });
-        }, opts.delay || 0);
+        }, delay);
     }
 };
 
@@ -254,6 +261,15 @@ function hasJS() {
 
 /********************* Misc. *********************/
 
+function relativeComplement(arr1, arr2) {
+    // returns the relative complement
+    // of two arrays
+    // depends on lodash
+    if(_) return;
+    var in_set = _.union(arr1, arr2);
+    log(in_set);
+}
+
 function randomArrayValue(arr) {
     return arr[getKey(arr)];
 }
@@ -296,6 +312,14 @@ function randomFixedString(count) {
         str += tokens[rando(tokens.length)];
     }
     return str;
+}
+
+function randomNumberArray(length, max) {
+    var arr = [];
+    for(var i = 0; i <= length; i++) {
+        arr.push(rando(max || 500));
+    }
+    return arr;
 }
 
 function convertPxToNum(str) {
