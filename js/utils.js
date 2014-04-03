@@ -261,15 +261,6 @@ function hasJS() {
 
 /********************* Misc. *********************/
 
-function relativeComplement(arr1, arr2) {
-    // returns the relative complement
-    // of two arrays
-    // depends on lodash
-    if(_) return;
-    var in_set = _.union(arr1, arr2);
-    log(in_set);
-}
-
 function randomArrayValue(arr) {
     return arr[getKey(arr)];
 }
