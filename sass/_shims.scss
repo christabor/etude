@@ -1,0 +1,27 @@
+.dg.ac * {
+	/* fix issue with dat.gui colorpicker */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.slabtexted .slabtext {
+	display:-moz-inline-box;
+	white-space:nowrap
+}
+.slabtextinactive .slabtext {
+	display:inline;
+	white-space:normal;
+	font-size:1em !important;
+	letter-spacing:inherit !important;
+	word-spacing:inherit !important;
+	*letter-spacing:0 !important;
+	*word-spacing:0 !important;
+}
+.slabtextdone .slabtext {
+	display:block;
+	line-height:0.9;
+}
+.slabtextdone > span {
+	margin:10px 0;
+	padding:5px;
+}

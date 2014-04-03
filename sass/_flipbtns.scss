@@ -1,0 +1,209 @@
+// Sass Flipt: feature flipping sass
+// 2013 Chris Tabor. See repo for details:
+// https://github.com/christabor/sass-flipt
+
+@import 'vendor';
+
+$base-padding-x: 6px;
+$base-padding-y: $base-padding-x * 2;
+$base-font-size: 14px;
+$default-margin: 5px;
+$border-thickness: 3px;
+
+$dark-grey: #444444;
+$grey: #bbbbbb;
+$light-grey: #f1f1f1;
+
+$red: #d83730;
+$blue: #6494d3;
+$orange: #e4770d;
+$green: #61b330;
+$purple: #874baf;
+
+@mixin btn-hollow-style($color1: $grey) {
+	border-bottom: $border-thickness solid $color1;
+	color: $color1;
+	border-color: darken($color1, 20%);
+	background-color: transparent;
+	&:hover {
+		color: lighten($color1, 10%);
+		border-color: lighten($color1, 10%);
+	}
+	&.to-dark:hover {
+		color: darken($color1, 10%);
+		border-color: darken($color1, 10%);
+	}
+}
+@mixin btn-flat-style($color1: $grey) {
+	background-color: $color1;
+	color: #ffffff;
+	border-color: darken($color1, 20%);
+	&:hover {
+		background-color: lighten($color1, 10%);
+	}
+	&.to-dark:hover {
+		background-color: darken($color1, 10%);
+	}
+}
+@mixin btn-zen-style($color1: $grey) {
+	@include gradient($color1, darken($color1, 20%));
+	color: #fff;
+	text-shadow: 0 0 2px lighten($color1, 20%);
+	border-color: darken($color1, 20%);
+	&:hover {
+		@include gradient(lighten($color1, 5%), lighten($color1, 10%));
+		text-shadow: 0 0 2px lighten($color1, 10%);
+	}
+	&.to-dark:hover {
+		@include gradient(darken($color1, 5%), darken($color1, 10%));
+		text-shadow: 0 0 2px darken($color1, 10%);
+	}
+}
+@mixin btn-glitz-style($color1: $grey) {
+	@include gradient($color1, darken($color1, 20%));
+	color: #fff;
+	text-shadow: 1px 1px 2px darken($color1, 20%);
+	box-shadow: 0 0 10px lighten($color1, 15%), 0 0 10px lighten($color1, 15%);
+	border:1px solid darken($color1, 10%);
+	border-bottom-width: 2px;
+	&:hover {
+		@include gradient(lighten($color1, 5%), lighten($color1, 10%));
+		text-shadow: 0 0 2px darken($color1, 30%);
+		border-color: lighten($color1, 10%);
+		box-shadow: 0 0 10px lighten($color1, 10%), 0 0 10px lighten($color1, 10%);
+	}
+	&.to-dark:hover {
+		@include gradient(darken($color1, 10%), darken($color1, 20%));
+		text-shadow: 0 0 2px darken($color1, 30%);
+		border-color: darken($color1, 20%);
+		box-shadow:0 0 10px darken($color1, 20%), 0 0 10px darken($color1, 20%);
+	}
+}
+
+.btn {
+	margin: $default-margin $default-margin $default-margin 0;
+	padding: $base-padding-x $base-padding-y;
+	font-size: $base-font-size;
+
+	// reset everything
+	background: none;
+	box-shadow: none;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	text-shadow: 0 0 0;
+	border:none;
+
+	&.border {
+		border-bottom: $border-thickness solid black;
+	}
+
+	// remove transitions from bootstrap
+	&:hover {
+		@include transition(all, 0s, linear);
+	}
+	&:active {
+		position: relative;
+		top: 2px;
+	}
+
+	&.btn-xlarge {
+		padding: $base-padding-x * 5 $base-padding-y * 5;
+		font-size: $base-font-size + 8;
+	}
+	&.btn-large {
+		padding: $base-padding-x * 4 $base-padding-y * 4;
+		font-size: $base-font-size + 6;
+	}
+	&.btn-medium {
+		padding: $base-padding-x * 3 $base-padding-y * 3;
+		font-size: $base-font-size + 4;
+	}
+	&.btn-small {
+		padding: $base-padding-x * 2 $base-padding-y * 2;
+		font-size: $base-font-size + 2;
+	}
+	&.btn-xsmall {
+		padding: $base-padding-x $base-padding-y;
+		font-size: $base-font-size - 2;
+	}
+}
+.style-hollow {
+	.btn {
+		@include btn-hollow-style($grey);
+	}
+	.btn-red {
+		@include btn-hollow-style($red);
+	}
+	.btn-blue {
+		@include btn-hollow-style($blue);
+	}
+	.btn-orange {
+		@include btn-hollow-style($orange);
+	}
+	.btn-green {
+		@include btn-hollow-style($green);
+	}
+	.btn-purple {
+		@include btn-hollow-style($purple);
+	}
+}
+.style-flat {
+	.btn {
+		@include btn-flat-style($grey);
+	}
+	.btn-red {
+		@include btn-flat-style($red);
+	}
+	.btn-blue {
+		@include btn-flat-style($blue);
+	}
+	.btn-orange {
+		@include btn-flat-style($orange);
+	}
+	.btn-green {
+		@include btn-flat-style($green);
+	}
+	.btn-purple {
+		@include btn-flat-style($purple);
+	}
+}
+.style-zen {
+	.btn {
+		@include btn-zen-style($grey);
+	}
+	.btn-red {
+		@include btn-zen-style($red);
+	}
+	.btn-blue {
+		@include btn-zen-style($blue);
+	}
+	.btn-orange {
+		@include btn-zen-style($orange);
+	}
+	.btn-green {
+		@include btn-zen-style($green);
+	}
+	.btn-purple {
+		@include btn-zen-style($purple);
+	}
+}
+.style-glitz {
+	.btn {
+		@include btn-glitz-style($grey);
+	}
+	.btn-red {
+		@include btn-glitz-style($red);
+	}
+	.btn-blue {
+		@include btn-glitz-style($blue);
+	}
+	.btn-orange {
+		@include btn-glitz-style($orange);
+	}
+	.btn-green {
+		@include btn-glitz-style($green);
+	}
+	.btn-purple {
+		@include btn-glitz-style($purple);
+	}
+}
