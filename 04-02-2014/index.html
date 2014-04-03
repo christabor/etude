@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 04-02-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Rosario:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='../css/vendor/flexbox-grid.min.css' rel='stylesheet' type='text/css'>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        text-align: center;
+        font-size: 18px;
+        font-family: 'Rosario', sans-serif;
+        padding: 0;
+        margin: 0;
+        text-shadow: 0 1px 2px #1e2642;
+        background-color: #3f4f87;
+        color: white;
+    }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #results {
+        text-align: right;
+    }
+    #intro {
+        background-color: #161b30;
+        padding: 20px;
+    }
+    .col-md-4 {
+        padding: 20px;
+        border-right: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+    .bracket,
+    .symbol {
+        padding: 0 0.3em;
+        opacity: 0.5;
+        font-size: 30px;
+        position: relative;
+        top: 4px;
+    }
+    .symbol {
+        font-size: 40px;
+        top: 1px;
+    }
+    .set {
+        background-color: #354476;
+        padding: 10px 10px 15px 10px;
+        display: block;
+        border-radius: 10px;
+    }
+    a {
+        color: #eef688;
+        text-decoration: none;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    }
+    a:hover {
+        border-bottom-color: rgba(255, 255, 255, 1);
+    }
+    .subdued {
+        margin-top: 100px;
+        display: block;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        .container {
+            width: 95%;
+        }
+        .col-md-4 {
+            border: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <div class="container style-flat">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>An example of common <strong><a href="http://en.wikipedia.org/wiki/Set_theory">set theory</a></strong> types.</h1>
+                    <p>Below are two &ldquo;sets&rdquo; of generated numbers for demonstration. The subsequent set types are then listed out. Click to see new ones!</p>
+                    <a href="#" id="generate" class="border btn-xlarge btn btn-orange">Generate again!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="results">
+        <div class="row">
+            <div id="set1" class="col-md-4">
+                <h2>Set 1</h2>
+                <span class="main set"></span>
+                <p>Element of <span class="symbol">&isin;</span></p>
+                <span class="elof set"></span>
+                <p>Not element of <span class="symbol">&notin;</span></p>
+                <span class="notelof set"></span>
+                <p>Subset of <span class="symbol">&sub;</span></p>
+                <div class="subset set"></div>
+                <p>Cardinality <span class="symbol">|A|</span></p>
+                <div class="cardinality set"></div>
+            </div>
+            <div id="set2" class="col-md-4">
+                <h2>Set 2</h2>
+                <span class="main set"></span>
+                <p>Element of <span class="symbol">&isin;</span></p>
+                <span class="elof set"></span>
+                <p>Not element of <span class="symbol">&notin;</span></p>
+                <span class="notelof set"></span>
+                <p>Subset of <span class="symbol">&sub;</span></p>
+                <div class="subset set"></div>
+                <p>Cardinality <span class="symbol">|A|</span></p>
+                <div class="cardinality set"></div>
+            </div>
+            <div id="results" class="col-md-4">
+                <h2>Both sets</h2>
+                <h3>Relative Complement <span class="symbol">\</span></h3>
+                <div id="relcomplement" class="set"></div>
+                <h3>Union <span class="symbol">&cup;</span></h3>
+                <div id="union" class="set"></div>
+                <h3>Intersection <span class="symbol">&cap;</span></h3>
+                <div id="intersection" class="set"></div>
+                <h3>Symmetric Different (xor)<span class="symbol">&Delta;</span></h3>
+                <div id="xor" class="set"></div>
+            </div>
+        </div>
+        <p class="subdued">
+            Credits: <a href="http://www.rapidtables.com/math/symbols/Set_Symbols.htm">Symbols source</a>
+        </p>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/lodash.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="sets.js"></script>
+</body>
+</html>
