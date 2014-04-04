@@ -108,6 +108,13 @@ input[type="color"] {
 
 /* Canvas UI */
 
+#generate-btn,
+#export-btn {
+	&.btn,
+	&.btn:active {
+		position: absolute;
+	}
+}
 #generate-btn {
 	border-radius: 0 6px 0 0;
 	left: 0;
