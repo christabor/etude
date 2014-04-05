@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 04-04-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #f1f1f1;
+        font-family: monospace;
+        margin: 0;
+    }
+    canvas:hover {
+        box-shadow: 0 0 20px black;
+        background-color: #111;
+        cursor: pointer;
+    }
+    #info {
+        position: absolute;
+        margin: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+    }
+    div, p {
+        display: inline-block;
+        margin: 0.3em;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #info {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h3>DATA</h3>
+        <div id="points"></div><br>
+        <p>Trial 1</p>
+        <div id="trial1"></div><br>
+        <p>Trial 2</p>
+        <div id="trial2"></div><br>
+        <p>Trial 3</p>
+        <div id="trial3"></div><br>
+        <p>Trial 4</p>
+        <div id="trial4"></div><br>
+        <p>Trial 5</p>
+        <div id="trial5"></div><br>
+        <p>Trial 6</p>
+        <div id="trial6"></div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="seismo.js"></script>
+</body>
+</html>
