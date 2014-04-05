@@ -30,10 +30,6 @@ var zagg = (function(){
             ctx.fillStyle = 'black';
             this.fillRect(0, 0, width, height);
         };
-        ctx.reset = function() {
-            ctx.clear();
-            current = 0;
-        }
         window.onmousedown = function(){exportCanvas(canvas)};
         setInterval(function(){
             canvas.style.backgroundColor = randomColor(40);
