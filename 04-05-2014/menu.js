@@ -20,6 +20,8 @@ var quotes = (function(){
         e.preventDefault();
         hideNav();
         $menu.hide();
+        // remove leftovers from previous clicks
+        $('iframe').remove();
         $('body').append($iframe);
     }
 
@@ -36,8 +38,6 @@ var quotes = (function(){
     }
 
     function init() {
-        $('#overlay').height(window.innerHeight);
-        $('#overlay').width(window.innerWidth);
         $('nav').find('a').not('.unique').on('click', simpleToggle);
         $('#quit').on('click', secretQuit);
         $('#newgame').on('click', loadVideo);
