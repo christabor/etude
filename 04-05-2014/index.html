@@ -1,0 +1,589 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 04-05-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400italic,700,700italic|Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        cursor: url(cursor.png), auto;
+    }
+    a:hover,
+    :active {
+        cursor: url(cursor-hover.png), auto;
+    }
+    body {
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Playfair Display SC', serif;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        color: #d2e3ce;
+        background: #768074 url(overlay-grunge.png) no-repeat 0 0;
+        font-weight: normal;
+        background-size: cover;
+    }
+    a {
+        text-decoration: none;
+    }
+    @-webkit-keyframes glitcher {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.4;
+            margin-left: 5px;
+            border-color: white;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes glitcher {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.4;
+            margin-left: 5px;
+            border-color: white;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-ms-keyframes glitcher {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.4;
+            margin-left: 5px;
+            border-color: white;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-o-keyframes glitcher {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.4;
+            margin-left: 5px;
+            border-color: white;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes glitcher {
+        0% {
+            opacity: 0;
+        }
+        25% {
+            opacity: 0.4;
+            margin-left: 5px;
+            border-color: white;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes blurry {
+        0% {
+            -webkit-filter: blur(10px);
+        }
+        100% {
+            background-color: #585f57;
+            -webkit-filter: blur(40px);
+        }
+    }
+    @-moz-keyframes blurry {
+        0% {
+            -webkit-filter: blur(10px);
+        }
+        100% {
+            background-color: #585f57;
+            -webkit-filter: blur(40px);
+        }
+    }
+    @-ms-keyframes blurry {
+        0% {
+            -webkit-filter: blur(10px);
+        }
+        100% {
+            background-color: #585f57;
+            -webkit-filter: blur(40px);
+        }
+    }
+    @-o-keyframes blurry {
+        0% {
+            -webkit-filter: blur(10px);
+        }
+        100% {
+            background-color: #585f57;
+            -webkit-filter: blur(40px);
+        }
+    }
+    @keyframes blurry {
+        0% {
+            -webkit-filter: blur(10px);
+        }
+        100% {
+            background-color: #585f57;
+            -webkit-filter: blur(40px);
+        }
+    }
+    @-webkit-keyframes tiltYSteep {
+        0% {
+            -webkit-transform: rotateX(40deg) translateY(10%) rotate(5deg);
+            -moz-transform: rotateX(40deg) translateY(10%) rotate(5deg);
+            -ms-transform: rotateX(40deg) translateY(10%) rotate(5deg);
+            -o-transform: rotateX(40deg) translateY(10%) rotate(5deg);
+            transform: rotateX(40deg) translateY(10%) rotate(5deg);
+        }
+    }
+    @-moz-keyframes tiltYSteep {
+        0% {
+            -webkit-transform: rotateX(5deg) translateY(4%);
+            -moz-transform: rotateX(5deg) translateY(4%);
+            -ms-transform: rotateX(5deg) translateY(4%);
+            -o-transform: rotateX(5deg) translateY(4%);
+            transform: rotateX(5deg) translateY(4%);
+        }
+    }
+    @keyframes tiltYSteep {
+        0% {
+            -webkit-transform: rotateX(5deg) translateY(4%);
+            -moz-transform: rotateX(5deg) translateY(4%);
+            -ms-transform: rotateX(5deg) translateY(4%);
+            -o-transform: rotateX(5deg) translateY(4%);
+            transform: rotateX(5deg) translateY(4%);
+        }
+    }
+    @-webkit-keyframes tiltY {
+        0% {
+            -webkit-transform: rotateX(5deg) translateY(4%);
+            -moz-transform: rotateX(5deg) translateY(4%);
+            -ms-transform: rotateX(5deg) translateY(4%);
+            -o-transform: rotateX(5deg) translateY(4%);
+            transform: rotateX(5deg) translateY(4%);
+        }
+    }
+    @-moz-keyframes tiltY {
+        0% {
+            -webkit-transform: rotateX(5deg) translateY(4%);
+            -moz-transform: rotateX(5deg) translateY(4%);
+            -ms-transform: rotateX(5deg) translateY(4%);
+            -o-transform: rotateX(5deg) translateY(4%);
+            transform: rotateX(5deg) translateY(4%);
+        }
+    }
+    @keyframes tiltY {
+        0% {
+            -webkit-transform: rotateX(5deg) translateY(4%);
+            -moz-transform: rotateX(5deg) translateY(4%);
+            -ms-transform: rotateX(5deg) translateY(4%);
+            -o-transform: rotateX(5deg) translateY(4%);
+            transform: rotateX(5deg) translateY(4%);
+        }
+    }
+    nav ul {
+        margin: 0;
+        padding: 12px;
+        background-color: #111;
+        position: absolute;
+        bottom: 100px;
+        width: 105%;
+        left: 0;
+        z-index: 2;
+        -webkit-transform: rotate(4deg) perspective(100px);
+        -moz-transform: rotate(4deg) perspective(100px);
+        -ms-transform: rotate(4deg) perspective(100px);
+        -o-transform: rotate(4deg) perspective(100px);
+        transform: rotate(4deg) perspective(100px);
+    }
+    nav ul:hover {
+        -webkit-transform: rotate(1deg);
+        -moz-transform: rotate(1deg);
+        -ms-transform: rotate(1deg);
+        -o-transform: rotate(1deg);
+        transform: rotate(1deg);
+    }
+    nav li {
+        margin: 0 4px;
+        display: inline-block;
+        list-style: none;
+    }
+    nav li a {
+        text-decoration: none;
+        display: inline-block;
+        padding: 12px 14px;
+        color: #d2e3ce;
+    }
+    nav li a:hover {
+        -webkit-transform: scale(1.2) translateX(10%) translateY(5%);
+        -moz-transform: scale(1.2) translateX(10%) translateY(5%);
+        -ms-transform: scale(1.2) translateX(10%) translateY(5%);
+        -o-transform: scale(1.2) translateX(10%) translateY(5%);
+        transform: scale(1.2) translateX(10%) translateY(5%);
+        background-color: #d2e3ce;
+        color: #111;
+    }
+    p {
+        color: #d2e3ce;
+    }
+    p,
+    .main-menu-nav {
+        font-family: 'Oswald', sans-serif;
+    }
+    #main-nav {
+        z-index: 999;
+    }
+    iframe {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+    }
+    iframe:hover {
+        pointer-events: none;
+    }
+    .animated {
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-direction: alternate;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        -webkit-animation-name: tiltZ;
+        animation-name: tiltZ;
+    }
+    #shards {
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        -o-perspective: 600px;
+        perspective: 600px;
+    }
+    .shard {
+        background-color: #111;
+        padding: 20px;
+        width: 400px;
+        -webkit-animation-name: tiltYSteep;
+        animation-name: tiltYSteep;
+        position: absolute;
+        z-index: 30;
+        top: 10px;
+    }
+    .shard:nth-of-type(1) {
+        top: 400px;
+        right: -50px;
+        width: 600px;
+        padding: 14px;
+        opacity: 0.4;
+        -webkit-filter: blur(10px);
+        -webkit-transform: rotate(14deg);
+        -moz-transform: rotate(14deg);
+        background-color: #c2d2bf;
+        -ms-transform: rotate(014deg);
+        -o-transform: rotate(14deg);
+        transform: rotate(14deg);
+    }
+    .shard:nth-of-type(2) {
+        top: 500px;
+        left: -30px;
+        width: 300px;
+        padding: 10px;
+    }
+    .shard:nth-of-type(3) {
+        right: -10px;
+        width: 300px;
+        bottom: 0;
+        -webkit-filter: blur(3px);
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+        top: 300px;
+    }
+    .shard:nth-of-type(4) {
+        left: -20px;
+        top: 10px;
+    }
+    .main-menu-nav {
+        text-align: left;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin: 10px 0;
+        color: #d2e3ce;
+        padding: 8px;
+    }
+    h2 {
+        background-color: #111;
+        padding: 20px;
+    }
+    #heading-bg,
+    h1 {
+        left: 50%;
+        margin-left: -50%;
+        top: 200px;
+        -webkit-transform: rotate(-6deg);
+        -moz-transform: rotate(-6deg);
+        -ms-transform: rotate(-6deg);
+        -o-transform: rotate(-6deg);
+        transform: rotate(-6deg);
+        display: block;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        height: auto;
+    }
+    #heading-bg {
+        -webkit-animation-name: blurry;
+        animation-name: blurry;
+        background-color: rgba(0, 0, 0, 0.9);
+        height: 300px;
+        z-index: 1;
+    }
+    h1 {
+        width: 90%;
+        margin-left: -45%;
+        font-size: 120px;
+        color: #dff2dc;
+        text-shadow: 0 2px 2px black;
+        border: 4px dotted rgba(223, 242, 220, 0.4);
+        font-weight: normal;
+        border-right: none;
+        border-left: none;
+    }
+    .main-menu-nav:hover {
+        background-color: #d2e3ce;
+        color: #111;
+    }
+    #main-menu {
+        display: none;
+        left: -100%;
+        position: absolute;
+        width: 80%;
+        z-index: 99;
+        top: 80px;
+        margin-left: -40%;
+        -webkit-perspective: 600px;
+        -moz-perspective: 600px;
+        -o-perspective: 600px;
+        perspective: 600px;
+        -webkit-transform: rotate(-4deg);
+        -moz-transform: rotate(-4deg);
+        -ms-transform: rotate(-4deg);
+        -o-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+    #main-menu-inner {
+        padding: 40px 20px;
+        min-height: 500px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        -webkit-animation-name: tiltY;
+        animation-name: tiltY;
+    }
+    input[type="range"] {
+        border-radius: 0 100%;
+        padding: 4px;
+        margin-left: 20px;
+    }
+    .glitcher {
+        -webkit-animation-name: glitcher;
+        animation-name: glitcher;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        position: fixed;
+        border-left:1px solid black;
+        border-right: 1px dotted rgba(0, 0, 0, 0.2);
+        height: 700px;
+        width: 4px;
+        z-index: 80;
+        left: 100px;
+
+    }
+    .glitcher:nth-of-type(1) {
+        height: 500px;
+        border-width: 3px;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    .glitcher:nth-of-type(2) {
+        height: 200px;
+        left: 500px;
+        -webkit-transform: rotate(18deg);
+        -moz-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+        -o-transform: rotate(18deg);
+        transform: rotate(18deg);
+    }
+    .glitcher:nth-of-type(3) {
+        right: 100px;
+        height: 200px;
+        top: 80px;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+    }
+    .glitcher:nth-of-type(4) {
+        height: 200px;
+        bottom: -100px;
+        left: 50%;
+        top: auto;
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+    }
+    .glitcher:nth-of-type(5) {
+        height: 350px;
+        top: 400px;
+        right: 400px;
+        left: auto;
+        -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
+    }
+    .glitcher:nth-of-type(6) {
+        height: 800px;
+        top: 0;
+        right: 100px;
+        left: auto;
+        -webkit-transform: rotate(24deg);
+        -moz-transform: rotate(24deg);
+        -ms-transform: rotate(24deg);
+        -o-transform: rotate(24deg);
+        transform: rotate(24deg);
+        -webkit-animation-duration: 0.7s;
+        animation-duration: 0.7s;
+    }
+    .subdued {
+        text-shadow: 0 1px 2px black;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        h1 {
+            font-size: 80px;
+        }
+        #heading-bg {
+            width: 100%;
+            height: 100px;
+        }
+        .subdued {
+            font-size: 11px;
+        }
+    }
+    @media handheld, screen and (max-width: 500px) {
+        h1 {
+            font-size: 40px;
+        }
+        nav li,
+        nav li a {
+            display: block;
+            width: 100%
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1 class="animated">[ CSSIFIED ]</h1>
+    <section id="main-menu">
+        <div id="main-menu-inner" class="animated">
+            <h2>Pretend menu options...</h2>
+            <a href="#" class="main-menu-nav">A control option...
+                <input type="range" min="0" max="100">
+            </a>
+            <a href="#" class="main-menu-nav">A control option...
+                <input type="range" min="0" max="100">
+            </a>
+            <a href="#" class="main-menu-nav">A control option...
+                <input type="range" min="0" max="100">
+            </a>
+            <a href="#" class="main-menu-nav">A control option...
+                <input type="range" min="0" max="100">
+            </a>
+            <a href="#" class="main-menu-nav">A control option...
+                <input type="range" min="0" max="100">
+            </a>
+        </div>
+    </section>
+    <nav id="main-nav">
+        <ul>
+            <li>
+                <a href="#">Continue</a>
+            </li>
+            <li>
+                <a href="#" class="unique" id="newgame">New Game</a>
+            </li>
+            <li>
+                <a href="#">Missions</a>
+            </li>
+            <li>
+                <a href="#">Load</a>
+            </li>
+            <li>
+                <a href="#">Options</a>
+            </li>
+            <li>
+                <a href="#" class="unique" id="quit">Quit Game</a>
+            </li>
+        </ul>
+    </nav>
+    <p class="subdued credits centered">A fake (approximated) implementation of the Dishonored in-game menu.</p>
+    <div class="animated" id="heading-bg"></div>
+    <div id="glitchers">
+        <div class="animated glitcher"></div>
+        <div class="animated glitcher"></div>
+        <div class="animated glitcher"></div>
+        <div class="animated glitcher"></div>
+        <div class="animated glitcher"></div>
+        <div class="animated glitcher"></div>
+    </div>
+    <div id="shards">
+        <div class="shard animated"></div>
+        <div class="shard animated"></div>
+        <div class="shard animated"></div>
+        <div class="shard animated"></div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
