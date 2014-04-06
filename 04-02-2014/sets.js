@@ -33,7 +33,8 @@ var quotes = (function(){
         ].join('');
     }
 
-    function generateAll() {
+    function generateAll(e) {
+        e.preventDefault();
         var sets = generateSets();
         var notelof2 = rando(arr_max);
         var notelof1 = rando(arr_max);
