@@ -90,6 +90,11 @@
 	z-index: 998;
 	line-height: 2em;
 	overflow-x: hidden;
+	.btn,
+	#export-btn.btn,
+	#generate-btn.btn {
+		position: relative;
+	}
 }
 .mobile-toggleable-menu.mobile-left {
 	left: -105%;
