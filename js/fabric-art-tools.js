@@ -41,6 +41,27 @@ function randomPolygon(max_iterations, x_distance, y_distance) {
     return points;
 }
 
+function addCross(opts) {
+    var b1, b2;
+    var setup = {
+        selectable: false,
+        width: opts.size || 10,
+        height: opts.size * opts.thickness || 4,
+        left: opts.left || rando(width),
+        top: opts.top || rando(height),
+        fill: opts.color || randomColor(255)
+    };
+    b1 = new fabric.Rect(setup);
+    setup.angle = 90;
+    b2 = new fabric.Rect(setup);
+    canvas.add(new fabric.Group([b1, b2],{
+        angle: opts.angle || 0,
+        selectable: false,
+        left: opts.left || rando(width),
+        top: opts.top || rando(height),
+    }));
+}
+
 function addCircleGroup(x, y, fill, size, direction, times) {
     if(!x && !y) {
         var dims = getViewportDimensions();
@@ -403,7 +424,7 @@ function zigZag(opts) {
 function addShiftedText(opts) {
     var text = (opts.vertical ? opts.text.split('').join('\n') : opts.text);
     opts.selectable = false;
-    opts.fontFamily = opts.fontFamily || 'Arial';
+    opts.fontFamily = opts.fontFamily || randomArrayValue(global_config.basic_fonts);
     opts.fontSize   = opts.fontSize || 50;
     canvas.add(new fabric.Text(text, opts));
     opts.left = opts.left + 8;
@@ -611,4 +632,55 @@ function addCoords(options) {
             canvas.add(quadrants[quadrant]);
         }
     }
+}
+
+/*  Image Filters */
+
+var fabric_filters = (function(filters){
+    // return all filters that have
+    // been added to the filter object
+    // for random use or sampling
+    var all = [];
+    $.each(filters, function(filter, fn){
+        all.push(filter);
+    });
+    return all;
+})(fabric.Image.filters);
+
+function addImgFilter(filter_name, dims, pixel_func){
+    // A faster way to add custom filters - WITH
+    // settable dimensions - not just the entire canvas.
+    var filters = fabric.Image.filters;
+    filters[filter_name] = fabric.util.createClass({
+        type: filter_name,
+        applyTo: function(elem) {
+            var ctx        = elem.getContext('2d');
+            var image_data = ctx.getImageData(
+                dims.top || 0,
+                dims.left || 0,
+                dims.width || width,
+                dims.height || height);
+            var data = image_data.data;
+            data = pixel_func(data);
+            // format for pixel_func:
+            // standard image data loop, with keys for RGBA
+            // must return pixel data
+            // for (var i = 0, len = data.length; i < len; i += 4) {
+            //     data[i + 0] = 0;
+            //     data[i + 1] = 0;
+            // }
+            ctx.putImageData(image_data, 0, 0);
+        }
+    });
+
+    // add to object for instantation
+    filters[filter_name].fromObject = function(object) {
+        return new filters[filter_name](object);
+    };
+}
+
+function applyFilter(img, filter_name) {
+    // push and apply to a given fabric.Image instance
+    img.filters.push(new fabric.Image.filters[filter_name]());
+    img.applyFilters(canvas.renderAll.bind(canvas));
 }
