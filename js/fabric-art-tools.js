@@ -524,6 +524,8 @@ function complexFlower(opts) {
 /*  More instructional */
 
 function addCoords(options) {
+    var width         = options.width / 2 || window.innerWidth;
+    var height        = options.height / 2 || window.innerHeight;
     var line_width    = options.line_width || 1;
     var block_size    = Math.round((options.block_size || 50) / 10) * 10;
     var quadrants     = [];
