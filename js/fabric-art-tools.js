@@ -525,24 +525,27 @@ function complexFlower(opts) {
 
 function addCoords(options) {
     var line_width    = options.line_width || 1;
-    var block_size    = options.block_size;
+    var block_size    = Math.round((options.block_size || 50) / 10) * 10;
     var quadrants     = [];
     var quad_width    = width / 2;
     var quad_height   = height / 2;
-    var bg_opacity    = 0.1;
+    var bg_opacity    = 0.2;
+    var sub_opacity   = bg_opacity / 2;
     var current       = 0;
-    var offset        = block_size - line_width;
+    var offset        = block_size - line_width / 2;
     var grid_spaces_x = Math.floor(width / offset);
     var grid_spaces_y = Math.floor(height / offset);
     var midway_x      = Math.floor(grid_spaces_x / 2);
     var midway_y      = Math.floor(grid_spaces_y / 2);
+    var use_numbers   = options.use_numbers || true;
 
     // split these in half to get
     // negative and positive values to loop over
     var pos_count_x   = -Math.floor(grid_spaces_x / 2);
     var pos_count_y   = Math.floor(grid_spaces_y / 2);
+    var digit;
     var opts          = {
-        fill: 'black',
+        fill: options.fill || 'black',
         selectable: false,
         angle: 0,
         top: height / 2,
@@ -556,54 +559,80 @@ function addCoords(options) {
         selectable: false
     };
     var text_opts     = {
-        fontFamily: opts.font_family || 'Lato, sans-serif',
+        fontFamily: options.font_family || 'Lato, sans-serif',
         selectable: false,
-        fontSize: opts.font_size || 9,
-        fill: opts.text_color || 'red'
+        fontSize: options.font_size || 9,
+        fill: options.text_color || 'red'
     };
-    opts.angle = 90;
+    opts.angle  = 90;
     opts.height = width - (line_width / 2);
+    opts.top    = offset;
 
     // add subtle grid background
     // add y
-    opts.top     = offset;
     opts.opacity = bg_opacity;
-    doSomethingABunch(function(){
-        text_opts.top = opts.top;
-        text_opts.left = (width / 2) + (offset / 2);
-        opts.opacity = current === midway_y ? 1 : bg_opacity;
+    for(var i = 0; i <= grid_spaces_y; i++) {
+        digit = String(Math.floor(pos_count_y)).replace('-', '- ');
+        text_opts.top  = opts.top;
+        text_opts.left = width / 2 + offset;
+        opts.opacity   = current === midway_y ? 1 : bg_opacity;
         canvas.add(new fabric.Rect(opts));
-        if(pos_count_y !== 0) {
-            canvas.add(new fabric.Text(
-                String(Math.floor(pos_count_y)), text_opts));
+        // only show 0 for the x-axis
+        if(use_numbers && i <= grid_spaces_y - 1) {
+            if(pos_count_y !== 0) {
+                canvas.add(new fabric.Text(digit, text_opts));
+            }
+        }
+        if(options.subgrid){
+            opts.opacity = sub_opacity;
+            opts.top -= offset / 2;
+            canvas.add(new fabric.Rect(opts));
+            opts.opacity = bg_opacity;
+            opts.top += offset / 2;
         }
         opts.top += offset;
         current += 1;
         pos_count_y -= 1;
-    }, grid_spaces_y);
+    }
 
     // add x
-    current = 0;
-    opts.top   = height / 2;
-    opts.left  = offset - line_width * 2;
-    opts.angle = 0;
+    zero_offset = offset / 6;
+    current     = 0;
+    opts.top    = height / 2;
+    opts.left   = offset;
+    opts.angle  = 0;
     opts.height = height;
     text_opts.left = 0;
-    doSomethingABunch(function(){
+    for(i = 0; i <= grid_spaces_x; i++) {
+        digit = String(Math.floor(pos_count_x)).replace('-', '- ');
         text_opts.top = (height / 2) + (offset / 2);
         text_opts.left += offset;
-        // slight tweak to offset by 1
-        // for the lack of a 0 on y-axis
-        if(current !== 0) {
-            canvas.add(new fabric.Text(
-                String(Math.floor(pos_count_x)), text_opts));
+        // slight offset for the 0
+        if(use_numbers && i <= grid_spaces_x - 1) {
+            if(pos_count_x === 0) {
+                text_opts.top -= zero_offset;
+                text_opts.left += zero_offset;
+                canvas.add(new fabric.Text(digit, text_opts));
+                // reset for next round
+                text_opts.top += zero_offset;
+                text_opts.left -= zero_offset;
+            } else {
+                canvas.add(new fabric.Text(digit, text_opts));
+            }
+        }
+        if(options.subgrid){
+            opts.opacity = sub_opacity;
+            opts.left -= offset / 2;
+            canvas.add(new fabric.Rect(opts));
+            opts.opacity = bg_opacity;
+            opts.left += offset / 2;
         }
         opts.opacity = current === midway_x ? 1 : bg_opacity;
         canvas.add(new fabric.Rect(opts));
         opts.left += offset;
         current += 1;
         pos_count_x += 1;
-    }, grid_spaces_x);
+    }
 
     // add quadrants
     if(options.use_quadrant) {
@@ -641,9 +670,11 @@ var fabric_filters = (function(filters){
     // been added to the filter object
     // for random use or sampling
     var all = [];
-    $.each(filters, function(filter, fn){
-        all.push(filter);
-    });
+    try {
+        $.each(filters, function(filter, fn){
+            all.push(filter);
+        });
+    } catch(e) {};
     return all;
 })(fabric.Image.filters);
 
