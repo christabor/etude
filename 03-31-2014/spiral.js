@@ -28,7 +28,7 @@ var circentric  = (function(){
     function line(x, y) {
         // curved path
         ctx.strokeStyle = 'purple';
-        ctx.fillStyle = 'none';
+        ctx.fillStyle = 'transparent';
         ctx.beginPath();
         ctx.moveTo(width / 2, height / 2);
 
@@ -49,7 +49,6 @@ var circentric  = (function(){
         ctx.moveTo(x+100, y+100);
         ctx.lineTo(width / 2, height / 2);
         ctx.stroke();
-        ctx.fill();
         circle(x + 10, y + 10, 2, 'rgba(255, 0, 0, 0.8');
     }
 
@@ -65,8 +64,8 @@ var circentric  = (function(){
         circle(width / 2, height / 2, 100, 'red');
         circle(width / 2, height / 2, event.y);
         circle(width / 2, height / 2, 5, 'rgba(255,0,0,0.3');
-            circle(width / 2, height / 2, 10, 'rgba(255,0,0,0.3');
-                circle(width / 2, height / 2, 50, 'rgba(255,0,0,0.3');
+        circle(width / 2, height / 2, 10, 'rgba(255,0,0,0.3');
+        circle(width / 2, height / 2, 50, 'rgba(255,0,0,0.3');
 
         // add follower
         line(event.x, event.y);
@@ -112,7 +111,7 @@ var circentric  = (function(){
             ev.x = rando(width);
             ev.y = rando(height);
             ring(ev);
-        }, 50);
+        }, 10);
     }
 
     return {
