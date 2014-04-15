@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 04-14-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        overflow: visible;
+        font-size: 12px;
+        background: #f1f1f1 url(../img/tiny_grid.png);
+    }
+    a {
+        color: #f7baff;
+    }
+    #intro,
+    #range {
+        position: absolute;
+        bottom: 10px;
+        padding: 10px 20px;
+        margin: 0;
+        color: white;
+        border-bottom: 4px solid #391842;
+        z-index: 999;
+        height: 80px;
+        display: block;
+    }
+    h1 {
+        margin: 0;
+    }
+    #intro {
+        width: 80%;
+        box-shadow: 0 4px 4px #999;
+        left: 50%;
+        margin-left: -40%;
+        background-color: #562463;
+    }
+    #range {
+        top: 0;
+        right: 0;
+        background-color: #391842;
+        border-bottom-color: #000;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        #intro {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            height: auto;
+        }
+        #range {
+            position: relative;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro" class="style-flat">
+        <h1>Polytopes!</h1>
+        <p>&ldquo;In elementary geometry, a polytope is a geometric object with flat sides, which exists in any general number of dimensions. <a href="http://en.wikipedia.org/wiki/Polytope">Wikipedia</a>&rdquo;</p>
+        <div id="range">
+            <br>
+            <label for="slider">Try with:</label> <br>
+            <input type="range" min="1" value="2" max="120" id="slider">
+            <a href="#" id="grid" class="btn btn-xsmall btn-green btn-block">grid</a>
+        </div>
+    </section>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="polytope.js"></script>
+</body>
+</html>
