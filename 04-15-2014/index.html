@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 04-15-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        overflow: visible;
+        font-size: 12px;
+        background: #f1f1f1 url(../img/noisy_grid.png);
+    }
+    a {
+        color: #6ccceb;
+    }
+    #intro {
+        position: absolute;
+        bottom: 0;
+        padding: 20px;
+        margin: 0;
+        color: white;
+        z-index: 999;
+        display: block;
+        opacity: 0.2;
+        overflow: hidden;
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+        background-color: #2e5663;
+        box-shadow: 0 0 20px #437f93;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-left: none;
+        border-bottom: none;
+        width: 300px;
+    }
+    #intro:hover {
+        opacity: 0.9;
+    }
+    label, input {
+        font-weight: bold;
+        width: 100%;
+    }
+    p {
+        line-height: 1.8em;
+    }
+    h1 {
+        margin: 0;
+    }
+    label, a{
+        margin: 0.6em 0 0 0;
+        display: block;
+
+    }
+    @media handheld, screen and (max-width: 500px) {
+        #intro {
+            width: 100%;
+            opacity: 1;
+            position: relative;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro" class="style-zen">
+        <h1>Polytopes redux</h1>
+        <a href="#" id="triangle" class="btn btn-xsmall btn-orange">Triangle</a>
+        <a href="#" id="rect" class="btn btn-xsmall btn-purple">Rect</a>
+        <a href="#" id="ellipse" class="btn btn-xsmall btn-green">Ellipse</a>
+        <a href="#" id="path" class="btn btn-xsmall btn-red">Path</a>
+        <br>
+        <label for="slider">Pathdata adjustments:</label>
+        <input type="range" min="1" value="2" max="120" id="pathdata">
+        <br>
+        <label for="slider">Width:</label> <br>
+        <input type="range" min="1" value="20" max="200" id="width">
+        <label for="slider">Height:</label> <br>
+        <input type="range" min="1" value="20" max="200" id="height">
+    </section>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="polytope2.js"></script>
+</body>
+</html>
