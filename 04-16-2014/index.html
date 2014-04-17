@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 04-16-2014</title>
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ccc;
+        font-family: "Lucida Bright", Georgia, serif;
+        text-align: justify;
+        color: black;
+        padding: 20px;
+        line-height: 2em;
+        text-shadow: 0 1px 2px #fff;
+    }
+    .latex {
+        display: block;
+        padding: 10px;
+    }
+    .title {
+        display: block;
+        text-align: center;
+        clear: both;
+        font-weight: bold;
+        font-size: 105%;
+        text-transform: uppercase;
+    }
+    #sources {
+        border-top: 1px solid #ccc;
+        padding-top: 0;
+        margin-top: 240px;
+        padding-top: 20px;
+        display: block;
+        font-size: 80%;
+        clear: both;
+    }
+    #sources li {
+        display: inline-block;
+        font-style: italic;
+    }
+    a {
+        color: black;
+        font-size: 12px;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .message {
+        box-shadow: 0 2px 8px #555;
+        background-color: white;
+        padding: 30px 50px;
+        overflow: hidden;
+        margin: 20px 0;
+        color: #000;
+    }
+    .message p {
+        display: inline-block;
+        float: left;
+        width: 48%;
+        margin-right: 2%;
+    }
+    .message p:first-of-type {
+        width: 80%;
+        margin: 20px auto;
+        float: none;
+        display: block;
+    }
+    #intro {
+        opacity: 0.4;
+        margin: 0;
+        text-align: center;
+        font-family: sans-serif;
+    }
+    #intro:hover {
+        opacity: 1;
+    }
+    #intro h3 {
+        margin: 0;
+    }
+    #intro p {
+        margin: 0;
+    }
+    .text-center {
+        text-align: center;
+    }
+    @media handheld, (max-width: 500px) {
+        body {
+            padding: 10px;
+        }
+        .container {
+            width: 100%;
+            font-size: 14px;
+        }
+        .message {
+            padding: 20px;
+        }
+        .message p {
+            float: none;
+            width: 100%;
+            margin: 0;
+        }
+        #sources {
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container style-flat">
+        <section id="intro">
+            <h3 class="text-center">Thesis paper generator</h3>
+            <p>Using Mathjax and some randomness for fun.</p>
+            <a href="#" id="generate" class="btn btn-purple btn-xsmall">Regenerate.</a>
+        </section>
+        <div id="message"></div>
+    </div>
+    <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="paper.js"></script>
+</body>
+</html>
