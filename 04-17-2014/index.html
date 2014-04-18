@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 04-17-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Homenaje', sans-serif;
+        background-color: #222;
+        color: white;
+        padding: 20px;
+        line-height: 2em;
+    }
+    h1 {
+        position: absolute;
+        padding: 0 20px;
+        z-index: 2;
+        text-shadow: 0 2px 4px black;
+    }
+    svg {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        top: 0;
+        padding: 0;
+        margin: 0;
+    }
+    @media handheld, (max-width: 500px) {
+        body {
+            padding: 10px;
+        }
+    }
+}
+</style>
+</head>
+<body class="style-flat">
+    <h1>Randomly generated SVG plus animations &nbsp;
+    <a href="#" class="btn btn-small btn-orange" id="btn">Generate</a>
+    </h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+        <path d="" stroke="#96daff" stroke-width="4.3" fill="none" style="-webkit-transition: stroke-dashoffset 2s ease-in-out; transition: stroke-dashoffset 2s ease-in-out; stroke-dasharray: 988.0062255859375px, 988.0062255859375px; stroke-dashoffset: 0px;"></path>
+    </svg>
+    <script src="../js/utils.js"></script>
+    <script src="svganim.js"></script>
+</body>
+</html>
