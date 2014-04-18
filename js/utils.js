@@ -334,6 +334,22 @@ function randomCSSColorAttr(elem, props, color_max) {
     return;
 }
 
+function animatePath(path) {
+    // taken from http://jakearchibald.com/2013/animated-line-drawing-svg/
+    var length = path.getTotalLength();
+    // Clear any previous transition
+    path.style.transition = path.style.WebkitTransition = 'none';
+    path.style.strokeDasharray = length + ' ' + length;
+    path.style.strokeDashoffset = length;
+    // Trigger a layout so styles are calculated & the browser
+    // picks up the starting position before animating
+    path.getBoundingClientRect();
+    // Define our transition
+    transition = 'stroke-dashoffset 2s ease-in-out';
+    path.style.transition = path.style.WebkitTransition = transition;
+    path.style.strokeDashoffset = '0';
+}
+
 /********************* Fabric.JS *********************/
 
 function randomCommandValues(iterations, max) {
@@ -426,6 +442,19 @@ function randomPrecisePath(max) {
     randomSVGCurveTo(max),
     randomSVGArcTo(max)
     ].join(',');
+}
+
+function smartPath(seed) {
+    var data = [];
+    data.push(randomSVGMoveTo(seed));
+
+    for (var i = 0; i < seed; i++) {
+        data.push(randomSVGCurveTo(i));
+        data.push(randomSVGLineTo(i));
+        data.push(randomSVGArcTo(i));
+    }
+    data.push(',z');
+    return data.join(',');
 }
 
 function randomCommandPair(iterations, max) {
