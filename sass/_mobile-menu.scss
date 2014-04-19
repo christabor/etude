@@ -1,39 +1,62 @@
+$default-width: 50%;
+$bg: #201e23;
+$highlight: darken(invert($bg), 10%);
+
 .mobile-menu-toggle {
-	left: -9999px;
 	position: absolute;
+	left: -9999px;
 	top: -9999px;
 	&:hover {
-		background-color: darkOrange;
+		background-color: $highlight;
 	}
 }
 .mobile-toggleable-menu {
-	background-color: #333;
+	background-color: $bg;
 	color: #fff;
 	opacity: 0.98;
 	display: block;
 	width: 100%;
 	padding: 0;
+	a, .btn {
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s;
+	}
 	li {
 		display: inline-block;
 		padding: 0;
 		margin: 0;
 	}
-	li > a {
+	li a {
 		height: 100%;
 		width: 100%;
+		padding: 2px 4px;
 		display: inline-block;
-		border-bottom: 1px solid #444;
+		border-bottom: 1px solid lighten($bg, 4%);
 		text-decoration: none;
-		color: #fff;
+		color: $highlight;
+		border-radius: 4px;
 	}
-	li > a:hover {
-		background-color: #222;
-		color: orange;
+	li a:hover {
+		text-indent: 20px;
+		background-color: darken($bg, 8%);
+		color: lighten($highlight, 6%);
 	}
-	li > a:active {
+	li a:active {
 		position: relative;
 		top: 1px;
-		background-color: #111;
+		color: $bg;
+		background-color: darken($bg, 10%);
+	}
+	li a.active {
+		background-color: $highlight;
+		text-shadow: 0 1px 2px white;
+		color: $bg;
+	}
+	li a.active:hover {
+		background-color: darken($highlight, 20%);
 	}
 }
 .mobmenu-toggle,
@@ -48,20 +71,21 @@
 	transition: all 0.2s;
 }
 .mobmenu-toggle {
-	background-color: orange;
-	color: #fff;
-	font-size: 32px;
+	background-color: darken($highlight, 5%);
+	color: $bg;
+	font-size: 30px;
+	padding: 8px;
 	text-decoration: none;
 	text-align: center;
 	font-weight: bold;
 	display: none;
 	left: 0;
 	margin: 0;
+	width: 50px !important;
 	display: inline-block;
-	width: 15%;
 	z-index: 999;
 	&:hover {
-		background-color: lighten(orange, 10%);
+		background-color: lighten($highlight, 5%);
 		cursor: pointer;
 	}
 	&.toggle-right {
@@ -83,7 +107,7 @@
 }
 .mobile-toggleable-menu {
 	margin: 0;
-	width: 85%;
+	width: $default-width;
 	height: 100%;
 	max-height: 100%;
 	min-height: 100%;
@@ -98,9 +122,11 @@
 }
 .mobile-toggleable-menu.mobile-left {
 	left: -105%;
+	right: auto;
 }
 .mobile-toggleable-menu.mobile-right {
 	right: -105%;
+	left: auto;
 }
 .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-right {
 	left: 0;
@@ -111,11 +137,11 @@
 	right: 0;
 }
 .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
-	width: 85% !important;
+	width: $default-width !important;
 	left: 0;
 }
 .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-right {
-	width: 85% !important;
+	width: $default-width !important;
 	right: 0;
 }
 .mobile-toggleable-menu {
@@ -133,7 +159,7 @@
 		width: 100%;
 	}
 	li a {
-		color: orange;
+		color: $highlight;
 	}
 	li > a {
 		padding: 10px;
@@ -149,8 +175,8 @@
 		font-size: 120%;
 		padding: 5px 20px;
 		margin: 10px 0;
-		border-left: 10px solid #666;
-		background-color: #111;
+		border-left: 10px solid lighten($bg, 10%);
+		background-color: darken($bg, 5%);
 	}
 	.subtitle {
 		font-weight: bold;
@@ -164,15 +190,31 @@
 	.active,
 	.active:hover {
 		color: white;
-		background-color: orange;
+		background-color: $highlight;
 		text-shadow: 0 1px 1px black;
 	}
 }
 .mobile-menu-toggle-button:checked ~ .mobmenu-toggle {
-	background-color: #000;
-	color: orange;
+	background-color: black;
+	color: $highlight;
+	-webkit-transform: rotate(-180deg);
+}
+.mobile-menu-toggle-button:checked ~ .mobmenu-toggle:hover {
+	background-color: lighten($highlight, 10%);
+	color: black;
 	-webkit-transform: rotate(-180deg);
 }
 .mobile-toggleable-menu {
 	box-shadow: 2px 2px 20px #444;
+}
+.mobile-menu-toggle-button:checked .menu-slide-container {
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-ms-transition: all .25s ease-in-out;
+	-o-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
+	margin-left: 200px;
+	display: block;
+	width: 100%;
+	height: 100%;
 }
