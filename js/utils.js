@@ -143,6 +143,25 @@ function populateMenu(list, menu, el, use_both) {
     });
 }
 
+function buttonsWithFuncs(container_el, funcs, set_active_fn, btn_classes) {
+    // A vanilla js version of populateMenu and setActiveFn.
+    // Easier to user and a mostly better mapper that
+    // takes a list of funcs and creates buttons and events.
+    // Just give it a container and a list of functions, and voila!
+    for(var func in funcs) {
+        var btn = document.createElement('a');
+        btn.setAttribute('href', '#');
+        btn.setAttribute('id', func);
+        btn.setAttribute('class', btn_classes || '');
+        btn.innerText = func;
+        container_el.appendChild(btn);
+        // custom function that must be capable
+        // of setting the value of a current variable to this functions
+        // matching name. Must be in a higher scope.
+        btn.onclick = set_active_fn;
+    }
+}
+
 function addCanvasUI(generate) {
     var export_btn;
     var generate_btn;
