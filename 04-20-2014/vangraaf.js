@@ -1,7 +1,4 @@
 var vangraaf = (function(){
-    var dims        = getViewportDimensions();
-    var height      = dims.height;
-    var width       = dims.width;
     var canvas_elem = document.querySelector('canvas');
     var tau         = Math.PI * 2;
     var text_blocks = document.getElementById('text')
@@ -23,6 +20,10 @@ var vangraaf = (function(){
     }
 
     function vanDeGraaf() {
+        var dims = getViewportDimensions();
+        var height = dims.height;
+        var width = dims.width;
+        clearCanvas();
         var mid_w = width / 2;
         var mid_h = height / 2;
 
@@ -81,6 +82,7 @@ var vangraaf = (function(){
     function init() {
         bootstrapCanvas(null, false);
         vanDeGraaf();
+        window.onresize = vanDeGraaf;
     }
 
     return {
