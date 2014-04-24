@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 04-22-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #dfffdc;
+        color: #373e36;
+        padding: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 0;
+        font-size: 12px;
+    }
+    .mobmenu-toggle,
+    .mobile-menu-toggle-button:checked + .mobile-toggleable-menu.mobile-left {
+        width: 300px !important;
+    }
+    .mobile-menu-toggle-button:checked ~ .mobmenu-toggle.mobile-left {
+        left: 300px;
+    }
+    .mobmenu-toggle {
+        width: 50px !important;
+    }
+    #nav-options {
+        opacity: 0.5;
+    }
+    #nav-options:hover {
+        opacity: 1;
+    }
+    p {
+        padding: 0;
+        margin: 0.2em 0;
+    }
+
+    </style>
+</head>
+<body>
+    <nav id="nav-options" class="style-zen">
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle mobile-menu-toggle-button" checked>
+        <ul id="plain-menu" class="togglemenu mobile-toggleable-menu mobile-left">
+            <li class="title">About this</li>
+            <li class="subtitle">Overview</li>
+            <li>
+                <p>This is a custom rule-based program, similar to cellular automata. The rules are ones I've created completely arbitrarily, off the top of my head.</p>
+            </li>
+            <li class="subtitle">Rules</li>
+            <li>
+                <p>Using the alphabet and corresponding digits: ABCDEFGHIJKLMNOPQRSTUVWXYZ  !@#$%^&amp;*()_+ etc... <br>
+                    12345678901234567890123456  000000000000 ......, let the underlying defined number = distance to travel. For example: Hello world = 85225035824
+                </p>
+                <p>
+                    Distance is defined by starting at N (North), then moving clockwise, and resetting after reaching the end: N, E, S, W, N, E...
+                </p>
+            </li>
+            <li class="subtitle">Text to translate (edit)</li>
+            <li>
+                <textarea name="" id="text" cols="30" rows="10"></textarea>
+            </li>
+            <li class="subtitle">Load Examples</li>
+            <li id="canned">
+                <a href="#" id="rev" class="btn btn-xsmall btn-block btn-red">Revelations 19</a>
+                <a href="#" id="pok" class="btn btn-xsmall btn-block btn-green">Pokemon</a>
+                <a href="#" id="roz" class="btn btn-xsmall btn-block btn-purple">Rosencrantz</a>
+            </li>
+        </ul>
+        <label class="mobile-left mobmenu-toggle toggle-left" for="mobile-menu-toggle">+</label>
+    </nav>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
+    <script src="../js/utils.js"></script>
+    <script src="letterautomata.js"></script>
+</body>
+</html>
