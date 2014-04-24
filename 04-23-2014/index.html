@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 04-23-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background: url(../img/az_subtle.png);
+        font-family: 'Open Sans Condensed', 'sans-serif';
+        margin: 0;
+        text-align: center;
+        font-size: 16px;
+    }
+    #results > div {
+        padding: 6px 10px;
+        margin: 4px;
+        display: inline-block;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    #results > .prime {
+        font-size: 200%;
+        background-color: #444;
+        color: white;
+    }
+    form {
+        width: 40%;
+        margin: 0 auto;
+    }
+    textarea, button {
+        width: 100%;
+    }
+    #intro {
+        width: 100%;
+        background: url(../img/binding_dark.png) #111;
+        color: white;
+        border-bottom: 10px solid #444;
+        display: block;
+        padding: 30px;
+        margin: 0 0 2em 0;
+    }
+    h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+    #metrics, .subdued, p {
+        font-family: 'Merriweather', 'serif';
+    }
+    #metrics {
+        margin: 1em 0;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        form {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <section id="intro">
+        <h1>Letter as prime (or not) numbers.</h1>
+        <p>Using a simple set of rules, let some set of letters map to their corresponding number in the alphabet, then determine if that number is prime.</p>
+        <form>
+            <textarea id="text" cols="10" rows="5">The quick brown fox jumped over the lazy dog.</textarea>
+            <br>
+            <button class="btn btn-xsmall btn-block btn-orange">Find primes</button>
+        </form>
+    </section>
+    <div id="metrics"></div>
+    <div id="results"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="primer.js"></script>
+</body>
+</html>
