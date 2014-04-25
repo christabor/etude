@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 04-24-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #ff7426;
+        margin: 0;
+        text-align: center;
+        font-size: 16px;
+        padding: 40px;
+        line-height: 2.2em;
+        color: white;
+        font-family: 'Merriweather', 'serif';
+    }
+    #results > div,
+    .sequence {
+        display: inline-block;
+        padding: 6px 10px;
+        margin: 4px;
+        display: inline-block;
+        border-radius: 10px;
+        background-color: #ff8d3e;
+        text-transform: uppercase;
+        -webkit-transition: all .1 ease-out;
+        -moz-transition: all .1 ease-out;
+        -ms-transition: all .1 ease-out;
+        -o-transition: all .1 ease-out;
+        transition: all .1s ease-out;
+    }
+    #results > div:hover,
+    .sequence:hover {
+        box-shadow: 0 0 20px #a35a26;
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -ms-transform: scale(2);
+        -o-transform: scale(2);
+        transform: scale(2);
+    }
+    #results > .prime {
+        font-size: 200%;
+        background-color: #bc551a;
+        color: white;
+    }
+    h1 {
+        font-size: 40px;
+        margin: 0;
+    }
+    form {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #metrics,
+    .subdued, p,
+    input,
+    .sequence {
+        font-family: 'Open Sans Condensed', 'sans-serif';
+    }
+    input {
+        min-height: 100px;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        font-size: 50px;
+        padding: 4px 12px;
+        text-align: center;
+        display: block;
+        color: black;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        border-radius: 0;
+        margin: 2em 0;
+    }
+    input:hover {
+        border-color: #ffa359;
+    }
+    input:focus {
+        border-color: #ff9642;
+        outline: 0;
+        background-color: #ef6c21;
+    }
+    .container .row:last-of-type {
+        border-top: 1px solid #ffa359;
+    }
+    .container .lower {
+        border-right: 1px solid #ffa359;
+        min-height: 200px;
+    }
+    .container .lower:last-of-type {
+        border: none;
+    }
+    #intro {
+        padding-top: 2em;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        .container .lower,
+        .container .row {
+            border: none;
+        }
+        body {
+            font-size: 14px;
+            line-height: 1.8em;
+            padding: 10px;
+        }
+        form, input {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4" id="intro">
+                <h1>What&rsquo;s in a name?</h1>
+                <p>Finding lots of random stuff about your name, and the letters that comprise it.</p>
+                <strong>To get started, type out your name, and then hover over the results!</strong>
+            </div>
+            <div class="col-md-8">
+                <form>
+                    <input id="text" type="text">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 lower">
+                <h4>Letter number mapping</h4>
+                <div id="mapping"></div>
+                <h4>Letter distribution</h4>
+                <div id="distribution"></div>
+            </div>
+            <div class="col-md-4 lower">
+                <h4>Distance between letters</h4>
+                <div id="distances"></div>
+            </div>
+            <div class="col-md-4 lower">
+                <h4>Prime metrics</h4>
+                <div id="metrics"></div>
+                <h4>Prime results</h4>
+                <div id="results"></div>
+            </div>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="letric.js"></script>
+</body>
+</html>
