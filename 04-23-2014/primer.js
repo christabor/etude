@@ -65,7 +65,7 @@ var primer = (function(){
             $results.append(container);
         }
         if(prime_count && len) {
-            $metrics.html('Total primes: ' + prime_count + ' of ' + len + ' letters, or (' + len / prime_count + '%)');
+            $metrics.html('Total primes: ' + prime_count + ' of ' + (len + 1) + ' letters, or (' + (prime_count / len) * 100 + '%)');
         } else {
             $metrics.empty();
         }

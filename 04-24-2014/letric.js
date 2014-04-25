@@ -60,7 +60,7 @@ var letric = (function(){
         log(total);
         // calculate distribution after counts have been added up.
         $.each(letter_count, function(k, count){
-            $distribution.append('<span class="sequence" style="font-size:'+ clamp((total/count) * 2, 10, 30) +'px">' + k + ': ' + count + '/' + total + ' ... ' + (total/count) + '%</span>');
+            $distribution.append('<span class="sequence" style="font-size:'+ clamp((count / total) * 2, 10, 30) +'px">' + k + ': ' + count + '/' + total + ' ... ' + Math.floor((count / total) * 100) + '%</span>');
         });
     }
 
@@ -94,7 +94,7 @@ var letric = (function(){
             $results.append(container);
         }
         if(prime_count && len) {
-            $metrics.html('Total primes: ' + prime_count + ' of ' + len + ' letters, or (' + len / prime_count + '%)');
+            $metrics.html('Total primes: ' + prime_count + ' of ' + (len + 1) + ' letters, or (' + Math.floor((prime_count / len) * 100) + '%)');
         } else {
             $metrics.empty();
         }
