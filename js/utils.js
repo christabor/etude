@@ -106,6 +106,17 @@ function successionPlugin(container, advance_speed, callback) {
     return;
 }
 
+function findPrime(num) {
+    var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+    var is_prime = false;
+    for(var i = 0, len = primes.length - 1; i <= len; i++) {
+        if(primes[i] === num) {
+            is_prime = true;
+        }
+    }
+    return is_prime;
+}
+
 /* UI / DOM related */
 
 function setActiveFn(els, funcs, el, active_fn) {
