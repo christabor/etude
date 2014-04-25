@@ -73,7 +73,7 @@ var primer = (function(){
 
     function init() {
         $form.on('submit', findPrimes);
-        $text.on('keyup, keypress, keydown', findPrimes);
+        $text.on('keyup change', findPrimes);
     }
 
     return {
