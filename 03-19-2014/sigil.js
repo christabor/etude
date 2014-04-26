@@ -103,7 +103,7 @@ function makeSigil() {
     rect = new fabric.Rect({
         width: w,
         height: h,
-        fill: 'none',
+        fill: '',
         stroke: color,
         strokeWidth: 4,
         selectable: false
