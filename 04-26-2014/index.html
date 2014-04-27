@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 04-26-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Buenard:400,700|Dorsa' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        background: url(../img/subtle_dots.png);
+        color: black;
+        font-weight: normal;
+        font-size: 18px;
+        font-family: 'Buenard', serif;
+        -webkit-transition: all .25 ease-in-out;
+        -moz-transition: all .25 ease-in-out;
+        -ms-transition: all .25 ease-in-out;
+        -o-transition: all .25 ease-in-out;
+        transition: all .25 ease-in-out;
+    }
+    .fa-times-circle {
+        margin: 0.3em;
+        color: #ff2b2f;
+    }
+    .fa-times-circle:hover {
+        color: #ff634c;
+        text-decoration: none;
+    }
+    .item {
+        background-color: #444;
+        border-radius: 4px;
+        padding: 5px 10px;
+        color: white;
+        margin: 0.4em 0.4em 0 0;
+        display: block;
+    }
+    .item select {
+        display: none;
+    }
+    .item:hover select {
+        display: block;
+    }
+    .chooser {
+        display: none;
+    }
+    #options-add  .chooser-container {
+        margin: 1em 0;
+        padding: 10px 15px;
+        min-height: 40px;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+    }
+    #options-add  .chooser-container:hover .chooser {
+        display: block;
+    }
+    h1 {
+        margin: 0;
+    }
+    h4 {
+        margin: 0;
+    }
+    h1,
+    input,
+    select {
+        width: 100%;
+        display: block;
+    }
+    input, select {
+        margin: 1em 0;
+    }
+    #intro {
+        margin-bottom: 2em;
+        text-align: center;
+        border-bottom: 2px solid #f1f1f1;
+        padding: 2em 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="controls" class="container style-zen">
+        <div class="row" id="intro">
+            <h1>
+                <span class="fa fa-flask"></span>
+                <span contenteditable="true">
+                    (fake) Application builder <span class="subdued">edit name</span>
+                </span>
+            </h1>
+            <p>A fake concept for application development - via GUI. <span class="subdued">Most buttons don't work!</span></p>
+        </div>
+        <div id="options-add" class="row">
+            <div class="col-md-3">
+                <div id="dbs" class="chooser-container">
+                    <h4>
+                        <span class="fa fa-hdd-o"></span>
+                        Add database
+                    </h4>
+                    <span class="chooser">
+                        <select name="">
+                            <option value="cassandra">Cassandra</option>
+                            <option value="mangodb">MangoDB</option>
+                            <option value="postgresql">Postgresql</option>
+                            <option value="mysql">MySQL</option>
+                            <option value="redis">Redis</option>
+                        </select>
+                        <label>Clusters</label>
+                        <input type="number" min="0" max="10">
+                        <label>Replication</label>
+                        <input type="number" min="0" max="10">
+                        <a href="#" class="btn-red btn btn-block
+                        dropdown-add">Add it!</a>
+                    </span>
+                </div>
+                <div id="servers" class="chooser-container">
+                    <h4>
+                        <span class="fa fa-gears"></span>
+                        Add server
+                    </h4>
+                    <span class="chooser">
+                        <select name="">
+                            <option value="gunicorn">G-unicorn</option>
+                            <option value="tornado">Tornado</option>
+                            <option value="eventlet">Eventlet</option>
+                            <option value="gevent">GEvent</option>
+                            <option value="twisted">Twisted</option>
+                        </select>
+                        <a href="#" class="btn-red btn btn-block dropdown-add">Add it!</a>
+                    </span>
+                </div>
+                <div id="frontends" class="chooser-container">
+                    <h4>
+                        <span class="fa fa-desktop"></span>
+                        Add front-end
+                    </h4>
+                    <span class="chooser">
+                        <select name="">
+                            <option value="rails">Ruby on Rails</option>
+                            <option value="django">Django</option>
+                            <option value="angular">AngularJS</option>
+                        </select>
+                        <fieldset>
+                            <legend>Options</legend>
+                            <label>LocalStorage?</label><input type="checkbox">
+                            <label>Mobile Friendly?</label><input type="checkbox">
+                            <p>Dynamic css</p>
+                            <label>SASS</label>
+                            <input type="radio" name="css">
+                            <label>LESS</label>
+                            <input type="radio" name="css">
+                        </fieldset>
+                        <a href="#" class="btn-red btn btn-block dropdown-add">Add it!</a>
+                    </span>
+                </div>
+                <div id="datamines" class="chooser-container">
+                    <h4>
+                        <span class="fa fa-download"></span>
+                        Add data-mine
+                    </h4>
+                    <span class="chooser">
+                        <label>Add keyword to data-mine</label>
+                        <input type="text" placeholder="keyword...">
+                        <a href="#" class="btn-red btn btn-block dropdown-add">Add it!</a>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-9" id="system-setup">
+                <h2>Your system setup:</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Database</h3>
+                        <div id="output-db"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Servers</h3>
+                        <div id="output-server"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Frontends</h3>
+                        <div id="output-frontend"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Data-mines</h3>
+                        <div id="output-datamine"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="appui.js"></script>
+</body>
+</html>
