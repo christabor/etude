@@ -105,6 +105,10 @@ $purple: #874baf;
 		position: relative;
 		top: 2px;
 	}
+	&.btn-block {
+		display: block;
+		width: 100%;
+	}
 
 	&.btn-xlarge {
 		padding: $base-padding-x * 5 $base-padding-y * 5;
