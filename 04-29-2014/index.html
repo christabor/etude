@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700|Belleza' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Etude - 04-29-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .subdued {
+        font-family: 'Exo 2';
+        font-weight: normal;
+        font-style: italic;
+        font-size: 50%;
+    }
+    #lovebar {
+        width: 50px;
+        background-color: #ca002b;
+        position: fixed;
+        left: 50%;
+        top: 0;
+        margin-left: -25px;
+    }
+    #lovebar-arrow {
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 50px 50px 0 50px;
+        border-color: #ca002c transparent transparent transparent;
+        position: fixed;
+        left: 50%;
+        margin-left: -50px;
+    }
+    body {
+        font-family: 'Belleza', sans-serif;
+        font-size: 20px;
+        color: white;
+        line-height: 30px;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        height: 4500px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        background-image: url(../img/binding_dark.png);
+    }
+    h1:first-of-type {
+        margin-top: 100px;
+    }
+    .row, .row div {
+        position: relative;
+    }
+    img {
+        background-color: white;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0 0 4px black;
+        max-width: 100%;
+        width: 400px;
+        margin: 0 auto;
+    }
+    h4 {
+        margin-top: 0.8em;
+    }
+    .row {
+        margin: 2em 0;
+    }
+    #ps {
+        border-radius: 40px;
+        border:1px solid #8f344e;
+        display: inline-block;
+        padding: 30px;
+    }
+    .text-center {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div id="lovebar" data-0="height:0px;" data-3500="height:420px;"></div>
+    <div id="lovebar-arrow" data-0="opacity:0;top:0;" data-3610="opacity:0;top:400px;" data-3650="opacity:1;top:420px;"></div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 data-0="font-size:50px;" data-50="font-size:120px;opacity:1;" data-400="opacity:0;">Happy</h1>
+                <h1 data-10="font-size:40px;" data-60="font-size:80px;opacity:1;" data-400="opacity:0;">anniversary</h1>
+                <span class="subdued">Scroll &darr;</span>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6">
+                <img src="imgs/p5.jpg" data-100="transform:rotate(0deg);opacity:0;" data-200="transform:rotate(-6deg);opacity:1;" alt="intro">
+            </div>
+            <div class="col-md-6">
+                <img src="imgs/p6.jpg" data-200="left:100px;transform:scale(0.1);opacity:0;" data-300="left:200px;transform:scale(1);opacity:1;" alt="intro">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6">
+                <img src="imgs/p2.jpg" data-850="transform:scale(0.1);opacity:0;" data-900="transform:scale(1);opacity:1;" alt="intro">
+            </div>
+            <div class="col-md-6">
+                <img src="imgs/p1.jpg" data-800="transform:rotate(-10deg);opacity:0;" data-900="transform:roate(10deg);opacity:1;" alt="intro">
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6">
+                <img src="imgs/p3.jpg" data-1000="transform:rotate(0deg);opacity:0;" data-1100="transform:rotate(-10deg);opacity:1;" alt="intro">
+            </div>
+            <div class="col-md-6">
+                <img src="imgs/p4.jpg" data-1100="transform:rotate(-10deg);opacity:0;" data-1150="transform:rotate(10deg);opacity:1;" alt="intro">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br>
+                <h3 data-1200="opacity:0;" data-1800="opacity:1;">Thank you for <span data-1400="margin-left:100px;" data-1800="margin-left:0;">the adventures</span>, <span data-1200="margin-left:100px;" data-1800="margin-left:0;">the memories</span></h3>
+                <h4 data-1800="opacity:0;font-size:20px;" data-1900="opacity:1;font-size:80px;"><span class="subdued">for...</span> being a friend</h4>
+                <h4 data-1900="opacity:0;font-size:20px;" data-2000="opacity:1;font-size:80px;"><span class="subdued">for...</span> being easy to love</h4>
+                <h4 data-2000="opacity:0;font-size:20px;" data-2100="opacity:1;font-size:80px;"><span class="subdued">for...</span> being patient</h4>
+                <p style="margin-top:100px;" data-2100="opacity:0;font-size:10px;" data-2200="opacity:0.8;font-size:18px;"><span class="subdued">for...</span>dishes &amp; laundry...</p>
+                <h4 data-2200="opacity:0;font-size:20px;" data-2300="opacity:1;font-size:60px;"><span class="subdued">for...</span> documentaries</h4>
+                <h4 data-2400="opacity:0;font-size:20px;" data-2500="opacity:1;font-size:60px;"><span class="subdued">for...</span> rollercoasters</h4>
+                <h4 data-2500="opacity:0;font-size:20px;" data-2600="opacity:1;font-size:60px;"><span class="subdued">for...</span> traveling abroad</h4>
+                <h4 data-2600="opacity:0;font-size:20px;" data-2700="opacity:1;font-size:60px;"><span class="subdued">for...</span> baking experiments</h4>
+                <h4 data-2700="opacity:0;font-size:10px;" data-2750="opacity:1;font-size:30px;"><span class="subdued">for...</span> drinking wine in mugs</h4>
+                <h4 data-2750="opacity:0;font-size:10px;" data-2800="opacity:1;font-size:30px;"><span class="subdued">for...</span> people watching in coffee shops</h4>
+                <h4 data-2800="opacity:0;font-size:10px;" data-2850="opacity:1;font-size:30px;"><span class="subdued">for...</span> awful trips to the malls</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h4 data-3000="opacity:0;font-size:10px;" data-3100="opacity:1;font-size:30px;">Happy</h4>
+                <h2 data-3100="opacity:0;font-size:10px;" data-3150="opacity:1;font-size:50px;" data-3200="opacity:0.1;font-size:10px;">1 years</h2>
+                <h2 data-3150="opacity:0;font-size:10px;" data-3200="opacity:1;font-size:50px;" data-3250="opacity:0;font-size:10px;">2 years</h2>
+                <h2 data-3200="opacity:0;font-size:10px;" data-3250="opacity:1;font-size:50px;" data-3300="opacity:0;">3 years</h2>
+                <h2 data-3250="opacity:0;font-size:10px;" data-3280="opacity:1;font-size:20px;">and more to come!</h2>
+                <h3 style="margin:300px;" data-3200="font-size:100px;opacity:0;" data-3500="opacity:1;font-size:80px;">Fin.</h3>
+                <h2 id="ps" data-3600="opacity:0;font-size:10px;" data-3650="opacity:1;font-size:24px;">p.s. I love you.</h2>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="thankyou.js"></script>
+</body>
+</html>
