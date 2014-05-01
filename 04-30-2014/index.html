@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <title>Etude - 04-30-2013</title>
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: white;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 20px;
+        line-height: 30px;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    #state {
+        padding: 10px;
+        height: 50px;
+        width: 70%;
+        margin: 0 auto 3em auto;
+        text-shadow: 0 0 2px white;
+        line-height: 1.3em;
+        border: 2px solid #d2b01f;
+        text-align: center;
+    }
+    #state.on {
+        background-color: #e9c424;
+        box-shadow: 0 0 20px #e9ce52;
+    }
+    #state.off {
+        background: #f1f1f1;
+    }
+    table tr {
+        padding: 2px;
+    }
+    table tr td {
+        padding: 2px;
+    }
+    table tbody tr:nth-of-type(odd) {
+        background-color: #f1f1f1;
+    }
+    .btn {
+        margin: 0;
+        text-align: center;
+    }
+    img {
+        padding: 10px;
+        margin-top: 40px;
+    }
+    table {
+        width: 100%;
+        text-align: center;
+        font-size: 90%;
+        margin: 0.2em;
+    }
+    td.on {
+        color: black;
+        text-shadow: 0 0 10px #f9d32b;
+    }
+    </style>
+</head>
+<body>
+    <div class="container style-zen">
+        <div class="row">
+            <div class="col-md-3 fadeInLeft">
+                <h1>Thomson&rsquo;s lamp</h1>
+                <p>
+                    A (partial) implementation of the classic thought experiment. <span class="subdued">Since the original experiment moves towards infinity, I've decided to shorten it a bit.</span>
+                    <span class="subdued fa fa-external-link">
+                        <a href="http://en.wikipedia.org/wiki/Thomson%27s_lamp">Wikipedia article</a>
+                    </span>
+                </p>
+                <a href="#" class="bounceIn btn btn-block btn-xlarge btn-green" id="play">Run the program!</a>
+                <br>
+                <a href="#" class="bounceIn btn btn-block btn-med btn-orange" id="reset">Reset all</a>
+                <h3>Total time passed</h3>
+                <div id="time">None of 2:00</div>
+            </div>
+            <div class="col-md-6 text-center fadeInTop">
+                <img id="lamp-on" style="display:none;" src="imgs/lamp-on.jpg" alt="">
+                <img id="lamp-off" src="imgs/lamp-off.jpg" alt="">
+                <h3>Current state</h3>
+                <div id="state" class="off">OFF</div>
+            </div>
+            <div class="col-md-3 fadeInRight">
+                <h3>All times</h3>
+                <table id="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>State</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="lamp.js"></script>
+</body>
+</html>
