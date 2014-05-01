@@ -27,7 +27,7 @@ var lamp = (function(){
 			'</td></tr>'
 		].join('');
 		$time.html(timestep + ' of 2:00, <br /> <span class="subdued">Running iteration ' + current_iter + ' of ' + MAX_BEFORE_STOP + '</span>');
-		$state.toggleClass('on off').text(on ? 'ON' : 'OFF');
+		$state.toggleClass('on off').text(on ? 'OFF' : 'ON');
 		$timetable.append(html);
 		toggleLamp();
 		prev_timestep = timestep;
