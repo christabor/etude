@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-01-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #11904c;
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+        padding: 40px;
+        line-height: 2.2em;
+        color: white;
+        font-family: 'Merriweather', 'serif';
+    }
+    h1 {
+        font-size: 40px;
+        margin: 0;
+        line-height: 1.7em;
+        color: #aeffb3;
+    }
+    form {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .letter {
+        margin: 0.4em 0;
+        text-transform: uppercase;
+        font-size: 40px;
+        display: block;
+        color: #33ff82;
+    }
+    .unit {
+        display: inline-block;
+        background-color: #104e28;
+        margin: 10px;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 2px;
+    }
+    input {
+        font-family: 'Merriweather', 'serif';
+    }
+    input {
+        min-height: 100px;
+        border: none;
+        background-color: #13b15d;
+        width: 100%;
+        font-size: 50px;
+        padding: 4px 12px;
+        text-align: center;
+        display: block;
+        color: black;
+        font-weight: bold;
+        border-bottom: 4px solid #0d783f;
+        border-radius: 0;
+        margin: 2em 0;
+    }
+    input:hover {
+        background-color: #13b65e;
+    }
+    input:focus {
+        border-color: #11a959;
+        outline: 0;
+        background-color: #15cf6d;
+    }
+    #intro {
+        padding-top: 2em;
+    }
+    .arrow {
+        display: block;
+        margin-top: 120px;
+        font-size: 50px;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        .hidden-sm  {
+            display: none;
+        }
+    }
+    @media handheld, screen and (max-width: 800px) {
+        .container .lower,
+        .container .row {
+            border: none;
+        }
+        body {
+            font-size: 14px;
+            line-height: 1.8em;
+            padding: 10px;
+        }
+        input {
+            width: 100%;
+            margin: 1em 0;
+        }
+        .letter {
+            font-size: 30px;
+        }
+        .unit {
+            margin: 4px;
+            padding: 5px 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-5" id="intro">
+                <h1>The Shape of letters</h1>
+                <p>Asking a simple question: if letters can be measured by the amount of vertices and edges they have, what does a typical name look like, numerically? Is there something special about certain names?</p>
+                <strong>To get started, just begin typing.</strong>
+            </div>
+            <div class="col-md-1">
+                <span class="hidden-sm arrow">&rarr;</span>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <input id="text" type="text">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="results"></div>
+            </div>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="lettergraph.js"></script>
+</body>
+</html>
