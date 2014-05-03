@@ -717,3 +717,145 @@ function applyFilter(img, filter_name) {
     img.filters.push(new fabric.Image.filters[filter_name]());
     img.applyFilters(canvas.renderAll.bind(canvas));
 }
+
+/* Instructional, reusable pieces */
+
+function MarkovState(color, top, left, radius, label) {
+    // A Markov style state circle, for use
+    // in Markov state machines
+    var self = this;
+    color = color || randomColor(255);
+    this.circle = new fabric.Circle({
+        radius: radius,
+        fill: color,
+        shadow: '0 4px 4px rgba(0, 0, 0, 0.4)'
+    });
+    this.inner_circle = new fabric.Circle({
+        radius: self.circle.radius - 5,
+        fill: 'white',
+    });
+    this.label = new fabric.Text(String(label), {
+        fill: color,
+        fontFamily: 'Lato, sans-serif',
+        fontSize: 30
+    });
+    this.container = new fabric.Group(
+        [self.circle, self.inner_circle, self.label], {
+            top: top,
+            left: left,
+            selectable: false
+        });
+    canvas.add(self.container);
+    canvas.renderAll();
+    this.updateLabel = function(val) {
+        self.label.text = String(val);
+        canvas.renderAll();
+    };
+    this.connectTo = function(connectee, top, l, direction) {
+        var padding = self.circle.radius * 4;
+        var conn_left = connectee.container.left;
+        var w = Math.abs(self.container.left - conn_left) - padding;
+        var h = 0;
+        var a = 0;
+        if(w > h) {
+            h = 4;
+        } else {
+            w = 4;
+        }
+        if(direction === 'left') {
+            // flip arrow point around
+            a = 180;
+        }
+        self.connector = new Arrow(w, h, top, l, a);
+        canvas.renderAll();
+    };
+    this.activateConnection = function() {
+        // light up a connection to something.
+        self.connector.point.fill = 'yellow';
+        self.connector.bar.fill = 'yellow';
+        canvas.renderAll();
+    };
+    this.deactivateConnection = function() {
+        self.connector.point.fill = 'black';
+        self.connector.bar.fill = 'black';
+        canvas.renderAll();
+    };
+    this.activate = function() {
+        // makes this markov state "active" by
+        // lighting it up
+        self.inner_circle.fill = 'yellow';
+        canvas.renderAll();
+    };
+    this.deactivate = function() {
+        self.inner_circle.fill = 'white';
+        canvas.renderAll();
+    };
+}
+
+function Bar(color, width, top, left) {
+    // A typical bar chart, with a single
+    // label at the bottom. Also provides
+    // a method to change the label.
+    var self = this;
+    this.bar = new fabric.Rect({
+        width: width,
+        height: 1,
+        fill: color || 'black'
+    });
+    this.label = new fabric.Text('0', {
+        fill: color || 'black',
+        fontFamily: 'Lato',
+        fontSize: 20,
+        top: 30
+    });
+    this.container = new fabric.Group(
+        [self.bar, self.label], {
+            top: top,
+            left: left,
+            selectable: false
+        });
+    canvas.add(self.container);
+    canvas.renderAll();
+    this.updateHeight = function(height) {
+        self.bar.height = height;
+        self.updateLabel(height);
+        canvas.renderAll();
+    };
+    this.updateLabel = function(num) {
+        self.label.text = String(num);
+        self.label.top = self.bar.height / 2;
+        canvas.renderAll();
+    };
+}
+
+function Arrow(width, height, top, left, angle) {
+    // A basic arrow
+    var self = this;
+    var t_top = 0;
+    var t_left = 0;
+    if(height > width) {
+        t_top = height;
+    }
+    this.bar = new fabric.Rect({
+        width: width,
+        height: height,
+        fill: 'black'
+    });
+    this.point = new fabric.Triangle({
+        width: 20,
+        height: 15,
+        angle: 90,
+        left: width / 2,
+        top: t_top,
+        fill: 'black'
+    });
+    this.container = new fabric.Group(
+        [self.bar, self.point], {
+            top: top,
+            angle: angle || 0,
+            left: left,
+            selectable: false
+        });
+    canvas.add(self.container);
+    canvas.renderAll();
+}
