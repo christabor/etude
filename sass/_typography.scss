@@ -7,3 +7,16 @@
 .text-right {
 	text-align: right;
 }
+pre {
+	margin: 10px;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #222;
+	text-shadow: 0 2px 2px #000;
+	color: #b1ff99;
+	text-align: left;
+	tab-size:4;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+}
