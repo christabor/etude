@@ -10,7 +10,11 @@ var truthabunga = (function(){
     function generateCell(type, number) {
         var vals = '';
         if(number === 0) {
-            vals = (rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy))
+            if(type === 'th') {
+                vals = '==';
+            } else {
+                vals = (rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy))
+            }
         } else {
             vals = rav(res);
         }
@@ -32,7 +36,7 @@ var truthabunga = (function(){
         var tr   = '';
         var html = '';
         for(var i = 0; i <= max; i++) {
-            ths.push(generateCell('th', 0));
+            ths.push(generateCell('th', i));
             trs.push(generateTR('td', max));
         }
         html += '<thead><tr>' + ths.join('') + '</tr></thead>';
