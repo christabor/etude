@@ -9,14 +9,18 @@ var truthabunga = (function(){
 
     function generateCell(type, number) {
         var vals = '';
-        if(number === 0) {
-            if(type === 'th') {
+        if(type === 'th') {
+            if(number === 0) {
                 vals = '==';
             } else {
-                vals = (rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy))
+                vals = rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy);
             }
         } else {
-            vals = rav(res);
+            if(number === 0) {
+                vals = rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy);
+            } else {
+                vals = rav(res);
+            }
         }
         return '<' + type + '>' + vals + '</' + type + '>';
     }
