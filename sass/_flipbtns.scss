@@ -39,6 +39,7 @@ $purple: #874baf;
 	color: #ffffff;
 	border-color: darken($color1, 20%);
 	&:hover {
+		color: white;
 		background-color: lighten($color1, 10%);
 	}
 	&.to-dark:hover {
@@ -51,6 +52,7 @@ $purple: #874baf;
 	text-shadow: 0 0 2px lighten($color1, 20%);
 	border-color: darken($color1, 20%);
 	&:hover {
+		color: white;
 		@include gradient(lighten($color1, 5%), lighten($color1, 10%));
 		text-shadow: 0 0 2px lighten($color1, 10%);
 	}
@@ -68,6 +70,7 @@ $purple: #874baf;
 	border-bottom-width: 2px;
 	&:hover {
 		@include gradient(lighten($color1, 5%), lighten($color1, 10%));
+		color: white;
 		text-shadow: 0 0 2px darken($color1, 30%);
 		border-color: lighten($color1, 10%);
 		box-shadow: 0 0 10px lighten($color1, 10%), 0 0 10px lighten($color1, 10%);

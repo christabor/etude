@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-06-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #fff8e0;
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 10px;
+        line-height: 2.2em;
+        color: black;
+        font-family: 'Merriweather', 'serif';
+    }
+    #table {
+        margin-top: 3em;
+    }
+    table {
+        font-family: monospace;
+        background-color: #fff;
+        box-shadow: 0 3px 3px #999;
+    }
+    h1 {
+        color: #59574e;
+    }
+    th {
+        text-align: center;
+        font-weight: bold;
+        font-size: 120%;
+    }
+    a {
+        text-decoration: underline;
+        color: #710f9d;
+    }
+    a:hover {
+        color: #2e0540;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        table {
+            width: 100%;
+        }
+        th {
+            font-size: 100%;
+        }
+        body {
+            padding: 10px 5px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section class="container style-zen">
+        <div class="text-center row">
+            <div class="col-md-12">
+                <h1>Kamailio truth table generator.</h1>
+                <p>My coworkers use a product called <strong>Kamailio</strong>, which is a type of SIP (Session Initiation Protocol) server. It is often ridiculed for its poor software design, as evidenced by <a href="http://kamailiosucks.tumblr.com/post/84140411979/the-values-null-0-and-0-considered">this <strong>very real</strong> truth table</a>, used for its inner workings. I decided to create a fake version that generates a random table, using random <strong>truthy</strong> or <strong>falsy</strong>, and in some cases, nonsense, values.</p>
+                <p>
+                    <a href="#" class="btn btn-medium btn-purple">Generate new table</a>
+                </p>
+                <div id="table"></div>
+            </div>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="truthy.js"></script>
+</body>
+</html>
