@@ -2,18 +2,25 @@ var truthabunga = (function(){
     var $table = $('#table');
     var $btn   = $('.btn');
     var values = '!@#$%^&*()_+'.split('');
-    var truthy = ['+','1', 'true', 'on', 'true'];
-    var falsy = ['-', 'nil', 'undefined', 'null', 'none', 'not', '0', 'false', 'off', 'false'];
+    var truthy = ['+','1', 'on'];
+    var res    = ['true', 'false', 'SYNTAX ERROR'];
+    var falsy = ['-', 'nil', 'undefined', 'null', 'none', 'not', '0', 'off'];
     var rav = randomArrayValue;
 
-    function generateCell(type) {
-        return '<' + type + '>' + (rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy)) + '</' + type + '>';
+    function generateCell(type, number) {
+        var vals = '';
+        if(number === 0) {
+            vals = (rando(10) > 5 ? rav(falsy) + rav(values) : rav(values) + rav(truthy))
+        } else {
+            vals = rav(res);
+        }
+        return '<' + type + '>' + vals + '</' + type + '>';
     }
 
     function generateTR(type, max) {
         var tds = ['<tr>'];
         for(var i = 0; i <= max; i++) {
-            tds.push(generateCell(type));
+            tds.push(generateCell(type, i));
         }
         tds.push('</tr>');
         return tds.join('');
@@ -25,7 +32,7 @@ var truthabunga = (function(){
         var tr   = '';
         var html = '';
         for(var i = 0; i <= max; i++) {
-            ths.push(generateCell('th'));
+            ths.push(generateCell('th', 0));
             trs.push(generateTR('td', max));
         }
         html += '<thead><tr>' + ths.join('') + '</tr></thead>';
