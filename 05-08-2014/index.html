@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-08-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 14px;
+        line-height: 2.2em;
+        color: black;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
+    }
+    label, input {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Max previous steps</label>
+        <input id="slider" type="range" min="2" max="30">
+        <span id="steps">Steps: 2</span>
+    </form>
+    <canvas id="canvas" width="100%" height="100%">
+        Your browser does not support canvas. :(
+    </canvas>
+    <script src="../js/utils.js"></script>
+    <script src="web.js"></script>
+</body>
+</html>
