@@ -1,4 +1,4 @@
-var markovSeq = (function(){
+var playdrawr = (function(){
     var dims        = getViewportDimensions();
     var canvas_elem = document.querySelector('canvas');
     var height      = dims.height/1.4;
@@ -86,4 +86,4 @@ var markovSeq = (function(){
 
 })();
 
-window.onload = markovSeq.init;
+window.onload = playdrawr.init;
