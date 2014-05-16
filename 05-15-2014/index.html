@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-15-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Merriweather';
+        background-color: #dafbe4;
+        margin: 0;
+        padding: 1em 0;
+        font-size: 1.5em;
+        line-height: 2.2em;
+        color: black;
+    }
+    .content-container {
+        position: relative;
+        margin: 2em 0;
+    }
+    #canvas {
+        box-shadow: 0 4px 20px #444;
+    }
+
+    [contenteditable]:hover {
+        background-color: yellow;
+        color: black;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        border-bottom: 1px solid #bae3d0;
+    }
+    a {
+        color: #669457;
+        border-bottom: 1px dotted #e5679a;
+    }
+    a:hover {
+        color: #944464;
+        border-color: #ff73ac;
+        text-decoration: none;
+    }
+    textarea {
+        width: 100%;
+    }
+    h3 {
+        font-size: 1.8em;
+    }
+    #timeline {
+        padding: 2px;
+        margin: 1em 0;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #b1d8c6;
+    }
+    #timeline img {
+        display: inline-block;
+        margin: 1px;
+    }
+    #last-edit {
+        border-bottom: 1px solid #bae3d0;
+    }
+    @media handheld, screen and (max-width: 800px) {
+    }
+    .container {
+        margin: 0.4em auto 2em auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row style-zen">
+            <div class="col-md-12">
+                <h2 class="animated fadeInRight" contenteditable>My Cool Collaboration project </h2>
+                <p>A proof of concept for a visual editor with playback changes!</p>
+                <div id="range"></div>
+                <div id="timeline"></div>
+            </div>
+            <div class="animated fadeInLeft col-md-8">
+                <canvas id="canvas" width="100%" height="100%">
+                    Your browser does not support canvas. :(
+                </canvas>
+            </div>
+            <div class="animated fadeInRight col-md-4">
+                <h2>Save/update</h2>
+                <p>
+                    <a href="#" id="save" class="btn btn-orange btn-xsmall">Save</a>
+                    <a href="#" id="play" class="btn btn-green btn-xsmall">Playback</a>
+                </p>
+                <form action="">
+                    <label>Add comment:</label>
+                    <textarea name="" id="comments" cols="3" rows="2"></textarea>
+                </form>
+                <h2>Log</h2>
+                <span class="subdued" id="last-edit"></span>
+                <br>
+                <ul id="log"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="playdraw.js"></script>
+</body>
+</html>

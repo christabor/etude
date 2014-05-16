@@ -654,13 +654,20 @@ function randomGradientObj(max_stops) {
     return colors;
 }
 
-function bootstrapCanvas(callback, is_fabric, canvas_el) {
+function bootstrapCanvas(callback, is_fabric, canvas_el, opts) {
     // a reusable function for bootstrapping
     // some common canvas inits. Also provides
     // a callback so everything is defined in order.
-    window.dims        = getViewportDimensions();
-    window.height      = dims.height;
-    window.width       = dims.width;
+    window.dims = getViewportDimensions();
+    // monkey patch options
+    if(!opts) {
+        opts = {
+            'height': dims.height,
+            'width': dims.width
+        }
+    }
+    window.height      = opts.height;
+    window.width       = opts.width;
     window.canvas_elem = document.querySelector(canvas_el || 'canvas');
     canvas_elem.width  = width;
     canvas_elem.height = height;
