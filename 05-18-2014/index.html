@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-18-2014</title>
+    <link href='../css/vendor/flexbox-grid.min.css' rel='stylesheet' type='text/css'>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: black;
+        font-family: monospace;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        font-size: 20px;
+        color: white;
+    }
+    input, label {
+        width: 100%;
+        margin: 1em 0;
+        padding: 0.5em;
+        display: block;
+    }
+    #intro {
+        border-bottom: 2px solid #222;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+    #output {
+        font-size: 12px;
+    }
+    #output > span {
+        display: inline-block;
+        margin: 0 1%;
+        padding: 1em;
+        width: 48%;
+        border-bottom: 1px dashed #444;
+    }
+    .letter {
+        color: orange;
+    }
+    a {
+        color: #999;
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="intro">
+                <h1>Protein encoding with RNA sequences.</h1>
+                <p>Enter a base pair sequence for RNA to find the correct amino acid transcriptions. Based on the <a href="http://content.udacity-data.com/course/bio110/geneticcode.jpg">reference chart</a> from Udacity</p>
+            </div>
+            <div id="controls" class="col-md-6">
+                <form>
+                    <label for="codez">Enter your sequence below <br><span class="subdued">(START codons are not required to be added.)</span></label>
+                    <input type="text" id="codez" placeholder="UCGACGAUCUACGGAC">
+                    <button class="btn btn-medium btn-blue btn-block">Transcribe it!</button>
+                </form>
+                <a id="random" class="btn btn-xsmall btn-orange btn-block">Random sequence</a>
+            </div>
+            <div class="col-md-6">
+                <h2>Output</h2>
+                <div id="output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="sequencer.js"></script>
+</body>
+</html>
