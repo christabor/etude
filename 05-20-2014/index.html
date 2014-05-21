@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-20-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: white;
+        color: white;
+        margin: 0;
+        font-family: 'Rokkitt', serif;
+        padding: 0;
+        font-size: 28px;
+        min-height: 3000px;
+    }
+    h1 {
+        border-radius: 20px;
+        display: inline-block;
+        color: #ffac5a;
+        border:2px solid rgba(255, 255, 255, 0.4);
+        padding: 10px 20px;
+    }
+    p {
+        line-height: 1.4em;
+        font-size: 22px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 100;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+    }
+    .container {
+        position: absolute;
+        z-index: 1;
+        top: 400px;
+    }
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    .col-md-12 {
+        padding: 1em 5em;
+    }
+    .row:nth-of-type(even) .col-md-12 {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+    }
+    .band {
+        min-height: 200px;
+        overflow: hidden;
+        background-size: cover;
+        background-color:rgba(0, 0, 0, 0.7);
+    }
+    #goodbye {
+        height: 2000px;
+        padding-top: 1000px;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        body {
+            font-size: 20px;
+        }
+        .container {
+            top: 10px;
+        }
+        #goodbye {
+            height: auto;
+            padding-top: 0;
+        }
+        .col-md-12 {
+            padding: 1em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="animated fadeInUp">Welcome &mdash; <strong>3d scroll!</strong></h1>
+                <p class="prominent">Lorem ipsum ...for a moment I stood a little puzzled by this curious request, not knowing exactly how to take it, whether humorously or in earnest. But concentrating all his crow's feet into one scowl, Captain Peleg started me on the errand.</p>
+                <p class="subdued">Don't mind me, I'm just playing with layouts, 3d and scrolling triggers...</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 band">
+                <h2 class="animated fadeInUp">Interesting stuff, eh?</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>For a moment I stood a little puzzled by this curious request, not knowing exactly how to take it, whether humorously or in earnest. But concentrating all his crow's feet into one scowl, Captain Peleg started me on the errand.</p>
+
+                        <p>Going forward and glancing over the weather bow, I perceived that the ship swinging to her anchor with the flood-tide, was now obliquely pointing towards the open ocean. The prospect was unlimited, but exceedingly monotonous and forbidding; not the slightest variety that I could see.</p>
+
+                        <p>"Well, what's the report?" said Peleg when I came back; "what did ye see?"</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>"Not much," I replied&mdash;"nothing but water; considerable horizon though, and there's a squall coming up, I think."</p>
+
+                        <p>"Well, what does thou think then of seeing the world? Do ye wish to go round Cape Horn to see any more of it, eh? Can't ye see the world where you stand?"</p>
+
+                        <p>I was a little staggered, but go a-whaling I must, and I would; and the Pequod was as good a ship as any&mdash;I thought the best&mdash;and all this I now repeated to Peleg. Seeing me so determined, he expressed his willingness to ship me.</p>
+
+                        <p>"And thou mayest as well sign the papers right off," he added&mdash;"come along with ye." And so saying, he led the way below deck into the cabin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 band">
+                <h2 class="animated fadeInUp"><strong>Indubitably</strong> &mdash; eureka and such!</h2>
+                <p>"Well, what does thou think then of seeing the world? Do ye wish to go round Cape Horn to see any more of it, eh? Can't ye see the world where you stand?"</p>
+
+                <p>I was a little staggered, but go a-whaling I must, and I would; and the Pequod was as good a ship as any&mdash;I thought the best&mdash;and all this I now repeated to Peleg. Seeing me so determined, he expressed his willingness to ship me.</p>
+
+                <p>Going forward and glancing over the weather bow, I perceived that the ship swinging to her anchor with the flood-tide, was now obliquely pointing towards the open ocean. The prospect was unlimited, but exceedingly monotonous and forbidding; not the slightest variety that I could see.</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 band">
+                <h2 class="animated fadeInUp"><strong>Indeed</strong> (stuff &amp; things)</h2>
+
+                <p>For a moment I stood a little puzzled by this curious request, not knowing exactly how to take it, whether humorously or in earnest. But concentrating all his crow's feet into one scowl, Captain Peleg started me on the errand.</p>
+
+                <p>Going forward and glancing over the weather bow, I perceived that the ship swinging to her anchor with the flood-tide, was now obliquely pointing towards the open ocean. The prospect was unlimited, but exceedingly monotonous and forbidding; not the slightest variety that I could see.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 band text-center" id="goodbye">
+                <h2>Adios!</h2>
+                <p class="subdued">Thanks for viewing!</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/vendor/three.min.js"></script>
+    <script src="../js/vendor/orbit.js"></script>
+    <script src="../js/vendor/three/CopyShader.js"></script>
+    <script src="../js/vendor/three/EffectComposer.js"></script>
+    <script src="../js/vendor/three-shaders/RGBShiftShader.js"></script>
+    <script src="../js/vendor/three/RenderPass.js"></script>
+    <script src="../js/vendor/three/MaskPass.js"></script>
+    <script src="../js/vendor/three/ShaderPass.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="threescroll.js"></script>
+</body>
+</html>
