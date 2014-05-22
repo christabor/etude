@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-21-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: 'Rokkitt', serif;
+        padding: 0 2em;
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 50px;
+        color: #999;
+        margin-bottom: 0;
+    }
+    .bar {
+        color: white;
+        background-color: black;
+        display: inline-block;
+        text-align: center;
+        float: left;
+        height: 40px;
+        line-height: 36px;
+        padding: 4px 6px;
+        margin: 2px;
+        border-radius: 20px;
+    }
+    .color {
+        padding: 4px 10px;
+        display: inline-block;
+        margin: 1px;
+        color: white;
+        border-radius: 4px;
+    }
+    .div2 {
+        background-color: green;
+    }
+    .div3 {
+        background-color: red;
+    }
+    .div4 {
+        background-color: purple;
+    }
+    .div5 {
+        background-color: orange;
+    }
+    br {
+        clear: both;
+        margin: 1em 0;
+    }
+    #container {
+        padding: 1em;
+        background-color: #f2f2f2;
+        border-top: 10px solid #ccc;
+        margin-left: -2em;
+        margin-right: -2em;
+    }
+    hr {
+        border: none;
+        border-top: 1px dotted #ddd;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        body {
+            padding: 0 0.5em;
+        }
+        #container {
+            margin-left: -0.5em;
+            margin-right: -0.5em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <h1>Visual characteristics of nested for-loops</h1>
+    <p>Through a set of nested (3) for-loops, the numbers inside each box represent the sum of the for-loop at the third-most loops completed set of iterations. The number of iterations is randomly chosen. <a href="#" class="btn btn-xsmall btn-green">Generate again</a>
+        <hr>
+        <strong>Color legend (divisible by):
+            <span class="color div2">2</span>
+            <span class="color div3">3</span>
+            <span class="color div4">4</span>
+            <span class="color div5">5</span>
+        </strong>
+    </p>
+    <div id="container" class="animated fadeInUp"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="barloop.js"></script>
+</body>
+</html>
