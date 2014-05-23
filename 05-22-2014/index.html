@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-22-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: 'Varela Round', sans-serif;
+        padding: 0 2em;
+        font-size: 20px;
+        text-align: center;
+        background-color: #2a0865;
+        color: white;
+        overflow-x: hidden;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: funkyGradBg;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: funkyGradBg;
+        -webkit-animation-duration: 20s;
+        animation-duration: 20s;
+    }
+    @-webkit-keyframes funkyGradBg {
+        0% {
+            background-color: purple;
+        }
+        50% {
+            background-color: blue;
+        }
+        100% {
+            background-color: green;
+        }
+    }
+    @-webkit-keyframes funkyGrad {
+        0% {
+            color: red;
+            top: 0;
+        }
+        20% {
+            color: orange;
+            top: 10px;
+        }
+        40% {
+            color: yellow;
+            top: 20px;
+        }
+        60% {
+            color: green;
+            top: 25px;
+        }
+        80% {
+            color: blue;
+            top: 10px;
+        }
+        100% {
+            color: purple;
+            top: 0;
+        }
+    }
+
+    @keyframes funkyGradBg {
+        0% {
+            background-color: purple;
+        }
+        50% {
+            background-color: blue;
+        }
+        100% {
+            background-color: green;
+        }
+    }
+    @keyframes funkyGrad {
+        0% {
+            color: red;
+            top: 0;
+        }
+        20% {
+            color: orange;
+            top: 10px;
+        }
+        40% {
+            color: yellow;
+            top: 20px;
+        }
+        60% {
+            color: green;
+            top: 25px;
+        }
+        80% {
+            color: blue;
+            top: 10px;
+        }
+        100% {
+            color: purple;
+            top: 0;
+        }
+    }
+    h1 {
+        font-size: 100px;
+    }
+    h1,
+    h2 {
+        text-transform: uppercase;
+        margin: 0.5em 0;
+        display: block;
+        padding: 0.4em;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+        position: relative;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        -webkit-transition: all .25s ease-out;
+        -moz-transition: all .25s ease-out;
+        -ms-transition: all .25s ease-out;
+        -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+    }
+    h1:hover,
+    h2:hover {
+        border-color: rgba(255, 255, 255, 0);
+    }
+    .funk {
+        /* prevent buggy behavior because of selection of text */
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+        display: inline-block;
+        outline: 0;
+        position: relative;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: funkyGrad;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: funkyGrad;
+        -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
+    }
+    p {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 1em;
+        margin: 0;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        h1,
+        h2 {
+            font-size: 14px;
+            padding: 0.3em;
+            margin: 0.4em 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p class="subdued">Some fun wave effects - mouse over!</p>
+    <h1>Wavey</h1>
+    <h2>Wavalicious</h2>
+    <h2>super-cali-fraga-listic-expi-ali-docious</h2>
+    <h2>Tubular</h2>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="wavytext.js"></script>
+</body>
+</html>
