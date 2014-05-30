@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-29-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0 2em;
+        overflow: hidden;
+    }
+    div {
+        position: absolute;
+    }
+    #crow {
+        bottom: 40px;
+        right: 40px;
+    }
+    #crow svg:hover {
+        cursor: pointer;
+        fill: red;
+    }
+    #notes {
+        bottom: 120px;
+        right: 300px;
+    }
+    .dark {
+        background-color: black;
+    }
+    .dark #crow svg {
+        fill: #999;
+    }
+    .dark #crow svg:hover {
+        fill: white;
+    }
+    .hidden {
+        display: none;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        div {
+            position: static;
+            margin: 0 auto;
+        }
+    }
+    </style>
+</head>
+<body class="hidden">
+    <div id="notes"></div>
+    <div id="crow"></div>
+    <script src="../js/vendor/howler.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="crow.js"></script>
+</body>
+</html>
