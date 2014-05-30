@@ -12,7 +12,6 @@ function add(fragment) {
 	container.drag();
 	setElements();
 	animateAll();
-	return;
 }
 
 function setElements() {
@@ -41,7 +40,6 @@ function setElements() {
 			fill: '#EDD64F'
 		}
 	};
-	return;
 }
 
 function animateAll() {
@@ -52,10 +50,8 @@ function animateAll() {
 			animate(el, els_map[el]);
 		}
 	}, 1000);
-	return;
 }
 
 function animate(elem, attrs) {
 	els[elem].animate(attrs, ANIMATION_SPEED);
-	return;
 }
