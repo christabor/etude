@@ -34,7 +34,6 @@ $(document).ready(function(){
 			timeline.push(matches[match]);
 		}
 		timeline = _.flatten(timeline);
-		return;
 	}
 
 	function resetAll() {
@@ -46,7 +45,6 @@ $(document).ready(function(){
 		$('form').find('button').show();
 		result_html.html('');
 		play_btn.hide();
-		return;
 	}
 
 	function playMusic() {
@@ -71,7 +69,6 @@ $(document).ready(function(){
 
 		// unload
 		triggerLoading(false);
-		return;
 	}
 
 	function matchGrammar(code) {
@@ -86,7 +83,6 @@ $(document).ready(function(){
 				matches[grammar] = multiCopyToArray(match.length, grammar);
 			}
 		}
-		return;
 	}
 
 	play_btn.on('click', function(e){
