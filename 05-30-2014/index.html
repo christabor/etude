@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-30-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'PT Sans', sans-serif;
+        margin: 0;
+        padding: 2em;
+    }
+    .attribution {
+        text-transform: capitalize;
+        border-radius: 0 2px 2px 0;
+        padding: 0.4em;
+        margin: 0.4em;
+        text-align: center;
+        position: absolute;
+        top: -27px;
+        border-bottom-color: 2px solid black;
+        display: inline-block;
+        color: white;
+        background-color: black;
+    }
+    .message-outer {
+        display: block;
+    }
+    .message {
+        position: relative;
+        padding: 1.1em;
+        border-radius: 15px;
+        margin: 10px auto;
+        margin-top: 2em;
+        width: auto;
+        display: inline-block;
+        background-color: #c4dd87;
+        border-bottom: 4px solid #93a665;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .message-outer:nth-of-type(odd) .message {
+        background-color: #7569dd;
+        border-color: #534b9e;
+        color: white;
+    }
+    label, button {
+        display: block;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            font-size: 13px;
+            padding: 0em;
+        }
+        .message {
+            padding: 0.5em 1em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1>Philosophical conversations</h1>
+                <p>Randomly generated using famous quotes.</p>
+                <div id="controls" class="animated fadeInLeft">
+                    <form>
+                        <fieldset>
+                            <legend>Pick two to chat.</legend>
+                            <label for="person_a">Person A</label>
+                            <select name="person_a" id="person_a"></select>
+
+                            <label for="person_b">Person B</label>
+                            <select name="person_b" id="person_b"></select>
+                            <br>
+                            <button class="btn btn-xsmall btn-purple">Converse!</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="conversation"></div>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="convos.js"></script>
+</body>
+</html>
