@@ -203,6 +203,15 @@ function addCanvasUI(generate) {
     }
 }
 
+function findIn(match, set) {
+    for(var i = 0; i < set.length; i++) {
+        if(set[i] === match) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function getLastOf(input) {
     // returns the last char
     // of a given string

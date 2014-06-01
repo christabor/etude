@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 05-31-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'PT Sans', sans-serif;
+        margin: 0;
+        text-align: center;
+        padding: 2em;
+        background-color: #fff0cd;
+        color: #b5a991;
+    }
+    input {
+        border: none;
+        color: black;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: transparent;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    h1 {
+        border-bottom: 2px dotted #f3e4c4;
+        display: inline-block;
+        padding-bottom: 30px;
+    }
+    input:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 10px #ccc;
+        color: #38b2ff;
+        z-index: 999;
+    }
+    input:focus {
+        box-shadow: 0 0 10px #38b2ff;
+    }
+    .container {
+        margin: 0 auto;
+        width: auto;
+        text-align: center;
+        position: relative;
+    }
+    #step1 {
+        top: 120px;
+        z-index: 97;
+        font-size: 100px;
+    }
+    #step2 {
+        top: 50px;
+        text-indent: 100px;
+        font-size: 60px;
+        z-index: 98;
+    }
+    #step3 {
+        text-indent: 200px;
+        font-size: 30px;
+        z-index: 99;
+    }
+    #results {
+        position: fixed;
+        opacity: 0.5;
+        text-align: center;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        bottom: 0;
+        padding: 2em;
+        background-color: black;
+    }
+    #results p {
+        font-size: 200px;
+        width: 100%;
+        display: block;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+    }
+    #results h3, #results p {
+        margin: 0;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            padding: 0em;
+        }
+        input {
+            width: 100%;
+            position: static;
+            margin-left: 0;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <h1>Exponent <sup>ially</sup> speaking</h1>
+    <div class="container">
+        <input type="number" min="1" max="99" value="1" id="step3">
+        <input type="number" min="1" max="99" value="1" id="step2">
+        <input type="number" min="1" max="99" value="1" id="step1">
+    </div>
+    <div id="results">
+        <h3>Results</h3>
+        <p>...</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="tower.js"></script>
+</body>
+</html>
