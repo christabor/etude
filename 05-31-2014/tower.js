@@ -7,10 +7,10 @@ var tower = (function(){
     var $three   = $('#step3');
 
     function updateExponents(e) {
-        var match = findIn(e.which, [50, 51, 52, 53, 54, 55, 56, 57, 48, 49]);
+        var match = findIn(e.which, [38, 40, 50, 51, 52, 53, 54, 55, 56, 57, 48, 49]);
         if(!match) {
             e.preventDefault();
-            return;
+            return false;
         }
         var res  = Math.pow($one.val(), Math.pow($two.val(), $three.val()));
         var size = (10 - res.toString().length) * 10;
