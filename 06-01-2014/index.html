@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 06-01-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: black;
+        overflow: hidden;
+    }
+    h1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: normal;
+        font-size: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+    }
+    a, a:hover {
+        text-decoration: none;
+    }
+    a {
+        font-weight: bold;
+        color: black;
+        border-bottom: 1px dotted #999;
+    }
+    a:hover {
+        border-color: black;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            width: 100%;
+            text-align: center;
+            left: 0;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Go ahead -- touch the dots! Click to add more!</h1>
+    <canvas data-processing-sources="space.pde"></canvas>
+    <script src="../js/vendor/processing.min.js"></script>
+</body>
+</html>
