@@ -352,6 +352,15 @@ function randomNumberArray(length, max) {
     return arr;
 }
 
+function randomCoords(max_x, max_y) {
+    // returns a single object containing
+    // x and y coords
+    return {
+        x: rando(max_x),
+        y: rando(max_y)
+    };
+}
+
 function convertPxToNum(str) {
     return parseInt(str.replace('px', ''), 10);
 }

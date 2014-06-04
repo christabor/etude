@@ -21,22 +21,13 @@ function randomFabricGradient(opts, max_stops) {
     };
 }
 
-function randomPolygonCoords(max_x, max_y) {
-    // returns a single object containing
-    // x and y coords
-    return {
-        x: rando(max_x),
-        y: rando(max_y)
-    };
-}
-
 function randomPolygon(max_iterations, x_distance, y_distance) {
     // returns an array of objects containing
     // points for a polygon
     var points = [];
     max_iterations = clamp(max_iterations, 3, 100);
     doSomethingABunch(function(){
-        points.push(randomPolygonCoords(x_distance, y_distance));
+        points.push(randomCoords(x_distance, y_distance));
     }, max_iterations);
     return points;
 }

@@ -14,7 +14,7 @@ var anim = (function(){
         var x = width;
         var y = height;
         doSomethingABunch(function(){
-            points.push(randomPolygonCoords(x, y));
+            points.push(randomCoords(x, y));
             x = x / 1.2;
             y = y / 1.2;
         }, clamp(rando(20), 2, 20));
