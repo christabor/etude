@@ -1,7 +1,7 @@
 int bg_stars = [0];
 int asteroids = [0];
 float growth = 50;
-color asteroid_color = color(100, 50, 20);
+color asteroid_color = color(200, 50, 20);
 boolean DEBUG = false;
 
 void setup() {
@@ -62,13 +62,12 @@ void randomAsteroid() {
 
 void mousePressed() {
     int rast = randomAsteroid()
-    fill(random(255), random(50), 10);
     ellipse(rast[0], rast[1], rast[2], rast[2]);
 }
 
 void moveAsteroids() {
     // copy to temp
-    fill(random(255), random(50), 10);
+    fill(asteroid_color);
     int temp = [0];
     int len = asteroids.length;
     for(int i = 0; i < len; i++) {
