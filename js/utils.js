@@ -898,3 +898,61 @@ function addTHREEStats() {
     container.appendChild(three_stats.domElement);
     return;
 }
+
+/********************* d3.js *********************/
+
+// Dependencies: d3.js
+
+function randomNodeLink(max, max_value) {
+    // Creates a flattened set of nodes
+    // and links, randomly connected.
+    var max = max || 20;
+    var nodeLinks = {'links': [], 'nodes': []};
+    for(var i = 0; i < max; i++) {
+        nodeLinks.links.push({
+            'name': randomFixedString(10),
+            // assign to a random group
+            // within the maximum number of groups.
+            'group': rando(max)
+        });
+        nodeLinks.nodes.push({
+            'source': rando(max),
+            'target': rando(max),
+            'value': rando(max_value || 400)
+        });
+    }
+    return nodeLinks;
+}
+
+function randomCoordsGroup(max, x_max, y_max) {
+    return d3.range(max || 10).map(function(d) {
+        return randomCoords(x_max || 20, y_max || 20);
+    });
+}
+
+function randomIntVal(obj, key, max_val) {
+    // populate an obj with a random value in a specific key
+    obj[key] = rando(max_val);
+    return obj;
+}
+
+function randomGroupValue(max_val) {
+    // random grouped values for use in d3 layouts
+    var x = randomIntVal({}, 'name', max_val);
+    return randomIntVal(x, 'value', max_val);
+}
+
+function randomHierarchical(breadth, depth, max_val) {
+    // Creates a random hierarchical style
+    // object that has children of N depth
+    var hierarchy = [];
+    for(var i = 0; i < breadth; i++) {
+        hierarchy.push(randomGroupValue(max_val));
+        if(depth > 0) {
+            // recursively create children
+            hierarchy[i].children = [randomHierarchical(breadth / 2, depth, max_val)];
+        }
+        depth -= 1;
+    }
+    return hierarchy;
+}
