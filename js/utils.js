@@ -950,7 +950,7 @@ function randomHierarchical(breadth, depth, max_val) {
         hierarchy.push(randomGroupValue(max_val));
         if(depth > 0) {
             // recursively create children
-            hierarchy[i].children = [randomHierarchical(breadth / 2, depth, max_val)];
+            hierarchy[i].children = [randomHierarchical(breadth / 2, depth - 1, max_val)];
         }
         depth -= 1;
     }
