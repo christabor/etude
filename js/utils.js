@@ -906,8 +906,8 @@ function addTHREEStats() {
 function randomNodeLink(max, max_value) {
     // Creates a flattened set of nodes
     // and links, randomly connected.
-    var max = max || 20;
     var nodeLinks = {'links': [], 'nodes': []};
+    max = max || 20;
     for(var i = 0; i < max; i++) {
         nodeLinks.links.push({
             'name': randomFixedString(10),
@@ -942,17 +942,28 @@ function randomGroupValue(max_val) {
     return randomIntVal(x, 'value', max_val);
 }
 
+function randomChildrenGroupValues(max, max_val) {
+    // random child values for hierarchical layouts
+    var children = [];
+    for(var i = 0; i < max; i++) {
+        var group = randomGroupValue(max_val);
+        // weighted to be less likely
+        if(rando(10) > 8) {
+            group.children = randomChildrenGroupValues(1, max_val);
+        }
+        children.push(group);
+    }
+    return children;
+}
+
 function randomHierarchical(breadth, depth, max_val) {
     // Creates a random hierarchical style
-    // object that has children of N depth
-    var hierarchy = [];
+    // start with parent el
+    var hierarchy = randomGroupValue(max_val);
     for(var i = 0; i < breadth; i++) {
-        hierarchy.push(randomGroupValue(max_val));
-        if(depth > 0) {
-            // recursively create children
-            hierarchy[i].children = [randomHierarchical(breadth / 2, depth - 1, max_val)];
+        if(rando(10) > 5) {
+            hierarchy.children = randomChildrenGroupValues(i, max_val);
         }
-        depth -= 1;
     }
     return hierarchy;
 }
