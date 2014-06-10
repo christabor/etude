@@ -4,15 +4,10 @@ var tired = (function(){
     var dims         = getViewportDimensions();
     var width        = dims.width - margin;
     var height       = dims.height - margin;
-    var reverse      = true;
     var svg          = d3.select('body').append('svg')
     var colorScale   = d3.scale.linear()
     .domain([0, width])
     .range(['red', 'purple', 'blue'])
-    var max          = width / 4;
-    var tree         = d3.layout.tree().size([height, width]);
-    var diagonal     = d3.svg.diagonal()
-    .projection(function(d) {return [d.y, d.x];});
 
     function init() {
         svg.attr('width', width)
