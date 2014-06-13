@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 06-11-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900,300italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        font-family: 'Lato', sans-serif;
+        padding: 0.5em;
+        margin: 0;
+        text-align: center;
+        text-shadow: 0 2px 1px white;
+        background: #ffffff; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, #ffffff 0%,#cbebff 47%,#a1dbff 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        font-size: 20px;
+        color: black;
+        text-transform: uppercase;
+    }
+    svg {
+        margin: 0;
+        padding: 0;
+        height: 300px;
+    }
+    img {
+        padding: 0.2em;
+        margin: 0.5em auto;
+    }
+    #widget {
+        width: 80%;
+        color: white;
+        text-align: left;
+        margin: 3em auto;
+        padding: 2em;
+        text-shadow: 0 1px 1px black;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: black;
+        opacity: 0.8;
+    }
+    ul:hover {
+        opacity: 0.9;
+    }
+    li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-block;
+    }
+    li a {
+        margin: 0;
+        padding: 1.3em 1em;
+        display: block;
+        width: block;
+        height: block;
+        color: white;
+        background-color: #222;
+        text-decoration: none;
+    }
+    li a.active {
+        background-color: black;
+    }
+    li a:hover {
+        background-color: #4c88db;
+    }
+    li .fa {
+        font-size: 130%;
+    }
+    .highlight {
+        background-color: #4c88db;
+    }
+    .container-block {
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0.8;
+    }
+    .container {
+        background: transparent url(titanfall.jpg) no-repeat 0 0;
+        background-size: cover;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+    #arrows,
+    #user-bar,
+    #top-nav,
+    #game-actions {
+        position: absolute;
+    }
+    #top-nav {
+        top: -78px;
+    }
+    #user-bar {
+        top: 40px;
+        left: -74px;
+    }
+    #arrows li,
+    #user-bar li,
+    #game-actions li {
+        width: 75px;
+        display: list-item;
+    }
+    #arrows,
+    #game-actions {
+        right: -74px;
+    }
+    #arrows {
+        top: 100px;
+        font-size: 150%;
+    }
+    #game-actions {
+        bottom: 100px;
+    }
+    .blue-text {
+        color: #569dfd;
+    }
+    .avatar {
+        border-radius: 100%;
+        border: 3px solid #4c88db;
+    }
+    .row>div {
+        padding: 1em 2em;
+    }
+    #content-right {
+        position: relative;
+        height: 100%;
+    }
+    .credits.centered {
+        width: 100%;
+        font-weight: bold;
+        padding: 0 1em;
+        color: black;
+        text-align: center;
+    }
+    a {
+        color: black;
+    }
+    .description {
+        text-transform: none;
+    }
+    .arrow-group {
+        float: right;
+        display: inline-block;
+        text-align: center;
+    }
+    .arrow-group > span {
+        width: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.1em;
+        margin: 0.1em 0;
+        display: block;
+        width: 100%;
+    }
+    .arrow-group > span:hover {
+        cursor: pointer;
+        border-color: #4c88db;
+        color: #4c88db;
+    }
+    .title-block {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 1em;
+        margin: 1em -1.5em;
+        clear: both;
+    }
+    .percentage {
+        border-radius: 1000px;
+        font-size: 140%;
+        height: 100px;
+        width: 100px;
+        margin: 0.5em;
+        line-height: 3.3em;
+        text-align: center;
+        font-weight: 100;
+        float: right;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    #graph-bars {
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    <p>A fake GUI recreation.</p>
+    <div id="widget">
+        <div class="container">
+            <ul id="user-bar">
+                <li><img src="avatar.jpg" alt="avatar" class="avatar"></li>
+                <li><a href="#"><span class="fa fa-desktop"></span></a></li>
+                <li><a href="#"  class="active"><span class="fa fa-shopping-cart"></span></a></li>
+                <li><a href="#"><span class="fa fa-power-off"></span></a></li>
+                <li><a href="#"><span class="fa fa-link"></span></a></li>
+                <li><a href="#"><span class="fa fa-user"></span></a></li>
+            </ul>
+            <ul id="top-nav">
+                <li><a href="#">store</a></li>
+                <li><a href="#">library</a></li>
+                <li><a href="#" class="highlight">23</a></li>
+                <li><a href="#">news</a></li>
+                <li><a href="#">community</a></li>
+                <li><a href="#"><span class="fa fa-inbox"></span></a></li>
+                <li><a href="#" class="highlight">12</a></li>
+            </ul>
+            <ul id="arrows">
+                <li><a href="#"><span class="fa fa-angle-left"></span></a></li>
+                <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
+            </ul>
+            <ul id="game-actions">
+                <li><a href="#"><span class="fa fa-trash-o"></span></a></li>
+                <li><a href="#"><span class="fa fa-play"></span></a></li>
+                <li><a href="#">9.75 <br><br><span class="blue-text fa fa-star"></span></a></li>
+            </ul>
+            <div class="row container-block">
+                <div class="col-md-4">
+                    <span class="arrow-group">
+                        <span class="fa fa-angle-up"></span>
+                        <span class="fa fa-angle-down"></span>
+                    </span>
+                    <h3 class="title-block animated fadeInUp">Disk Space</h3>
+                    <span class="percentage animated bounceIn">13.6%</span>
+                    <p class="blue-text"><strong>Used</strong></p>
+                    <p class="blue-text"><span class="fa fa-circle"></span> 136 GB</p>
+                    <p>Free</p>
+                    <p><span class="fa fa-circle"></span> <strong>854 GB</strong></p>
+
+                    <h3 class="title-block animated fadeInUp">Downloading...</h3>
+                    <span class="percentage animated bounceIn">12%</span>
+                    <p>
+                        <span class="blue-text">1.4 GB</span> / 10.9 GB -
+                        <strong>12.3GB</strong>
+                    </p>
+                    <p>Rate: <span class="blue-text">2.4mb/s</span></p>
+                    <h3 class="title-block animated fadeInUp">Graphs are cool</h3>
+                    <div id="graph-bars"></div>
+                </div>
+                <div class="col-md-8 block-right-bottom" id="content-right">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-block animated fadeInLeft">Titanfall</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="arrow-group">
+                                <span class="fa fa-angle-up"></span>
+                                <span class="fa fa-angle-down"></span>
+                            </span>
+                            <p class="description">
+                                In Titanfall players fight in online multiplayer only matches set...
+                            </p>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel fermentum est. Sed a eleifend libero. Nunc tincidunt nec erat ut suscipit. Quisque in luctus augue, vitae iaculis nisl. Integer id mauris velit. In suscipit enim nisl, eget porttitor velit viverra vitae.
+                            </p>
+                            <p class="description">
+                                In laoreet justo nec luctus auctor. Duis blandit tristique turpis ut pulvinar. Cras sed lectus eu ante luctus malesuada in lacinia mi. Nulla nec sem aliquam, tempus tortor id, feugiat tellus. Pellentesque at velit placerat, scelerisque orci ac, interdum diam. Aenean eu leo tellus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="subdued credits centered">
+        Recreation inspired by: <a href="https://dribbble.com/shots/1448819-Game-Widget-V2">Malte Westedt</a>
+    </p>
+    <script src="../js/utils.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="gui.js"></script>
+</body>
+</html>
