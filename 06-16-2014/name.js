@@ -4,8 +4,8 @@ var godhead = (function(){
     var width          = dims.width;
     var height         = dims.height;
     var data = {};
-    var colorScale     = d3.scale.linear().range(['red', 'blue', 'yellow']).domain([0, 5, 10]);
-    var letters = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
+    var colorScale     = d3.scale.linear().range(['red', 'blue']).domain([0, 5]);
+    var letters = 'abcdefghijklmnopqrstuvwxyzÞÆ'.toUpperCase().split('');
     var names = [
         'Bestla',
         'Gorm',
@@ -64,8 +64,9 @@ var godhead = (function(){
     .append('g');
 
     function init() {
+        var EDGE_BOUNDS = 150;
         var PADDING = 40;
-        var MIN_FONT_SIZE = 12;
+        var MIN_FONT_SIZE = 14;
 
         var circs = container.append('g').attr('id', 'circles');
         var titles = container.append('g').attr('id', 'titles');
@@ -84,9 +85,9 @@ var godhead = (function(){
         .data(reformatted)
         .enter()
         .append('text')
-        .attr('x', function(d, i){return 100;})
+        .attr('x', function(d, i){return width - EDGE_BOUNDS;})
         .attr('y', function(d, i){return xRange(i * height / reformatted.length + PADDING);})
-        .attr('fill', function(d){return 'white';})
+        .attr('fill', function(d){return colorScale(d[0]);})
         .attr('font-size', function(d){return d[0] * 4 + MIN_FONT_SIZE;})
         .attr('text-anchor', 'middle')
         .text(function(d){return d[0];});
@@ -95,7 +96,7 @@ var godhead = (function(){
         .data(reformatted)
         .enter()
         .append('text')
-        .attr('x', function(d, i){return 150;})
+        .attr('x', function(d, i){return EDGE_BOUNDS;})
         .attr('y', function(d, i){return xRange(i * height / reformatted.length + PADDING + MIN_FONT_SIZE / 2);})
         .attr('font-size', function(d){return d[0] * 4 + MIN_FONT_SIZE;})
         .text(function(d){return d[1].join(', ');});
