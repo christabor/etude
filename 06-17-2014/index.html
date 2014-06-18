@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-17-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje|Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: black;
+        font-family: 'Homenaje', sans-serif;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    a {
+        color: white;
+    }
+    text {
+        fill: white;
+    }
+    h1 {
+        color: #777;
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        left: 40px;
+        bottom: 40px;
+        position: fixed;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        body {
+            overflow-x: visible;
+        }
+        h1 {
+            position: static;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1><strong>Top 10 ranking</strong><br> for worlds <br>fastest computers.
+        <br> <span class="subdued"><a href="http://en.wikipedia.org/wiki/List_of_fastest_computers">source</a></span>
+    </h1>
+    <script src="../js/utils.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="fastcomp.js"></script>
+</body>
+</html>
