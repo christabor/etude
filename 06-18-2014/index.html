@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-18-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        font-family: 'Lato', helvetica, sans-serif;
+        padding: 2em 0.2em;
+        margin: 0;
+        background-color: #1c0010;
+        overflow-x: hidden;
+        color: #fff7b8;
+        font-weight: 100;
+        font-size: 62.5%;
+    }
+    a {
+        color: white;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    h1 {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        color: #726e52;
+        font-size: 3.2rem;
+        font-weight: 100;
+    }
+    cite {
+        font-size: 1rem;
+    }
+    strong {
+        font-weight: 700;
+    }
+    svg {
+        display: block;
+        margin: 2em auto;
+        padding: 0.4em;
+    }
+    #intro {
+        padding: 0 4em;
+    }
+    rect:hover {
+        cursor: pointer;
+    }
+    .subdued {
+        font-size: 0.8rem;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="intro" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>
+                    Data visualization of many red wines.
+                </h1>
+                <p>pH balance is shown via colors. Click to toggle between alcohol <strong>content </strong>and <strong>quality. </strong>You can also zoom in to see details.</p>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <p class="subdued"><a href="https://archive.ics.uci.edu/ml/datasets/Wine">From the UCI page:</a></p>
+                <br><cite>&ldquo;These data are the results of a chemical analysis of wines grown in the same region in Italy but derived from three different cultivars. The analysis determined the quantities of 13 constituents found in each of the three types of wines.&rdquo;</cite>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="red-wines.js"></script>
+</body>
+</html>
