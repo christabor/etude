@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-19-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        font-family: 'Lato', helvetica, sans-serif;
+        padding: 1em;
+        margin: 0;
+        background-color: #001b24;
+        overflow-x: hidden;
+        color: #ebffd1;
+        font-weight: 100;
+        text-shadow: 0 2px 2px black;
+        font-size: 62.5%;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.3rem;
+        line-height: 3rem;
+    }
+    svg {
+        background-color: #000;
+        padding: 1em;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 0.8em;
+        border-left-width: 4px;
+        border-left-color: rgba(255, 255, 255, 0.1);
+        border-bottom-width: 2px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    a {
+        color: white;
+    }
+
+    @media handheld, screen and (max-width: 1000px) {
+        body {
+            font-weight: 400;
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1>I &lt;3 D3js</h1>
+                <p>Random experiments with d3js. I couldn't decide on one, so I made a few (which happens to be great for learning!)</p>
+            </div>
+            <div class="col-md-9" id="svg-container"></div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="piccadilly.js"></script>
+</body>
+</html>
