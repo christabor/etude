@@ -76,6 +76,24 @@ function smoothData(max, min_clamp, dims){
     });
 }
 
+function randomMatrix(max_rows, cells_per_row, max_digit) {
+    // Returns a random matrix of values for
+    // use in certainl layouts where this data structure
+    // is most approrpiate (e.g. the chord layout).
+    // Defaults to a 4x4 matrix.
+    cells_per_row = cells_per_row || 4;
+    max_rows = max_rows || 4;
+    var matrix = [];
+    for(var i = 0; i < max_rows; i++) {
+        var row = []
+        for(var j = 0; j < cells_per_row; j++) {
+            row.push(rando(max_digit));
+        }
+        matrix.push(row);
+    }
+    return matrix;
+}
+
 // Taken from http://bl.ocks.org/mbostock/4060954
 // Inspired by Lee Byron's test data generator.
 function bumpLayer(n) {
