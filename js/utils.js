@@ -967,3 +967,10 @@ function randomHierarchical(breadth, depth, max_val) {
     }
     return hierarchy;
 }
+
+function getSVG(id, size) {
+    return d3.select('#svg-container')
+    .append('svg').attr('id', id)
+    .attr('width', size.h)
+    .attr('height', size.w);
+}

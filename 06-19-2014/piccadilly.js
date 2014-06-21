@@ -5,6 +5,7 @@ var piccadilly = (function(){
     var tau = Math.PI * 2;
     var width = 300;
     var height = 300;
+    var dims = {'w': width, 'h': height};
 
     function init() {
         // input -> domain
@@ -29,7 +30,7 @@ var piccadilly = (function(){
         }
 
         function arcGen() {
-            var container = getSVG('arcgen');
+            var container = getSVG('arcgen', dims);
             var arc = d3.svg.arc()
             .innerRadius(10)
             .outerRadius(height - PADDING)
@@ -54,7 +55,7 @@ var piccadilly = (function(){
         }
 
         function squaggles() {
-            var container = getSVG('squiggles');
+            var container = getSVG('squiggles', dims);
             var rLine = d3.svg.area.radial()
             .innerRadius(height / 4)
             .outerRadius(height)
@@ -88,13 +89,6 @@ var piccadilly = (function(){
             });
         }
 
-        function getSVG(id) {
-            return d3.select('#svg-container')
-            .append('svg').attr('id', id)
-            .attr('width', width)
-            .attr('height', height);
-        }
-
         function radSauce() {
             var arc = d3.svg.arc()
             .innerRadius(10)
@@ -102,7 +96,7 @@ var piccadilly = (function(){
             .startAngle(0)
             .endAngle(function(d){return d[0] / tau;});
 
-            var container = getSVG('rad');
+            var container = getSVG('rad', dims);
             container.selectAll('circle')
             .data(data2(100))
             .enter()
@@ -120,7 +114,7 @@ var piccadilly = (function(){
         }
 
         function radialSquares() {
-            var container = getSVG('radialSquares');
+            var container = getSVG('radialSquares', dims);
             var pixls = container.selectAll('rect')
             .data(data2(100))
             .enter()
