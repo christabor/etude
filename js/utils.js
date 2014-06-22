@@ -903,6 +903,27 @@ function addTHREEStats() {
 
 // Dependencies: d3.js
 
+function addTitle(container, title) {
+    // creates a scale that will constrain the font size
+    // to within the containers dimensions,
+    // based on the number of letters in the title.
+    var TOP_OFFSET = 10;
+    var width = container[0][0].clientWidth;
+    var constrainedBoxFontScale = d3.scale.linear()
+    .domain([0, title.length]).range([10, clamp((width / title.length) * 1.8, 10, 30)]);
+    return container.append('text')
+    .attr('x', width / 2)
+    .attr('y', function(d){
+        return TOP_OFFSET + constrainedBoxFontScale(title.length);
+    })
+    .attr('class', 'd3.svg-title')
+    .attr('font-size', function(d){
+        return constrainedBoxFontScale(title.length);
+    })
+    .attr('text-anchor', 'middle')
+    .text(title);
+}
+
 function getSVG(id, dims, container) {
     return d3.select(container || '#svg-container')
     .append('svg').attr('id', id)

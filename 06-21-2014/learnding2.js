@@ -15,34 +15,11 @@ var learnding2 = (function(){
         var timer = 0;
         var max = 100;
         var timer_reset = 100;
-        var colorRadial = d3.scale.linear()
-        .domain([0, max / 2, max]).range(['red', 'green', 'blue']);
 
         var data2 = function(max){
             return d3.range(max).map(function(d){
                 return [rando(d), d + rando(100)];
             });
-        }
-
-        function addTitle(container, title) {
-            // creates a scale that will constrain the font size
-            // to within the containers dimensions,
-            // based on the number of letters in the title.
-            var TOP_OFFSET = 10;
-            var width = container[0][0].clientWidth;
-            var constrainedBoxFontScale = d3.scale.linear()
-            .domain([0, title.length]).range([10, clamp((width / title.length) * 1.8, 10, 30)]);
-            return container.append('text')
-            .attr('x', width / 2)
-            .attr('y', function(d){
-                return TOP_OFFSET + constrainedBoxFontScale(title.length);
-            })
-            .attr('class', 'title')
-            .attr('font-size', function(d){
-                return constrainedBoxFontScale(title.length);
-            })
-            .attr('text-anchor', 'middle')
-            .text(title);
         }
 
         var fns = [
