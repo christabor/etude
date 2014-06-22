@@ -38,18 +38,21 @@ function randomIntVal(obj, key, max_val) {
 }
 
 function randomGroupValue(max_val) {
-    // random grouped values for use in d3 layouts
+    // random grouped values with keys
+    // `name` and `value` for use in d3 layouts
     var x = randomIntVal({}, 'name', max_val);
     return randomIntVal(x, 'value', max_val);
 }
 
-function randomChildrenGroupValues(max, max_val) {
+function randomChildrenGroupValues(max, max_val, weighting) {
     // random child values for hierarchical layouts
     var children = [];
+    weighting = weighting || 8;
     for(var i = 0; i < max; i++) {
         var group = randomGroupValue(max_val);
-        // weighted to be less likely
-        if(rando(10) > 8) {
+        // weighted to be less likely - customizable
+        if(rando(10) > weighting) {
+            // recursively go down once, for further nesting
             group.children = randomChildrenGroupValues(1, max_val);
         }
         children.push(group);
@@ -59,14 +62,14 @@ function randomChildrenGroupValues(max, max_val) {
 
 function randomHierarchical(breadth, depth, max_val) {
     // Creates a random hierarchical style
-    // start with parent el
-    var hierarchy = randomGroupValue(max_val);
+    // for use in d3 hierarchical layouts.
+    var root = randomGroupValue(max_val);
     for(var i = 0; i < breadth; i++) {
         if(rando(10) > 5) {
-            hierarchy.children = randomChildrenGroupValues(i, max_val);
+            root.children = randomChildrenGroupValues(i, max_val);
         }
     }
-    return hierarchy;
+    return root;
 }
 
 function smoothData(max, min_clamp, dims){
@@ -80,9 +83,9 @@ function smoothData(max, min_clamp, dims){
 
 function randomMatrix(max_rows, cells_per_row, max_digit, uniform) {
     // Returns a random matrix of values for
-    // use in certainl layouts where this data structure
-    // is most approrpiate (e.g. the chord layout).
-    // Defaults to a 4x4 matrix.
+    // use in certain layouts where this data structure
+    // is most appropriate (e.g. the chord layout).
+    // Defaults to a 4 x 4 matrix.
     // :uniform conforms the row and column to be the same
     // which may be required for some applications,
     // like the chord layout
