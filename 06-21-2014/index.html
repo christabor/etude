@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-21-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        font-family: 'Lato', helvetica, sans-serif;
+        padding: 1em 1em 3em 1em;
+        margin: 0;
+        background-color: #4de5ca;
+        overflow-x: hidden;
+        text-align: center;
+        color: black;
+        font-weight: 400;
+        text-shadow: 0 1px 1px white;
+        font-size: 62.5%;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 2.3rem;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    p {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    svg {
+        background-color: white;
+        margin: 1em 0.4em;
+        box-shadow: 0 10px 4px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        display: inline-block;
+    }
+    .iterated {
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: none;
+    }
+    div {
+        clear: both;
+    }
+    a {
+        color: black;
+    }
+    .title {
+        font-weight: 700;
+    }
+    .red {
+        color: #d72f6c;
+    }
+    .row, .row > div {
+        text-align: center;
+    }
+    .row > .showcase {
+        margin: 0.4em 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 1em;
+        border-radius: 10px;
+    }
+    #svg-iterations {
+        background-color: black;
+        text-shadow: 0 1px 2px black;
+        fill: white;
+    }
+    @media handheld, screen and (max-width: 1000px) {
+        body {
+            font-weight: 400;
+            overflow-x: visible;
+        }
+        .row > .showcase {
+            padding: 0.2em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><span class="red">&lt;3&lt;3</span> d3js <span class="red">&lt;3&lt;3</span> Part Deux</h1>
+                <p>More skill sharpening practice... continuing from <a href="../06-20-2014">yesterday.</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Some standard experiments...</h3>
+            <div class="showcase col-md-12" id="svg-container"></div>
+        </div>
+        <div class="row">
+            <h3>Check out the power of iterating over chord layouts with different parameters, so easily done with <code>d3.range</code>:</h3>
+            <div class="showcase col-md-12" id="svg-iterations"></div>
+        </div>
+        <div class="row">
+            <h3>Scale types, illustrated through examples</h3>
+            <div class="showcase col-md-12" id="svg-scale-types"></div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/utils.d3.data.js"></script>
+    <script src="learnding2.js"></script>
+</body>
+</html>
