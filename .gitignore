@@ -1,4 +1,7 @@
-compiled source #
+# Tags
+.tags_sorted_by_file
+.tags
+# Compiled source #
 ###################
 *.com
 *.class
