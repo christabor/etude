@@ -53,7 +53,6 @@ var learnding = (function(){
             function() {
                 var container = getSVG('area', dims);
                 var data = smoothData(height, 10, dims);
-                var line = d3.svg.line();
                 var area = d3.svg.area().x(function(d){
                     return d[0] * Math.PI;
                 });
