@@ -903,9 +903,14 @@ function addTHREEStats() {
 
 // Dependencies: d3.js
 
-function getSVG(id, size) {
-    return d3.select('#svg-container')
+function getSVG(id, dims, container) {
+    return d3.select(container || '#svg-container')
     .append('svg').attr('id', id)
-    .attr('width', size.h)
-    .attr('height', size.w);
+    .attr('width', dims.h)
+    .attr('height', dims.w);
+}
+
+function getCenterTranslation(dims) {
+    // returns a boilerplate center translation string
+    return 'translate(' + [dims.w / 2, dims.h / 2].join(',') + ')';
 }

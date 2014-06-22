@@ -5,25 +5,27 @@
 function randomNodeLink(max, max_value) {
     // Creates a flattened set of nodes
     // and links, randomly connected.
-    var nodeLinks = {'links': [], 'nodes': []};
+    var node_links = {'links': [], 'nodes': []};
     max = max || 20;
     for(var i = 0; i < max; i++) {
-        nodeLinks.links.push({
+        node_links.links.push({
             'name': randomFixedString(10),
             // assign to a random group
             // within the maximum number of groups.
             'group': rando(max)
         });
-        nodeLinks.nodes.push({
+        node_links.nodes.push({
             'source': rando(max),
             'target': rando(max),
             'value': rando(max_value || 400)
         });
     }
-    return nodeLinks;
+    return node_links;
 }
 
 function randomCoordsGroup(max, x_max, y_max) {
+    // creates an array of coord objects
+    // e.g: [{x: 10, y: 20}, {x: 20, y: 40}]
     return d3.range(max || 10).map(function(d) {
         return randomCoords(x_max || 20, y_max || 20);
     });
@@ -76,14 +78,20 @@ function smoothData(max, min_clamp, dims){
     });
 }
 
-function randomMatrix(max_rows, cells_per_row, max_digit) {
+function randomMatrix(max_rows, cells_per_row, max_digit, uniform) {
     // Returns a random matrix of values for
     // use in certainl layouts where this data structure
     // is most approrpiate (e.g. the chord layout).
     // Defaults to a 4x4 matrix.
+    // :uniform conforms the row and column to be the same
+    // which may be required for some applications,
+    // like the chord layout
     cells_per_row = cells_per_row || 4;
     max_rows = max_rows || 4;
     var matrix = [];
+    if(uniform) {
+        max_rows = cells_per_row;
+    }
     for(var i = 0; i < max_rows; i++) {
         var row = []
         for(var j = 0; j < cells_per_row; j++) {
