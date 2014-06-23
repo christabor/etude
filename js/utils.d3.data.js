@@ -41,7 +41,8 @@ function randomGroupValue(max_val) {
     // random grouped values with keys
     // `name` and `value` for use in d3 layouts
     var x = randomIntVal({}, 'name', max_val);
-    return randomIntVal(x, 'value', max_val);
+    x = randomIntVal(x, 'value', max_val);
+    return randomIntVal(x, 'size', max_val);
 }
 
 function randomChildrenGroupValues(max, max_val, weighting) {
@@ -53,20 +54,21 @@ function randomChildrenGroupValues(max, max_val, weighting) {
         // weighted to be less likely - customizable
         if(rando(10) > weighting) {
             // recursively go down once, for further nesting
-            group.children = randomChildrenGroupValues(1, max_val);
+            group.children = randomChildrenGroupValues(1, max_val, weighting);
         }
         children.push(group);
     }
     return children;
 }
 
-function randomHierarchical(breadth, depth, max_val) {
+function randomHierarchical(breadth, depth, max_val, weighting) {
     // Creates a random hierarchical style
     // for use in d3 hierarchical layouts.
     var root = randomGroupValue(max_val);
+    weighting = weighting || 8;
     for(var i = 0; i < breadth; i++) {
-        if(rando(10) > 5) {
-            root.children = randomChildrenGroupValues(i, max_val);
+        if(rando(10) > weighting) {
+            root.children = randomChildrenGroupValues(i, max_val, weighting);
         }
     }
     return root;
