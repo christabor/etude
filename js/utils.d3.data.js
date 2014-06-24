@@ -31,6 +31,17 @@ function randomCoordsGroup(max, x_max, y_max) {
     });
 }
 
+function randomStackLayer(layers, max_values, max_x, max_y) {
+    // Constructs a data structure suitable for stack layouts
+    // https://github.com/mbostock/d3/wiki/Stack-Layout#stack
+    return d3.range(layers).map(function(d){
+        return {
+            'name': randomFixedString(10),
+            'values': bumpLayer(max_values)
+        };
+    });
+}
+
 function randomIntVal(obj, key, max_val) {
     // populate an obj with a random value in a specific key
     obj[key] = rando(max_val);
