@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-25-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 2em;
+        color: #130c21;
+        background-color: white;
+        font-size: 12px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    h1, h2 {
+        font-weight: normal;
+    }
+    .dataflow {
+        height: 400px;
+        max-height: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: #f1f1f1;
+        border-radius: 4px;
+        padding: 0.5em;
+        box-shadow: inset 0 2px 4px #ccc;
+    }
+    .dataflow p {
+        margin: 1em 0.4em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #fff;
+        font-size: 10px;
+    }
+    h1 {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: right;
+        text-transform: uppercase;
+    }
+    svg text {
+        text-transform: uppercase;
+        font-size: 10px;
+        opacity: 0.8;
+    }
+    svg {
+        padding: 1em 0;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Dataflow example</h1>
+                <p><strong>Huh?</strong> I really like the idea of seeing data in <strong>systems</strong>, particularly in real-time. In this example, I've created a common software architecture, that of the <strong>consumer/producer model</strong>, albeit abstracted into something more generic and much, much simpler. Just random data being produced, then transformed and finally consumed (or processed). Throttles to the right are actual timing mechanisms that update when a function is fired.</p>
+            </div>
+            <div class="col-md-8">
+                <div id="svg-container"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Producing</h2>
+                <div id="producing" class="dataflow"></div>
+            </div>
+            <div class="col-md-4">
+                <h2>Processing <span class="subdued">aka consuming</span></h2>
+                <div id="processing" class="dataflow"></div>
+            </div>
+            <div class="col-md-4">
+                <h2>Auxiliary operations</h2>
+                <div id="aux" class="dataflow"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="consumerproducer.js"></script>
+</body>
+</html>
