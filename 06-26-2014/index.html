@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 06-26-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        color: #130c21;
+        text-align: center;
+        background: #d6dff2 url(../img/tiny_grid.png);
+        font-size: 14px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    svg {
+        margin: 0.4em;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1><span class="subdued">/ ...</span> Shapes <span class="subdued">... /</span></h1>
+    <div id="groups"></div>
+    <div id="groups2"></div>
+    <div id="groups3"></div>
+    <div id="groups4"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="shapeof.js"></script>
+</body>
+</html>
