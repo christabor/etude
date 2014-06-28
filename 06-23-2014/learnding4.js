@@ -187,15 +187,6 @@ var learnding4 = (function(){
                 var poly = d3.geom.polygon(d3.range(100).map(function(d){
                     return [rando(width / 1.2), rando(height / 2)];
                 }));
-                var area = d3.svg.area()
-                .x(function(d){return d[0];})
-                .y0(function(d){return d[1];})
-                .y1(function(d){return d[1] + d[0];});
-
-                var line = d3.svg.line()
-                .x(function(d){return d[0]})
-                .y(function(d){return d[1]});
-
                 var group = container.append('g')
                 .attr('transform', 'translate(25, 100)');
 
