@@ -927,8 +927,8 @@ function addTitle(container, title) {
 function getSVG(id, dims, container) {
     return d3.select(container || '#svg-container')
     .append('svg').attr('id', id)
-    .attr('width', dims.h)
-    .attr('height', dims.w);
+    .attr('width', dims.w)
+    .attr('height', dims.h);
 }
 
 function getCenterTranslation(dims) {
