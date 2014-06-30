@@ -927,11 +927,11 @@ function addTitle(container, title) {
 function getSVG(id, dims, container) {
     return d3.select(container || '#svg-container')
     .append('svg').attr('id', id)
-    .attr('width', dims.w)
-    .attr('height', dims.h);
+    .attr('width', dims.w || dims.width)
+    .attr('height', dims.h || dims.height)
 }
 
 function getCenterTranslation(dims) {
     // returns a boilerplate center translation string
-    return 'translate(' + [dims.w / 2, dims.h / 2].join(',') + ')';
+    return 'translate(' + [(dims.w || dims.width) / 2, (dims.h || dims.height) / 2].join(',') + ')';
 }
