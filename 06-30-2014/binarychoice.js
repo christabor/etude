@@ -143,7 +143,7 @@ var binarychoice = (function(){
             .attr('fill', '#999')
             .attr('font-size', font_size)
             .attr('text-anchor', 'middle')
-            .text(function(d){return d['1'];})
+            .text(function(d){return d['0'];})
             .attr('x', function(d, i){return i * bar_width * 4 - bar_width / 2;})
             .attr('y', function(d){return trial_scale_zero_h(d['0']) + PADDING;});
         }
