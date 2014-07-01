@@ -545,7 +545,7 @@ function randomBinary(max) {
     // @max size (e.g. 0101010101)
     var str = '';
     for(var i = 0; i <= max; i++) {
-        str += rando(10) > 5 ? '0' : '1';
+        str += rando(10) >= 5 ? '0' : '1';
     }
     return str;
 }
