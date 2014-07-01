@@ -70,7 +70,7 @@ var binarychoice = (function(){
             var zero_length = data_0.length;
             var one_length = data_1.length;
             var num = parseInt(randomBinary(0), 10);
-            if(zero_length >= height || one_length >= height) return;
+            if(zero_length >= height || one_length >= height) return false;
             num === 0 ? data_0.push(num) : data_1.push(num);
             tick(zero_length, one_length);
         });
