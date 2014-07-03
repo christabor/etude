@@ -903,7 +903,7 @@ function addTHREEStats() {
 
 // Dependencies: d3.js
 
-function addTitle(container, title) {
+function addTitle(container, title, fixed_size) {
     // creates a scale that will constrain the font size
     // to within the containers dimensions,
     // based on the number of letters in the title.
@@ -918,7 +918,7 @@ function addTitle(container, title) {
     })
     .attr('class', 'd3.svg-title')
     .attr('font-size', function(d){
-        return constrainedBoxFontScale(title.length);
+        return fixed_size || constrainedBoxFontScale(title.length);
     })
     .attr('text-anchor', 'middle')
     .text(title);
