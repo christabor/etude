@@ -1,8 +1,6 @@
 var phrontistical = (function(){
     'use strict';
     var dims     = getViewportDimensions();
-    var diagonal = d3.svg.diagonal();
-    var form     = d3.select('form');
     var height   = dims.height;
     var width    = dims.width;
 
