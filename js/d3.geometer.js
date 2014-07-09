@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.1.1'
+    'version': '0.1.2'
 };
 
 d3_geometer.nGon = function(group) {
@@ -61,7 +61,9 @@ d3_geometer.nGon = function(group) {
 
     nGon.drawLabels = function() {
         // Draw some labels on the vertices.
-        group.selectAll('.label')
+        group.append('g')
+        .classed({'ngon-labels': true})
+        .selectAll('.label')
         .data(element.datum())
         .enter()
         .append('text')
@@ -73,7 +75,9 @@ d3_geometer.nGon = function(group) {
 
     nGon.drawVertices = function() {
         // Draw vertices for each edge.
-        group.selectAll('.vertex')
+        group.append('g')
+        .classed({'ngon-vertices': true})
+        .selectAll('.vertex')
         .data(element.datum())
         .enter()
         .append('circle')
@@ -83,9 +87,11 @@ d3_geometer.nGon = function(group) {
         return nGon;
     };
 
-    nGon.drawConnectingEdges = function() {
-        group.selectAll('.dashed')
-        .data(element.datum())
+    nGon.drawConnectingEdges = function(edges) {
+        group.append('g')
+        .classed({'ngon-dash-edges': true})
+        .selectAll('.dashed')
+        .data(edges || element.datum())
         .enter()
         .append('path')
         .attr('stroke-dasharray', DASHARRAY)
