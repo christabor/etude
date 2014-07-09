@@ -3,14 +3,22 @@
 // Copyright (c) 2014, Chris Tabor
 // All rights reserved.
 
-var geometer = {
+var d3_geometer = {
     'version': '0.0.1'
 };
 
-geometer.nGon = function(group) {
+d3_geometer.nGon = function(group) {
     // d3 style - chainable interfaces.
-
-    var element = null;
+    var tau          = Math.PI * 2;
+    var STROKE       = '#b66d48';
+    var FILL         = '#f4eae5';
+    var STROKE_WIDTH = 3;
+    var DOT_SIZE     = 5;
+    var OFFSET       = 50;
+    var element      = null;
+    var line         = d3.svg.line()
+                       .x(function(d){return d.x;})
+                       .y(function(d){return d.y;});
 
     // Inner "parent" function that is **always** returned
     // in each helper function, which allows for chaining.
