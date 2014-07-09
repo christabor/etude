@@ -3,8 +3,9 @@
 // Copyright (c) 2014, Chris Tabor
 // All rights reserved.
 
+// Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.0.1'
+    'version': '0.1.1'
 };
 
 d3_geometer.nGon = function(group) {
@@ -16,6 +17,7 @@ d3_geometer.nGon = function(group) {
     var STROKE_WIDTH = 3;
     var DOT_SIZE     = 5;
     var OFFSET       = 50;
+    var DASHARRAY    = 10;
     var line         = d3.svg.line()
                        .x(function(d){return d.x;})
                        .y(function(d){return d.y;});
@@ -63,7 +65,7 @@ d3_geometer.nGon = function(group) {
         .data(element.datum())
         .enter()
         .append('text')
-        .text(function(d){return 'T'})
+        .text(function(d){return d.label;})
         .attr('x', function(d){return d.x - 4;})
         .attr('y', function(d){return d.y - 10;});
         return nGon;
@@ -86,12 +88,11 @@ d3_geometer.nGon = function(group) {
         .data(element.datum())
         .enter()
         .append('path')
-        .attr('stroke-dasharray', 10)
+        .attr('stroke-dasharray', DASHARRAY)
         .attr('stroke-width', STROKE_WIDTH)
         .attr('fill', 'none')
         .attr('stroke', 'purple')
         .attr('d', line)
-        .attr('stroke-dasharray', 6);
         return nGon;
     };
 
