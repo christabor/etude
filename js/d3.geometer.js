@@ -114,7 +114,6 @@ d3_geometer.nGon = function(group) {
         // @param {number} modulo - A modulo to allow custom numerical offsets.
         var datum = element.datum();
         var len   = datum.length;
-        log(len);
         if(len < 3) return;
 
         function push(inner, j, i) {
