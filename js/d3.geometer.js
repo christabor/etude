@@ -16,7 +16,6 @@ d3_geometer.nGon = function(group) {
     var STROKE_WIDTH = 3;
     var DOT_SIZE     = 5;
     var OFFSET       = 50;
-    var element      = null;
     var line         = d3.svg.line()
                        .x(function(d){return d.x;})
                        .y(function(d){return d.y;});
