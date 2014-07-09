@@ -9,6 +9,7 @@ var d3_geometer = {
 };
 
 d3_geometer.nGon = function(group) {
+    // @param {number} group - A d3 group selection.
     if(!d3) return console.error('d3 library not found :sadface:');
 
     // d3 style - chainable interfaces.
@@ -30,6 +31,9 @@ d3_geometer.nGon = function(group) {
     // Inner "parent" function that is **always** returned
     // in each helper function, which allows for chaining.
     function nGon(radius, sides) {
+        // @param {number} radius - Size of entire shape
+        //  - calculated using the unit circle
+        // @param {number} sides - Number of sides.
         group = group || d3.select('svg').append('g');
         // Initialize element for later reference
         // This is important!
@@ -53,6 +57,9 @@ d3_geometer.nGon = function(group) {
     nGon.getCoords = function(radius, sides) {
         // Generate the coordinates for
         // each point based on # of sides.
+        // @param {number} radius - Size of entire shape
+        //  - calculated using the unit circle
+        // @param {number} sides - Number of sides.
         return d3.range(sides).map(function(d){
             var cx           = 0;  // center x
             var cy           = 0;  // center y
@@ -104,6 +111,7 @@ d3_geometer.nGon = function(group) {
         // Calculates all positions for each
         // vertex to connect to - offset by one,
         // since adjacent vertices are already connected
+        // @param {number} modulo - A modulo to allow custom numerical offsets.
         var datum = element.datum();
         var len   = datum.length;
         log(len);
@@ -134,6 +142,8 @@ d3_geometer.nGon = function(group) {
     nGon.drawNearAdjacentEdges = function(connections) {
         // Draws edges directly adjacent + 1 to each vertex.
         // see calculateEdgeOffsets for details.
+        // @param {array} connections - A list of custom connections
+        //  -must be an array of objects with x and y accessors
         if(!connections) {
             nGon.calculateEdgeOffsets();
             connections = _connections;
