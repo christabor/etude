@@ -9,6 +9,7 @@ var d3_geometer = {
 
 d3_geometer.nGon = function(group) {
     // d3 style - chainable interfaces.
+    var element      = null;
     var tau          = Math.PI * 2;
     var STROKE       = '#b66d48';
     var FILL         = '#f4eae5';
