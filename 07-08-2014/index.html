@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-08-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: black;
+    }
+    h1 {
+        font-weight: lighter;
+    }
+    a {
+        color: orange;
+    }
+    a:hover {
+        color: black;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Visual Math &mdash; <strong>BUILDER</strong></h1>
+    <p>
+        <a href="../07-07-2014/">Yesterday</a> I made a cool little graphic &mdash; today I make the beginnings of a tool that generates such visualizations dynamically.
+    </p>
+    <p>
+        <strong>Press <kbd>enter</kbd> to generate increasing complex shapes. Press <kbd>0</kbd> to reset the value.</strong>
+    </p>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/d3.geometer.js"></script>
+    <script src="../js/utils.d3.data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="geometer2.js"></script>
+</body>
+</html>
