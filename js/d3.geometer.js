@@ -143,8 +143,11 @@ d3_geometer.nGon = function(group) {
         return nGon;
     };
 
-    nGon.drawCenterPoint = function(height, width) {
+    nGon.drawCenterPoint = function(height, width, use_labels) {
         // Simply draws the center vertex
+        // @param {number} height - required height of container
+        // @param {number} width - required width of container
+        // @param {boolean} use_labels - Add a label to center point
         group.select('.ngon-vertices')
         .append('circle')
         .attr('class', 'center-vertex')
@@ -154,6 +157,16 @@ d3_geometer.nGon = function(group) {
         .transition()
         .delay(function(d, i){return i * 100;})
         .attr('r', RADIUS);
+
+        if(use_labels) {
+            // Draw some labels on the vertices.
+            group.select('.ngon-labels')
+            .append('text')
+            .attr('class', 'center-vertex-label')
+            .text(function(d){return 'O1';})
+            .attr('x', RADIUS + RADIUS / 2)
+            .attr('y', RADIUS);
+        }
         return nGon;
     };
 
