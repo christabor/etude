@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.2.3'
+    'version': '0.2.4'
 };
 
 d3_geometer.nGon = function(group) {
@@ -14,6 +14,7 @@ d3_geometer.nGon = function(group) {
 
     // d3 style - chainable interfaces.
     var element      = null;
+    var _radius      = null;
     var GLOBAL_CLASS = 'd3_geometer';
     var _connections = [];
     var tau          = Math.PI * 2;
@@ -35,6 +36,8 @@ d3_geometer.nGon = function(group) {
         //  - calculated using the unit circle
         // @param {number} sides - Number of sides.
         group = group || d3.select('svg').append('g');
+        // expose radius value
+        _radius = radius;
         // Initialize element for later reference
         // This is important!
         element = group.selectAll('.ngon')
@@ -51,6 +54,8 @@ d3_geometer.nGon = function(group) {
 
     nGon.destroy = function() {
         element.remove();
+        // One reason for keeping all elements
+        // in a group is that it makes cleanup easier.
         group.selectAll('g').remove();
     };
 
@@ -135,6 +140,20 @@ d3_geometer.nGon = function(group) {
             }
             return inner;
         });
+        return nGon;
+    };
+
+    nGon.drawCenterPoint = function(height, width) {
+        // Simply draws the center vertex
+        group.select('.ngon-vertices')
+        .append('circle')
+        .attr('class', 'center-vertex')
+        .attr('r', 0)
+        .attr('cx', 0)
+        .attr('cy', 0)
+        .transition()
+        .delay(function(d, i){return i * 100;})
+        .attr('r', RADIUS);
         return nGon;
     };
 
