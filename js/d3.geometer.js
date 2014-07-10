@@ -116,9 +116,9 @@ d3_geometer.nGon = function(group) {
         var len   = datum.length;
         if(len < 3) return;
 
-        function push(inner, j, i) {
-            inner.push({'x': datum[i].x, 'y': datum[i].y, 'label': 'C' + i});
-            inner.push({'x': datum[len - j].x, 'y': datum[len - j].y, 'label': 'C' + (len - j)});
+        function push(inner, sub_index, index) {
+            inner.push({'x': datum[index].x, 'y': datum[index].y, 'label': 'C' + index});
+            inner.push({'x': datum[len - sub_index].x, 'y': datum[len - sub_index].y, 'label': 'C' + (len - sub_index)});
         }
 
         // store connections state
