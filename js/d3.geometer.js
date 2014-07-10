@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.3.5'
+    'version': '0.3.6'
 };
 
 d3_geometer.nGon = function(group) {
@@ -26,7 +26,7 @@ d3_geometer.nGon = function(group) {
     var OFFSET       = 50;
     var DASHARRAY    = 5;
     var ARC_I_RADIUS = 0;
-    var ARC_O_RADIUS = 30;
+    var ARC_O_RADIUS = RADIUS * 4;
     var ANG_OPACITY  = 0.8;
     var ANG_STROKE   = '#689452';
     var ANG_FILL     = '#acf287';
@@ -35,9 +35,24 @@ d3_geometer.nGon = function(group) {
     .y(function(d){return d.y;});
     var arc          = d3.svg.arc()
     .innerRadius(ARC_I_RADIUS)
-    .outerRadius(ARC_O_RADIUS)
-    .startAngle(0)
-    .endAngle(0);
+    .outerRadius(ARC_O_RADIUS);
+
+    function setupGroups() {
+        // A single source to set up parent groups
+        // for each type of element.
+        var classes = [
+            'ngon-labels',
+            'ngon-dash-edges',
+            'ngon-angles',
+            'ngon-vertices',
+            'ngon-right-angles'
+        ];
+
+        for(var i = 0, len = classes.length; i < len; i ++) {
+            group.append('g')
+            .attr('class', [GLOBAL_CLASS, classes[i]].join(' '));
+        }
+    }
 
     // Inner "parent" function that is **always** returned
     // in each helper function, which allows for chaining.
@@ -59,6 +74,7 @@ d3_geometer.nGon = function(group) {
         .attr('fill', FILL)
         .attr('opacity', 1)
         .attr('d', function(d){return line(d) + 'Z';});
+        setupGroups();
         return nGon;
     }
 
@@ -93,8 +109,7 @@ d3_geometer.nGon = function(group) {
 
     nGon.drawLabels = function() {
         // Draw some labels on the vertices.
-        group.append('g')
-        .attr('class', [GLOBAL_CLASS, 'ngon-labels'].join(' '))
+        group.select('.ngon-labels')
         .selectAll('.label')
         .data(element.datum())
         .enter()
@@ -107,8 +122,7 @@ d3_geometer.nGon = function(group) {
 
     nGon.drawVertices = function() {
         // Draw vertices for each edge.
-        group.append('g')
-        .attr('class', [GLOBAL_CLASS, 'ngon-vertices'].join(' '))
+        group.select('.ngon-vertices')
         .selectAll('.vertex')
         .data(element.datum())
         .enter()
@@ -123,7 +137,8 @@ d3_geometer.nGon = function(group) {
     };
 
     nGon.drawRightAngle = function(x, y) {
-        group.append('rect')
+        group.select('.ngon-right-angles')
+        .append('rect')
         .attr('class', 'right-angle')
         .attr('x', x)
         .attr('y', y)
@@ -204,8 +219,7 @@ d3_geometer.nGon = function(group) {
             nGon.calculateEdgeOffsets(modulo);
             connections = _connections;
         }
-        group.append('g')
-        .attr('class', [GLOBAL_CLASS, 'ngon-dash-edges'].join(' '))
+        group.select('.ngon-dash-edges')
         .selectAll('.dashed')
         .data(connections)
         .enter()
