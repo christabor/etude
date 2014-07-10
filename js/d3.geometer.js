@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.2.4'
+    'version': '0.3.5'
 };
 
 d3_geometer.nGon = function(group) {
@@ -25,9 +25,19 @@ d3_geometer.nGon = function(group) {
     var RADIUS       = 6;
     var OFFSET       = 50;
     var DASHARRAY    = 5;
+    var ARC_I_RADIUS = 0;
+    var ARC_O_RADIUS = 30;
+    var ANG_OPACITY  = 0.8;
+    var ANG_STROKE   = '#689452';
+    var ANG_FILL     = '#acf287';
     var line         = d3.svg.line()
     .x(function(d){return d.x;})
     .y(function(d){return d.y;});
+    var arc          = d3.svg.arc()
+    .innerRadius(ARC_I_RADIUS)
+    .outerRadius(ARC_O_RADIUS)
+    .startAngle(0)
+    .endAngle(0);
 
     // Inner "parent" function that is **always** returned
     // in each helper function, which allows for chaining.
@@ -112,6 +122,21 @@ d3_geometer.nGon = function(group) {
         return nGon;
     };
 
+    nGon.drawRightAngle = function(x, y) {
+        group.append('rect')
+        .attr('class', 'right-angle')
+        .attr('x', x)
+        .attr('y', y)
+        .attr('stroke-width', STROKE_WIDTH / 2)
+        .attr('stroke', ANG_STROKE)
+        .attr('opacity', ANG_OPACITY)
+        .attr('fill', ANG_FILL)
+        .attr('opacity', ANG_OPACITY)
+        .attr('width', RADIUS * 3)
+        .attr('height', RADIUS * 3);
+        return nGon;
+    };
+
     nGon.calculateEdgeOffsets = function(modulo) {
         // Calculates all positions for each
         // vertex to connect to - offset by one,
@@ -170,13 +195,13 @@ d3_geometer.nGon = function(group) {
         return nGon;
     };
 
-    nGon.drawNearAdjacentEdges = function(connections) {
+    nGon.drawNearAdjacentEdges = function(connections, modulo) {
         // Draws edges directly adjacent + 1 to each vertex.
         // see calculateEdgeOffsets for details.
         // @param {array} connections - A list of custom connections
         //  -must be an array of objects with x and y accessors
         if(!connections) {
-            nGon.calculateEdgeOffsets();
+            nGon.calculateEdgeOffsets(modulo);
             connections = _connections;
         }
         group.append('g')
