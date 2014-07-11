@@ -5,7 +5,13 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.3.6'
+    'version': '0.3.7'
+};
+
+d3_geometer.utils = {};
+d3_geometer.utils.toRadian = function(deg) {
+    if(isNaN(deg)) return deg;
+    return deg * (Math.PI / 180);
 };
 
 d3_geometer.nGon = function(group) {
@@ -33,9 +39,6 @@ d3_geometer.nGon = function(group) {
     var line         = d3.svg.line()
     .x(function(d){return d.x;})
     .y(function(d){return d.y;});
-    var arc          = d3.svg.arc()
-    .innerRadius(ARC_I_RADIUS)
-    .outerRadius(ARC_O_RADIUS);
 
     function setupGroups() {
         // A single source to set up parent groups
@@ -144,11 +147,40 @@ d3_geometer.nGon = function(group) {
         .attr('y', y)
         .attr('stroke-width', STROKE_WIDTH / 2)
         .attr('stroke', ANG_STROKE)
-        .attr('opacity', ANG_OPACITY)
         .attr('fill', ANG_FILL)
         .attr('opacity', ANG_OPACITY)
         .attr('width', RADIUS * 3)
         .attr('height', RADIUS * 3);
+        return nGon;
+    };
+
+    nGon.drawAngle = function(deg, x, y) {
+        var _arc = d3.svg.arc()
+        .innerRadius(ARC_I_RADIUS)
+        .outerRadius(ARC_O_RADIUS)
+        .startAngle(0)
+        .endAngle(d3_geometer.utils.toRadian(deg));
+
+        group.select('.ngon-angles')
+        .append('path')
+        .attr('class', 'ngon-angle')
+        .attr('x', x)
+        .attr('y', y)
+        .attr('stroke-width', STROKE_WIDTH / 2)
+        .attr('stroke', ANG_STROKE)
+        .attr('fill', ANG_FILL)
+        .attr('opacity', ANG_OPACITY)
+        .attr('d', _arc);
+
+        // add label
+        group.select('.ngon-angles')
+        .append('text')
+        .attr('class', 'ngon-angle-text')
+        .attr('x', x - 20)
+        .attr('y', y - 10)
+        .attr('fill', 'black')
+        .attr('font-size', 10)
+        .text(deg + '°');
         return nGon;
     };
 
