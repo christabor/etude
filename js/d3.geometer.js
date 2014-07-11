@@ -5,11 +5,14 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.3.7'
+    'version': '0.3.8'
 };
 
 d3_geometer.utils = {};
 d3_geometer.utils.toRadian = function(deg) {
+    if(deg > 360) deg = 360;
+    // Converts degrees to radians.
+    // @param {deg} degree - the degrees to convert - up to 360
     if(isNaN(deg)) return deg;
     return deg * (Math.PI / 180);
 };
@@ -21,6 +24,8 @@ d3_geometer.nGon = function(group) {
     // d3 style - chainable interfaces.
     var element      = null;
     var _radius      = null;
+    var _sides       = null;
+    var _coords      = null;
     var GLOBAL_CLASS = 'd3_geometer';
     var _connections = [];
     var tau          = Math.PI * 2;
@@ -31,7 +36,7 @@ d3_geometer.nGon = function(group) {
     var RADIUS       = 6;
     var OFFSET       = 50;
     var DASHARRAY    = 5;
-    var ARC_I_RADIUS = 0;
+    var ARC_I_RADIUS = 10;
     var ARC_O_RADIUS = RADIUS * 4;
     var ANG_OPACITY  = 0.8;
     var ANG_STROKE   = '#689452';
@@ -63,13 +68,15 @@ d3_geometer.nGon = function(group) {
         // @param {number} radius - Size of entire shape
         //  - calculated using the unit circle
         // @param {number} sides - Number of sides.
-        group = group || d3.select('svg').append('g');
-        // expose radius value
+        group   = group || d3.select('svg').append('g');
+        // expose values
         _radius = radius;
+        _sides  = sides;
+        _coords = nGon.getCoords(radius, sides);
         // Initialize element for later reference
         // This is important!
         element = group.selectAll('.ngon')
-        .data([nGon.getCoords(radius, sides)])
+        .data([_coords])
         .enter()
         .append('path')
         .attr('stroke-width', STROKE_WIDTH)
@@ -162,10 +169,10 @@ d3_geometer.nGon = function(group) {
         .endAngle(d3_geometer.utils.toRadian(deg));
 
         group.select('.ngon-angles')
+        .append('g')
+        .attr('transform', 'translate(' + x + ',' + y +')')
         .append('path')
         .attr('class', 'ngon-angle')
-        .attr('x', x)
-        .attr('y', y)
         .attr('stroke-width', STROKE_WIDTH / 2)
         .attr('stroke', ANG_STROKE)
         .attr('fill', ANG_FILL)
@@ -176,11 +183,11 @@ d3_geometer.nGon = function(group) {
         group.select('.ngon-angles')
         .append('text')
         .attr('class', 'ngon-angle-text')
-        .attr('x', x - 20)
-        .attr('y', y - 10)
+        .attr('x', x + 5)
+        .attr('y', y + 20)
         .attr('fill', 'black')
         .attr('font-size', 10)
-        .text(deg + '°');
+        .text(Math.abs(deg) + '°');
         return nGon;
     };
 
