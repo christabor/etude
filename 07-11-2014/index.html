@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-11-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: #414e8b;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Lora', serif;
+        color: white;
+    }
+    h1 {
+        font-weight: lighter;
+    }
+    .custom-label {
+        text-anchor: middle;
+        font-size: 14px;
+        text-shadow: 0 2px 4px white;
+    }
+    .custom-label:first-of-type {
+        font-size: 30px;
+    }
+    .custom-label:last-of-type {
+        font-size: 11px;
+    }
+    path {
+        fill: #b0eab0;
+        stroke: #2b345d;
+        stroke-width: 10;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1><strong>99 Polygons</strong> and <em>interior angles</em> on the wall.</h1>
+    <p>An ongoing extension of my <strong>d3.geometer</strong> library.</p>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/d3.geometer.js"></script>
+    <script src="../js/utils.d3.data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="intangles.js"></script>
+</body>
+</html>
