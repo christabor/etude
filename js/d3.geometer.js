@@ -5,16 +5,24 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.3.8'
+    'version': '0.3.9'
 };
 
 d3_geometer.utils = {};
+
 d3_geometer.utils.toRadian = function(deg) {
     if(deg > 360) deg = 360;
     // Converts degrees to radians.
     // @param {deg} degree - the degrees to convert - up to 360
     if(isNaN(deg)) return deg;
     return deg * (Math.PI / 180);
+};
+
+d3_geometer.utils.calculateAngleSum = function(sides) {
+    // Calculates the sum of interior angles of a given number of sides
+    // @param {sides} sides - number of sides to calculate from.
+    // http://www.regentsprep.org/Regents/math/geometry/GG3/LPoly1.htm
+    return 180 * (sides - 2);
 };
 
 d3_geometer.nGon = function(group) {
@@ -87,6 +95,15 @@ d3_geometer.nGon = function(group) {
         setupGroups();
         return nGon;
     }
+
+    nGon.rotate = function(deg, el) {
+        // Rotate a given element.
+        // @param {deg} deg - the amount, in degrees, to rotate by
+        // @param {el} el - the d3 selector (class, tag, etc..) to rotate.
+        group.select(el)
+        .attr('transform', 'rotate(' + deg + ')');
+        return nGon;
+    };
 
     nGon.destroy = function() {
         element.remove();
