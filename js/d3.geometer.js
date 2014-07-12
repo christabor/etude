@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.3.9'
+    'version': '0.4.0'
 };
 
 d3_geometer.utils = {};
@@ -13,16 +13,25 @@ d3_geometer.utils = {};
 d3_geometer.utils.toRadian = function(deg) {
     if(deg > 360) deg = 360;
     // Converts degrees to radians.
-    // @param {deg} degree - the degrees to convert - up to 360
+    // @param {number} degree - the degrees to convert - up to 360
     if(isNaN(deg)) return deg;
     return deg * (Math.PI / 180);
 };
 
 d3_geometer.utils.calculateAngleSum = function(sides) {
     // Calculates the sum of interior angles of a given number of sides
-    // @param {sides} sides - number of sides to calculate from.
+    // @param {number} sides - number of sides to calculate from.
     // http://www.regentsprep.org/Regents/math/geometry/GG3/LPoly1.htm
     return 180 * (sides - 2);
+};
+
+d3_geometer.utils.calculateAngles = function(sides, round) {
+    // Calculates the angle of a given side,
+    // given a number of equal sides.
+    // @param {number} sides - number of sides to calculate.
+    // @param {boolean} round - whether or not to round the calculation.
+    var deg = d3_geometer.utils.calculateAngleSum(sides) / sides;
+    return round ? Math.round(deg) : deg;
 };
 
 d3_geometer.nGon = function(group) {
@@ -98,8 +107,8 @@ d3_geometer.nGon = function(group) {
 
     nGon.rotate = function(deg, el) {
         // Rotate a given element.
-        // @param {deg} deg - the amount, in degrees, to rotate by
-        // @param {el} el - the d3 selector (class, tag, etc..) to rotate.
+        // @param {number} deg - the amount, in degrees, to rotate by
+        // @param {string} el - the d3 selector (class, tag, etc..) to rotate.
         group.select(el)
         .attr('transform', 'rotate(' + deg + ')');
         return nGon;
@@ -132,6 +141,20 @@ d3_geometer.nGon = function(group) {
                 'y': vy
             };
         });
+    };
+
+    nGon.label = function(text, x, y) {
+        // Draw a custom label, wherever.
+        // @param {string} text - the label text.
+        // @param {number} x - x position
+        // @param {number} y - y position
+        group.select('.ngon-labels')
+        .append('text')
+        .attr('class', 'custom-label')
+        .text(text)
+        .attr('x', x || 0)
+        .attr('y', y || 0);
+        return nGon;
     };
 
     nGon.drawLabels = function() {
