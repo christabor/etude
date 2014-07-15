@@ -935,3 +935,12 @@ function getCenterTranslation(dims) {
     // returns a boilerplate center translation string
     return 'translate(' + [(dims.w || dims.width) / 2, (dims.h || dims.height) / 2].join(',') + ')';
 }
+
+function flattenQuadtree(quadtree) {
+    // http://bl.ocks.org/mbostock/4343214
+    var nodes = [];
+    quadtree.visit(function(node, x1, y1, x2, y2){
+        nodes.push({'x': x1, 'y': y1, 'width': x2 - x1, 'height': y2 - y1});
+    });
+    return nodes;
+}
