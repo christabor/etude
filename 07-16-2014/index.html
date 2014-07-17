@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-16-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: #402751;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-size: 16px;
+        color: white;
+        font-family: 'PT Sans Caption', sans-serif;
+    }
+    p, h1, h2, h3, h4, h5 {
+        margin: 0.2em;
+    }
+    a {
+        color: #999;
+    }
+    h1 {
+        font-weight: normal;
+    }
+    ul {
+        font-size: 1em;
+        padding-left: 2em;
+        list-style-type: square;
+    }
+    ul li {
+        line-height: 2.5em;
+    }
+    #intro .banner {
+        text-align: center;
+        background-color: #2e1c3b;
+        padding: 1.4em;
+        margin: 2em 0;
+    }
+    #intro .banner .lead {
+        opacity: 0.5;
+        text-transform: uppercase;
+    }
+    .container {
+        margin: 0 auto;
+        width: 900px;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        .container {
+            width: 100%;
+        }
+        .btn {
+            max-width: 100%;
+            padding: 0.4em;
+        }
+        body {
+            font-size: 14px;
+        }
+    }
+
+
+    /* Modal widget */
+
+    .modal-container {
+        display: none;
+    }
+    .modal-container.active {
+        display: block;
+    }
+    .modal-container.blur {
+        -webkit-filter: blur(2px);
+    }
+    .modal-container,
+    .modal-container > .modal-bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .modal-container > .modal-bg {
+        background-color: black;
+        opacity: 0.5;
+    }
+    .modal-container.notint > .modal-bg {
+        background-color: transparent;
+    }
+    .modal-container > .modal-dialog {
+        background-color: white;
+        color: black;
+        position: relative;
+        z-index: 999;
+        margin: 2em auto;
+        min-width: 500px;
+        width: auto;
+        max-width: 95%;
+        box-shadow: 0 5px 2px rgba(0, 0, 0, 0.7);
+        border-radius: 4px;
+    }
+    .modal-container .modal-header {
+        border-radius: 4px 4px 0 0;
+    }
+    .modal-container .modal-footer {
+        border-radius: 0 0 4px 4px;
+    }
+
+    .modal-container.modal-25 > .modal-dialog {
+        width: 25%;
+    }
+    .modal-container.modal-50 > .modal-dialog {
+        width: 50%;
+    }
+    .modal-container.modal-75 > .modal-dialog {
+        width: 75%;
+    }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 1em;
+        position: relative;
+    }
+    .modal-footer {
+        border-top: 1px solid #ccc;
+        font-size: 80%;
+    }
+    .modal-header {
+        background-color: #444;
+        border-bottom: 5px solid #777;
+        color: white;
+    }
+    a[data-close] {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+    a[data-close]:hover {
+        color: white;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        .modal-container.modal-25 > .modal-dialog,
+        .modal-container.modal-50 > .modal-dialog,
+        .modal-container.modal-75 > .modal-dialog {
+            width: 95%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="container" class="style-flat">
+        <div id="intro">
+            <div class="banner">
+                <h1>A simple <strong>yet powerful</strong> modal widget.</h1>
+                <p class="text-center lead">Here are some reasons why.</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul>
+                            <li>Allows for N nested modals - no limit!</li>
+                            <li>Easy to style, allows for header, footer, body (similar to bootstrap)</li>
+                            <li>Animations can easily tacked on, (example used: animate.css)</li>
+                            <li>Customizeable via api</li>
+                            <li>Simple design allows for toggling between modals when clicking on any modal target.</li>
+                            <li>Keeps track of z-index, so you don't have too.</li>
+                            <li>Multiple sizing options</li>
+                            <li>Mobile friendly!</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <br><br>
+                        <a href="#" class="btn btn-large btn-purple" data-modal-target="#modal1"><strong>Launch</strong> Modal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container modal-75" id="modal1" data-remote="myfile.json" data-callback="myfunc">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <a href="#" data-close>
+                        <span class="fa fa-times"></span>
+                    </a>
+                    <h3>Check me out - 1</h3>
+                </div>
+                <div class="modal-body">
+                    <p>I'm a body</p>
+                    <ul>
+                        <li>stuff</li>
+                        <li>thangs.</li>
+                    </ul>
+                    <a href="#" data-modal-target="#modal2" class="btn btn-small btn-orange">Click me</a>
+                </div>
+                <div class="modal-footer">
+                    <p>footer...</p>
+                </div>
+            </div>
+            <div class="modal-bg"></div>
+        </div>
+
+        <div class="modal-container modal-50" id="modal4">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <a href="#" data-close>
+                        <span class="fa fa-times"></span>
+                    </a>
+                    <h3>Check me out - 4</h3>
+                </div>
+                <div class="modal-body">
+                    <p>I'm a body</p>
+                    <ul>
+                        <li>stuff</li>
+                        <li>thangs.</li>
+                    </ul>
+                    <p>That's all folks!</p>
+                </div>
+                <div class="modal-footer">
+                    <p>footer...</p>
+                </div>
+            </div>
+            <div class="modal-bg"></div>
+        </div>
+
+        <div class="modal-container modal-50" id="modal3">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <a href="#" data-close>
+                        <span class="fa fa-times"></span>
+                    </a>
+
+                    <h3>Check me out - 3</h3>
+                </div>
+                <div class="modal-body">
+                    <p>I'm a body</p>
+                    <ul>
+                        <li>stuff</li>
+                        <li>thangs.</li>
+                    </ul>
+                    <a href="#" data-modal-target="#modal4" class="btn btn-small btn-green">Click me</a>
+                </div>
+                <div class="modal-footer">
+                    <p>footer...</p>
+                </div>
+            </div>
+            <div class="modal-bg"></div>
+        </div>
+
+        <div class="modal-container modal-25" id="modal2">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <a href="#" data-close>
+                        <span class="fa fa-times"></span>
+                    </a>
+                    <h3>Check me out - 2</h3>
+                </div>
+                <div class="modal-body">
+                    <p>I'm a body</p>
+                    <ul>
+                        <li>stuff</li>
+                        <li>thangs.</li>
+                    </ul>
+                    <a href="#" data-modal-target="#modal3" class="btn btn-small btn-blue">Click me</a>
+                </div>
+                <div class="modal-footer">
+                    <p>footer...</p>
+                </div>
+            </div>
+            <div class="modal-bg"></div>
+        </div>
+
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="vorotree.js"></script>
+</body>
+</html>
