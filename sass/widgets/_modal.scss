@@ -1,0 +1,84 @@
+
+/* Modal widget */
+
+.modal-container {
+    display: none;
+}
+.modal-container.active {
+    display: block;
+}
+.modal-container.blur {
+}
+.modal-container,
+.modal-container > .modal-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.modal-container > .modal-bg {
+    background-color: black;
+    opacity: 0.5;
+}
+.modal-container.notint > .modal-bg {
+    background-color: transparent;
+}
+.modal-container > .modal-dialog {
+    background-color: white;
+    color: black;
+    position: relative;
+    z-index: 999;
+    margin: 2em auto;
+    min-width: 500px;
+    width: auto;
+    max-width: 95%;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+.modal-container .modal-header {
+    border-radius: 4px 4px 0 0;
+}
+.modal-container .modal-footer {
+    border-radius: 0 0 4px 4px;
+}
+
+.modal-container.modal-25 > .modal-dialog {
+    width: 25%;
+}
+.modal-container.modal-50 > .modal-dialog {
+    width: 50%;
+}
+.modal-container.modal-75 > .modal-dialog {
+    width: 75%;
+}
+.modal-header,
+.modal-body,
+.modal-footer {
+    padding: 1em;
+    position: relative;
+}
+.modal-footer {
+    border-top: 1px solid #ccc;
+    font-size: 80%;
+}
+.modal-header {
+    background-color: #444;
+    border-bottom: 5px solid #777;
+    color: white;
+}
+a[data-close] {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+a[data-close]:hover {
+    color: white;
+}
+@media handheld, screen and (max-width: 700px) {
+    .modal-container.modal-25 > .modal-dialog,
+    .modal-container.modal-50 > .modal-dialog,
+    .modal-container.modal-75 > .modal-dialog {
+        width: 95%;
+    }
+}

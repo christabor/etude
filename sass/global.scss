@@ -2,9 +2,12 @@
 @import 'btns';
 @import 'animations';
 @import 'shims';
-@import 'mobile-menu';
 @import 'typography';
 @import 'code';
+
+// Widgets
+@import 'widgets/mobile-menu';
+@import 'widgets/modal';
 
 /* Typography */
 
