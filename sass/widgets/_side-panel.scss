@@ -1,28 +1,31 @@
+$rotation: -15deg;
 $panel-width: 30%;
+$scale: 0.8;
+$perspective-amount: 1400px;
 
 .sidebar-panel {
-    width: $panel-width;
-    &.left {
-        left: -$panel-width;
-        &.open {
-            left: 0;
-        }
+-webkit-transition: all 0.6s ease-in-out;  /* Saf3.2+, Chrome */
+-moz-transition: all 0.6s ease-in-out;  /* FF4+ */
+-ms-transition: all 0.6s ease-in-out;  /* IE10? */
+-o-transition: all 0.6s ease-in-out;  /* Opera 10.5+ */
+transition: all 0.6s ease-in-out;
+width: $panel-width;
+&.left {
+    left: -$panel-width;
+    &.open {
+        left: 0;
     }
-    &.right {
-        right: -$panel-width;
-        &.open {
-            right: 0;
-        }
+}
+&.right {
+    right: -$panel-width;
+    &.open {
+        right: 0;
     }
+}
 }
 .sidebar-panel,
 .panel-main {
     overflow-y: scroll;
-    -webkit-transition: all 0.6s ease-in-out;  /* Saf3.2+, Chrome */
-    -moz-transition: all 0.6s ease-in-out;  /* FF4+ */
-    -ms-transition: all 0.6s ease-in-out;  /* IE10? */
-    -o-transition: all 0.6s ease-in-out;  /* Opera 10.5+ */
-    transition: all 0.6s ease-in-out;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -42,15 +45,48 @@ $panel-width: 30%;
         right: 0;
     }
 }
+.anim_box-perspective {
+    -webkit-animation: perspective-shrink 1s normal; /* Saf5, Chrome */
+    -moz-animation: perspective-shrink 1s normal; /* FF5+ */
+    -ms-animation: perspective-shrink 1s normal; /* IE10pp3 */
+    -webkit-animation-fill-mode: forwards; /* Safari and Chrome */
+    animation-fill-mode: forwards;
+}
+@mixin perspectify($persp, $scale, $rotatey) {
+    transform: perspective($persp) scale($scale) rotateY($rotatey);
+    -ms-transform: perspective($persp) scale($scale) rotateY($rotatey);
+    -o-transform: perspective($persp) scale($scale) rotateY($rotatey);
+    -moz-transform: perspective($persp) scale($scale) rotateY($rotatey);
+    -webkit-transform: perspective($persp) scale($scale) rotateY($rotatey);
+}
+@-webkit-keyframes perspective-shrink {
+    0%   {}
+    100% {
+        @include perspectify($perspective-amount, $scale, $rotation);
+    }
+}
+@-moz-keyframes perspective-shrink {
+    0%   {}
+    100% {
+        @include perspectify($perspective-amount, $scale, $rotation);
+    }
+}
+@-ms-keyframes perspective-shrink {
+    0%   {}
+    100% {
+        @include perspectify($perspective-amount, $scale, $rotation);
+    }
+}
+@keyframes perspective-shrink {
+    0%   {}
+    100% {
+        @include perspectify($perspective-amount, $scale, $rotation);
+    }
+}
 .sidebar-panel.open ~ .panel-main {
     &.panel-shrink {
-        $rotation: -15deg;
+        @extend .anim_box-perspective;
         box-shadow: 60px 60px 20px rgba(0,0,0,0.2);
-        transform: perspective(1400px) scale(0.8) rotateY($rotation);
-        -ms-transform: perspective(1400px) scale(0.8) rotateY($rotation);
-        -o-transform: perspective(1400px) scale(0.8) rotateY($rotation);
-        -moz-transform: perspective(1400px) scale(0.8) rotateY($rotation);
-        -webkit-transform: perspective(1400px) scale(0.8) rotateY($rotation);
     }
     &.right {
         left: $panel-width;
