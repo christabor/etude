@@ -8,6 +8,7 @@
     display: block;
 }
 .modal-container.blur {
+    -webkit-filter: blur(2px);
 }
 .modal-container,
 .modal-container > .modal-bg {
