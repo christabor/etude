@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-17-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: #28514f;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 16px;
+        color: white;
+        font-family: 'PT Sans Caption', sans-serif;
+    }
+    #container .btn {
+        display: block;
+        width: 200px;
+        margin: 0.4em auto;
+        padding: 0.4em;
+    }
+    .sidebar-panel {
+        background-color: #1f3f3e;
+    }
+    .panel-main {
+        background-color: #397572;
+    }
+    a, a:hover {
+        color: white;
+    }
+
+    @media handheld, screen and (max-width: 400px) {
+        .container {
+            width: 100%;
+        }
+        .btn {
+            max-width: 100%;
+            padding: 0.4em;
+        }
+        body {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar-panel left" id="sidebar1">
+        <h2>I am a panel! Hear me roar!!!!</h2>
+        <p class="lead">
+            Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.
+        </p>
+        <p>
+            You know, being a test pilot isn't always the healthiest business in the world.
+
+            Dinosaurs are extinct today because they lacked opposable thumbs and the brainpower to build a space program.
+
+            Curious that we spend more time congratulating people who have succeeded than encouraging people who have not.
+        </p>
+        <ul>
+            <li>
+                As I stand out here in the wonders of the unknown at Hadley, I sort of realize there's a fundamental truth to our nature, Man must explore . . . and this is exploration at its greatest.
+            </li>
+            <li>
+                I don't know what you could say about a day in which you have seen four beautiful sunsets.
+            </li>
+        </ul>
+        <p class="subdued">
+            <a href="http://spaceipsum.com/">Ipsum provided by http://spaceipsum.com/</a>
+        </p>
+    </div>
+
+    <div class="panel-main right panel-shrink">
+        <div id="container" class="text-center style-zen">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Panels panels everywhere</h1>
+                    <p>A simple, easy to use panel "drawer" widget.</p>
+                    <a href="#" data-anim="animated fadeInLeft" class="btn btn-medium btn-green" data-sidebar-target="#sidebar1">Launch</a>
+                    <a href="#" data-anim="animated fadeInUp" class="btn-medium btn btn-red" data-sidebar-target="#sidebar1">Launch</a>
+                    <a href="#" data-anim="animated flipInX" class="btn-medium btn btn-blue" data-sidebar-target="#sidebar1">Launch</a>
+                    <a href="#" class="btn-medium btn btn-purple" data-sidebar-target="#sidebar1">Launch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/widgets/side-panel.js"></script>
+    <script src="sidebarp.js"></script>
+</body>
+</html>
