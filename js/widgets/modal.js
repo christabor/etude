@@ -38,7 +38,7 @@ var widg_modal = (function(options){
 
     // jquery namespace
     $.fn.widg_modal = function() {
-        $('a[data-modal-target]').on('click', openModal);
+        $('[data-modal-target]').on('click', openModal);
         $('.modal-header').find('[data-close]').on('click', closeModal);
     }
 })();
