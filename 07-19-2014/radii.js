@@ -12,8 +12,16 @@ var radii = (function(){
     var OFFSET = 10;
     var data = d3.range(8).map(function(d){return 360 / 8;});
     var pie = d3.layout.pie()(data);
-    // create arc path generator, using a fraction
-    // of the data size to generate a "growing" spiral
+    var colors = [
+        {'color': 'yellow'},
+        {'color': 'green'},
+        {'color': 'darkGreen'},
+        {'color': 'blue'},
+        {'color': 'darkBlue'},
+        {'color': 'pink'},
+        {'color': 'red'},
+        {'color': 'orange'}
+    ];
 
     var radii = [
         [
@@ -89,7 +97,7 @@ var radii = (function(){
         .delay(delay)
         .attr('transform', 'rotate(180)')
         .attr('opacity', opacity || 1)
-        .attr('fill', function(d, i){return emotions[i].color;})
+        .attr('fill', function(d, i){return colors[i].color;})
         .attr('d', arc);
     }
 
