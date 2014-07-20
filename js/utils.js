@@ -106,6 +106,17 @@ function successionPlugin(container, advance_speed, callback) {
     return;
 }
 
+/* Math */
+
+function calculateRadialAngle(deg, index, size) {
+    // Calculates the positioning for x/y
+    // coords along a circle.
+    return [
+        Math.sin((deg * index) * (Math.PI / 180)) * size,
+        Math.cos((deg * index) * (Math.PI / 180)) * size
+     ];
+}
+
 function findPrime(num) {
     var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
     var is_prime = false;
