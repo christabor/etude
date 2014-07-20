@@ -10,26 +10,6 @@ var radii = (function(){
     var MAX              = 1;
     var START_RADIUS  = height / 5;
     var OFFSET = 10;
-    var emotions = [
-        {'emotion': 'ecstasy', 'color': 'yellow'},
-        {'emotion': 'admiration', 'color': 'green'},
-        {'emotion': 'terror', 'color': 'darkGreen'},
-        {'emotion': 'amazement', 'color': 'blue'},
-        {'emotion': 'grief', 'color': 'darkBlue'},
-        {'emotion': 'loathing', 'color': 'pink'},
-        {'emotion': 'rage', 'color': 'red'},
-        {'emotion': 'vigilance', 'color': 'orange'}
-    ];
-    var emotions2 = [
-        {'emotion': 'joy', 'color': 'yellow'},
-        {'emotion': 'trust', 'color': 'green'},
-        {'emotion': 'fear', 'color': 'darkGreen'},
-        {'emotion': 'surprise', 'color': 'blue'},
-        {'emotion': 'sadness', 'color': 'darkBlue'},
-        {'emotion': 'disgust', 'color': 'pink'},
-        {'emotion': 'anger', 'color': 'red'},
-        {'emotion': 'anticipation', 'color': 'orange'}
-    ];
     var data = d3.range(8).map(function(d){return 360 / 8;});
     var pie = d3.layout.pie()(data);
     // create arc path generator, using a fraction
