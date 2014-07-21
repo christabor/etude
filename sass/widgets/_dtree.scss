@@ -4,6 +4,13 @@ $no-fg: 'red';
 $no-bg: #f7d3d1;
 $bradius: 4px;
 
+.flatten {
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-indent: 0;
+    margin-left: 0;
+}
 .dtree-title {
     font-weight: bold;
     font-size: 120%;
@@ -26,11 +33,7 @@ $bradius: 4px;
     &.flattened ul,
     &.flattened li,
     &.flattened li:hover {
-        padding: 0;
-        margin: 0;
-        border: none;
-        text-indent: 0;
-        margin-left: 0;
+        @extend .flatten;
     }
     .question {
         font-size: 80%;
@@ -56,5 +59,25 @@ $bradius: 4px;
     }
     .child {
         font-weight: normal;
+    }
+}
+@media handheld, screen and (max-width: 500px) {
+    // Sadly SASS doesn't support
+    // extend on media query declarations.
+    .dtree {
+        padding: 0;
+        margin: 0;
+        border: none;
+        text-indent: 0;
+        margin-left: 0;
+        ul,
+        ul li,
+        ul li:hover {
+            padding: 0;
+            margin: 0;
+            border: none;
+            text-indent: 0;
+            margin-left: 0;
+        }
     }
 }
