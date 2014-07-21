@@ -1,0 +1,60 @@
+$yes-fg: 'green';
+$yes-bg: #adf7ae;
+$no-fg: 'red';
+$no-bg: #f7d3d1;
+$bradius: 4px;
+
+.dtree-title {
+    font-weight: bold;
+    font-size: 120%;
+    text-transform: capitalize;
+}
+.dtree {
+    line-height: 1.8em;
+    list-style: none;
+    li {
+        list-style: none;
+        padding: 0.4em;
+        border:2px solid transparent;
+        &:hover {
+            border-radius: $bradius;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #ccc;
+        }
+    }
+    &.flattened,
+    &.flattened ul,
+    &.flattened li,
+    &.flattened li:hover {
+        padding: 0;
+        margin: 0;
+        border: none;
+        text-indent: 0;
+        margin-left: 0;
+    }
+    .question {
+        font-size: 80%;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+    .label > span {
+        font-weight: bold;
+        border:2px solid black;
+        border-radius: $bradius;
+        padding: 0.4em 0.8em;
+        font-size: 70%;
+    }
+    .label.yes > span {
+        color: $yes-fg;
+        background-color: $yes-bg;
+        border-color: $yes-fg;
+    }
+    .label.no > span {
+        color: $no-fg;
+        background-color: $no-bg;
+        border-color: $no-fg;
+    }
+    .child {
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,33 @@
+[
+    {
+        "title": "what will i do tomorrow...",
+        "q": "do you need to get errands/chores done?",
+        "yes": "do those first",
+        "no": {
+            "q": "do you like games?",
+            "yes": "play games",
+            "no": {
+                "q": "do you like reading?",
+                "yes": "read a book.",
+                "no": {
+                    "q": "do you have children?",
+                    "yes": "do something fun with them",
+                    "no": {
+                        "q": "do you like exercising?",
+                        "yes": {
+                            "q": "do you like running?",
+                            "yes": "go for a run."
+                        },
+                        "q": "do you like walking?",
+                        "no": {
+                            "q": "do you like art?",
+                            "yes": "look at art.",
+                            "no": "Jeez, I got nothing!"
+                        },
+                        "yes": "go for a walk."
+                    }
+                }
+            }
+        }
+    }
+]

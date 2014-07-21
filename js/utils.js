@@ -856,6 +856,27 @@ function hide(elem) {
     return elem;
 }
 
+function createDTreeFromJSON(data, html) {
+    // generate dom html recursively
+    if(!html) html = '';
+    if(!data.yes && !data.no) return html;
+    html += '<ul class="dtree flattened"><li class="question">' + data.q + '</li>';
+    if(typeof data.yes === 'string'){
+        html += '<li class="animated fadeInLeft label yes"><span>Yes?</span> <ul class="child"><li>' + data.yes + '</li></ul></li>';
+    } else {
+        html += '<li class="animated fadeInLeft label yes"><span>Yes?</span> <ul class="child"><li>';
+        return createDTreeFromJSON(data.yes, html);
+    }
+    if(typeof data.no === 'string'){
+        html += '<li class="animated fadeInLeft label no"><span>No?</span> <ul class="child"><li>' + data.no + '</li></ul></li>';
+    } else {
+        html += '<li class="animated fadeInLeft label no"><span>No?</span> <ul class="child"><li>';
+        return createDTreeFromJSON(data.no, html);
+    }
+    html += '</ul>';
+    return html;
+}
+
 /********************* SHIMS *********************/
 
 function hasGetUserMedia() {

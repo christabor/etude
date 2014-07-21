@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-20-2014</title>
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 2em 5em;
+        font-size: 20px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    a {
+        color: orange;
+    }
+    #container {
+        background-color: #f1f1f1;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        padding: 1em;
+    }
+    .btns {
+        z-index: 999;
+        right: 100px;
+        bottom: 100px;
+        background-color: black;
+        color: white;
+        padding: 1em;
+        position: fixed;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            padding: 1em;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <h1>A <a href="http://en.wikipedia.org/wiki/Decision_tree">decision tree</a> implementation.</h1>
+    <p class="lead">Generates html from JSON encoded file, recursively, in <strong>19 LOC.</strong></p>
+    <p class="subdued">It works via a specific json format:
+        <code></code>
+    </p>
+    <p class="btns"><a href="#" id="flatten" class="btn btn-green">Flattened</a> or <a href="#" id="nest" class="btn btn-green">Nested.</a></p>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="radii.js"></script>
+</body>
+</html>
