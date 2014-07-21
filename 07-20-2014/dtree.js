@@ -1,4 +1,4 @@
-var radii = (function(){
+var dtree = (function(){
     'use strict';
     var dims   = getViewportDimensions();
     var height = dims.height;
@@ -6,7 +6,7 @@ var radii = (function(){
 
     function init() {
         d3.json('data.json', function(data){
-            var html = createDTreeFromJSON(data[0], null);
+            var html = createDTreeFromJSON(data[0], null, false);
             // add default title
             d3.select('#container')
             .append('p')
@@ -19,12 +19,12 @@ var radii = (function(){
             // add events for demo
             d3.select('#flatten').on('mousedown', function(){
                 d3.event.preventDefault();
-                d3.select('#container ul')
+                d3.select('#container').selectAll('ul')
                 .classed('flattened', true);
             });
             d3.select('#nest').on('mousedown', function(){
                 d3.event.preventDefault();
-                d3.select('#container ul')
+                d3.select('#container').selectAll('ul')
                 .classed('flattened', false);
             });
         });
@@ -35,4 +35,4 @@ var radii = (function(){
     };
 })();
 
-window.onload = radii.init;
+window.onload = dtree.init;
