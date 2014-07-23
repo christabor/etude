@@ -9,7 +9,7 @@ var coordos = (function(){
         var ngon_group = container.append('g')
         .attr('transform', getCenterTranslation(dims));
 
-        var map = d3_geometer.coordSpace(group, dims, 4);
+        var map = d3_geometer.coordSpace(group, dims, 10);
         var ngon = d3_geometer.nGon(ngon_group);
 
         var ngon_group2 = group.append('g')
