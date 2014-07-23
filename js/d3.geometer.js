@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.4.0'
+    'version': '0.5.0'
 };
 
 d3_geometer.utils = {};
@@ -34,8 +34,82 @@ d3_geometer.utils.calculateAngles = function(sides, round) {
     return round ? Math.round(deg) : deg;
 };
 
+d3_geometer.coordSpace = function(group, dims, max_coords) {
+    // @param {object} group - A d3 group selection.
+    // @param {object} dims - A dimensions (width, height) object.
+    // @param {number} max_coords - Max number of coordinate spaces per axis.
+    // Expects keys `width` and `height`
+    var PADDING        = 10;
+    var LINE_THICKNESS = 1;
+    var x_scale        = null;
+    var y_scale        = null;
+    var x_axis         = null;
+    var y_axis         = null;
+    var coords         = d3.range(-max_coords, max_coords + 1);
+
+    x_scale = d3.scale.linear()
+    .domain([d3.min(coords), d3.max(coords)])
+    .range([PADDING, dims.width - PADDING]);
+
+    y_scale = d3.scale.linear()
+    .domain([d3.min(coords), d3.max(coords)])
+    .range([dims.height - PADDING, PADDING]);
+
+    x_axis = d3.svg.axis()
+    .tickValues(coords)
+    .scale(x_scale)
+    .orient('bottom');
+
+    y_axis = d3.svg.axis()
+    .tickValues(coords)
+    .scale(y_scale)
+    .orient('left');
+
+    // add x-axis
+    group.append('g')
+    .attr('transform', 'translate(0,' + dims.height / 2 + ')')
+    .attr('id', 'xCoords').call(x_axis);
+
+    // add y-axis
+    group.append('g')
+    .attr('transform', 'translate(' + dims.width / 2 + ', 0)')
+    .attr('id', 'yCoords').call(y_axis);
+
+    // add bg lines
+    group.append('g').attr('id', 'yCoordsLines')
+    .selectAll('.ycoord-line')
+    .data(coords)
+    .enter()
+    .append('rect')
+    .attr('opacity', 0.1)
+    .attr('y', dims.width / 2)
+    .attr('width', LINE_THICKNESS)
+    .attr('height', dims.height)
+    .attr('x', x_scale)
+    .attr('y', 0);
+
+    group.append('g').attr('id', 'xCoordsLines')
+    .selectAll('.xcoord-line')
+    .data(coords)
+    .enter()
+    .append('rect')
+    .attr('y', dims.height / 2)
+    .attr('opacity', 0.1)
+    .attr('width', dims.width)
+    .attr('height', LINE_THICKNESS)
+    .attr('x', 0)
+    .attr('y', y_scale);
+
+    // hide domain paths
+    group.select('#xCoords')
+    .select('.domain').style('display', 'none');
+
+    group.select('#yCoords')
+    .select('.domain').style('display', 'none');
+};
+
 d3_geometer.nGon = function(group) {
-    // @param {number} group - A d3 group selection.
+    // @param {object} group - A d3 group selection.
     if(!d3) return console.error('d3 library not found :sadface:');
 
     // d3 style - chainable interfaces.
