@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-23-2014</title>
+    <link rel="stylesheet" href="../css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        background: url(../img/tiny_grid.png);
+        text-align: center;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    a {
+        color: #156ded;
+    }
+    a:hover {
+        color: black;
+    }
+    h1 {
+        font-weight: 100;
+    }
+    .skinned {
+        font-family: 'PT Sans Caption', sans-serif;
+    }
+    .skinned h2 {
+        font-weight: 100;
+    }
+    hr {
+        opacity: 0;
+    }
+    .arrow {
+        height: 100px;
+        width: 100px;
+    }
+    .box-container,
+    .box {
+        -webkit-transition: box-shadow 0.3s ease-out;  /* Saf3.2+, Chrome */
+           -moz-transition: box-shadow 0.3s ease-out;  /* FF4+ */
+            -ms-transition: box-shadow 0.3s ease-out;  /* IE10? */
+             -o-transition: box-shadow 0.3s ease-out;  /* Opera 10.5+ */
+                transition: box-shadow 0.3s ease-out;
+    }
+    .box-container.ui-draggable-dragging,
+    .box.ui-draggable-dragging {
+        box-shadow: 0 0 40px #999;
+    }
+    </style>
+</head>
+<body class="diagram skinned style-hollow">
+    <h1>A proof of concept for a diagram creator/editor in <strong>html/javascript/css</strong></h1>
+    <p>Click to edit text &mdash; drag boxes &amp; arrows around to position content. Dragging/resizing provided by <a href="http://jqueryui.com/draggable/">jquery-ui</a></p>
+    <div class="modal-container modal-25" id="modal2" data-modal-template>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <a href="#" data-close>
+                    <span class="fa fa-times"></span>
+                </a>
+                <h3>Expert system submodule</h3>
+            </div>
+            <div class="modal-body">
+                <p>I am the content for expert system module component.</p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+        <div class="modal-bg"></div>
+    </div>
+
+    <a href="#" id="new-box" class="btn btn-red">New box</a>
+
+    <h4>Arrows:</h4>
+    <div class="draggable arrow arrow-up"></div>
+    <div class="draggable arrow arrow-left"></div>
+    <div class="draggable arrow arrow-down"></div>
+    <div class="draggable arrow arrow-right"></div>
+    <div class="draggable arrow arrow-up arrow-45"></div>
+    <div class="draggable arrow arrow-left arrow-45"></div>
+    <div class="draggable arrow dashed arrow-left"></div>
+    <div class="draggable arrow double arrow-left"></div>
+    <div class="draggable arrow dotted arrow-left"></div>
+
+    <h4>Boxes:</h4>
+    <hr class="after">
+    <div class="draggable box-container">
+        <span class="handle"></span>
+        <h2 contenteditable="true" class="editable box-container-title"><span class="icon-star"></span> Expert system module [example]</h2>
+        <div class="box draggable">
+            <span class="handle"></span>
+            <h3 class="editable box-title" contenteditable="true">
+                Title
+            </h3>
+            <p class="editable box-description" contenteditable="true">description
+                <a href="#" data-modal-target="#modal2">Click me</a>
+            </p>
+        </div>
+        <div class="box draggable">
+            <span class="handle"></span>
+            <h3 class="editable box-title" contenteditable="true">
+                Title
+            </h3>
+            <p class="editable box-description" contenteditable="true">description
+                <a href="#" data-modal-target="#modal2">Click me</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/widgets/modal.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="diagrammer.js"></script>
+</body>
+</html>

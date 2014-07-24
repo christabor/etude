@@ -1,0 +1,146 @@
+.diagram {
+    .box-container,
+    .box {
+        background-color: white;
+    }
+    .box-container {
+        border:1px solid #ccc;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+        margin: 1em;
+        max-width: 500px;
+        padding: 0.2em;
+    }
+    .box {
+        border: 2px solid #ccc;
+        box-shadow: 4px 4px 0 black;
+        display: inline-block;
+        margin: 1em auto;
+        max-height: 200px;
+        max-width: 400px;
+        min-height: 50px;
+        min-width: 100px;
+        padding: 0.4em;
+    }
+    .editable {
+        display: inline-block;
+        margin: 0.5em auto;
+        padding: 0.2em;
+        &:hover {
+            background-color: #ffeda1;
+            cursor: text;
+        }
+    }
+    .box-title,
+    .box-container-title {
+        display: block;
+    }
+    .handle {
+        $handle-size: 1em;
+        background-color: #ccc;
+        border: 2px solid #999;
+        border-radius: 50%;
+        height: $handle-size;
+        left: -$handle-size / 2;
+        position: absolute;
+        top: -$handle-size / 2;
+        width: $handle-size;
+        &:hover {
+            background-color: black;
+            cursor: move;
+        }
+    }
+    .draggable:hover{
+        cursor: move;
+    }
+    .arrow {
+        $arrow-size: 10px;
+        $arrow-bar-thickness: $arrow-size / 2;
+        $arrow-color: black;
+        $arrow-hover: red;
+
+        display: inline-block;
+        margin: 1em;
+        padding: 0;
+        position: relative;
+        &.arrow-45 {
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            zoom: 1;
+        }
+        &.arrow-up,
+        &.arrow-down {
+            border-left: $arrow-bar-thickness solid black;
+            min-height: $arrow-size * 3;
+            width: $arrow-bar-thickness;
+            &.dashed {
+                border-left-style: dashed;
+            }
+            &.dotted {
+                border-left-style: dotted;
+            }
+            &.double {
+                border-left-style: double;
+            }
+        }
+        &.arrow-left,
+        &.arrow-right {
+            border-bottom: $arrow-bar-thickness solid black;
+            height: $arrow-bar-thickness;
+            min-width: $arrow-size * 3;
+            &.dashed {
+                border-bottom-style: dashed;
+            }
+            &.dotted {
+                border-bottom-style: dotted;
+            }
+            &.double {
+                border-bottom-style: double;
+            }
+        }
+        &.arrow-up:before,
+        &.arrow-down:before {
+            left: -$arrow-size - ($arrow-bar-thickness / 2);
+        }
+        &.arrow-left:before,
+        &.arrow-right:before {
+            top: -$arrow-size + ($arrow-bar-thickness * 1.5);
+        }
+        &.arrow-up:before {
+            border-bottom: $arrow-size * 1.5 solid $arrow-color;
+            border-left: $arrow-size solid transparent;
+            border-right: $arrow-size solid transparent;
+            top: -$arrow-size;
+        }
+        &.arrow-down:before {
+            border-left: $arrow-size solid transparent;
+            border-right: $arrow-size solid transparent;
+            border-top: $arrow-size * 1.5 solid $arrow-color;
+            bottom: -$arrow-size;
+        }
+        &.arrow-right:before {
+            border-bottom: $arrow-size solid transparent;
+            border-left: $arrow-size * 1.5 solid $arrow-color;
+            border-top: $arrow-size solid transparent;
+            right: -$arrow-size;
+        }
+        &.arrow-left:before {
+            border-bottom: $arrow-size solid transparent;
+            border-right:$arrow-size * 1.5 solid $arrow-color;
+            border-top: $arrow-size solid transparent;
+            left: -$arrow-size;
+        }
+        &:hover {
+            border-color: $arrow-hover;
+            color: $arrow-hover;
+        }
+        &:before {
+            bottom: $arrow-size / 2;
+            content: '';
+            height: 0;
+            position: absolute;
+            width: 0;
+        }
+    }
+}
