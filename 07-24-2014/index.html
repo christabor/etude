@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-24-2014</title>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,700italic|Varela+Round' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        width: 10000px;
+    }
+    a {
+        color: #fff5d2;
+    }
+    a:hover {
+        color: black;
+    }
+    .hover {
+        background-color: transparent;
+    }
+    h1 {
+        font-size: 60px;
+        max-width: 800px;
+        font-weight: 100;
+    }
+    hr {
+        opacity: 0.3;
+        margin: 3em auto;
+    }
+    .diagram .container {
+        width: 800px;
+    }
+    .diagram .box:hover {
+        cursor: pointer;
+    }
+    .diagram .box-container:hover {
+        cursor: default;
+    }
+    .diagram .box:hover {
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        border-color: #ff6200;
+        box-shadow: 5px 5px 0 #ff6200;
+        color: #ff6200;
+    }
+    .diagram .box,
+    .diagram .box-container {
+        text-align: center;
+        margin: 0.8em 0.5em;
+    }
+    .intro {
+        padding: 0.2em 2em 1em 2em;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 1em;
+    }
+    .diagram .box-container {
+        width: 100%;
+    }
+    p {
+        display: block;
+        line-height: 2em;
+        max-width: 800px;
+    }
+    .diagram .close-btn:hover {
+        background-color: #ff6200;
+    }
+    .diagram-panel:first-of-type {
+        background-color: #405191;
+        color: white;
+    }
+    .diagram .box {
+        color: black;
+    }
+    </style>
+</head>
+<body class="diagram style-hollow">
+    <div id="diagram">
+        <div class="diagram-panel open">
+            <div class="intro">
+                <h1>A proof of concept collapsing panel layout</h1>
+                <p class="lead">As a way to represent hierarchical information, the layout expands a given "module", showcasing the details of that module, into ever-expanding panels. This allows for diagrams that represent large chunks of information as layers, but in an easy to navigate way. Click each box to expand its panel.</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">
+                    Submodule
+                </h3>
+                <p class="box-description">description
+                </p>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Dummy text meant to showcase overflow of content.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            Proper resources catalyst country social impact, smart cities, gender public service implementation free expression. Hack non-partisan; aid employment donation, crowdsourcing pursue these aspirations assessment expert. End hunger empower resourceful; convener; dedicated, initiative, Rosa Parks rights-based approach tackle inclusive capitalism. Educate; safety detection fundraise, justice civic engagement, giving enabler shifting landscape; women's rights cause improving quality visionary.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p>
+                        Citizenry Kony 2012, raise awareness, collaborative cities Rockefeller micro-finance eradicate Action Against Hunger environmental. Recognition governance criteria resolve, expanding community ownership fight against oppression global citizens underprivileged results. Respect NGO; participatory monitoring, local solutions equality combat malaria.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <hr>
+                    <p class="subdued">
+                        Global South amplify UNICEF, making progress Ford Foundation. Local generosity, legal aid sustainable future partner, billionaire philanthropy; Bill and Melinda Gates nonprofit human being clean water focus on impact lifting people up grantees impact. Socio-economic divide measures minority; Nelson Mandela benefit, refugee save the world John Lennon. Transformative human potential rural development global network vaccine accelerate gun control. Policy; voice meaningful work donors efficient social challenges interconnectivity, gender rights Bono health.
+                    </p>
+                    <p>
+                        <a href="socialgoodipsum.com">Ipsum provided by SocialGoodIpsum</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>Some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+        <hr>
+        <h2>Dummy text meant to showcase overflow of content.</h2>
+        <p>
+            Proper resources catalyst country social impact, smart cities, gender public service implementation free expression. Hack non-partisan; aid employment donation, crowdsourcing pursue these aspirations assessment expert. End hunger empower resourceful; convener; dedicated, initiative, Rosa Parks rights-based approach tackle inclusive capitalism. Educate; safety detection fundraise, justice civic engagement, giving enabler shifting landscape; women's rights cause improving quality visionary.
+        </p>
+        <p>
+            Citizenry Kony 2012, raise awareness, collaborative cities Rockefeller micro-finance eradicate Action Against Hunger environmental. Recognition governance criteria resolve, expanding community ownership fight against oppression global citizens underprivileged results. Respect NGO; participatory monitoring, local solutions equality combat malaria.
+        </p>
+        <p>
+            Proper resources catalyst country social impact, smart cities, gender public service implementation free expression. Hack non-partisan; aid employment donation, crowdsourcing pursue these aspirations assessment expert. End hunger empower resourceful; convener; dedicated, initiative, Rosa Parks rights-based approach tackle inclusive capitalism. Educate; safety detection fundraise, justice civic engagement, giving enabler shifting landscape; women's rights cause improving quality visionary.
+        </p>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>Some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+    <div class="diagram-panel">
+        <h3>Submodule title 0.x</h3>
+        <p>some kind of description for this submodule.</p>
+        <div class="box-container">
+            <h2 class="box-container-title"><span class="icon-star"></span>
+                Module with submodules
+            </h2>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+            <div class="box">
+                <h3 class="box-title">Module Title</h3>
+                <p class="box-description">Module Description</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/widgets/diagram-panel.js"></script>
+<script>window.onload = $.fn.widg_dpanel;</script>
+</body>
+</html>
