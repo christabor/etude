@@ -1,0 +1,78 @@
+$close-btn-size: 10px;
+$dark: #cecece;
+$light: #f1f1f1;
+$max-width: 800px;
+
+.diagram-panel {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 0;
+    &.open {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 1.5em 3em;
+        width: $max-width;
+    }
+    &.open + .diagram-panel {
+        box-shadow: inset 5px 0 5px #888;
+    }
+    &:nth-of-type(even) {
+        background-color: $light;
+    }
+    &:nth-of-type(odd) {
+        background-color: $dark;
+    }
+    .inactive {
+        opacity: 0.3;
+    }
+    .active {
+        $scale-amount: 2;
+        position: relative;
+        z-index: 999;
+        -webkit-transform:scale($scale-amount);
+        -ms-transform:scale($scale-amount);
+        -o-transform:scale($scale-amount);
+        -moz-transform:scale($scale-amount);
+        transform:scale($scale-amount);
+    }
+    .close-btn {
+        background-color: white;
+        border-radius: 50%;
+        color: black;
+        font-family: 'Varela Round', 'Arial Round', sans-serif;
+        font-weight: 100;
+        height: $close-btn-size;
+        right: $close-btn-size;
+        top: $close-btn-size;
+        width: $close-btn-size;
+        line-height: 12px;
+        padding: 0.4em;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #eee;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #999;
+        border-radius: 0;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #222;
+    }
+}
