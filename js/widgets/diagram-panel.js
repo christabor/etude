@@ -2,85 +2,81 @@ var widg_dpanel = (function(options){
     var defaults  = {
         'animation_duration': 500,
         'module_class': '.box',
-        'container_class': '.box-container'
+        'container_class': '.box-container',
+        'root': $('.diagram'),
+        'close_btn_html': '<a href="#" class="close-btn">X</a>',
+        'offset': 100
     };
     var opts      = $.extend(defaults, options);
     var z_index   = 999;
-    var active_eq = 1;
+    var $body     = $('body, html');
     var $diagrams = $('.diagram-panel');
-    var max_eq    = $diagrams.length - 1;
+    var max_eq    = $diagrams.length;
     var animating = false;
 
-    function closePanel(e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        var parent = $(this).parent();
-        var index = parent.index();
-        // If panel is next to beginning, close
-        // initial panel as well.
-        if(index === 1) {resetAllPanels();}
-        if(index === 0) {
-            // Prevent first panel from closing.
-            return;
-        }
-
-        $(this).parent().removeClass('open');
-        // deactivate/remove inactive states for all child containers
-        $(this).parent().find(opts.module_class).removeClass('active inactive');
-        $(this).parent().find(opts.container_class).removeClass('active inactive');
-        // move back in panel order
-        active_eq -= 1;
-    }
-
-    function openPanel(self, boxes, containers) {
-        $diagrams.eq(active_eq).addClass('open');
-
-        boxes.addClass('inactive');
-        containers.addClass('inactive');
-
-        self.parent().removeClass('inactive');
-        self.removeClass('inactive').addClass('active');
-    }
-
-    function resetAllPanels() {
-        // Resets all panels and containers back to their
-        // original state.
-        $diagrams.find(opts.module_class).removeClass('active inactive');
-        $diagrams.find(opts.container_class).removeClass('inactive');
+    function getTotalWidth() {
+        var width = 0;
+        $diagrams.filter('.open').each(function(k, diagram){
+            width += $(diagram).outerWidth();
+        });
+        return width + opts.offset;
     }
 
     function scrollToPanel() {
-        // trigger "lock" for potential animation queues
-        if(animating) return;
-        animating = true;
         // http://css-tricks.com/snippets/jquery/smooth-scrolling/
-        $('html, body').animate({
-            scrollLeft: $('.diagram-panel').eq(active_eq).position().left
-        }, opts.animation_duration);
-        // "unlock" after animation completes
-        setTimeout(function(){animating = false}, opts.animation_duration);
+        setTimeout(function(){
+            $body.animate({
+                scrollLeft: $diagrams.filter('.open:last').offset().left
+            }, opts.animation_duration);
+        }, 100);
+    }
+
+    function adjustWidth() {
+        // adjust width of document for scrolling purposes
+        $body.css('width', getTotalWidth());
+    }
+
+    function openPanel(index) {
+        var panels = opts.root.find('.diagram-panel');
+        var panel = panels.eq(index + 1);
+        var position = 0;
+        panel.addClass('open').removeClass('closed');
+        panel.css('left', getTotalWidth());
+        adjustWidth();
+        scrollToPanel();
     }
 
     $.fn.widg_dpanel = function() {
-        // add close buttons
-        $diagrams.each(function(k, panel){
-            $(this).addClass('animated fadeInLeft');
-            $(this).prepend('<a href="#" class="close-btn">X</a>');
-            $(this).find('.close-btn').on('click', closePanel);
+        // force overflow-x scrolling
+        $body.css('overflow-x', 'scroll');
+        $diagrams.css({
+            'position': 'absolute',
+            'top': 0,
+            'left': 0
         });
-        $diagrams.height(window.innerHeight);
-        $diagrams.on('click', opts.module_class, function(e){
-            // prevent jitter and wonk when clicks queue up.
-            if(animating) return;
-            var $boxes      = $(this).parent().find(opts.module_class);
-            var $containers = $(this).parent().find(opts.container_class);
-
-            // end of panels
-            if(active_eq === max_eq) return;
-            openPanel($(this), $boxes, $containers);
-            // move forward in panel order
-            active_eq += 1;
-            scrollToPanel();
+        // add close buttons
+        $diagrams.each(function(index, panel){
+            var self = $(this);
+            // stretch all diagrams to height of window
+            $(this).height(window.innerHeight)
+            // .addClass('animated ' + opts.enter_class);
+            $(this).prepend(opts.close_btn_html);
+            $(this).find('.close-btn').on('click', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var panels = opts.root.find('.diagram-panel:gt(' + (index - 1) + ')');
+                // Prevent first panel from closing, if a button exists.
+                if(index === 0) return;
+                panels.addClass('close').removeClass('open');
+                adjustWidth();
+                scrollToPanel();
+            });
+            // add panel events
+            $(this).on('click', opts.module_class, function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                openPanel(index);
+            });
         });
     }
 })();
