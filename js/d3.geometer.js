@@ -37,8 +37,8 @@ d3_geometer.utils.calculateAngles = function(sides, round) {
 d3_geometer.coordSpace = function(group, dims, max_coords) {
     // @param {object} group - A d3 group selection.
     // @param {object} dims - A dimensions (width, height) object.
-    // @param {number} max_coords - Max number of coordinate spaces per axis.
     // Expects keys `width` and `height`
+    // @param {number} max_coords - Max number of coordinate spaces per axis.
     var PADDING        = 10;
     var LINE_THICKNESS = 1;
     var x_scale        = null;
