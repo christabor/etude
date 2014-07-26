@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.5.0'
+    'version': '0.5.1'
 };
 
 d3_geometer.utils = {};
@@ -155,7 +155,7 @@ d3_geometer.nGon = function(group) {
 
     // Inner "parent" function that is **always** returned
     // in each helper function, which allows for chaining.
-    function nGon(radius, sides) {
+    function _nGon(radius, sides) {
         // @param {number} radius - Size of entire shape
         //  - calculated using the unit circle
         // @param {number} sides - Number of sides.
@@ -163,7 +163,7 @@ d3_geometer.nGon = function(group) {
         // expose values
         _radius = radius;
         _sides  = sides;
-        _coords = nGon.getCoords(radius, sides);
+        _coords = _nGon.getCoords(radius, sides);
         // Initialize element for later reference
         // This is important!
         element = group.selectAll('.ngon')
@@ -176,26 +176,26 @@ d3_geometer.nGon = function(group) {
         .attr('opacity', 1)
         .attr('d', function(d){return line(d) + 'Z';});
         setupGroups();
-        return nGon;
+        return _nGon;
     }
 
-    nGon.rotate = function(deg, el) {
+    _nGon.rotate = function(deg, el) {
         // Rotate a given element.
         // @param {number} deg - the amount, in degrees, to rotate by
         // @param {string} el - the d3 selector (class, tag, etc..) to rotate.
         group.select(el)
         .attr('transform', 'rotate(' + deg + ')');
-        return nGon;
+        return _nGon;
     };
 
-    nGon.destroy = function() {
+    _nGon.destroy = function() {
         element.remove();
         // One reason for keeping all elements
         // in a group is that it makes cleanup easier.
         group.selectAll('g').remove();
     };
 
-    nGon.getCoords = function(radius, sides) {
+    _nGon.getCoords = function(radius, sides) {
         // Generate the coordinates for
         // each point based on # of sides.
         // @param {number} radius - Size of entire shape
@@ -217,7 +217,7 @@ d3_geometer.nGon = function(group) {
         });
     };
 
-    nGon.label = function(text, x, y) {
+    _nGon.label = function(text, x, y) {
         // Draw a custom label, wherever.
         // @param {string} text - the label text.
         // @param {number} x - x position
@@ -228,10 +228,10 @@ d3_geometer.nGon = function(group) {
         .text(text)
         .attr('x', x || 0)
         .attr('y', y || 0);
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawLabels = function() {
+    _nGon.drawLabels = function() {
         // Draw some labels on the vertices.
         group.select('.ngon-labels')
         .selectAll('.label')
@@ -241,10 +241,10 @@ d3_geometer.nGon = function(group) {
         .text(function(d){return d.label;})
         .attr('x', function(d){return d.x - (RADIUS + RADIUS / 2);})
         .attr('y', function(d){return d.y - (RADIUS + RADIUS / 2);});
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawVertices = function() {
+    _nGon.drawVertices = function() {
         // Draw vertices for each edge.
         group.select('.ngon-vertices')
         .selectAll('.vertex')
@@ -257,10 +257,10 @@ d3_geometer.nGon = function(group) {
         .transition()
         .delay(function(d, i){return i * 100;})
         .attr('r', RADIUS);
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawRightAngle = function(x, y) {
+    _nGon.drawRightAngle = function(x, y) {
         group.select('.ngon-right-angles')
         .append('rect')
         .attr('class', 'right-angle')
@@ -272,10 +272,10 @@ d3_geometer.nGon = function(group) {
         .attr('opacity', ANG_OPACITY)
         .attr('width', RADIUS * 3)
         .attr('height', RADIUS * 3);
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawAngle = function(deg, x, y) {
+    _nGon.drawAngle = function(deg, x, y) {
         var _arc = d3.svg.arc()
         .innerRadius(ARC_I_RADIUS)
         .outerRadius(ARC_O_RADIUS)
@@ -302,10 +302,10 @@ d3_geometer.nGon = function(group) {
         .attr('fill', 'black')
         .attr('font-size', 10)
         .text(Math.abs(deg) + '°');
-        return nGon;
+        return _nGon;
     };
 
-    nGon.calculateEdgeOffsets = function(modulo) {
+    _nGon.calculateEdgeOffsets = function(modulo) {
         // Calculates all positions for each
         // vertex to connect to - offset by one,
         // since adjacent vertices are already connected
@@ -333,10 +333,10 @@ d3_geometer.nGon = function(group) {
             }
             return inner;
         });
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawCenterPoint = function(height, width, use_labels) {
+    _nGon.drawCenterPoint = function(height, width, use_labels) {
         // Simply draws the center vertex
         // @param {number} height - required height of container
         // @param {number} width - required width of container
@@ -360,16 +360,16 @@ d3_geometer.nGon = function(group) {
             .attr('x', RADIUS + RADIUS / 2)
             .attr('y', RADIUS);
         }
-        return nGon;
+        return _nGon;
     };
 
-    nGon.drawNearAdjacentEdges = function(connections, modulo) {
+    _nGon.drawNearAdjacentEdges = function(connections, modulo) {
         // Draws edges directly adjacent + 1 to each vertex.
         // see calculateEdgeOffsets for details.
         // @param {array} connections - A list of custom connections
         //  -must be an array of objects with x and y accessors
         if(!connections) {
-            nGon.calculateEdgeOffsets(modulo);
+            _nGon.calculateEdgeOffsets(modulo);
             connections = _connections;
         }
         group.select('.ngon-dash-edges')
@@ -381,8 +381,8 @@ d3_geometer.nGon = function(group) {
         .attr('stroke', STROKE)
         .attr('fill', 'none')
         .attr('d', line);
-        return nGon;
+        return _nGon;
     };
 
-    return nGon;
+    return _nGon;
 };
