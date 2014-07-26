@@ -4,8 +4,7 @@ var widg_dpanel = (function(options){
         'module_class': '.box',
         'container_class': '.box-container',
         'root': $('.diagram'),
-        'close_btn_html': '<a href="#" class="close-btn">X</a>',
-        'offset': 100
+        'close_btn_html': '<a href="#" class="close-btn">X</a>'
     };
     var opts      = $.extend(defaults, options);
     var z_index   = 999;
@@ -17,9 +16,11 @@ var widg_dpanel = (function(options){
     function getTotalWidth() {
         var width = 0;
         $diagrams.filter('.open').each(function(k, diagram){
-            width += $(diagram).outerWidth();
+            if(k !== 0) {
+                width += $(diagram).outerWidth();
+            }
         });
-        return width + opts.offset;
+        return width;
     }
 
     function scrollToPanel() {
