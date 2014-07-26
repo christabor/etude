@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 07-25-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        background-color: #f3f3f3;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .ngon path {
+        fill: green;
+        opacity: 0.5;
+        stroke-width: 0;
+    }
+    .ngon path:hover {
+        opacity: 1;
+    }
+    circle {
+        opacity: 0.4;
+    }
+    text {
+        font-size: 10px;
+    }
+    h1 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        margin: 0;
+        font-size: 14px;
+        background-color: #f1f1f1;
+        padding: 1em;
+        font-weight: 400;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>[Click around]</h1>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/d3.geometer.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="notagain.js"></script>
+</body>
+</html>

@@ -968,6 +968,11 @@ function getCenterTranslation(dims) {
     return 'translate(' + [(dims.w || dims.width) / 2, (dims.h || dims.height) / 2].join(',') + ')';
 }
 
+function translation(w, h) {
+    // Returns a translation string used in attr('transform');
+    return 'translate(' + [w, h].join(',') + ')';
+}
+
 function flattenQuadtree(quadtree) {
     // http://bl.ocks.org/mbostock/4343214
     var nodes = [];
