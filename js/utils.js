@@ -111,10 +111,11 @@ function successionPlugin(container, advance_speed, callback) {
 function calculateRadialAngle(deg, index, size) {
     // Calculates the positioning for x/y
     // coords along a circle.
+    var rad = (Math.PI / 180);
     return [
-        Math.sin((deg * index) * (Math.PI / 180)) * size,
-        Math.cos((deg * index) * (Math.PI / 180)) * size
-     ];
+        Math.sin((deg * index) * rad) * size,
+        Math.cos((deg * index) * rad) * size
+    ];
 }
 
 function findPrime(num) {
