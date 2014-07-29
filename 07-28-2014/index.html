@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-29-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        background-color: #f3f3f3;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Lora', serif;
+    }
+    #intro {
+        padding: 0.7em;
+    }
+    h1 {
+        font-weight: lighter;
+    }
+    svg {
+        margin: 1em;
+    }
+    hr {
+        width: 40%;
+        margin: 1em auto;
+        opacity: 0.2;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    #protractor:hover {
+        cursor: move;
+    }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1><strong>Protractor</strong> d3.js plugin</h1>
+        <p>An ongoing extension of my <strong>d3.geometer</strong> library, which adds an interactive protractor for measuring angles.</p>
+        <p>Use <em>up and down</em> keys to change angle.</p>
+    </div>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/d3.geometer.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="protractin.js"></script>
+</body>
+</html>
