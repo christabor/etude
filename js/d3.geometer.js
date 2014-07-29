@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.5.1'
+    'version': '0.6.1'
 };
 
 d3_geometer.utils = {};
@@ -28,10 +28,185 @@ d3_geometer.utils.calculateAngleSum = function(sides) {
 d3_geometer.utils.calculateAngles = function(sides, round) {
     // Calculates the angle of a given side,
     // given a number of equal sides.
-    // @param {number} sides - number of sides to calculate.
-    // @param {boolean} round - whether or not to round the calculation.
+    // @param {sides} number - number of sides to calculate.
+    // @param {round} boolean - whether or not to round the calculation.
     var deg = d3_geometer.utils.calculateAngleSum(sides) / sides;
     return round ? Math.round(deg) : deg;
+};
+
+d3_geometer.protractor = function(group, size) {
+    // Generates a visual protractor to use in angle measurement
+    // and interactive contexts
+    // @param {group} object - d3 data selection.
+    // @param {size} number - size of protractor.
+    var SIZE                    = size || 200;
+    var end_angle               = d3_geometer.utils.toRadian(180);
+    var drag                    = d3.behavior.drag().on('drag', move)
+    var BAR_THICKNESS           = 1;
+    var HIGHLIGHT_BAR_THICKNESS = 4;
+    var protractor              = group.attr('id', 'protractor').call(drag);
+    var angle                   = 0; // protractor angle -- part of interactivity.
+    var arc_bottom;
+    var arc_bg;
+
+    arc_bg = d3.svg.arc()
+    .innerRadius(20)
+    .outerRadius(SIZE)
+    .startAngle(0)
+    .endAngle(end_angle);
+
+    arc_bottom = d3.svg.arc()
+    .innerRadius(10)
+    .outerRadius(20)
+    .startAngle(0)
+    .endAngle(end_angle);
+
+    function move() {
+        d3.select(this)
+        .attr('transform', translation(d3.event.x, d3.event.y));
+    }
+
+    function rotate() {
+        var trans = protractor.attr('transform');
+        var ang   = ',rotate(' + Math.abs(angle) + ')';
+        trans = trans.replace(/,rotate\(+[0-9]+\)/g, '');
+        trans += ang;
+        protractor.attr('transform', trans);
+    }
+
+    function _updateAngle(e) {
+        // updates the angle of the protractor based on
+        // user key presses (up and down keys)
+        var key = d3.event.keyCode;
+        // reset angle
+        if(angle > 360) {
+            angle = 0;
+        }
+        // up key
+        if(key === 38) {
+            angle -= 1;
+        // down key
+        } else if(key === 40) {
+            angle += 1;
+        }
+        // recalculate
+        rotate();
+    }
+
+    function updateAngle(ang) {
+        // sets angle and rotates
+        angle = ang;
+        rotate();
+    }
+
+    // drag bg
+    protractor
+    .append('path')
+    .classed('protractor-bg', true)
+    .attr('fill', 'white')
+    .attr('opacity', 0.3)
+    .attr('stroke', 'black')
+    .attr('stroke-width', HIGHLIGHT_BAR_THICKNESS / 2)
+    .attr('d', arc_bg);
+
+    // 0, 180 degree line -----
+    protractor
+    .selectAll('.protractor-angle-0')
+    .data(d3.range(1))
+    .enter()
+    .append('rect')
+    .classed('protractor-angle-0', true)
+    .attr('fill', 'black')
+    .attr('width', HIGHLIGHT_BAR_THICKNESS)
+    .attr('height', SIZE * 2)
+    .attr('y', -SIZE)
+    .attr('x', -HIGHLIGHT_BAR_THICKNESS / 2);
+
+    // 90 degree line -----
+    protractor
+    .selectAll('.protractor-angle-90')
+    .data(d3.range(89, 90))
+    .enter()
+    .append('rect')
+    .classed('protractor-angle-90', true)
+    .attr('fill', 'red')
+    .attr('width', SIZE / 1.4)
+    .attr('height', HIGHLIGHT_BAR_THICKNESS)
+    .attr('y', -HIGHLIGHT_BAR_THICKNESS / 2)
+    .attr('x', 0);
+
+    // all angles -----
+    protractor
+    .selectAll('.protractor-angle')
+    .data(d3.range(1, 180))
+    .enter()
+    .append('rect')
+    .classed('protractor-angle', true)
+    .attr('fill', function(d){return d === 90 ? 'red' : 'black';})
+    .attr('width', BAR_THICKNESS)
+    .attr('opacity', 0.6)
+    .attr('height', function(d){
+        if(d % 10 === 0) {
+            if(d === 90) {
+                return SIZE / 6;
+            }
+            return SIZE;
+        } else if(d % 5 === 0) {
+            return SIZE / 6;
+        }
+        return SIZE / 14;
+    })
+    .attr('y', -SIZE)
+    .attr('transform', function(d){return 'rotate(' + d + ')';});
+
+    // bottom arc overlay
+    protractor
+    .append('path')
+    .classed('protractor-arc-bottom', true)
+    .attr('fill', 'black')
+    .attr('stroke-width', 0)
+    .attr('stroke', 'none')
+    .attr('d', arc_bottom);
+
+    // text labels - TOP -----
+    protractor
+    .selectAll('.protractor-text-top')
+    .data(d3.range(19)) // 0 + 18 * 10 = 180
+    .enter()
+    .append('text')
+    .classed('protractor-text-top', true)
+    .attr('fill', 'black')
+    .attr('text-anchor', 'middle')
+    .attr('x', 0)
+    .attr('y', -SIZE - 8)
+    .attr('font-size', function(d){return d === 90 ? 30 : 15;})
+    .attr('transform', function(d){return 'rotate(' + (d * 10)+ ')';})
+    .text(function(d){return d * 10;});
+
+    // text labels - BOTTOM -----
+    protractor
+    .selectAll('.protractor-text-bottom')
+    .data(d3.range(1, 18)) // 0 + 18 * 10 = 180
+    .enter()
+    .append('text')
+    .classed('protractor-text-bottom', true)
+    .attr('fill', 'black')
+    .attr('text-anchor', 'middle')
+    .attr('x', 0)
+    .attr('y', -SIZE / 1.3)
+    .attr('font-size', 11)
+    .attr('transform', function(d){return 'rotate(' + (d * 10)+ ')';})
+    .text(function(d){return d !== 90 ? 180 - d * 10 : '';});
+
+    d3.select('body').on('keydown', _updateAngle);
+    // trigger update angle first time, so user set angle is rendered.
+    rotate();
+
+    // return some public helper methods
+    return {
+        'el': protractor,
+        'rotate': updateAngle
+    };
 };
 
 d3_geometer.coordSpace = function(group, dims, max_coords) {
