@@ -4,12 +4,12 @@ var directions = (function(){
     var PADDING        = 50;
     var dims           = {
         'width': _dims.width - PADDING,
-        'height': _dims.height / 1.4 - PADDING
+        'height': _dims.width - PADDING
     };
     var direction      = null;
     var posx           = dims.width / 2;
     var posy           = dims.height / 2;
-    var INCREMENT      = 3;
+    var INCREMENT      = 8;
     var RADIUS         = 30;
     var directions     = [
         'topleft', 'topright', 'bottomleft', 'bottomright',
@@ -59,8 +59,8 @@ var directions = (function(){
         setInterval(changeDirection, 400);
         d3.timer(function(){
             // handle... edge cases (oh I crack myself up)
-            if(posx <= RADIUS / 2 || posx >= dims.width - RADIUS / 2) {posx = 0;}
-            if(posy <= RADIUS / 2 || posy >= dims.height - RADIUS / 2) {posy = 0;}
+            if(posx <= RADIUS || posx >= dims.width) {posx = 0;}
+            if(posy <= RADIUS || posy >= dims.height) {posy = 0;}
 
             // handle all normal directions
             switch(direction) {
