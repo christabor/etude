@@ -256,9 +256,13 @@ d3_geometer.coordSpace = function(group, dims, max_coords) {
     .data(coords)
     .enter()
     .append('rect')
-    .attr('opacity', 0.1)
+    .attr('opacity', function(d){
+        return d === 0 ? 1 : 0.1;
+    })
     .attr('y', dims.width / 2)
-    .attr('width', LINE_THICKNESS)
+    .attr('width', function(d){
+        return d === 0 ? LINE_THICKNESS * 3 : LINE_THICKNESS;
+    })
     .attr('height', dims.height)
     .attr('x', x_scale)
     .attr('y', 0);
@@ -269,9 +273,13 @@ d3_geometer.coordSpace = function(group, dims, max_coords) {
     .enter()
     .append('rect')
     .attr('y', dims.height / 2)
-    .attr('opacity', 0.1)
+    .attr('opacity', function(d){
+        return d === 0 ? 1 : 0.1;
+    })
     .attr('width', dims.width)
-    .attr('height', LINE_THICKNESS)
+    .attr('height', function(d){
+        return d === 0 ? LINE_THICKNESS * 3 : LINE_THICKNESS;
+    })
     .attr('x', 0)
     .attr('y', y_scale);
 
