@@ -5,7 +5,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.6.1'
+    'version': '0.6.2'
 };
 
 d3_geometer.utils = {};
