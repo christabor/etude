@@ -1,0 +1,9 @@
+// Shims etc
+
+@mixin prefixr($suffix, $value) {
+    -ms-#{$suffix}: $value;
+    -o-#{$suffix}: $value;
+    -moz-#{$suffix}: $value;
+    -webkit-#{$suffix}: $value;
+    #{$suffix}: $value;
+}

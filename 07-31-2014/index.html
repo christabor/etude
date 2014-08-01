@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 07-31-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        padding: 2em;
+        font-size: 12px;
+        line-height: 2em;
+        overflow-x: hidden;
+        font-family: 'Exo 2', sans-serif;
+        background-color: #152a4e;
+    }
+    a {
+        color: #3366c2;
+    }
+    a:hover {
+        color: #4487ff;
+    }
+    #intro {
+        text-align: center;
+    }
+    .card-container-group {
+        margin: 5em auto 2em auto;
+        max-width: 800px;
+    }
+    .card-container {
+        margin: 0 auto;
+        display: block;
+        width: 500px;
+        height: 200px;
+    }
+    .card-container:hover {
+        cursor: pointer;
+    }
+    .card-container-group:hover .card {
+        box-shadow: 0 0 40px rgba(0,0,0, 0.8);
+    }
+    .card-container .card {
+        padding: 2em;
+        box-shadow: 0 10px 30px rgba(0,0,0, 0.5);
+        border-bottom:3px solid #3874db;
+    }
+    .card-container .card.front {
+        background-color: #2e5fb3;
+        font-size: 120%;
+    }
+    .card-container .card.back {
+        border-color: #222;
+    }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1>Playing with css3</h1>
+        <p>Inspired by <a href="https://dribbble.com/shots/1431097-Go-Play-Menu-Animation?list=users&offset=11">Go Play menu by Unity on Dribbble</a>. Click to see it in action.</p>
+    </section>
+    <section class="card-container-group">
+        <div class="card-container">
+            <div class="cards">
+                <div class="front card">
+                    <h2>Title 1 - Front of card...</h2>
+                    <p class="lead">
+                        Social good ipsum - frontline human being, fundraise, global health free-speech.
+                    </p>
+                </div>
+                <div class="back card">
+                    <h3>Title 1 - Back of card...</h3>
+                    <p>
+                        Social good ipsum - Expanding community ownership meaningful work beneficiaries worldwide momentum eradicate. New approaches fluctuation diversity rural improving quality; marginalized communities accelerate UNICEF Andrew Carnegie; international initiative safety protect vaccines.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="front card">
+                    <h2>Title 2 - Front of card...</h2>
+                    <p class="lead">
+                        Social good ipsum - Climate change, peace, challenges, cause minority small-scale farmers.
+                    </p>
+                </div>
+                <div class="back card">
+                    <h3>Title 2 - Back of card...</h3>
+                    <p>
+                        Social good ipsum - Change working families, public sector readiness foundation, Kickstarter political honor forward-thinking, partnership affiliate; developing nations process humanitarian relief.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="cards">
+                <div class="front card">
+                    <h2>Title 3 - Front of card...</h2>
+                    <p class="lead">
+                        Social good ipsum - Climate change, peace, challenges, cause minority small-scale farmers.
+                    </p>
+                </div>
+                <div class="back card">
+                    <h3>Title 3 - Back of card...</h3>
+                    <p>
+                        Social good ipsum - Change working families, public sector readiness foundation, Kickstarter political honor forward-thinking, partnership affiliate; developing nations process humanitarian relief.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="flippant.js"></script>
+</body>
+</html>
