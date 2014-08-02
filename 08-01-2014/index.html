@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 08-01-2014</title>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        background-color: #111;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: monospace;
+        color: white;
+        font-size: 12px;
+    }
+    svg {
+        padding: 2em 0;
+        margin: 2em 0;
+    }
+    g:nth-of-type(even) > text {
+        fill: #444;
+    }
+    text {
+        fill: white;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="codequalizer.js"></script>
+</body>
+</html>
