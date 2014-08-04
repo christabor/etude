@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 08-03-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Lato', helvetica, sans-serif;
+    }
+    .container {
+        margin: 0 auto;
+    }
+    .pull-left {
+        float: left;
+        border-right: 1px solid #ddd;
+        padding-right: 0.4em;
+        margin-right: 1em;
+    }
+    .row {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    svg {
+        padding: 0.2em 0;
+    }
+    #header {
+        background-color: #f1f1f1;
+        height: 80px;
+    }
+    #header ul {
+        padding: 0;
+        height: 80px;
+        margin: 0;
+    }
+    #nav {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+    #nav #logo {
+        margin-top: 10px;
+        float: right;
+    }
+    #nav {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    #nav li {
+        display: inline-block;
+        margin: 0 0.4em;
+        padding: 0;
+        height: 100%;
+        float: left;
+    }
+    #nav li a {
+        color: black;
+        display: block;
+        margin-top: 25px;
+        margin-left: 20px;
+        font-size: 90%;
+    }
+    #nav li a:not(.btn) {
+        text-decoration: none;
+        border-bottom: 1px dotted #999;
+    }
+    #nav li a:hover {
+        color: green;
+        border-color: black;
+    }
+    #nav .btn {
+        position: relative;
+        top: -5px;
+    }
+    .logo {
+        position: relative;
+        top: 0.5em;
+        display: inline-block;
+        text-align: right;
+    }
+    #nav .avatar-container {
+        margin-left: -20px;
+    }
+    .avatar-container {
+        padding: 0;
+        background-color: #ccc;
+        width: 220px;
+        overflow: hidden;
+        top: 0;
+        position: relative;
+    }
+    .avatar-container:hover {
+        background-color: #333;
+        color: white;
+    }
+    .avatar {
+        height: 100%;
+        margin: 0;
+        position: relative;
+        top: 4px;
+        padding: 0 1em;
+        display: inline-block;
+    }
+    #nav img {
+        display: inline-block;
+    }
+    .user-info,
+    .avatar-bg {
+        position: absolute;
+        display: inline-block;
+    }
+    .avatar-bg {
+        top: 4px;
+        background: url(avatar.png) no-repeat 0 0;
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        border: 2px solid white;
+        border-radius: 100px;
+    }
+    .user-info {
+        top: 14px;
+        left: 100px;
+        width: 100px;
+    }
+    text {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    .md-stat,
+    .lg-stat {
+        margin: 0;
+        border-radius: 200px;
+        padding: 0.4em;
+        border: 2px solid #ccc;
+        text-align: center;
+        display: inline-block;
+    }
+    .md-stat {
+        font-size: 20px;
+    }
+    .lg-stat {
+        font-size: 50px;
+    }
+    .main-stat > .lg-stat {
+        font-size: 80px;
+        border:none;
+        text-align: center;
+        background-color: black;
+        color: white;
+    }
+    .parens {
+        font-size: 12px;
+        color: #999;
+        display: block;
+        margin: 0;
+        padding: 0.5em 0;
+    }
+    h4 {
+        text-transform: uppercase;
+        font-size: 90%;
+        padding-bottom: 1em;
+        border-bottom: 1px dashed #ccc;
+    }
+    h2 {
+        margin: 0;
+        padding: 0.5em 0;
+    }
+    #timeline {
+        margin: 2em 0 1em 0;
+        padding: 0;
+    }
+    #bar-1 {
+        margin-top: 4em;
+    }
+    #timeline li {
+        width: 24%;
+        display: inline-block;
+        text-align: center;
+    }
+    #timeline .name {
+        width: 100%;
+        display: inline-block;
+    }
+    #timeline .name:before,
+    #timeline .name:after {
+        content: '';
+        display: inline-block;
+        width: 20%;
+        top: -5px;
+        position: relative;
+        border-bottom: 2px solid #ccc;
+    }
+    #timeline li:first-of-type .name:before,
+    #timeline li:last-of-type .name:after {
+        border-bottom: 2px dotted #999;
+        width: 20px;
+    }
+    #timeline .name:before {
+        right: 10px;
+    }
+    #timeline .name:after {
+        left: 10px;
+    }
+    #timeline .location:before {
+        content: '';
+        width: 2px;
+        background-color: #999;
+        position: absolute;
+        left: -1px;
+        left: 50%;
+        top: -30px;
+        height: 30px;
+    }
+    #timeline .location {
+        padding: 0.2em 0.4em;
+        font-size: 70%;
+        border: 1px solid #ccc;
+        display: inline-block;
+        position: relative;
+        top: 30px;
+    }
+    #left-col,
+    #right-col {
+        padding-left: 40px;
+    }
+    #right-col {
+        background-color: #f1f1f1;
+
+    }
+    #left-col > .row > div:first-of-type {
+        text-align: center;
+    }
+    @media handheld, screen and (max-width: 460px) {
+        body {
+            overflow-x: visible;
+            text-align: center;
+        }
+        .md-stat {
+            font-size: 14px;
+        }
+        .lg-stat {
+            font-size: 30px;
+        }
+        .main-stat > .lg-stat {
+            font-size: 60px;
+        }
+        .pull-left,
+        .pull-right {
+            float: none;
+            margin: 0 auto;
+            border: none;
+        }
+        #left-col,
+        #right-col {
+            padding-left: 0;
+        }
+        .row {
+            margin: 0;
+            padding: 1em 0;
+        }
+        .row > div {
+            padding: 0.5em 0;
+        }
+        .row > div:nth-of-type(even) {
+            background-color: #f1f1f1;
+        }
+        p {
+            padding: 1em;
+        }
+        #nav li {
+            display: block;
+            float: none;
+            width: 100%;
+        }
+        .avatar-container {
+            margin: 0;
+        }
+        .avatar {
+            display: block;
+        }
+        .row, h4 {
+            border: none;
+            padding: 0;
+            margin: 0.3em;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            float: none;
+            border: none;
+            padding: 1em;
+            max-width: 80%;
+        }
+        #header,
+        #header ul {
+            height: auto;
+            padding: 0 0.4em;
+        }
+        #header .row > div {
+            margin: 0;
+        }
+        #nav .avatar-container {
+            margin: 0;
+        }
+        #nav {
+            padding: 0.4em;
+        }
+        #nav li,
+        #nav li a {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        #timeline .name,
+        #timeline .title {
+            position: static;
+        }
+        #nav #logo {
+            float: none;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <div class="container">
+        <div class="row" id="header">
+            <div class="col-md-12">
+                <ul id="nav">
+                    <li class="avatar-container">
+                        <p class="avatar">
+                            <span class="avatar-bg"></span>
+                            <span class="user-info">
+                                <strong>Miebo, Z. </strong><br>
+                                <span class="subdued">ACTIVE SINCE 2014</span>
+                            </span>
+                        </p>
+                    </li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">billing</a></li>
+                    <li><a href="#">help center</a></li>
+                    <li><a href="#" class="btn btn-grey">UPGRADE TO Z-PRO!</a></li>
+                    <li id="logo">
+                        <img src="logo.png" alt="logo" class="logo">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="left-col">
+                <div class="row">
+                    <div class="col-md-4 main-stat">
+                        <h2 class="beta">HUMANS EATEN</h2>
+                        <p class="lg-stat">24
+                            <span class="parens">(44TH PERCENTILE)</span>
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>country</h4>
+                        <div id="country-eaten"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>age</h4>
+                        <div id="age-eaten"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>music preference</h4>
+                        <div id="music-eaten"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>INFECTIONS CAUSED</h2>
+                        <p class="lg-stat">32</p>
+                        <span class="parens">(30TH PERCENTILE)</span>
+                    </div>
+                    <div class="col-md-8">
+                        <ul id="timeline">
+                            <li>
+                                <span class="name">1. Jon B.</span>
+                                <span class="location">Neck</span>
+                            </li>
+                            <li>
+                                <span class="name">2. Jane D.</span>
+                                <span class="location">Foot</span>
+                            </li>
+                            <li>
+                                <span class="name">3. Ken T.</span>
+                                <span class="location">R. Arm</span>
+                            </li>
+                            <li>
+                                <span class="name">4 . Lynn K.</span>
+                                <span class="location">Neck</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>TIMES HIT</h2>
+                        <p class="lg-stat">17</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Regions</h4>
+                        <div id="hit-regions"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Weapon type</h4>
+                        <div id="weapon-types"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="right-col">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>AVERAGE SPEED</h2>
+                        <p class="lg-stat">2.12 <span class="parens">MPH</span></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="speed"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>FAVORITE PART OF BODY</h2>
+                        <p class="md-stat">Calf</p>
+                        <p>
+                            <img src="part.png" alt="favorite body part" class="pull-left">
+                            You like the soft underbelly of the leg, where sinewy muscle combines with a reasonably thick layer of fat. Watch out for the bikers though, you might find the texture a bit too stringy.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>GRUNTING RANGE</h2>
+                        <div id="grunting-range"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="zombalytics.js"></script>
+</body>
+</html>
