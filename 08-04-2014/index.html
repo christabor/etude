@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 08-04-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts/dovah.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        color: white;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: black;
+        font-family: 'Lora', serif;
+    }
+    a {
+        color: white;
+    }
+    #content,
+    #bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
+    #content {
+        padding-left: 2em;
+    }
+    #bg {
+        background: black url(bg.jpg) no-repeat center center;
+        z-index: 1;
+        opacity: 0.2;
+    }
+    text {
+        text-shadow: 0 2px 2px black;
+    }
+    .dragon-name {
+        fill: #82abdc;
+        color: #82abdc;
+        text-transform: lowercase !important;
+        font-family: 'dovah';
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+        #content {
+            padding-left: 0.5em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>
+            D3js Dovahzul (<span class="dragon-name">Dovahzul</span>)
+        </h1>
+        <p>Dragon names from Skyrim, shown by max level. Hover over text to toggle between english &amp; dovah names. <em>Yes, this is not very insightful, but it was fun!</em></p>
+        <p class="subdued">Dovahzul font courtesy of <a href="http://www.thuum.org/downloads.php#font">Thuum.org</a> Data courtesy of <a href="http://www.uesp.net/wiki/Skyrim">UESP.net</a></p>
+        <div id="container"></div>
+    </div>
+    <div id="bg"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="dovah.js"></script>
+</body>
+</html>
