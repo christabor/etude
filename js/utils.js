@@ -129,6 +129,17 @@ function findPrime(num) {
     return is_prime;
 }
 
+function distance(pos1, pos2){
+    // http://snipplr.com/view/47207/distance-between-two-points/
+    var xs = 0;
+    var ys = 0;
+    xs = pos2.x - pos1.x;
+    xs = xs * xs;
+    ys = pos2.y - pos1.y;
+    ys = ys * ys;
+    return Math.sqrt(xs + ys);
+}
+
 /* UI / DOM related */
 
 function setActiveFn(els, funcs, el, active_fn) {
