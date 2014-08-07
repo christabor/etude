@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 08-06-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 4em 2em;
+        margin: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 100;
+        background-color: #f1f1f1;
+        text-align: center;
+        font-size: 14px;
+        color: #008AC0;
+    }
+    h1 {
+        margin-top: 2em;
+        font-weight: 100;
+    }
+    h1 span {
+        color: black;
+        font-style: italic;
+    }
+    fieldset {
+        padding: 1em;
+        border:1px solid #ccc;
+        width: 80%;
+        margin: 0 auto;
+    }
+    legend {
+        font-size: 120%;
+        padding: 1em;
+    }
+    label {
+        width: 49%;
+        text-align: left;
+        display: inline-block;
+        margin: 1em 0;
+    }
+    .btn {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        margin: 1em 0;
+        border-color: #008AC0;
+    }
+    #container {
+        background-color: white;
+        padding: 2em 4em;
+        margin: 0 auto;
+        width: 90%;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+    #search label {
+        border-top: 1px dashed #ccc;
+        padding-top: 2em;
+        text-align: center;
+    }
+    input {
+        border:3px solid #ccc;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 0.6em;
+    }
+    button {
+        position: relative;
+        top: 1px;
+    }
+    label.checked {
+        /* requires js, because of lacking ^ parent selector css traversal. */
+        color: black;
+        font-weight: bold;
+    }
+    #beta-diagnoses,
+    #diagnoses {
+        display: none;
+    }
+    ul {
+        text-align:left;
+        margin: 0 auto;
+        width: 60%;
+    }
+    li {
+        display: inline-block;
+        line-height: 2em;
+    }
+    .subdued {
+        margin-top: 3em;
+        padding: 1em;
+    }
+    .title {
+        color: black;
+        display: block;
+        padding-right: 10px;
+        text-transform: uppercase;
+        font-size: 110%;
+    }
+    @media handheld, screen and (max-width: 1024px) {
+        fieldset {
+            width: 100%;
+        }
+        #search label {
+            width: 100%;
+        }
+    }
+    @media handheld, screen and (max-width: 600px) {
+        img {
+            max-width: 100%;
+        }
+        body {
+            padding: 0;
+            font-size: 12px;
+        }
+        #container {
+            width: 100%;
+            box-shadow: 0 0 0;
+            padding: 2em;
+        }
+        .subdued {
+            font-size: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <img src="logo.png" alt="HypochondriacMD">
+        <h1><span>presents...</span> &ldquo;One degree to fatal illness&rdquo;</h1>
+        <form role="form" id="check-symptoms" class="style-flat">
+            <fieldset>
+                <legend>Check all the symptoms that apply.</legend>
+            </fieldset>
+            <button class="btn btn-blue btn-large">Diagnose me!</button>
+            <div id="diagnoses">
+                <h3>Your results</h3>
+                <ul></ul>
+            </div>
+        </form>
+        <form role="form" id="search" class="style-hollow">
+            <label>
+                Try our new search feature! <strong><em>(beta)</em></strong>
+                <input type="text" name="search" placeholder="search keywords...">
+                <button class="btn btn-blue">Search</button>
+            </label>
+            <div id="beta-diagnoses">
+                <h3>Your results</h3>
+                <p>It's cancer. We're really sorry.</p>
+            </div>
+        </form>
+    </section>
+    <p class="subdued"><strong>Disclaimer:</strong> this is a satirical project, meant solely to poke fun at the advent of self-diagnosis on the internet. It is an example of how technology can go awry when used incorrectly. Always seek a health professional if you are concerned about your health.</p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="onedegree.js"></script>
+</body>
+</html>
