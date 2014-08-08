@@ -1,5 +1,4 @@
 var onedegree = (function(){
-    var DEBUG = false;
     var dims  = getViewportDimensions();
     var W     = dims.width;
     var form1 = $('#check-symptoms');
