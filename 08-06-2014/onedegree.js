@@ -8,7 +8,7 @@ var onedegree = (function(){
         'stomach_pain': ['stomach cancer', 'tapeworms', 'crohn\'s disease'],
         'headache': ['brain cancer', 'aneurysm', 'meningitis', 'multiple sclerosis'],
         'muscle tension': ['rigor mortis', 'gangrene', 'muscular dystrophy', 'Lou Gehrig\'s disease'],
-        'anxious_worrisome': ['schizophrenia', 'severe depression', 'disassociatve amnesia', 'post-tramautic stress disorder'],
+        'anxious_worrisome': ['schizophrenia', 'severe depression', 'dissociative amnesia', 'post-traumatic stress disorder'],
         'sneezing': ['acute viral infection', 'H1N1 virus'],
         'cold_tired': ['chronic anemia', 'skin cancer']
     };
