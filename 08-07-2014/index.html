@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 08-07-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Oswald:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 4em 2em;
+        margin: 0;
+        font-weight: 100;
+        background-color: black;
+        text-align: center;
+        font-family: 'Oswald', sans-serif;
+        color: #ff770e;
+    }
+    .light {
+        background-color: black;
+        color: red;
+        box-shadow: 0 5px 10px black;
+        border: 3px solid #ccc;
+        font-family: 'Lobster', cursive;
+        border-radius: 100px;
+        margin: 0.1em;
+        text-shadow: 0 2px 1px black;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    #container {
+        margin: 0 auto;
+        width: auto;
+        text-align: center;
+    }
+    h3 {
+        font-size: 50px;
+        display: block;
+        margin-top: 1em;
+    }
+    h3 span {
+        color: #ffbe00;
+        font-family: 'Lobster', cursive;
+    }
+    .light:nth-of-type(odd) {
+        font-family: 'Oswald', sans-serif;
+    }
+    @media handheld, screen and (max-width: 600px) {
+        h3 {
+            font-size: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="container"></section>
+    <h3>to this <span>awesome</span> project!</h3>
+    <p class="subdued">I'm tired, time for bed.</p>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="flashy.js"></script>
+</body>
+</html>
