@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 08-08-2014</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: black;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .aqua {
+        width: 418px;
+        height: 712px;
+        display: inline-block;
+        background-size: cover;
+        background: url(bottle.jpg) no-repeat bottom center;
+        position: relative;
+        z-index: 1;
+        bottom: -1em;
+    }
+    .aqua > .fill {
+        background-color: #07b212;
+        box-shadow: 0 -4px 20px black;
+        border: 2px dashed white;
+        border-top: 0;
+        border-bottom: 0;
+        opacity: 0.5;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        width: 240px;
+        left: 84px;
+        z-index: 1;
+    }
+    p {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        z-index: 4;
+        text-shadow: 0 1px 1px white;
+        display: block;
+    }
+    strong {
+        display: block;
+    }
+    h1 {
+        font-weight: 100;
+    }
+    #container {
+        margin: 0 auto;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Water prices during my Las Vegas trip...</h1>
+    <div id="container">
+        <div id="hardrock" class="aqua">
+            <p><strong>CVS</strong> $0.39 / Liter</p>
+        </div>
+        <div id="cvs" class="aqua">
+            <p><strong>Hard Rock Casino</strong> $8.00 / Liter</p>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="wata.js"></script>
+</body>
+</html>
