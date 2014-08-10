@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 08-09-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 30px 0;
+        text-align: center;
+        font-size: 14px;
+        line-height: 2.2em;
+        color: black;
+        overflow-x : hidden;
+        text-shadow: 0 1px 1px white;
+    }
+    </style>
+</head>
+<body>
+    <h1>Markov chain visualizer!</h1>
+    <div id="output"></div>
+    <canvas id="canvas" width="100%" height="100%">
+        Your browser does not support canvas. :(
+    </canvas>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.3.0/fabric.min.js"></script>
+    <script src="../js/fabric-art-tools.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="markovSeq.js"></script>
+</body>
+</html>
