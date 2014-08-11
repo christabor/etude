@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 08-10-2013</title>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Bangers' rel='stylesheet' type='text/css'> -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+    }
+    fieldset {
+        margin-bottom: 10px;
+    }
+    label,
+    input,
+    button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    #form,
+    #results {
+        padding: 0 20px;
+    }
+    #results {
+        position: relative;
+        width: 80%;
+    }
+    #results .title {
+        font-weight: bold;
+        font-size: 110%;
+    }
+    #form {
+        min-width: 300px;
+        width: 20%;
+        background-color: #000;
+        color: #fff;
+        position: relative;
+        min-height: 100vh;
+    }
+    #add-more {
+        background-color: green;
+        text-decoration: none;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+    #container {
+        display: flex;
+        flex: 1;
+    }
+    #results p {
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        height: 60px;
+        letter-spacing: 1em;
+        margin: 0;
+    }
+    #results #title-female {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        line-height: 2em;
+        height: 100%;
+    }
+    #square {
+        margin-left: 40px;
+    }
+    #menu {
+        position: fixed;
+        top: 100px;
+        right: -100px;
+        width: 50%;
+    }
+    :hover {
+        -webkit-transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -ms-transition: all .25s ease-in-out;
+        -o-transition: all .25s ease-in-out;
+        transition: all .25s ease-in-out;
+    }
+    ul {
+
+    }
+    li {
+        border-radius: 0 100%;
+        background-color: #f1f1f1;
+        padding: 100px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+  <h2>Punnett Square Generator</h2>
+    <section id="container">
+        <form role="form" id="form">
+            <fieldset>
+                <legend>Trait 0</legend>
+                <label>Enter <strong>female</strong> gene</label>
+                <input class="female" name="female" type="text" value="" placeholder="e.g. red hair">
+                <label>Enter <strong>male</strong> gene</label>
+                <input class="male" name="male" type="text" value="" placeholder="e.g. blue stripes">
+            </fieldset>
+            <a href="#" class="btn-plain btn-basic" id="add-more">+ Add more traits...</a>
+            <button class="btn-plain btn-basic">Build Square</button>
+        </form>
+        <div id="results">
+            <p id="title-female">F<br>e<br>m<br>a<br>l<br>e</p>
+            <p id="title-male">Male</p>
+            <table id="square" class="table table-bordered table-striped table-hover">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    -->
+    <script src="../js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="../js/vendor/lodash.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="punnetsquare.js"></script>
+</body>
+</html>
