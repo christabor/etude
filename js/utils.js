@@ -770,10 +770,18 @@ function log(msg) {
     return console.log(msg);
 }
 
-function uuid() {
+function uid() {
+    return rando(9999);
+}
+
+function uuid(count, delimiter) {
     // random unique identifier in the form 0000-0000-0000-0000
-    var uid = function(){ return rando(9999); };
-    return [uid(), uid(), uid(), uid()].join('-');
+    var _uuid = [];
+    count = count || 4;
+    for(var i = 0; i < count; i++) {
+        _uuid.push(uid());
+    }
+    return _uuid.join(delimiter || '-');
 }
 
 function makeHTMLTag(el, content) {
