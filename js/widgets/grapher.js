@@ -98,6 +98,7 @@ function GrapherWidget(container, dims){
                 // check if active or if number of edges is 2
                 if(self.is_active || els.length !== 2) return;
                 lock_drag = true;
+                return; // for now...
                 addEdge(
                     d3.select(els[0]).attr('x'),
                     d3.select(els[0]).attr('y'),
