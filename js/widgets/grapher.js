@@ -3,10 +3,6 @@ function GrapherWidget(container, dims){
     var width              = dims.width;
     var height             = dims.height;
     var elements           = [];
-    var BOX_WIDTH          = 200;
-    var BOX_HEIGHT         = 100;
-    var HANDLE_SIZE        = 10;
-    var CIRCLE_SIZE        = BOX_WIDTH / 2.5;
     var open_connection    = false;
     var boxes              = [];
     var edges              = container.append('g').attr('id', 'edges');
@@ -19,19 +15,31 @@ function GrapherWidget(container, dims){
     .x(function(d){return d.x})
     .y(function(d){return d.y});
 
+    var props = {
+        box_width: 200,
+        box_height: 100,
+        handle_size: 10
+    };
+    props.circle_size = props.box_width / 2.5
+
+    function prop(name, val) {
+        if(!val) return props[name];
+        props[name] = val;
+    }
+
     function moveElement() {
         // drag behavior.
         if(lock_drag) return;
         d3.select(this)
-        .attr('transform', translation(d3.event.x - BOX_WIDTH / 2, d3.event.y - BOX_HEIGHT / 2));
+        .attr('transform', translation(d3.event.x - props.box_width / 2, d3.event.y - props.box_height / 2));
 
         // redraw all the connected vertices
     }
 
     function randCoords() {
         // for testing
-        var x = clamp(rando(width) - BOX_WIDTH, BOX_WIDTH, width);
-        var y = clamp(rando(height) - BOX_HEIGHT, BOX_HEIGHT, height);
+        var x = clamp(rando(width) - props.box_width, props.box_width, width);
+        var y = clamp(rando(height) - props.box_height, props.box_height, height);
         return {'x': x, 'y': y};
     }
 
@@ -74,10 +82,10 @@ function GrapherWidget(container, dims){
             var css = {'handle': true};
             css[label] = true;
             el.append('rect')
-            .attr('x', x - HANDLE_SIZE / 2)
-            .attr('y', y - HANDLE_SIZE / 2)
-            .attr('width', HANDLE_SIZE)
-            .attr('height', HANDLE_SIZE)
+            .attr('x', x - props.handle_size / 2)
+            .attr('y', y - props.handle_size / 2)
+            .attr('width', props.handle_size)
+            .attr('height', props.handle_size)
             .attr('fill', 'black')
             .attr('stroke', 'black')
             .classed(css)
@@ -98,7 +106,6 @@ function GrapherWidget(container, dims){
                 // check if active or if number of edges is 2
                 if(self.is_active || els.length !== 2) return;
                 lock_drag = true;
-                return; // for now...
                 addEdge(
                     d3.select(els[0]).attr('x'),
                     d3.select(els[0]).attr('y'),
@@ -114,6 +121,7 @@ function GrapherWidget(container, dims){
         }
 
         function addEdge(x1, y1, x2, y2) {
+            return;
             // prevent adding edges for only one node.
             if(elements.length < 2) return;
             var _id  = uuid(1);
@@ -140,8 +148,8 @@ function GrapherWidget(container, dims){
     function Box(x, y) {
         var self = new Node(x, y);
         self.group.append('rect')
-        .attr('width', BOX_WIDTH)
-        .attr('height', BOX_HEIGHT)
+        .attr('width', props.box_width)
+        .attr('height', props.box_height)
         .attr('fill', 'white')
         .classed('graph-element', true)
         .attr('stroke', 'black')
@@ -149,11 +157,11 @@ function GrapherWidget(container, dims){
 
         // Corners
         self.tl = self.makeCorner(self.group, 0, 0, 'left'); // tl
-        self.tr = self.makeCorner(self.group, BOX_WIDTH, 0, 'right'); // tr
-        self.bl = self.makeCorner(self.group, 0, BOX_HEIGHT, 'left'); // bl
-        self.br = self.makeCorner(self.group, BOX_WIDTH, BOX_HEIGHT, 'right'); // br
-        self.tc = self.makeCorner(self.group, BOX_WIDTH / 2, 0, 'top'); // tc
-        self.bc = self.makeCorner(self.group, BOX_WIDTH / 2, BOX_HEIGHT, 'bottom'); // bc
+        self.tr = self.makeCorner(self.group, props.box_width, 0, 'right'); // tr
+        self.bl = self.makeCorner(self.group, 0, props.box_height, 'left'); // bl
+        self.br = self.makeCorner(self.group, props.box_width, props.box_height, 'right'); // br
+        self.tc = self.makeCorner(self.group, props.box_width / 2, 0, 'top'); // tc
+        self.bc = self.makeCorner(self.group, props.box_width / 2, props.box_height, 'bottom'); // bc
         return self;
     }
 
@@ -164,16 +172,16 @@ function GrapherWidget(container, dims){
     function Circle(x, y) {
         var self = new Node(x, y);
         self.group.append('circle')
-        .attr('r', CIRCLE_SIZE)
+        .attr('r', props.circle_size)
         .attr('fill', 'white')
         .attr('stroke', 'black')
         .attr('stroke-width', 4);
 
         // Corners
-        self.lc = self.makeCorner(self.group, -CIRCLE_SIZE, 0, 'left'); // lc
-        self.rc = self.makeCorner(self.group, CIRCLE_SIZE, 0, 'right'); // rc
-        self.tc = self.makeCorner(self.group, 0, -CIRCLE_SIZE, 'top'); // tc
-        self.bc = self.makeCorner(self.group, 0, CIRCLE_SIZE, 'bottom'); // bc
+        self.lc = self.makeCorner(self.group, -props.circle_size, 0, 'left'); // lc
+        self.rc = self.makeCorner(self.group, props.circle_size, 0, 'right'); // rc
+        self.tc = self.makeCorner(self.group, 0, -props.circle_size, 'top'); // tc
+        self.bc = self.makeCorner(self.group, 0, props.circle_size, 'bottom'); // bc
         return self;
     }
 
