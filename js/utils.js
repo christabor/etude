@@ -375,6 +375,11 @@ function randomNumberArray(length, max) {
     return arr;
 }
 
+function coordify(x, y) {
+    // object from args
+    return {'x': x, 'y': y};
+}
+
 function randomCoords(max_x, max_y) {
     // returns a single object containing
     // x and y coords
