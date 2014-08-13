@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-12-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family: 'Oxygen', sans-serif;
+        color: #444;
+        background-color: #f1f1f1;
+    }
+    button {
+        font-family: 'Oxygen', sans-serif;
+    }
+    h1 {
+        font-weight: 100;
+        font-family: 'Oswald', sans-serif;
+    }
+    h2 {
+        font-weight: 100;
+    }
+    #model-evolution {
+        margin: 0 0 3em 0;
+    }
+    #model-evolution li {
+        display: inline-block;
+    }
+    #model-evolution li span {
+        margin: 1em auto;
+        background-color: red;
+        display: block;
+    }
+    #start {
+        box-shadow: 10px 10px 10px black;
+        width: 100px;
+        height: 100px;
+        border-radius: 0 10px 20px 1px;
+        background-color: green;
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+    #p2 {
+        width: 140px;
+        height: 140px;
+        border-radius: 10px 20px 50px 20px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 1);
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
+    #p3 {
+        width: 150px;
+        height: 150px;
+        border-radius: 20px 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+    }
+    #p4 {
+        width: 180px;
+        height: 180px;
+        border-radius: 50px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        border: 1px solid white;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+    }
+    #final {
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        border: 2px solid white;
+    }
+    .bar-graph {
+        margin: 2em 0 0 0;
+        position: relative;
+        background-color: #ccc;
+        height: 40px;
+    }
+    .time,
+    .goal,
+    .bar-bg,
+    #markers {
+        z-index: 99;
+        position: absolute;
+    }
+    .style-flat {
+        padding-top: 1em;
+        background-color: #e9e9e9;
+        text-align: center;
+    }
+    .time,
+    .goal {
+        text-transform: uppercase;
+        top: 10px;
+        font-size: 80%;
+        color: white;
+        text-shadow: 0 1px 1px black;
+        font-family: 'Oswald', sans-serif;
+    }
+    .metrics {
+        font-family: 'Oswald', sans-serif;
+        font-size: 140%;
+        text-align: center;
+        font-weight: 100;
+    }
+    .metrics span {
+        font-weight: 400;
+    }
+    .metrics > div {
+        display: inline-block;
+        padding: 0.5em 1em;
+        background-color: white;
+        min-width: 25%;
+        overflow: hidden;
+    }
+    .time {
+        left: 20px;
+    }
+    .goal {
+        right: 20px;
+    }
+    .bar-bg {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: green;
+    }
+    #markers {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        list-style-type: none;
+        height: 120px;
+    }
+    #markers li {
+        display: inline-block;
+        position: relative;
+        top: -20px;
+        margin: 0 3em;
+    }
+    .marker {
+        border-left: 3px solid #ccc;
+        height: 40px;
+    }
+    .marker.half {
+        height: 100px;
+        top: -40px;
+    }
+    .marker.quarter {
+        height: 50px;
+        top: -20px;
+    }
+    .marker > span {
+        position: relative;
+        bottom: -10px;
+    }
+    ul {
+        list-style-type: square;
+        padding-left: 1.2em;
+    }
+    #markers li,
+    #model-evolution li {
+        padding: 0;
+        margin: 0;
+        width: 19%;
+        text-align: center;
+    }
+    iframe {
+        margin-top: 2em;
+        border: 2px solid #ccc;
+        padding: 0.3em;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            font-size: 12px;
+            overflow-x: visible;
+        }
+        .metrics > div {
+            width: 100%;
+        }
+        iframe {
+            max-width: 100%;
+            margin: 1em 0 0 0;
+            padding: 0;
+        }
+        #markers li,
+        #model-evolution li {
+            text-align: left;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <iframe width="440" height="260" src="//www.youtube-nocookie.com/embed/UyPrL0cmJRs?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-8">
+                <h1><strong>Brain plasticity:</strong> modeling example</h1>
+                <h2>As outlined in the video, <em>brain plasticity</em> is pretty much all about
+                    <strong>creating models</strong> of the <strong>desired outcome</strong> and then <strong>evolving behavior</strong> until it is <strong>sufficiently near the intended outcome.</strong></h2>
+                    <p>Implications of this:</p>
+                    <ul>
+                        <li>
+                            How many steps /changes/parameters can be effectively changed PER ITERATION (e.g. rotation AND scale AND blurriness AND fidelity)
+                        </li>
+                        <li>
+                            How many iterations it takes before reaching the final perfect model
+                        </li>
+                        <li>
+                            Is learning speed/efficiency a factor of:
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 style-flat">
+                    <button id="start-btn" class="btn btn-purple btn-large">Start</button>
+                    <p><strong>GOAL: Draw a perfect circle.</strong></p>
+                    <div class="metrics model-section">
+                        <p class="subdued"><em>Example</em> metrics</p>
+                        <div id="fidelity">Fidelity: <span>0</span></div>
+                        <div id="attempt">Current Attempt: <span>0</span></div>
+                        <div id="delta">Last/Current delta: <span>0</span></div>
+                    </div>
+                    <div class="bar-graph model-section">
+                        <span class="time">time...</span>
+                        <span class="goal">goal reached!</span>
+                        <div class="bar-bg"></div>
+                        <ul id="markers">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div id="container" class="model-section">
+                        <ul id="model-evolution">
+                            <li><span id="start"></span></li>
+                            <li><span id="p2"></span></li>
+                            <li><span id="p3"></span></li>
+                            <li><span id="p4"></span></li>
+                            <li><span id="final"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../js/utils.js"></script>
+        <script src="plasticbrain.js"></script>
+    </body>
+    </html>
