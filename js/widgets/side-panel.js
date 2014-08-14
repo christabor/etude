@@ -1,6 +1,4 @@
 var widg_panel = (function(options){
-
-    // traditional namespace
     var defaults = {};
     var opts    = $.extend(defaults, options);
     var $panels = $('[data-sidebar-target]')

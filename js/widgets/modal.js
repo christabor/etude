@@ -1,6 +1,4 @@
 var widg_modal = (function(options){
-
-    // traditional namespace
     var defaults = {
         'blur': true,
         'transition_classes': 'animated fadeInUp'
