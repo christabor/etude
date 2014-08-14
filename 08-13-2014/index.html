@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-13-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Oxygen', sans-serif;
+        overflow-x: hidden;
+        color: #444;
+        font-size: 16px;
+        padding: 2em 1em;
+        background-color: #f1f1f1;
+    }
+    h1 {
+        font-weight: 100;
+        font-family: 'Oswald', sans-serif;
+    }
+    a {
+        color: #999;
+    }
+    h3 {
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+    sup a {
+        text-decoration: none;
+    }
+    sup {
+        padding: 0.1em 0.8em;
+        border-radius: 100px;
+        font-size: 0.6em;
+        background-color: white;
+    }
+    sup,
+    sup a {
+        color: green;
+    }
+    sup:hover,
+    sup a:hover {
+        color: black;
+    }
+    sup.active,
+    sup.active a {
+        color: orange;
+    }
+    #citations li {
+        font-size: 70%;
+        border-bottom: 1px dotted #ccc;
+        list-style-type: square;
+        position: absolute !important;
+        top: 0;
+        color: #999;
+        font-style: italic;
+    }
+    #citations .active a {
+        color: orange;
+    }
+    #citations li:hover {
+        color: black;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    p {
+        line-height: 1.5em;
+    }
+    #citations li {
+        -webkit-transition: font-size 0.2s ease-out;  /* Saf3.2+, Chrome */
+           -moz-transition: font-size 0.2s ease-out;  /* FF4+ */
+            -ms-transition: font-size 0.2s ease-out;  /* IE10? */
+             -o-transition: font-size 0.2s ease-out;  /* Opera 10.5+ */
+                transition: font-size 0.2s ease-out;
+    }
+    #citations .active {
+        color: orange;
+        font-size: 120%;
+    }
+    hr {
+        border:1px solid rgba(0, 0, 0, 0.1);
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            padding: 0.4em;
+            font-size: 12px;
+            overflow-x: visible;
+        }
+        .container {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>jQuery Citations plugin</h1>
+                <h2>Simple citations with corresponding links, automatically positioned.</h2>
+                <p class="lead"><strong>Also includes hover styling for references.</strong></p>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 blocks">
+                <p class="lead">
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat<sup data-cite="#cite-0"><a href="#">0</a></sup>. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. <sup data-cite="#cite-1"><a href="#">1</a></sup>Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <h3>Pellentesque habitant morbi tristique se</h3>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, <sup data-cite="#cite-2"><a href="#">2</a></sup> condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, <sup data-cite="#cite-3"><a href="#">3</a></sup> elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis <sup data-cite="#cite-6"><a href="#">6</a></sup>. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <h3>Pellentesque habitant morbi tristique se</h3>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. <sup data-cite="#cite-4">Foobar (4)</sup> Nam dui mi, tincidunt quis, accumsan
+                    porttitor, facilisis luctus, metus
+                </p>
+                <p>
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                    ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
+                    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
+                    ultricies mi vitae est. Mauris placerat eleifend leo <sup data-cite="#cite-6">Foobar (6)</sup>. Quisque sit amet
+                    est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,
+                    commodo vitae, ornare sit amet, wisi.
+                </p>
+                <p>Aenean fermentum, elit eget tincidunt
+                    condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+                    Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus,
+                    neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi, <sup data-cite="#cite-5">Foobar (5)</sup> quis,
+                    accumsan porttitor, facilisis luctus, metus
+                </p>
+            </div>
+            <div class="col-md-4">
+                <ul id="citations">
+                    <li id="cite-0">0. <a href="#">blah foo</a> blah, March 2013</li>
+                    <li id="cite-1">1. <a href="#">doo wee bop zam</a>, boo foo blah</li>
+                    <li id="cite-2">2. foo zoom bam biz zom foo blah</li>
+                    <li id="cite-3">3. foo foo blah blah zim bam bop foo blah</li>
+                    <li id="cite-4">4. Foo-Foo foobop foo blah</li>
+                    <li id="cite-5">5. Herp a derp foo blah</li>
+                    <li id="cite-6">6. Herp a derpy hooplah</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/widgets/excitation.js"></script>
+<script>$(document).ready($.fn.excitation);</script>
+</body>
+</html>
