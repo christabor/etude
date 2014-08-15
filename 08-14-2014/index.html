@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-14-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Oxygen', sans-serif;
+        overflow-x: hidden;
+        color: #444;
+        font-size: 16px;
+        background-color: white;
+        padding: 0;
+        overflow: hidden;
+        background: #ffffff; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #d6f0fd 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#d6f0fd)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#d6f0fd 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#d6f0fd 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#d6f0fd 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, #ffffff 0%,#d6f0fd 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6f0fd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    #container {
+        position: relative;
+        height: 100%;
+        width: auto;
+        margin: 0 auto;
+    }
+    h1 {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 100;
+    }
+    .arrow {
+        position: absolute;
+        left: 50%;
+        -webkit-animation: moveup linear 4s; /* Saf5, Chrome */
+        -moz-animation: moveup linear 4s; /* FF5+ */
+        -ms-animation: moveup linear 4s; /* IE10pp3 */
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -ms-animation-iteration-count: 1;
+    }
+    @-webkit-keyframes moveup {
+        0%   {
+            opacity: 0;
+            bottom: -100px;
+            display: block;
+        }
+        10% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            bottom: 120%;
+            display: none;
+        }
+    }
+    @-moz-keyframes moveup {
+        0%   {
+            opacity: 0;
+            bottom: -100px;
+            display: block;
+        }
+        10% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            bottom: 120%;
+            display: none;
+        }
+    }
+    @-ms-keyframes moveup {
+        0%   {
+            opacity: 0;
+            bottom: -100px;
+            display: block;
+        }
+        10% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            bottom: 120%;
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>DDR Esque <span class="subdued">(non-interactive)</span></h1>
+    <div id="container"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="ddresque.js"></script>
+</body>
+</html>
