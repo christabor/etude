@@ -53,15 +53,18 @@
         font-weight: 100;
     }
     #container {
-        position: absolute;
+        position: relative;
         bottom: 0;
         left: 50%;
         margin-left: -50%;
         width: 100%;
     }
-    @media handheld, screen and (max-width: 700px) {
+    @media handheld, screen and (max-width: 400px) {
         body {
             overflow-x: visible;
+        }
+        h1 {
+            font-size: 1.4em;
         }
     }
     </style>
