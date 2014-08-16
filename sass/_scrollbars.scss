@@ -1,0 +1,50 @@
+@import 'colors';
+
+@mixin scrollbar-theme($color) {
+    $width: 10px;
+    $amt: 20%;
+
+    ::-webkit-scrollbar {
+        width: $width;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: darken($color, $amt * 1.5);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 0;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($color, $amt);
+    }
+}
+
+// meant to be attached to html: <html class="scroll-color"></html>
+
+.scroll-green {
+    @include scrollbar-theme($green);
+}
+.scroll-red {
+    @include scrollbar-theme($red);
+}
+.scroll-blue {
+    @include scrollbar-theme($blue);
+}
+.scroll-orange {
+    @include scrollbar-theme($orange);
+}
+.scroll-purple {
+    @include scrollbar-theme($purple);
+}
+.scroll-dk-grey {
+    @include scrollbar-theme($dark-grey);
+}
+.scroll-lt-grey {
+    @include scrollbar-theme($light-grey);
+}
+.scroll-grey {
+    @include scrollbar-theme($grey);
+}
