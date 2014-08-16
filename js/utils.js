@@ -881,6 +881,14 @@ function hide(elem) {
     return elem;
 }
 
+function arrayToHTMList(arr) {
+    var html = '';
+    for(var i = 0; i < arr.length; i++) {
+        html += '<li>' + arr[i] + '</li>';
+    }
+    return html;
+}
+
 function createDTreeFromJSON(data, html, flattened) {
     // generate dom html recursively
     if(!html) html = '';

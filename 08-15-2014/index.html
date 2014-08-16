@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-15-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    input {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body, button, input {
+        font-family: 'Oxygen', sans-serif;
+    }
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        color: #444;
+        font-size: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        padding: 0;
+    }
+    #container {
+        position: relative;
+        height: 100%;
+        width: auto;
+        margin: 0 auto;
+    }
+    h1 {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        text-align: center;
+        margin-left: -50%;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 100;
+    }
+    .error {
+        font-size: 20px;
+        color: #b00000;
+    }
+    form {
+        width: 70%;
+        margin: 0 auto;
+    }
+    input {
+        border: none;
+        border:4px solid #ccc;
+        font-size: 40px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    input, button {
+        padding: 0;
+        width: 100%;
+        max-width: 400px;
+        display: block;
+    }
+    #obfuscator {
+        margin-top: 7em;
+    }
+    #obfuscated {
+        font-size: 10em;
+        padding: 2em;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #obfuscator {
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 12px;
+            margin: 0;
+            position: static;
+            padding: 2em;
+            max-width: auto;
+            width: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Math obfuscator! <em>Making math <strong>harder</strong> to understand since just now.</em></h1>
+    <form role="form" id="obfuscator" class="style-zen">
+        <input type="number" min="1" max="9999" value="1">
+        <button class="btn btn-red btn-medium">Obfuscate me!</button>
+    </form>
+    <div id="obfuscated"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="obfuscator.js"></script>
+</body>
+</html>
