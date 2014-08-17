@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-16-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Oxygen', sans-serif;
+        overflow-x: hidden;
+        background-size: cover;
+        background-repeat: 0 0;
+        text-align: center;
+        text-shadow: 0 1px 1px white;
+        color: #444;
+        background: #ffffff; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #daeacc 64%, #a7c9b4 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(64%,#daeacc), color-stop(100%,#a7c9b4)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#daeacc 64%,#a7c9b4 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#daeacc 64%,#a7c9b4 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#daeacc 64%,#a7c9b4 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, #ffffff 0%,#daeacc 64%,#a7c9b4 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a7c9b4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    h1 {
+        margin: 0;
+        font-size: 24px;
+        padding: 1em;
+        font-weight: 100;
+    }
+    .subdued {
+        display: block;
+        margin-top: 10px;
+    }
+    ul {
+        list-style-type: square;
+    }
+    p {
+        margin: 2em 0;
+    }
+    li {
+        line-height: 2em;
+        text-transform: capitalize;
+    }
+    .mathematician {
+        display: inline-block;
+        position: relative;
+        width: 25%;
+    }
+    .info {
+        overflow: hidden;
+        font-size: 11px;
+        text-align: left;
+        max-height: 400px;
+        min-width: 320px;
+        overflow-y: scroll;
+        background-color: white;
+        padding: 0.5em 1em 0 1em;
+        opacity: 0;
+        left: 0;
+        top: -20px;
+        -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+        -moz-transition: all 0.3s ease-out;  /* FF4+ */
+        -ms-transition: all 0.3s ease-out;  /* IE10? */
+        -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+        transition: all 0.3s ease-out;
+        box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
+        position: absolute;
+    }
+    .mathematician:hover {
+        z-index: 999;
+    }
+    .mathematician:hover .info {
+        opacity: 1;
+        display: inline-block;
+    }
+    .mathematician:hover img {
+        box-shadow: 0 0 40px black;
+    }
+    .name, .born,
+    .died, .nationality, .known_for {
+        list-style-type: none;
+    }
+    .name, .born,
+    .died, .nationality {
+        font-size: 120%;
+    }
+    .known_for {
+        margin-top: 1em;
+    }
+    .known_for ul {
+        margin: 1em -2em 0 -2em;
+        padding: 1em 1em 0 1em;
+    }
+    .known_for li {
+        color: black;
+        list-style-type: none;
+        padding: 0.4em 1em;
+        margin: 0;
+        background-color: #f1f1f1;
+        border-bottom: 1px solid white;
+    }
+    .known_for li:nth-of-type(odd) {
+        background-color: #ccc;
+        border-color: #999;
+    }
+    .name {
+        font-size: 180%;
+        padding-bottom: 0.4em;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1em;
+    }
+    img {
+        border:1px solid #ccc;
+        padding: 0.5em;
+        margin: 0.5em;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px #444;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            font-size: 12px;
+            overflow-x: visible;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Some of the <strong>greatest mathematicians</strong> of all time <span class="subdued">Rated by contributions - via Wikipedia, (with the exception of Isaac Newton, cause, well, yeah). Some data has been scrubbed for consistency. <br><strong>Hover over each to get details!</strong></span></h1>
+    <div id="container"></div>
+    <p>This can be misleading, so take it with a grain of salt!</p>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/vendor/masonry.min.js"></script>
+    <script src="../js/vendor/imagesloaded.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="mathematicians.js"></script>
+</body>
+</html>
