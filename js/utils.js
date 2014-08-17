@@ -882,6 +882,8 @@ function hide(elem) {
 }
 
 function arrayToHTMList(arr) {
+    // creates a series of lis from an array -
+    // parent element is not created.
     var html = '';
     for(var i = 0; i < arr.length; i++) {
         html += '<li>' + arr[i] + '</li>';
@@ -889,8 +891,54 @@ function arrayToHTMList(arr) {
     return html;
 }
 
+function arrayToHTMLOptions(arr) {
+    // creates a dropdown form from an array -
+    // parent element is not created.
+    var html = '';
+    for(var i = 0; i < arr.length; i++) {
+        html += '<option>' + arr[i] + '</option>';
+    }
+    return html;
+}
+
+function arrayToHTMLCheckboxes(arr) {
+    // creates a set of checkboxes form from an array
+    var html = '';
+    for(var i = 0; i < arr.length; i++) {
+        var id = uuid(1) + '-' + i;
+        html += strToHTMLCheckBox(arr[i], id, null);
+    }
+    return html;
+}
+
+function strToHTMLCheckBox(str, id, data) {
+    // Create a single checkbox with a @param "string"
+    // value and id of @param "id"
+    // also allows for extra data-* attrs to be passed
+    // to the checkbox via @param data.
+    var data_attrs = '';
+    for(var attr in data) {
+        data_attrs += ('data-' + attr + '=' + data[attr]) + ' ';
+    }
+    return '<label id="' + id + '">' +
+           '<input type="checkbox" ' +  data_attrs + '>' + str +
+           '</label>';
+}
+
 function createDTreeFromJSON(data, html, flattened) {
-    // generate dom html recursively
+    // generates a decision tree via html,
+    // recursively from the *appropriately*
+    // formatted JSON data.
+    // Required format:
+    //   "title": "my title...",
+    //   "q": "question 1",
+    //   "yes": "if yes...",
+    //   "no": {
+    //     ... more "yes", "no", "q" objects or strings,
+    //         which will be recursively enumerated until no
+    //         more objects are found.
+    //   }
+
     if(!html) html = '';
     if(!data.yes && !data.no) return html;
     html += '<ul class="dtree ' + (flattened ? 'flattened' : '') + '"><li class="question">' + data.q + '</li>';

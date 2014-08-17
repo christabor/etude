@@ -24,6 +24,13 @@
 	-ms-user-select:none;
 	user-select:none;
 }
+.clearfix {
+	&:after {
+		content:' ';
+		display: block;
+		clear: both;
+	}
+}
 .lead {
 	font-size: 120%;
 }
