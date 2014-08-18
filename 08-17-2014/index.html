@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="scroll-red">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-17-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: black;
+        color: #f1f1f1;
+        margin: 0;
+        overflow-x: hidden;
+        padding: 0;
+        text-align: center;
+        font-family: 'Oxygen', sans-serif;
+    }
+    ::selection {
+        background: red; /* WebKit/Blink Browsers */
+        color: black;
+    }
+    ::-moz-selection {
+        background: red; /* Gecko Browsers */
+        color: black;
+    }
+    input, textarea {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    h1 {
+        font-size: 60px;
+        font-weight: 100;
+        color: red;
+    }
+    textarea {
+        background-color: transparent;
+        border: none;
+        color: red;
+        text-transform: uppercase;
+        font-size: 14px;
+        z-index: 99;
+        padding: 1.3em;
+        font-family: monospace;
+    }
+    textarea:focus {
+        outline: 0;
+    }
+    #panel,
+    #panel .bg,
+    textarea {
+        display: block;
+        height: 400px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    #panel {
+        background-color: rgba(100, 0, 0, 1);
+        border-bottom: 5px solid red;
+        display: none;
+        -moz-transition: all 0.5s ease-out;  /* FF4+ */
+        -ms-transition: all 0.5s ease-out;  /* IE10? */
+        -o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
+        -webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
+        transition: all 0.5s ease-out;
+    }
+    #panel .bg {
+        background: black url(wp.jpg) no-repeat 0 -100px;
+        background-size: cover;
+        /* background underlay */
+        content: ' ';
+        opacity: 0.4;
+        pointer-events: none;
+        z-index: 1;
+    }
+    #panel .bg {
+        -webkit-animation: alternate panbg 5s infinite; /* Saf5, Chrome */
+        -moz-animation: alternate panbg 5s infinite; /* FF5+ */
+        -ms-animation: alternate panbg 5s infinite; /* IE10pp3 */
+    }
+    #intro {
+        border: 4px solid #222;
+        padding: 3em;
+        margin: 5em;
+    }
+    @-webkit-keyframes panbg {
+        0%   {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 0 -100px;
+        }
+    }
+    @-moz-keyframes panbg {
+        0%   {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 0 -100px;
+        }
+    }
+    @-ms-keyframes panbg {
+        0%   {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 0 -100px;
+        }
+    }
+    @media handheld, screen and (max-width: 700px) {
+        textarea {
+            font-size: 12px;
+        }
+        body {
+            font-size: 10px;
+        }
+        h1.ultra {
+            font-size: 30px;
+        }
+        #intro {
+            margin: 1em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="panel">
+        <textarea></textarea>
+        <div class="bg"></div>
+    </div>
+    <section id="intro">
+        <h1 class="ultra"><strong>Cheat code</strong> console</h1>
+        <h3>Heavily influenced by doom... <span class="subdued">\m/</span></h3>
+        <p>Press <kbd>`</kbd> or <kbd>~</kbd> to toggle it.</p>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="godmode.js"></script>
+</body>
+</html>
