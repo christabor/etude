@@ -1,5 +1,6 @@
 // D3 Geometer - a utility library for d3 that allows drawing
 // of geometric primitives, labels, connections and more.
+// Licensed under MIT.
 // Copyright (c) 2014, Chris Tabor
 // All rights reserved.
 
