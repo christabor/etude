@@ -735,10 +735,11 @@ function setCanvasSize(canvas, factor) {
     canvas.width  = width * factor;
 }
 
-function clearCanvas() {
+function clearCanvas(bg) {
+    if(!bg) bg = 'white';
     // a simple clearing fn
     // -- assumes a global variable "ctx"
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, width, height);
 }
 
