@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Etude - 08-19-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style type="text/css">
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 1em;
+        margin: 0;
+        text-shadow: 0 1px 2px white;
+        font-weight: 100;
+        font-family: 'Oxygen', sans-serif;
+        background: #fcfff4; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  #fcfff4 0%, #e9e9ce 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fcfff4), color-stop(100%,#e9e9ce)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover,  #fcfff4 0%,#e9e9ce 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover,  #fcfff4 0%,#e9e9ce 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover,  #fcfff4 0%,#e9e9ce 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center,  #fcfff4 0%,#e9e9ce 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#e9e9ce',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        text-align: center;
+        font-size: 14px;
+    }
+    input, label {
+        font-family: 'Oxygen', sans-serif;
+    }
+    h1, .btn {
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+    h1 {
+        color: #874baf;
+    }
+    form, #results {
+        margin: 1em auto 2em auto;
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 80%;
+        border:1px solid #ccc;
+        border-bottom-width: 4px;
+    }
+    a {
+        color: black;
+    }
+    a:hover {
+        color: #999;
+    }
+    fieldset {
+        border:none;
+        border:1px solid #ccc;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        padding: 1em;
+        margin: 0 auto;
+        width: 100%;
+    }
+    legend {
+        font-size: 120%;
+        padding: 1em;
+        font-weight: bold;
+    }
+    label {
+        text-align: left;
+        width: 48%;
+        display: inline-block;
+        padding: 0.8em;
+        margin: 0.5em 1%;
+        border: 2px solid rgba(0, 0, 0, 0.07);
+    }
+    label:hover {
+        background-color: green;
+        border: 2px solid white;
+        color: white;
+        text-shadow: 0 1px 1px black;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+    }
+    .btn {
+        margin: 0 0 2em 0;
+        border-color: #008AC0;
+    }
+    #results {
+        display: none;
+        padding: 2em;
+    }
+    #primary-type {
+        display: inline-block;
+        padding: 2em 2.2em;
+    }
+    #primary-type span {
+        font-size: 150%;
+    }
+    #types div {
+        display: inline-block;
+        padding: 1em;
+        width: 24%;
+        margin: 1em 1% 1em 0;
+        height: 120px;
+        float: left;
+    }
+    #types h4 {
+        margin: 0;
+    }
+    .type-color {
+        border-left: 10px solid #444;
+    }
+    .beige {
+        border-color: #f0d09b;
+        background-color: #f0edd4;
+    }
+    .purple {
+        border-color: purple;
+        background-color: #bbb1d2;
+    }
+    .red {
+        border-color: red;
+        background-color: #f6a795;
+    }
+    .blue {
+        border-color: blue;
+        background-color: #b4c8f6;
+    }
+    .orange {
+        border-color: orange;
+        background-color: #f6d291;
+    }
+    .yellow {
+        border-color: yellow;
+        background-color: #f6f4ab;
+    }
+    .turquoise {
+        border-color: #5bd2d2;
+        background-color: #abd2cf;
+
+    }
+    .green {
+        border-color: green;
+        background-color: #9bf6a3;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        #types div {
+            float: none;
+            height: auto;
+            width: 48%;
+        }
+    }
+    @media handheld, screen and (max-width: 600px) {
+        body {
+            padding: 0;
+            font-size: 12px;
+        }
+        .subdued {
+            font-size: 10px;
+        }
+        label {
+            width: 100%;
+        }
+        form {
+            width: 100%;
+        }
+        #types div {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="intro">
+        <h1>Spiral Dynamics measurement</h1>
+        <form role="form" class="style-flat">
+            <fieldset>
+                <legend>Please select the fields that you feel resonate most with your beliefs. <span class="subdued">(for best results, please look at all options!)</span></legend>
+                <div id="data"></div>
+            </fieldset>
+            <button class="btn btn-purple btn-medium">Score my results!</button>
+        </form>
+    </section>
+    <section id="results" class="container">
+        <h2>The results are in!</h2>
+        <p id="primary-type">It looks like you're predominantly... &ldquo;<span></span>&rdquo;</p>
+        <p>Learn more about these types at <a href="http://en.wikipedia.org/wiki/Spiral_Dynamics#vMEMEs">Wikipedia</a></p>
+        <h4>Here's the breakdown of your other traits</h4>
+        <div id="types" class="clearfix"></div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/lodash.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="spiraldynamics.js"></script>
+</body>
+</html>
