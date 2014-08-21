@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Etude - 08-20-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background: #ffffff; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #d9e5bc 100%); /* FF3.6+ */
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#d9e5bc)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#d9e5bc 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#d9e5bc 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#d9e5bc 100%); /* IE10+ */
+        background: radial-gradient(ellipse at center, #ffffff 0%,#d9e5bc 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d9e5bc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        overflow-x: hidden;
+        font-family: 'Oxygen', sans-serif;
+    }
+    a {
+        color: green;
+    }
+    h1, h2 {
+        margin: 0.4em;
+        padding: 0.5em;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    svg {
+        padding: 1em;
+        margin: 1em;
+        border:1px solid #ccc;
+        border-bottom-width: 4px;
+        background-color: white;
+    }
+    #container {
+        margin-top: 2em;
+        position: relative;
+    }
+    .value {
+        display: block;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            overflow-x: visible;
+        }
+        svg {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Implementations of <a href="http://en.wikipedia.org/wiki/Parametric_equation">parametric equations</a> from Wikipedia</h1>
+    <h2>Radius increases on each time step merely for effect.</h2>
+    <form role="form" class="style-flat">
+        <span class="value">...</span>
+        <input type="range" min="0.2" max="5" step="0.1" value="0.2">
+    </form>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/utils.math.js"></script>
+    <script src="parametric.js"></script>
+</body>
+</html>
