@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-21-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        -webkit-transition: background-color 0.3s ease-out;  /* Saf3.2+, Chrome */
+        -moz-transition: background-color 0.3s ease-out;  /* FF4+ */
+        -ms-transition: background-color 0.3s ease-out;  /* IE10? */
+        -o-transition: background-color 0.3s ease-out;  /* Opera 10.5+ */
+        transition: background-color 0.3s ease-out;
+        margin: 0;
+        overflow-x: hidden;
+        padding: 3em;
+        font-size: 18px;
+        color: #999;
+        line-height: 2.2em;
+        text-align: center;
+        text-shadow:0 2px 2px rgba(0, 0, 0, 0.2);
+        font-family: 'Oxygen', sans-serif;
+    }
+    #intro {
+        text-transform: uppercase;
+        opacity: 0.4;
+        display: block;
+        margin-top: 4em;
+    }
+    label span {
+        text-transform: capitalize;
+    }
+    #intro h1 {
+        font-weight: 700;
+    }
+    a {
+        color: black;
+    }
+    #intro:hover {
+        opacity: 1;
+    }
+    form {
+        width: 500px;
+        margin: 0 auto;
+    }
+    textarea {
+        font-size: 20px;
+        width: 100%;
+        display: block;
+        margin: 2em auto;
+        background-color: transparent;
+        border: 2px solid #ddd;
+    }
+    .small {
+        font-size: 80%;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            padding: 2em;
+        }
+        form {
+            width: 100%;
+        }
+        br {
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <section id="result"></section>
+    <form role="form">
+        <label>
+            <span>Just start typing something...</span>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </label>
+    </form>
+    <section id="intro">
+        <h1>MoodColor</h1>
+        <p>Using the "emotion" method of <a href="http://www.javascriptoo.com/Knwl-js/">knowljs</a> to visually explore <br> moods in NLP (Natural Language Processing) filtered text.</p>
+        <p class="small">
+            The library is pretty rudimentary so results may vary.
+        </p>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/vendor/knwl.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="moody.js"></script>
+</body>
+</html>
