@@ -1,0 +1,129 @@
+.gridbox-table {
+    // A table style inspired by Feltron
+    // infographics
+    // http://feltron.com/FAR10_07.html
+
+    // Google fonts:
+    // css?family=Varela|Oswald:400,300,700
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: black;
+    a {
+        text-decoration: none;
+        border-bottom: 1px dotted white;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    tr {
+        &.highlight,
+        .highlight {
+            color: white;
+        }
+    }
+    td {
+        text-align: left;
+        border-bottom: 1px solid white;
+        &:first-of-type {
+            border-right: 1px dashed white;
+            padding: 1em 2em 1em 0;
+        }
+        &:last-of-type {
+            padding: 1em;
+            font-size: 22px;
+            font-family: 'Oswald', sans-serif;
+        }
+        ul {
+            padding-left: 1.3em;
+            list-style-type: square;
+        }
+    }
+    td:first-of-type,
+    .small {
+        font-size: 10px;
+        font-family: 'Varela', sans-serif;
+    }
+    &.block,
+    .block {
+        display: block;
+        width: 100%;
+    }
+    &.thick {
+        td {
+            border-width: 2px;
+        }
+    }
+    &.vertical {
+        overflow: hidden;
+        display: block;
+        td {
+            border-right: none;
+            display: block;
+            padding-left: 0;
+        }
+    }
+    &.teal {
+        // Recommended body bg color:
+        // #b1edfd
+        $base: #2d425b;
+        $border: lighten($base, 30%);
+        color: $base;
+        a {
+            color: black;
+        }
+        tr {
+            &.highlight,
+            .highlight {
+                color: #e41f3d;
+            }
+        }
+        td {
+            border-color: $border;
+        }
+    }
+    &.mint {
+        // Recommended body bg color:
+        // #291a3e
+        $base: #c2eec4;
+        $border: lighten($base, 30%);
+        color: $base;
+        a {
+            color: white;
+        }
+        td {
+            border-color: $border;
+        }
+        tr {
+            &.highlight,
+            .highlight {
+                color: #4eff57;
+            }
+        }
+    }
+}
+
+@media handheld, screen and (max-width: 400px) {
+    .gridbox-table {
+        td {
+            &:first-of-type {
+                padding: 0.5em 1em 0.5em 0;
+            }
+            &:last-of-type {
+                padding: 0.5em;
+            }
+        }
+        .vertical {
+            width: 100%;
+            tbody, tr, td {
+                width: 100%;
+            }
+            td,
+            td:last-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+}

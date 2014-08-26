@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-25-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 1em 2em;
+        overflow-x: hidden;
+        background-color: #ccc;
+        color: white;
+        font-family: 'Varela', sans-serif;
+        text-transform: uppercase;
+    }
+    #buttons {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: block;
+        text-align: right;
+        padding: 3em 1em 1em 1em;
+        margin: -2em -2em 2em -2em; /* negative body padding */
+    }
+    #info {
+        content: ' ';
+        margin: 6em 2em 0 0;
+        display: block;
+    }
+    #buttons:hover {
+        background-color: rgba(0, 0, 0, 1);
+    }
+    body.mint {
+        background-color: #291a3e;
+        color: white;
+    }
+    body.teal {
+        background-color: #b1edfd;
+    }
+    body.mint circle {
+        fill: white;
+    }
+    body.teal circle {
+        fill: red;
+    }
+    h3, .style-hollow .btn {
+        font-size: 11px;
+    }
+    h3 {
+        display: inline-block;
+        padding: 1em;
+        margin: 0;
+    }
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 20px;
+        padding: 1em;
+        background-color: #ccc;
+        font-weight: 100;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+    h1 a {
+        color: black;
+    }
+    h1:hover {
+        background-color: #111;
+    }
+    .subdued {
+        font-family: 'Varela', sans-serif;
+    }
+    a {
+        color: #999;
+    }
+    h1:hover .subdued {
+        opacity: 0.8;
+    }
+    h1:hover a {
+        color: yellow;
+    }
+    .gridbox-table tr .giant {
+        font-size: 120px;
+        font-weight: bold;
+    }
+    .gridbox-table {
+        display: inline-block;
+        float: left;
+        margin: 0 1em 0 0;
+        border-right: 10px solid rgba(255, 255, 255, 0.4);
+    }
+    .style-hollow .btn {
+        border-radius: 0;
+    }
+    img {
+        border-radius: 10px;
+        -webkit-filter: grayscale(100%);
+    }
+    body.mint img {
+        -webkit-filter: hue-rotate(100deg);
+    }
+    body.teal img {
+        -webkit-filter: hue-rotate(-22deg);
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            text-align: center;
+            font-size: 12px;
+        }
+        h1,
+        #buttons {
+            position: static;
+        }
+        #buttons {
+            margin: 0;
+            padding: 0.4em;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <section id="buttons">
+        <h3>Styles</h3>
+        <a href="#" id="toggle-mint" class="btn btn-small">Mint</a>
+        <a href="#" id="toggle-teal" class="btn btn-small">Teal</a>
+    </section>
+    <section id="info">
+        <table class="mini gridbox-table">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Christopher Ryan Tabor</td>
+                </tr>
+                <tr>
+                    <td>Avatar</td>
+                    <td>
+                        <img src="me.jpg" alt="me" width="80">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td>
+                        <a href="http://www.dxdstudio.com">dxdstudio</a>
+                        <a href="http://github.com/christabor">github</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Birth weight</td>
+                    <td>6<span class="small">lbs</span>, 12<span class="small">oz</span></td>
+                </tr>
+                <tr>
+                    <td>Born</td>
+                    <td>Houston, Texas</td>
+                </tr>
+                <tr class="highlight">
+                    <td>Occupation</td>
+                    <td>Software Engineer</td>
+                </tr>
+                <tr>
+                    <td>Dob</td>
+                    <td>01/05/1986</td>
+                </tr>
+                <tr>
+                    <td>Current age</td>
+                    <td class="giant">28</td>
+                </tr>
+                <tr>
+                    <td>Known Programming languages</td>
+                    <td>Python, JavaScript, CoffeeScript</td>
+                </tr>
+                <tr>
+                    <td>Experimented languages</td>
+                    <td>
+                        Ruby, Lisp, Clojure, Java, Haskell, Go
+                    </td>
+                </tr>
+                <tr>
+                    <td>Software engineering experience</td>
+                    <td><strong>2.5</strong> years</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="gridbox-table vertical">
+            <tbody>
+                <tr>
+                    <td>Outdoor hobbies</td>
+                    <td>
+                        <ul class="small">
+                            <li>Walking at night</li>
+                            <li>Riding bikes at night</li>
+                            <li>Nature photography</li>
+                            <li>Camping</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Some art.</td>
+                    <td><div id="viz1"></div></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="gridbox-table vertical">
+            <tbody>
+                <tr>
+                    <td>Parents' names</td>
+                    <td>Keith, Kathlene</td>
+                </tr>
+                <tr>
+                    <td>Siblings</td>
+                    <td>
+                        <span class="giant">3</span>
+                        <span class="block small">(Beth, Jesse, Keith Jr.)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Favorite color</td>
+                    <td>1. Green, 2. Purple</td>
+                </tr>
+                <tr>
+                    <td>Favorite soda</td>
+                    <td>Ginger Ale</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <h1>Me-in-fographics (with D3.js) <br>
+        <span class="subdued">Table design inspired by <a href="http://feltron.com/">Feltron</a></span>
+    </h1>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="infome.js"></script>
+</body>
+</html>
