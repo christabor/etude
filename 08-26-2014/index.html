@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-26-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 2em;
+        font-size: 16px;
+        overflow-x: hidden;
+        font-family: 'Varela', sans-serif;
+    }
+    h2 {
+        font-weight: bold;
+        font-family: 'Oswald', sans-serif;
+    }
+    h1 {
+        margin: 0;
+        font-size: 20px;
+        padding: 1em;
+        font-weight: 100;
+        position: fixed;
+        text-align: right;
+        bottom: 0;
+        right: 0;
+    }
+    text {
+        text-anchor: middle;
+        pointer-events: none;
+    }
+    rect:first-of-type,
+    rect:last-of-type {
+        stroke-width: 2;
+    }
+    svg {
+        margin: 3em 0 0 0;
+    }
+    input, .style-hollow > .btn {
+        height: 2em;
+        line-height: 1em;
+        border-width: 3px;
+        border-style: solid;
+    }
+    input {
+        border-color: #ccc;
+    }
+    .heading-group {
+        display: inline-block;
+        margin: 0 2em;
+        border-right: 2px solid #f1f1f1;
+        padding-right: 4em; /* 2 * margin */
+    }
+    .heading-group:last-of-type {
+        border:none;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            text-align: center;
+            font-size: 14px;
+            padding: 0.5em;
+        }
+        input, .btn {
+            width: 100%;
+            margin: 0.5em 0;
+        }
+        .heading-group {
+            display: block;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            position: static;
+            text-align: center;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        .subdued {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Stack visualization <span class="subdued">(Computer Science data structure)</span></h1>
+                <input type="text" placeholder="Enter value to push...">
+                <button id="push-btn" class="btn btn-blue">Push</button>
+                or
+                <button id="pop-btn" class="btn btn-green">Pop</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="contents"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="info"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.d3.data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="stack.js"></script>
+</body>
+</html>
