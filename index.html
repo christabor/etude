@@ -44,27 +44,6 @@
         background-color: #999;
         opacity: 0.3;
     }
-    ul:last-of-type li:last-of-type {
-        background-color: #2d2d52;
-        border-color: #fff;
-        display: block;
-        color: #fff;
-    }
-    ul:last-of-type li:last-of-type a {
-        border:none;
-    }
-    ul:last-of-type li:last-of-type:after {
-        content: 'Current';
-        display: block;
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        left: 50%;
-        margin-left: -50%;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 10px;
-    }
     .lead {
         font-size: 150%;
     }
@@ -91,21 +70,44 @@
         background-color: #000000;
     }
     li {
-        border:1px solid #5c5f93;
-        border-bottom: 10px solid #5c5f93;
         list-style-type: none;
-        color: #fff;
-        text-decoration: none;
         margin: 0.4em 0.5%;
         height: auto;
-        border-radius: 5px;
-        text-align: center;
         min-width: 24%;
         float: left;
         position: relative;
     }
     li a {
+        text-align: center;
+        text-decoration: none;
+        border:1px solid #5c5f93;
+        border-bottom: 10px solid #5c5f93;
+        border-radius: 5px;
+        color: #fff;
         padding: 10px 0 30px 0;
+    }
+    li a:visited {
+        border-color: #222338;
+        color: #313352;
+    }
+    ul:last-of-type li:last-of-type a {
+        background-color: #2d2d52;
+    }
+    ul:last-of-type li:last-of-type a:visited {
+        background-color: #252543;
+        color: white;
+    }
+    ul:last-of-type li:last-of-type:after {
+        content: 'Current';
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        left: 50%;
+        margin-left: -50%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10px;
     }
     .list-title {
         border:none;
