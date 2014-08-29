@@ -118,6 +118,14 @@ function calculateRadialAngle(deg, index, size) {
     ];
 }
 
+function sum(arr) {
+    var _sum = 0;
+    for(var i = 0; i < arr.length; i++) {
+        _sum += arr[i];
+    }
+    return _sum;
+}
+
 function findPrime(num) {
     var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
     var is_prime = false;
@@ -1030,7 +1038,7 @@ function addTitle(container, title, fixed_size) {
     .attr('y', function(d){
         return TOP_OFFSET + constrainedBoxFontScale(title.length);
     })
-    .attr('class', 'd3.svg-title')
+    .attr('class', 'svg-title')
     .attr('font-size', function(d){
         return fixed_size || constrainedBoxFontScale(title.length);
     })
@@ -1053,6 +1061,16 @@ function getCenterTranslation(dims) {
 function translation(w, h) {
     // Returns a translation string used in attr('transform');
     return 'translate(' + [w, h].join(',') + ')';
+}
+
+function transformMatrix(sx, sy, x, y) {
+    // Returns a matrix translation
+    // http://stackoverflow.com/questions/6711610/how-to-set-transform-origin-in-svg
+    return 'matrix(' + sx + ', 0, 0, ' + sy + ', ' + (x - sx * x) + ', ' + (y - sy * y) + ')';
+}
+
+function transformMatrixUniform(scale, x, y) {
+    return transformMatrix(scale, scale, x, y);
 }
 
 function flattenQuadtree(quadtree) {
