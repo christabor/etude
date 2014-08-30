@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="scroll-dk-grey">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-29-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+        overflow-x: hidden;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    h1 {
+        font-weight: 300;
+        color: #666;
+        text-shadow: 1px 1px 1px white, 1px 1px 1px white;
+        font-size: 30px;
+        margin: 2em 0 1em 0;
+    }
+    svg {
+        background-color: #fff;
+        display: inline-block;
+        margin: 1em;
+        padding: 1.4em;
+        box-shadow: 2px 2px 1px #ccc;
+    }
+    svg:hover circle {
+        stroke: red;
+    }
+    svg:hover {
+        box-shadow: 10px 10px 1px #ccc;
+    }
+    circle {
+        stroke: #444;
+    }
+    </style>
+</head>
+<body>
+    <h1>Recursion in different forms <br><span class="subdued">(from rotation to scale)</span></h1>
+    <div id="contents"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="recursion2.js"></script>
+</body>
+</html>
