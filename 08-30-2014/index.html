@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" class="scroll-orange">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-30-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        background: #f1f1f1 url(../img/tiny_grid.png);
+        overflow-y: hidden;
+    }
+    h1 {
+        margin: 0;
+        padding: 1em;
+        position: fixed;
+        background-color: white;
+        font-size: 20px;
+        max-width: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        box-shadow: -10px -10px 10px #ccc;
+    }
+    g:hover > text {
+        opacity: 1;
+    }
+    text {
+        opacity: 0.2;
+        font-size: 4px;
+        text-anchor: middle;
+        font-family: 'Oswald', sans-serif;
+    }
+    text:hover {
+        font-size: 20px;
+        fill: orange;
+        opacity: 1;
+    }
+    circle,
+    rect {
+        opacity: 0.2;
+        fill: rgba(255, 0, 0, 0.4);
+        stroke: red;
+    }
+    svg {
+        padding: 0 2em;
+    }
+    circle:hover, rect:hover {
+        opacity: 1;
+        fill: orange;
+    }
+    .svg-title {
+        font-size: 18px;
+        opacity: 1;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 14px;
+        }
+        .subdued {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="contents"></div>
+    <h1>Multiple visualizations of a <em>double summation</em> of the harmonic series <span class="subdued">(hover for sums)</span><span class="series"></span></h1>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="harmonic.js"></script>
+</body>
+</html>
