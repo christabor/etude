@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="scroll-orange">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 08-31-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        background-color: #f1f1f1;
+    }
+    button {
+        font-family: 'Varela', sans-serif;
+        text-transform: uppercase;
+    }
+    button, h1 {
+        text-shadow: 2px 2px 4px white, 2px 2px 4px white;
+    }
+    button:focus {
+        outline: 0;
+    }
+    canvas {
+        margin: 0 0.4em 0.4em 0.4em;
+        border:1px solid #d3d3d3;
+        background-color: #fff;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 20px;
+        }
+        .subdued {
+            display: block;
+        }
+        canvas {
+            margin: 0.2em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <h1>Cellular art boards <br><span class="subdued">randomly generated with fixed columns and rows for a grid-like style.</span></h1>
+    <p><button class="btn btn-red">Generate</button></p>
+    <div id="contents"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="cellula.js"></script>
+</body>
+</html>
