@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="scroll-orange">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-01-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        background-color: #f1f1f1;
+        font-weight: 300;
+        font-size: 18px;
+    }
+    h1 {
+        letter-spacing: -0.02em;
+        font-weight: 300;
+        font-family: 'Varela', sans-serif;
+        text-shadow: 2px 2px 4px white, 2px 2px 4px white;
+    }
+    #intro {
+        text-align: center;
+    }
+    .subdued {
+        display: block;
+    }
+    h1 .subdued {
+        font-size: 20px;
+    }
+    #main {
+        margin-top: 2em;
+    }
+    #contents {
+        text-align: center;
+    }
+    text {
+        text-transform: uppercase;
+        font-size: 11px;
+    }
+    strong {
+        font-weight: 700;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 20px;
+        }
+        canvas {
+            margin: 0.2em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="intro">
+                <h1>Cellular Automata<span class="subdued">
+                    With <strong>ratio of on and off states</strong> visualized for each time step.</span></h1>
+                    <label>
+                        Rules
+                        <select></select>
+                    </label>
+                </div>
+            </div>
+            <div class="row" id="main">
+                <div class="col-md-6">
+                    <div id="contents"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="charts"></div>
+                    <p>On/off ratio: <strong id="ratio"></strong></p>
+                    <h3>History of ratios</h3>
+                    <p class="subdued">(The ratio of on/off for each time step -- cut off after 10 steps.)</p>
+                    <div id="history"></div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/vendor/d3.min.js"></script>
+        <script src="../js/utils.js"></script>
+        <script src="cellula2.js"></script>
+    </body>
+    </html>
