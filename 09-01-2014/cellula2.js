@@ -137,12 +137,19 @@ window.onload = function(){
     }
 
     function reset() {
+        // reset ratios
         ratios = [0, 0];
+        // draw over canvas
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, width, height);
+        // remove d3 elements
         charts.selectAll('rect').remove();
         history.selectAll('rect').remove();
         _seed();
+        // reset all timelines to
+        for(var type in types) {
+            types[type].timesteps = [];
+        }
     }
 
     function _loop() {
