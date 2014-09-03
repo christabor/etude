@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="scroll-green">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-02-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        text-shadow: 1px 1px 1px white;
+        background-color: #f2f2f2;
+        font-size: 18px;
+        text-align: center;
+    }
+    h1 {
+        margin: 1em 0;
+    }
+    strong {
+        color: #639347;
+    }
+    label {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 14px;
+        color: #666;
+    }
+    input {
+        border: 1px solid #ccc;
+        padding: 0.8em;
+        font-family: 'Varela', sans-serif;
+        font-size: 20px;
+    }
+    blockquote {
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 34px;
+    }
+    .diff {
+        color: red;
+    }
+    .container {
+        width: 100%;
+    }
+    #intro {
+        background-color: #def6ce;
+        border-bottom: 4px solid #bcdca5;
+        padding: 0 1em 2em 1em;
+    }
+    #results {
+        padding: 1em;
+        margin: 2em 0;
+    }
+    #comparison {
+        margin-top: 0.4em;
+        display: block;
+        font-size: 30px;
+    }
+    #results .inp1 span {
+        color: blue;
+    }
+    #results .inp2 span {
+        color: red;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        body {
+            font-size: 14px;
+        }
+        input {
+            width: 90%;
+            margin: 0.5em 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="intro">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hamming Distance</h1>
+                <blockquote>
+                    &ldquo;In information theory, the Hamming distance between two strings of equal length is the <strong>number of positions at which the corresponding symbols are different.</strong> In another way, it measures the <strong>minimum number of substitutions required to change one string into the other</strong>, or the minimum number of errors that could have transformed one string into the other.&rdquo;
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="main">
+        <div class="row">
+            <div class="col-md-12">
+                <p id="results">...</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="inp1">Enter string one.</label>
+                <input type="text" id="inp1" placeholder="e.g. sanguine swine">
+            </div>
+            <div class="col-md-6">
+                <label for="inp2">Enter string two.</label>
+                <input type="text" id="inp2" placeholder="e.g. dandelion wine">
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="hamming.js"></script>
+</body>
+</html>
