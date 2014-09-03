@@ -19,7 +19,8 @@ window.onload = function(){
     .attr('width', width)
     .attr('height', height);
     var ctx         = container.node().getContext('2d');
-    var data        = new Uint8Array(width * height);
+    var max_pts     = ~~(width * height);
+    var data        = new Uint8Array(max_pts);
     var len         = data.length;
     var c_on        = 'orange';
     var c_off       = '#853826';
