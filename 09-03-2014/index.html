@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="scroll-green">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-03-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding:1em;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        background-color: #f1f1f1;
+        text-shadow: 1px 2px 1px white;
+        font-size: 18px;
+        text-align: center;
+    }
+    h1 {
+        margin: 1em 0;
+    }
+    label {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+        font-size: 14px;
+        color: #666;
+    }
+    textarea {
+        border: 1px solid #ccc;
+        padding: 0.8em;
+        font-family: 'Varela', sans-serif;
+        font-size: 20px;
+    }
+    blockquote {
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 34px;
+    }
+    .rot13 {
+        color: red;
+        font-size: 130%;
+    }
+    #results {
+        margin-top: 2em;
+    }
+    ul {
+        text-align: left;
+        list-style-type: square;
+        line-height: 2em;
+        margin-left: 1em;
+        padding: 0;
+        font-size: 14px;
+    }
+    h3 {
+        text-align: left;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        body {
+            font-size: 14px;
+        }
+        textarea {
+            width: 90%;
+            margin: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Rot13 "encryption" algorithm.</h1>
+                <blockquote>
+                    &ldquo;ROT13 (rotate by 13 places) is a simple letter substitution cipher that <strong>replaces a letter with the letter 13 letters after it in the alphabet.</strong> ROT13 is an example of the Caesar cipher, developed in ancient Rome.&rdquo;
+                </blockquote>
+                <p class="subdued">Below is the rot13 cipher, as well variations using N places shifted.</p>
+            </div>
+        </div>
+        <div class="row" id="results">
+            <div class="col-md-6">
+                <label for="information">Enter "secret" information.</label>
+                <textarea id="information" cols="30" rows="5" placeholder="Attack the west!"></textarea>
+            </div>
+            <div class="col-md-6">
+                <h3>Rot-N types</h3>
+                <ul id="n-types">
+                    <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="rot13.js"></script>
+</body>
+</html>
