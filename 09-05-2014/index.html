@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="scroll-red">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-05-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/animate.min.css">
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        text-align: center;
+        background-color: #222;
+        color: white;
+        font-size: 18px;
+    }
+    h1 {
+        letter-spacing: -0.02em;
+        font-weight: 300;
+        color: #d83730;
+        text-shadow: 1px 1px 1px black;
+        font-family: 'Oswald', sans-serif;
+    }
+    .subdued {
+        font-family: 'Varela', sans-serif;
+    }
+    canvas {
+        background-color: #111;
+        border: 1px solid #333;
+    }
+    .subdued {
+        display: block;
+    }
+    h1 .subdued {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    .group {
+        padding: 1em 0;
+        display: inline-block;
+        margin: 0 0.4em;
+    }
+    #loader {
+        position: fixed;
+    }
+    #loader,
+    #loader .bg {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        color: white;
+        font-size: 40px;
+        padding: 3em;
+    }
+    #loader .bg {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    #loader .bg,
+    #loader .content {
+        position: absolute;
+    }
+    #loader .bg {
+        z-index: 0;
+    }
+    #loader .content {
+        z-index: 1;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 20px;
+        }
+        canvas {
+            margin: 0.2em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <div id="loader" class="animated fadeInLeft">
+        <div class="content">
+            <p class="animated fadeInTop">Loading... </p>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <h1>
+        Chaos theory<span class="subdued">
+        Lorenz Attractor algorithms from Clifford Pickover's book &lsquo;<strong>Chaos in Wonderland</strong>&rsquo;</span>
+    </h1>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="attractor.js"></script>
+</body>
+</html>
