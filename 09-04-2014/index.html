@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="scroll-grey">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-04-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 2em;
+        font-family: 'Varela', sans-serif;
+        overflow-x: hidden;
+        text-align: center;
+        background-color: #eee;
+        font-weight: 300;
+        font-size: 20px;
+        text-shadow: 1px 1px 3px white,
+                     1px 1px 3px white;
+    }
+    h1 {
+        letter-spacing: -0.02em;
+        font-weight: 300;
+        margin: 0;
+        font-family: 'Varela', sans-serif;
+    }
+    .subdued {
+        display: block;
+        font-family: 'Lora', serif;
+    }
+    h1 .subdued {
+        font-size: 20px;
+        margin: 0.4em 0 2em 0;
+    }
+    strong {
+        font-weight: 700;
+    }
+    .group {
+        display: inline-block;
+        margin: 0 0.4em;
+    }
+    canvas {
+        background-color: white;
+        display: inline-block;
+        padding: 0.5em;
+        border: 4px solid #eee;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 20px;
+        }
+        h1 .subdued {
+            font-size: 14px;
+        }
+        canvas {
+            margin: 0.2em;
+        }
+    }
+    </style>
+</head>
+<body class="style-zen">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>
+                    Cellular Automata art.<span class="subdued">Randomized color sets and rules generate interesting pixel art (refresh for more).</span>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="capixel.js"></script>
+</body>
+</html>
