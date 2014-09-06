@@ -1,11 +1,17 @@
 @import 'colors';
 
 @mixin scrollbar-theme($color) {
-    $width: 10px;
+    $thickness: 10px;
     $amt: 20%;
 
     ::-webkit-scrollbar {
-        width: $width;
+        width: $thickness;
+    }
+    ::-webkit-scrollbar:vertical {
+        width: $thickness;
+    }
+    ::-webkit-scrollbar:horizontal {
+        height: $thickness;
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 0;
@@ -19,6 +25,9 @@
     }
     ::-webkit-scrollbar-thumb:hover {
         background-color: lighten($color, $amt);
+    }
+    ::-webkit-scrollbar-corner {
+        background-color: darken($color, $amt * 1.5);
     }
 }
 

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="scroll-red">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-08-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Lora:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        color: black;
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
+        line-height: 1.4rem;
+        background: #222 url(imgs/rover-bg.jpg) no-repeat;
+        background-size: 100%;
+        font-family: 'Lora', serif;
+    }
+    h1, h2, h3 {
+        text-shadow: 1px 1px 1px black;
+        display: inline-block;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 400;
+        margin: 0 0 0.4em 0;
+        color: white;
+        text-transform: uppercase;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    #data {
+        left: 0;
+        width: 40%;
+    }
+    ul {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        line-height: 3rem;
+    }
+    li {
+        border-bottom: 1px solid #444;
+        display: block;
+        margin-right: 0.5em;
+    }
+    li:hover {
+        background-color: #222;
+        color: #9bf69e;
+        text-indent: 10px;
+        -webkit-transition: text-indent 0.2s ease-out;
+        -moz-transition: text-indent 0.2s ease-out;
+        -ms-transition: text-indent 0.2s ease-out;
+        -o-transition: text-indent 0.2s ease-out;
+        transition: text-indent 0.2s ease-out;
+    }
+    li:last-of-type {
+        border-bottom: none;
+    }
+    .infobox {
+        position: fixed;
+        top: 0;
+        background-color: #111;
+        color: white;
+        padding: 1em 2em;
+        z-index: 2;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        max-height: 100%;
+        height: 140px;
+    }
+    .infobox:hover {
+        padding: 2em;
+        font-size: 140%;
+        height: auto;
+    }
+    #intro {
+        width: 60%;
+        left: 40%;
+    }
+    .check {
+        color: #9bf69e;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        .infobox {
+            position: static;
+        }
+        #intro, #data {
+            width: 100%;
+        }
+        h1 .subdued {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="data" class="infobox">
+        <h2>Mission log</h2>
+        <ul id="output"></ul>
+    </div>
+    <div id="intro" class="infobox">
+        <h1>Mars Rover project</h1>
+        <p>
+            A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth.
+        </p>
+        <h3>Mission requirements</h3>
+        <ul>
+            <li>
+                Input data should produce expected outputs
+                <span class="check">&#10003;</span>
+            </li>
+            <li>
+                Code should be maintainable and well documented
+                <span class="check">&#10003;</span>
+            </li>
+            <li>
+                Code should be tested/testable
+                <span class="check">&#10003;</span>
+            </li>
+            <li>
+                Code should consider boundary cases and generally be robust
+                <span class="check">&#10003;</span>
+            </li>
+            <li>
+                Must prevent multiple rovers from running at once (e.g. they should be run in a queue)
+                <span class="check">&#10003;</span>
+            </li>
+        </ul>
+    </div>
+    <script src="roverWidget.js"></script>
+    <script src="rover.js"></script>
+</body>
+</html>
