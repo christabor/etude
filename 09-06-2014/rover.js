@@ -1,7 +1,7 @@
 window.onload = function(){
     'use strict';
     if(!RoverWidget) return;
-    var TESTING     = 100;
+    var TESTING     = true;
     var container   = document.getElementById('container');
     var output      = document.getElementById('output');
     var dims        = {'height': document.documentElement.clientHeight,
