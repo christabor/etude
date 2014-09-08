@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-06-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Lora:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        text-shadow: 1px 1px 1px black;
+    }
+    h1 {
+        display: block;
+        font-family: 'Oswald', sans-serif;
+        font-size: 80px;
+        font-weight: 400;
+        left: 50%;
+        margin: 0;
+        margin-left: -45%;
+        position: fixed;
+        text-transform: uppercase;
+        top: 30%;
+        width: 90%;
+        z-index: 2;
+    }
+    canvas {
+        opacity: 0.6;
+    }
+    .subdued {
+        display: block;
+        font-family: 'Lora', serif;
+        text-transform: lowercase;
+    }
+    #container {
+        position: fixed;
+        z-index: 1;
+    }
+    h1 .subdued {
+        font-size: 28px;
+        line-height: 40px;
+        margin: 0.4em 0 2em 0;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        body {
+            overflow-y: scroll;
+        }
+        h1 {
+            width: 80%;
+            margin-left: -40%;
+            font-size: 40px;
+        }
+        h1 .subdued {
+            font-size: 20px;
+        }
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            width: 70%;
+            margin-left: -35%;
+            font-size: 30px;
+        }
+        h1 .subdued {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>
+        Pixel grid fx.<span class="subdued">Generated on a pixel grid with increasing and resetting colors, <br>which gives an interesting fading effect. <strong>(move your mouse!)</strong></span>
+    </h1>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="rave.js"></script>
+</body>
+</html>
