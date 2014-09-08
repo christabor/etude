@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-07-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Lora:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        background-color: black;
+        color: black;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        text-shadow: 1px 1px 1px white;
+    }
+    h1 {
+        -webkit-transition: background-color 0.3s ease-out;  /* Saf3.2+, Chrome */
+           -moz-transition: background-color 0.3s ease-out;  /* FF4+ */
+            -ms-transition: background-color 0.3s ease-out;  /* IE10? */
+             -o-transition: background-color 0.3s ease-out;  /* Opera 10.5+ */
+                transition: background-color 0.3s ease-out;
+        display: inline-block;
+        font-family: 'Oswald', sans-serif;
+        font-size: 80px;
+        font-weight: 400;
+        margin: 0;
+        padding: 0.4em;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        position: fixed;
+        text-transform: uppercase;
+        z-index: 2;
+        top: 20%;
+        left: 50%;
+        margin-left: -25%;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    h1:hover {
+        background-color: black;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+    h1:hover + #container {
+        opacity: 0.5;
+    }
+    h1:hover + #container canvas {
+        background-color: white;
+    }
+    canvas {
+        opacity: 0.8;
+    }
+    .subdued {
+        display: block;
+        font-family: 'Lora', serif;
+        text-transform: lowercase;
+    }
+    #container {
+        position: fixed;
+        z-index: 1;
+    }
+    h1 .subdued {
+        font-size: 22px;
+        line-height: 40px;
+        margin: 0.4em 0 2em 0;
+    }
+    .hidden {
+        display: none;
+    }
+    h1:hover .hidden {
+        font-size: 120%;
+        margin-top: 1em;
+        display: block;
+    }
+    @media handheld, screen and (max-width: 800px) {
+        body {
+            overflow-y: scroll;
+        }
+        h1 {
+            width: 80%;
+            margin-left: -40%;
+            font-size: 40px;
+        }
+        h1 .subdued {
+            font-size: 20px;
+        }
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            width: 70%;
+            margin-left: -35%;
+            font-size: 30px;
+        }
+        h1 .subdued {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>
+        Grid fx part deux.<span class="subdued">Generated on a pixel grid with increasing and resetting colors, <br>with polygons generated for each grid section <strong>(move your mouse!)</strong>
+        <span class="hidden">Click to clear canvas, or just move around <br>(for best results, move in a clockwise fashion)!</span>
+    </span>
+    </h1>
+    <div id="container"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="polyrave.js"></script>
+</body>
+</html>
