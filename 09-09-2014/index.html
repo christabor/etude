@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-09-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Varela', sans-serif;
+        font-size: 12px;
+        overflow-x: hidden;
+    }
+    #text {
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        margin-left: -50%;
+        width: 100%;
+        display: block;
+    }
+    circle {
+        stroke-width: 1;
+        opacity: 1;
+    }
+    .length {
+        stroke: blue;
+        color: rgba(0, 0, 255, 0.2);
+        fill: rgba(0, 0, 255, 0.2);
+    }
+    .bin-tag {
+        stroke: red;
+        color: rgba(255, 0, 0, 0.2);
+        fill: rgba(255, 0, 0, 0.2);
+    }
+    .heading-length {
+        color: blue;
+    }
+    .heading-tag {
+        color: red;
+    }
+    .companies {
+        opacity: 0.1;
+        font-size: 10px;
+    }
+    h2 {
+        display: inline-block;
+        font-size: 20px;
+        padding: 1em;
+    }
+    a {
+        margin-top: 2em;
+        font-size: 14px;
+        display: block;
+        color: black;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 14px;
+        }
+        .subdued {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section id="text">
+        <h1>
+            <strong>Fortune 500</strong> companies <br>
+            <span class="subdued">tagged parts of speech</span>
+            <a href="https://github.com/automotron/namebot">Generated with namebot</a>
+        </h1>
+        <h2 class="heading-length">Length</h2>
+        <h2 class="heading-tag">Part-of-speech tag</h2>
+    </section>
+    <div id="contents"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="pos.js"></script>
+</body>
+</html>
