@@ -57,7 +57,8 @@ window.onload = function(){
         function render() {
             if(current >= max) {
                 // remove one = remove all
-                return d3.select('#loader').classed('fadeOutUp', true);
+                d3.select('#loader').classed('fadeOutUp', true);
+                return setTimeout(function(){d3.select('#loader').remove()}, 1000);
             }
             current += 1;
             for(var i = 0; i <= npts; i++) {
