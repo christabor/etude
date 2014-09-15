@@ -1,8 +1,9 @@
 var playdrawr = (function(){
     var dims        = getViewportDimensions();
     var canvas_elem = document.querySelector('canvas');
-    var height      = dims.height/1.4;
-    var width       = dims.width/2;
+    var container   = document.getElementById('canvas-container');
+    var width       = container.offsetWidth - 80;
+    var height      = width / 1.5;
     var $save       = $('#save');
     var $log        = $('#log');
     var $comments   = $('#comments');

@@ -67,6 +67,9 @@
         display: inline-block;
         margin: 1px;
     }
+    .row > div {
+        max-width: 100%;
+    }
     #last-edit {
         border-bottom: 1px solid #bae3d0;
     }
@@ -78,15 +81,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row style-zen">
+    <div class="container style-zen">
+        <div class="row">
             <div class="col-md-12">
                 <h2 class="animated fadeInRight" contenteditable>My Cool Collaboration project </h2>
                 <p>A proof of concept for a visual editor with playback changes!</p>
                 <div id="range"></div>
                 <div id="timeline"></div>
             </div>
-            <div class="animated fadeInLeft col-md-8">
+        </div>
+        <div class="row">
+            <div class="animated fadeInLeft col-md-8" id="canvas-container">
                 <canvas id="canvas" width="100%" height="100%">
                     Your browser does not support canvas. :(
                 </canvas>
