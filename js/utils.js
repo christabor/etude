@@ -788,6 +788,12 @@ function uid() {
     return rando(9999);
 }
 
+function cssUuid() {
+    // appends `id_` to the beginning of random uuids,
+    // since css selectors do not work on first numbers
+    return 'id_' + uuid(1);
+}
+
 function uuid(count, delimiter) {
     // random unique identifier in the form 0000-0000-0000-0000
     var _uuid = [];
