@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-22-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Oswald';
+        overflow-x: hidden;
+        text-transform: uppercase;
+    }
+    p {
+        text-transform: lowercase;
+        font-family: 'Varela', sans-serif;
+    }
+    h3 {
+        color: green;
+    }
+    svg {
+        background-color: #fff;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        h1 {
+            font-size: 14px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>An abstract visual representation of a typical scalable system.</h1>
+    <p>(CPUs are represented as squares inside of each node, or server.)</p>
+    <h3>Traditional systems can either scale horizontally (more nodes) or vertically (more power)</h3>
+    <div id="contents"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="scalable.js"></script>
+</body>
+</html>
