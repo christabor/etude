@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 09-23-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Oswald';
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+    h1, h2, h3 {
+        margin: 0.2em;
+    }
+    p {
+        font-family: 'Varela', sans-serif;
+        margin: 0 auto;
+    }
+    #contents {
+        margin: 1em 0;
+    }
+    .name {
+        width: 24%;
+        display: inline-block;
+        padding: 2em 1em;
+    }
+    .number-title {
+        margin-bottom: 2em;
+    }
+    .subdued-title {
+        font-size: 12px;
+        color: #999;
+    }
+    .generation-container {
+        padding: 1em 0;
+        margin: 0 auto;
+    }
+    img {
+        display: block;
+        margin: 1em auto;
+    }
+    img:hover {
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -o-transform: scale(2);
+        transform: scale(2);
+    }
+    .generation-container:nth-of-type(odd) {
+        background-color: #f1ebcd;
+    }
+    @media handheld, screen and (max-width: 500px) {
+        h1, h2 {
+            padding: 1em;
+            margin: 0;
+        }
+        .name {
+            text-align: center;
+            display: block;
+            padding: 0.4em;
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Fibonacci <span class="subdued">bunny</span> sequence</h1>
+    <h2 class="subdued">(Names are randomly generated and have no bearing on previous generations.)</h2>
+    <div id="contents"></div>
+    <script src="../js/vendor/d3.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="bunnienaci.js"></script>
+</body>
+</html>
