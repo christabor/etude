@@ -52,7 +52,7 @@ void draw() {
     stroke(opacity);
 
     // O(N^4) Ftw! :|
-    for(int x = MAX_RADIUS / 2; x < screen.width + MAX_RADIUS / 2; x += MAX_RADIUS) {3
+    for(int x = MAX_RADIUS / 2; x < screen.width + MAX_RADIUS / 2; x += MAX_RADIUS) {
         for(int y = MAX_RADIUS / 2; y < screen.height + MAX_RADIUS / 2; y += MAX_RADIUS) {
 
             int lines_per_petal = int(random(3, 6));
