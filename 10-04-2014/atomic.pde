@@ -6,12 +6,12 @@ int MAX_RADIUS    = 180;
 int MIN_RADIUS    = MAX_RADIUS / 4;
 int MAX_PETALS    = 6;
 int MIN_PETALS    = 2;
-int POINT_RADIUS  = 4;
+int FADE_SPEED    = 20;
+bool DEBUG        = false;
+
 int bg_opacity    = 0;
 int opacity       = 255;
 int _div          = 0;
-bool DEBUG        = false;
-int FADE_SPEED    = 20;
 
 void setup() {
     size(constrain(screen.width, 100, 2000), constrain(screen.height, 100, 2000));
