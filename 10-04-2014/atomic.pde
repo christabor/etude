@@ -37,8 +37,6 @@ void drawPetal(int lines_per_petal, int radius, int x, int y, int theta) {
     popMatrix();
 }
 
-int BOX_SIZE = 10;
-
 void draw() {
     newBg();
     noFill();
