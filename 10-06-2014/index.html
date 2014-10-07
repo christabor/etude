@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 10-06-2014</title>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <style>
+    body {
+        margin: 0;
+        padding: 1em;
+        overflow-x: hidden;
+        font-family: 'Oxygen', sans-serif;
+        color: #444;
+        background-color: #f1f1f1;
+    }
+    button {
+        font-family: 'Oxygen', sans-serif;
+    }
+    button:focus {
+        outline: 0;
+    }
+    h1 {
+        font-weight: 100;
+        font-family: 'Oswald', sans-serif;
+    }
+    .classname {
+        border-bottom: 1px solid red;
+        margin: 0;
+        padding: 0.3em;
+    }
+    .responsibilities {
+        border-right: 1px solid #ccc;
+    }
+    .responsibilities,
+    .collaborators {
+        padding: 0.2em 0.8em;
+        float: left;
+        display: inline-block;
+    }
+    .responsibilities {
+        margin-right: 1em;
+    }
+    .card:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+    .card {
+        background-color: #fbffd9;
+        border: 1px solid #ccc;
+        padding: 1em;
+        margin: 0.5em;
+        display: inline-block;
+        float: left;
+        box-shadow: 2px 2px 10px #999;
+    }
+    .card:hover {
+        box-shadow: 2px 2px 30px #444;
+        cursor: pointer;
+    }
+    #cards:after {
+        clear:both;
+    }
+    .style-zen .btn {
+        text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    ul {
+        list-style-type: square;
+        padding: 0 0 0 1.1em;
+    }
+    a {
+        color: orange;
+    }
+    a:hover {
+        color: black;
+    }
+    textarea, select, input {
+        display: block;
+        width: 100%;
+        margin: 1em 0;
+        border:1px solid #ccc;
+        padding: 0.3em;
+    }
+    textarea {
+        height: 80px;
+    }
+    @media handheld, screen and (max-width: 700px) {
+        body {
+            font-size: 12px;
+            overflow-x: visible;
+            text-align: center;
+        }
+        .card {
+            width: 100%;
+            margin: 0;
+            float: none;
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container style-zen">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>CRC Card builder</h1>
+                <p class="lead">An example tool for building <a href="http://en.wikipedia.org/wiki/Class-responsibility-collaboration_card">CRC Cards</a></p>
+                <form id="add">
+                    <label for="classname">Class name</label>
+                    <input type="text" id="classname">
+
+                    <label for="collaborators">Collaborators</label>
+                    <select id="collaborators" multiple></select>
+
+                    <label for="responsibilities">Responsibilities <span class="subdued">(seperate with a new line)</span></label>
+                    <textarea id="responsibilities" multiple></textarea>
+
+                    <button id="add" class="btn btn-green btn-medium">Add/Update Card</button>
+                </form>
+                <button id="export" class="btn btn-small">Export as JSON</button>
+                <hr>
+                <textarea id="json" cols="30" rows="10" disabled></textarea>
+            </div>
+            <div class="col-md-8" id="cards"></div>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="crc.js"></script>
+</body>
+</html>
