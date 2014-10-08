@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - 10-07-2014</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+        margin: 0;
+        padding: 1em;
+        text-align: center;
+        overflow-x: hidden;
+        font-family: 'Oxygen', sans-serif;
+        color: #444;
+        background-color: #c3eaff;
+    }
+    h1 {
+        font-family: 'Oxygen', sans-serif;
+    }
+    #summation-container {
+        margin: 2em 0;
+        padding: 0;
+    }
+    #summation-container li {
+        display: block;
+    }
+    .sigma {
+        font-size: 250px;
+        line-height: 200px;
+        height: 220px;
+        overflow: hidden;
+    }
+    input {
+        min-height: 30px;
+        border: none;
+        font-size: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    input:hover {
+        background-color: #fff;
+    }
+    table {
+        background-color: #fff;
+        max-width: 60%;
+        min-width: 500px;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px #999;
+        max-height: 800px;
+        overflow-y: scroll;
+    }
+    @media handheld, screen and (max-width: 700px) {
+    }
+    </style>
+</head>
+<body>
+    <h1>Visualizing Summations as for loops</h1>
+    <ul id="summation-container">
+        <li class="iterator-end">
+            <input type="number" id="end" value="10">
+        </li>
+        <li class="sigma">&Sigma;</li>
+        <li class="iterator-start">
+            N = <input type="number" id="start" value="1">
+        </li>
+    </ul>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>N</td>
+                <td>Sum to N</td>
+            </tr>
+        </thead>
+        <tbody id="results"></tbody>
+    </table>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="summation.js"></script>
+</body>
+</html>
