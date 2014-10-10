@@ -234,6 +234,11 @@ function addCanvasUI(generate) {
     }
 }
 
+function newArr(count, mapfn) {
+    // Fills an array @count times with return value of @mapfn.
+    return Array.apply(null, new Array(count)).map(mapfn);
+}
+
 function findIn(match, set) {
     for(var i = 0; i < set.length; i++) {
         if(set[i] === match) {
