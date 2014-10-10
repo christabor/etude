@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-09-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/vendor/flexbox-grid.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #cb0e00;
+        color: white;
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 10px;
+        font-family: 'Merriweather', 'serif';
+    }
+    #table {
+        font-family: monospace;
+        background-color: #fff;
+        box-shadow: 0 3px 10px black;
+        font-size: 11px;
+        margin: 3em auto;
+    }
+    label {
+        padding: 0.4em;
+    }
+    label:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    #table td {
+        text-align: center;
+        padding: 2em 1em;
+        color: #cb0e00;
+        font-weight: bold;
+        border-color: #ff8474;
+    }
+    #table.square td {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+        height: 80px;
+        min-height: 80px;
+        max-height: 80px;
+        line-height: 100px;
+        padding: 0;
+    }
+    #table tr:first-of-type td,
+    #table td:first-of-type {
+        background-color: #f7ffca;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #generate {
+        border-color: #feff81;
+        color: #feff81;
+    }
+    #generate:hover {
+        border-color: white;
+        color: white;
+    }
+    #square {
+        display: inline-block;
+        font-size: 14px;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #table td {
+            width: auto;
+            height: auto;
+            line-height: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <section class="container style-hollow">
+        <div class="text-center row">
+            <div class="col-md-12">
+                <h1>
+                    Cayley table generator.
+                    <a href="#" id="generate" class="btn btn-tiny btn-yellow">Generate new table</a>
+                    <div id="square" span="subdued">
+                        <label>Use square? &nbsp;<input type="checkbox"></label>
+                     </div>
+                </h1>
+                <p>To demonstrate versatility, both data sets and operations (functions) have been randomized each click.</p>
+                <table id="table" class="table table-striped table-bordered"></table>
+            </div>
+        </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="cayley.js"></script>
+</body>
+</html>
