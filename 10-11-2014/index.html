@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Etude - 10-11-2014</title>
+  <link href='../css/global.css' rel='stylesheet' type='text/css'>
+  <link href='../typey/jquery.typey.css' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0;
+    background-color: #e4e2ff;
+    color: #444;
+    margin: 0;
+    overflow: hidden;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, .5);
+  }
+  html:hover,
+  body:hover {
+    cursor: pointer;
+  }
+  body:active * {
+    /*
+    disable annoying text selection on clicks
+    */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+  }
+  #viewer [data-typey-editable],
+  #viewer p {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    margin-left: -50%;
+    width: 100%;
+  }
+  #viewer p {
+    top: auto;
+    bottom: 0;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    color: white;
+    text-shadow: 0 0 0;
+    padding: 1em;
+  }
+  #viewer [data-typey-editable] {
+    font-size: 400px;
+    text-transform: uppercase;
+  }
+  #viewer [data-typey-font-list] {
+    display: none;
+  }
+  #loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    padding: 2em;
+    z-index: 999;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  #loader.shrunken {
+    width: 300px;
+    height: auto;
+    font-size: 14px;
+    top: auto;
+    bottom: 0;
+  }
+  #loader.shrunken img {
+    display: none;
+  }
+  @media handheld, screen and (max-width: 400px) {
+    #loader {
+      font-size: 14px;
+    }
+    #loader.shrunken {
+      top: 0;
+      bottom: auto;
+      width: 100%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <p>Loading fonts...</p>
+    <img src="db.gif" alt="ooh yeah" width="200" height="230">
+  </div>
+  <section id="viewer">
+    <h2 data-typey-editable id="letter-e">
+      e
+      <ul class="fonts" data-typey-font-list></ul>
+    </h2>
+    <h2 data-typey-editable id="letter-t">
+      t
+      <ul class="fonts" data-typey-font-list></ul>
+    </h2>
+    <h2 data-typey-editable id="letter-r">
+      r
+      <ul class="fonts" data-typey-font-list></ul>
+    </h2>
+    <p><strong>E</strong>lla <strong>R</strong>enee <strong>T</strong>abor</p>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../typey/jquery.typey.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="initials.js"></script>
+</body>
+</html>
