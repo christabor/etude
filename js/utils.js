@@ -239,6 +239,20 @@ function newArr(count, mapfn) {
     return Array.apply(null, new Array(count)).map(mapfn);
 }
 
+function pad(str, amt, atom) {
+    // similar to Python's padding.
+    atom = atom || '\u00A0';
+    var s = ''
+    for(var i = 0 ; i < amt; i++) {
+        if(i === amt / 2) {
+            s += str;
+        } else {
+            s += atom;
+        }
+    }
+    return s;
+}
+
 function findIn(match, set) {
     for(var i = 0; i < set.length; i++) {
         if(set[i] === match) {

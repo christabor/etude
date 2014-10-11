@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-10-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,300' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #2a5752;
+        color: white;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        font-size: 20px;
+        overflow: hidden;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    body.charmode {
+        background-color: #66301e;
+    }
+    h1 {
+        font-size: 60px;
+        padding: 1em 0 0 0 ;
+        margin: 0;
+    }
+    p {
+        padding: 1em;
+        margin: 0;
+    }
+    #container {
+        font-size: 20px;
+        padding: 2em 0 0 0;
+        pointer-events: none;
+    }
+    #container p {
+        padding: 0;
+        margin: 0;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        #table td {
+            width: auto;
+            height: auto;
+            line-height: auto;
+        }
+    }
+    </style>
+</head>
+<body id="body">
+    <h1>Triangle mouse</h1>
+    <p class="subdued">Click anywhere to toggle <strong>character mode</strong>... and move your mouse!</p>
+    <div id="container"></div>
+    <script src="../js/utils.js"></script>
+    <script src="triangleMouse.js"></script>
+</body>
+</html>
