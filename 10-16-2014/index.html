@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <title>Etude - 10-16-2014</title>
+    <link href='../css/global.css' rel='stylesheet' type='text/css'>
+    <link href='../css/vendor/vis.min.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-size: 14px;
+        font-family: 'Merriweather', 'serif';
+    }
+    form {
+        margin: 4em auto;
+    }
+    .form-group {
+        display: block;
+        width: 100%;
+        padding: 0 0 1em 0;
+    }
+    .form-group label {
+        margin-left: 1em;
+    }
+    #intro {
+        margin-bottom: 4em;
+        padding: 2em;
+    }
+    .subdued {
+        margin-top: 8em;
+    }
+    #timeline {
+        margin: 0 auto;
+        width: 80%;
+        padding: 2em 0;
+    }
+
+    .vis.timeline .item.background.no-change,
+    .vis.timeline .item.background.increase,
+    .vis.timeline .item.background.decrease {
+        text-transform: uppercase;
+        font-size: 70%;
+    }
+    .vis.timeline .item.background.no-change {
+        background-color: #d8daef;
+        border-color: #ccc;
+    }
+    .vis.timeline .item.background.increase {
+        background-color: #d2efc1;
+        border-color: #a4b996;
+    }
+    .vis.timeline .item.background.decrease {
+        background-color: #efcdbf;
+        border-color: #ef0f0a;
+    }
+    @media handheld, screen and (max-width: 400px) {
+        .form-group label {
+            margin-left: 0.4em;
+        }
+        #table td {
+            width: auto;
+            height: auto;
+            line-height: auto;
+        }
+    }
+    </style>
+</head>
+<body class="style-hollow">
+    <section class="container-fluid text-center" id="top">
+        <div class="row">
+            <div class="col-md-12">
+                <section id="intro">
+                    <h1>Newborn weight loss calculator</h1>
+                    <p>I couldn't find a decent one online, so I made my own.</p>
+                </section>
+            </div>
+            <form role="form" class="form-inline">
+                <div class="form-group">
+                    <label>
+                        Date
+                        <input type="date" class="form-control nb-date" name="date-0">
+                    </label>
+                    <label>
+                        Pounds
+                        <input type="number" min="0" max="99" class="form-control nb-lb" name="lb-0" value="1">
+                    </label>
+                    <label>
+                        Ounces
+                        <input type="number" min="0" max="16" class="form-control nb-oz" name="oz-0" value="1">
+                    </label>
+                </div>
+                <a href="#" class="btn btn-tiny" id="add">Add another day</a>
+                <button class="btn btn-tiny btn-green">Calculate days!</button>
+            </form>
+            <hr>
+            <h3>Results</h3>
+            <div id="timeline"></div>
+        </div>
+    </div>
+</section>
+<section class="container text-center">
+    <footer>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="subdued">Awesome timeline provided by the <a href="http://visjs.org/">VisJS library.</a></p>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/vendor/vis.min.js"></script>
+<script src="../js/utils.js"></script>
+<script src="newborn-calc.js"></script>
+</body>
+</html>
