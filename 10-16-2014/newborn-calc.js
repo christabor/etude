@@ -10,57 +10,59 @@ var calc = (function(){
         arLog(convertWeight(1, 0));
         arLog(convertWeight(6, 12));
         arLog(convertWeight(7, 11));
-        arLog(fmt('10/20/2014'));
-        arLog(fmt('2014/10/20'));
-        arLog(fmt(new Date()));
     }
 
-    function fmt(date) {
-        var d = new Date(date).toLocaleString().split(' ')[0].split('-');
-        // fix reverse order
-        if(d[0].length === 2) {
-            d = [d[2], d[1], d[0]];
-        }
-        return d.join('-');
+    function fmtStr(lb_before, oz_before, total_before) {
+        return lb_before + 'lbs' + ' ' + oz_before + 'oz' + ' (Total: ' + total_before + 'lbs)';
     }
 
     function getData(k, el) {
-        var data;
-        var val;
-
-        el = $(el);
-
-        var lb_before = el.find('.nb-lb').val();
-        var oz_before = el.find('.nb-oz').val();
-        var total_before = convertWeight(parseInt(lb_before, 10), parseInt(oz_before, 10));
-
-        data = {
-            start: el.find('.nb-date').val(),
-            content: lb_before + 'lbs' + ' ' + oz_before + 'oz' + ' (Total: ' + total_before + 'lbs)'
-        };
-
         // add bg weight difference indicator
         // in-between if there is a before and after
-        if(k !== 0) {
-            var el_after = $form.parent().find('.form-group').eq(k + 1);
-            if(el_after.length < 1) {
-                el_after = el;
-            }
-            var lb_after = el_after.find('.nb-lb').val();
-            var oz_after = el_after.find('.nb-oz').val();
-            var total_after = convertWeight(parseInt(lb_after, 10), parseInt(oz_after, 10));
+        var data = null;
+        var range_data = null;
+        var val = null;
+        var lb_before = null;
+        var oz_before = null;
+        var total_before = null;
+        var oz_after = null;
+        var total_after = null;
+        var next_date = null;
+        var start = null;
+        var end = null;
+        var _el = $(el);
+        var el_after = $form.parent().find('.form-group').eq(k + 1);
 
-            // Increase to next day for bg
-            var next_date = new Date(data.start);
-            next_date.setHours(24);
-            results.push({
-                start: fmt(data.start),
-                end: fmt(next_date),
-                type: 'background',
-                content: getContent(total_before, total_after),
-                className: getClass(total_before, total_after)
-            });
+        if(el_after.length === 0) {
+            // Reassign ranges if this is the last element
+            el_after = _el;
+            _el = $form.parent().find('.form-group').eq(k);
         }
+
+        lb_before = parseInt(_el.find('.nb-lb').val(), 10);
+        oz_before = parseInt(_el.find('.nb-oz').val(), 10);
+        total_before = convertWeight(lb_before, oz_before);
+
+        lb_after = parseInt(el_after.find('.nb-lb').val(), 10);
+        oz_after = parseInt(el_after.find('.nb-oz').val(), 10);
+        total_after = convertWeight(lb_after, oz_after);
+
+        start = _el.find('.nb-date').val();
+        end = el_after.find('.nb-date').val();
+
+        data = {
+            start: start,
+            content: fmtStr(lb_before, oz_before, total_before)
+        };
+        range_data = {
+            start: start,
+            end: end,
+            type: 'background',
+            content: getContent(total_before, total_after),
+            className: getClass(total_before, total_after)
+        };
+
+        results.push(range_data);
         results.push(data);
     }
 
@@ -84,19 +86,15 @@ var calc = (function(){
         return 'gained';
     }
 
-    function addData() {
+    function addData(e) {
+        e.preventDefault();
         $timeline.empty();
         results = [];
         // update data
         $form.find('.form-group').each(getData);
-        var options  = {zoomable: false, padding: 20};
+        var options  = {padding: 20};
         var data     = new vis.DataSet(results);
         var timeline = new vis.Timeline($timeline[0], data, options);
-    }
-
-    function generateResults(e) {
-        e.preventDefault();
-        addData();
     }
 
     function convertWeight(lbs, oz) {
@@ -121,12 +119,9 @@ var calc = (function(){
     }
 
     function init() {
-        $form.on('submit', generateResults);
+        $form.on('submit', addData);
         $add.on('click', addNewDate);
         $add.click();
-        if(DEBUG) {
-            $add.click();
-        }
     }
 
     return {
