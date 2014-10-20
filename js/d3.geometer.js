@@ -6,7 +6,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.6.2'
+    'version': '0.7.2'
 };
 
 d3_geometer.utils = {};
@@ -408,7 +408,7 @@ d3_geometer.nGon = function(group) {
         // @param {number} y - y position
         group.select('.ngon-labels')
         .append('text')
-        .attr('class', 'custom-label')
+        .classed('custom-label', true)
         .text(text)
         .attr('x', x || 0)
         .attr('y', y || 0);
@@ -422,6 +422,7 @@ d3_geometer.nGon = function(group) {
         .data(element.datum())
         .enter()
         .append('text')
+        .classed('label', true)
         .text(function(d){return d.label;})
         .attr('x', function(d){return d.x - (RADIUS + RADIUS / 2);})
         .attr('y', function(d){return d.y - (RADIUS + RADIUS / 2);});
@@ -435,6 +436,7 @@ d3_geometer.nGon = function(group) {
         .data(element.datum())
         .enter()
         .append('circle')
+        .classed('vertex', true)
         .attr('r', 0)
         .attr('cx', function(d){return d.x})
         .attr('cy', function(d){return d.y})
@@ -459,7 +461,8 @@ d3_geometer.nGon = function(group) {
         return _nGon;
     };
 
-    _nGon.drawAngle = function(deg, x, y) {
+    _nGon.drawAngle = function(deg, x, y, rotation) {
+        if(!rotation) rotation = 0;
         var _arc = d3.svg.arc()
         .innerRadius(ARC_I_RADIUS)
         .outerRadius(ARC_O_RADIUS)
@@ -468,7 +471,7 @@ d3_geometer.nGon = function(group) {
 
         group.select('.ngon-angles')
         .append('g')
-        .attr('transform', 'translate(' + x + ',' + y +')')
+        .attr('transform', 'translate(' + x + ',' + y +'), rotate(' + rotation + ')')
         .append('path')
         .attr('class', 'ngon-angle')
         .attr('stroke-width', STROKE_WIDTH / 2)
@@ -480,12 +483,34 @@ d3_geometer.nGon = function(group) {
         // add label
         group.select('.ngon-angles')
         .append('text')
-        .attr('class', 'ngon-angle-text')
+        .classed('ngon-angle-text', true)
         .attr('x', x + 5)
         .attr('y', y + 20)
         .attr('fill', 'black')
         .attr('font-size', 10)
         .text(Math.abs(deg) + '°');
+        return _nGon;
+    };
+
+    _nGon.drawPerimeterInteriorAngles = function() {
+
+        // Uses util function to get all interior angles
+        // on the outer perimeter and then draws it for each vertex
+        var deg = d3_geometer.utils.calculateAngles(_sides, true);
+        var vertices = d3.select('.ngon-vertices').selectAll('.vertex');
+        var angle_increment = 360 / _sides;
+        if(!vertices) throw new Error('Must apply vertices before angles are calculated.');
+        vertices.each(function(v, k){
+            // The angle arc may be the same length for all vertices,
+            // but the rotation for each one is different, and must be
+            // calculated by getting the standard inverse angle (360/sides)
+            // as well as the offset, calculated for each vertex, in a series
+            // based on the vertex order, starting at 90 and going in increments
+            // of @angle_increment.
+            var rotation_offset = k + (_sides / 2 - 0.5);
+            var aor = -angle_increment * rotation_offset;
+            _nGon.drawAngle(deg, v.x, v.y, aor);
+        });
         return _nGon;
     };
 
