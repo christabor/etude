@@ -6,7 +6,7 @@
 
 // Using semantic versioning. http://semver.org/
 var d3_geometer = {
-    'version': '0.7.2'
+    'version': '0.8.2'
 };
 
 d3_geometer.utils = {};
@@ -377,6 +377,16 @@ d3_geometer.nGon = function(group) {
         // One reason for keeping all elements
         // in a group is that it makes cleanup easier.
         group.selectAll('g').remove();
+    };
+
+    _nGon.sumTotalInteriorAngles = function() {
+        // Calculates the sum of all interior angles.
+        var res = 0;
+        var deg = d3_geometer.utils.calculateAngles(_sides, true);
+        d3.range(_sides).map(function(d){
+            return res += deg;
+        });
+        return res;
     };
 
     _nGon.getCoords = function(radius, sides) {
