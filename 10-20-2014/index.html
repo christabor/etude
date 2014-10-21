@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Etude - 10-20-2014</title>
+  <link href='../css/global.css' rel='stylesheet' type='text/css'>
+  <link href='../typey/jquery.typey.css' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 0;
+    color: #444;
+    margin: 0;
+  }
+  body:active * {
+    /*
+    disable annoying text selection on clicks
+    */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+  }
+  #viewer {
+    position: relative;
+    background-color: #e4e2ff;
+  }
+  #viewer:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #d8385a;
+  }
+  #viewer [data-typey-editable] {
+    position: relative;
+  }
+  #viewer [data-typey-editable] > .info {
+    display: none;
+    position: absolute;
+    top: -40px;
+  }
+  #viewer [data-typey-editable]:hover {
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  }
+  #viewer [data-typey-editable]:hover .info {
+    display: block;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1em 2em;
+  }
+  #viewer [data-typey-font-list] {
+    display: none;
+  }
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 80px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: 'Lato', 'Arial', sans-serif;
+    pointer-events: none;
+  }
+  section {
+    padding: 4em;
+  }
+  #intro {
+    font-family: 'Lato', 'Arial', sans-serif;
+    background-color: white;
+    font-size: 80%;
+    text-align: right;
+  }
+  #intro h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #viewer,
+  #load-more {
+    -webkit-transition: background-color, left 0.3s ease-out;  /* Saf3.2+, Chrome */
+    -moz-transition: background-color, left 0.3s ease-out;  /* FF4+ */
+    -ms-transition: background-color, left 0.3s ease-out;  /* IE10? */
+    -o-transition: background-color, left 0.3s ease-out;  /* Opera 10.5+ */
+    transition: background-color, left 0.3s ease-out;
+  }
+  #load-more {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    background-color: black;
+    color: white;
+    padding: 2em;
+  }
+  #viewer:hover #load-more {
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  #viewer .content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  @media handheld, screen and (max-width: 400px) {
+    #loader {
+      font-size: 14px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="loader"><img src="loader.GIF" alt=""> Loading...</div>
+  <section id="intro">
+    <h1>Experimenting with font metrics</h1>
+    <p class="lead">Font sizing and leading is automatically calculated using built-in font metrics.</p>
+    <p class="subdued">Font metric parsing provided by <a href="http://pomax.nihongoresources.com/pages/Font.js/">Font.js</a></p>
+  </section>
+  <section id="viewer">
+    <p id="load-more">LOAD MORE</p>
+    <div class="content">
+      <h1 data-typey-editable>
+        I am a heading - hear me roar.
+        <ul class="fonts" data-typey-font-list></ul>
+        <span class="info">...</span>
+      </h1>
+      <h2 data-typey-editable>
+        A platea ad a a commodo.
+        <ul class="fonts" data-typey-font-list></ul>
+        <span class="info">...</span>
+      </h2>
+      <h3 data-typey-editable>
+        Quis adipiscing ut aptent purus ligula suspendisse ante litora a mi egestas viverra ridiculus.
+        <ul class="fonts" data-typey-font-list></ul>
+        <span class="info">...</span>
+      </h3>
+      <h4 data-typey-editable id="para">
+        Bibendum hac fusce a a ultrices a a vestibulum cras ante venenatis lacus felis nulla.Ac aenean eu commodo vestibulum a magna sagittis consectetur a non eleifend eu lobortis dis a hac facilisis a scelerisque suspendisse porttitor facilisi.Vehicula elit primis adipiscing inceptos ullamcorper platea vestibulum a fames vel integer odio vestibulum a etiam eu pulvinar neque adipiscing ullamcorper habitant non at rutrum a facilisis scelerisque fermentum.Eu morbi eu fusce nostra nam cum sapien sagittis gravida pulvinar a felis rutrum vestibulum id convallis eu inceptos aliquet.
+        <ul class="fonts" data-typey-font-list></ul>
+        <span class="info">...</span>
+      </h4>
+    </div>
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../typey/jquery.typey.js"></script>
+  <script src="../js/vendor/Font.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="goldenFont.js"></script>
+</body>
+</html>
