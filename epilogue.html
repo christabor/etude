@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1">
+    <title>Etude - epilogue.</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/epilogue.css">
+    <link rel="stylesheet" href="css/template.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <p class="style-hollow">
+            <a class="btn btn-medium" href="index.html">&larr; Back</a>
+        </p>
+        <hr>
+        <h4>NLOC </h4>
+        <span class="subdued">(Number of lines of code)</span>
+        <p class="code">34,294</p>
+        <hr>
+        <h4>File names</h4>
+        <p><span class="loc">XX</span> = Lines of code</p>
+        <br>
+        <ul id="filenames" class="data-list"></ul>
+        <hr>
+        <h4>Libraries used</h4>
+        <ul id="libraries" class="data-list"></ul>
+        <hr>
+        <h4>Wisdom Upgrade</h4>
+        <ol>
+            <li>It's hard to do anything, <strong>especially</strong> write a program, once a day, for a year</li>
+            <li>JavaScript is so verbose (I already knew that)</li>
+            <li>Trying to force creative programming is both exhausting and exciting</li>
+            <li>Beyond discipline and learning, my motives evolved over time, and I learned about myself as a result</li>
+            <li>It is fun to do something for the sake of experimentation, but it's not always appropriate to do it in a language not designed for it.</li>
+            <li>I have really begun to appreciate long-term projects</li>
+            <li>HTML is basically unparseable</li>
+            <li>Python is so much more fun to use</li>
+            <li>Sometimes sketching an idea or implementation on paper makes all the difference in the world</li>
+            <li>Programming while falling asleep becomes a real time vampire</li>
+            <li>Ideas are easy, implementations are not</li>
+            <li>Math has amazing properties that are undervalued in programming</li>
+            <li>d3.js is pretty great</li>
+            <li>Visual programs are easy to demo, but do not always provide a useful challenge for continuing your programming skillset</li>
+            <li>The <a href="http://c2.com/cgi/wiki?ZeroOneInfinityRule">zero, one, infinity</a> rule is vital for maintainability</li>
+            <li>The right data structure makes all the difference in the world</li>
+            <li>You can do a lot in a short amount of time; put another way, <a href="http://en.wikipedia.org/wiki/Parkinson's_law">Parkinson's Law</a> is very real</li>
+            <li>The web needs better ways to syndicate and share data across websites (e.g. cross-domain, parsing, security, consistent representation)</li>
+            <li>You'll be amazed at what you can do when you put your mind to it</li>
+            <li>Declarative programming is the one-true-way to design APIs</li>
+            <li>... many more!?</li>
+        </ol>
+    </div>
+    <script src="js/vendor/d3.min.js"></script>
+    <script>
+    window.onload = function(){
+        d3.text('libs.txt', function(data){
+            data = data.split('\n');
+            d3.select('body').select('#libraries')
+            .selectAll('li')
+            .data(data)
+            .enter()
+            .append('li')
+            .html(function(d){
+                d = d.split('/');
+                return d[2];
+            });
+        });
+        d3.text('filenames.txt', function(data){
+            data = data.split('\n');
+            d3.select('body').select('#filenames')
+            .selectAll('li')
+            .data(data)
+            .enter()
+            .append('li')
+            .html(function(d){
+                d = d.split('/');
+                return [
+                ' <span class="loc">', d[0], '</span>',
+                ' <span class="subdued">',
+                d[1], ' ... </span> ', d[2]
+                ].join('');
+            });
+        });
+    };
+    </script>
+</body>
+</html>
