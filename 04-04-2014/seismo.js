@@ -15,7 +15,7 @@ var zagg = (function(){
     var oldy        = height / 2 + 10;
     var oldx        = 10;
     var $points     = document.getElementById('points');
-    var c_width     = width / max_canvas;
+    var c_width     = width / max_canvas - (max_canvas * 1);
 
     function addCanvas() {
         var temp_canvas = document.createElement('canvas');
