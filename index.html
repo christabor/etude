@@ -24,6 +24,10 @@
         <hr>
         <p class="subdued">All <strong>non external-library code</strong> released under Apache v2 license. See repo and license for details. Third-party libraries have different licenses, please see them for details.</p>
     </div>
+    <hr>
+    <p class="style-hollow">
+        <a href="#" class="btn hidden-mobile" id="toggle-bgs" target="_parent">Toggle backgrounds</a>
+    </p>
     <h4 class="year-title list-title">2013</h4>
     <ul class="days">
         <li class="month-title list-title">October</li>
@@ -1885,5 +1889,29 @@
             </a>
         </li>
     </ul>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var enabled = false;
+            function addImgBgs(e) {
+                e.preventDefault();
+                $('li').each(function(k, li){
+                    if(enabled) {
+                        return $(li).attr('style', '');
+                    }
+                    var img = $(li).find('a').attr('href');
+                    if(img) {
+                        img = img.replace('/index.html', '_cropped.png');
+                        $(li).css({
+                            'background': 'url(screenshots/' + img + ') no-repeat 0 0',
+                            'background-size': 'cover'
+                        }).toggleClass('bg-active');
+                    }
+                });
+                enabled = !enabled;
+            }
+            $('#toggle-bgs').on('click', addImgBgs);
+        });
+    </script>
 </body>
 </html>

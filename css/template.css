@@ -44,6 +44,14 @@ hr {
     padding-right: 30px;
     text-align: center;
 }
+#toggle-bgs {
+    margin: 0 auto;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+    border-width: 2px;
+    padding: 0.5em 1em;
+}
 #intro {
     padding: 40px 60px;
     width: 60%;
@@ -69,6 +77,7 @@ hr {
     min-width: 24%;
     float: left;
     position: relative;
+    border-radius: 5px;
 }
 .days li a {
     text-align: center;
@@ -208,6 +217,15 @@ a {
 .quotes {
     font-family: serif;
 }
+.bg-active a {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.bg-active a:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+.bg-active a:hover .date * {
+    opacity: 0;
+}
 .style-hollow .btn {
     -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
     -moz-transition: all 0.3s ease-out;  /* FF4+ */
@@ -248,6 +266,9 @@ a {
     }
 }
 @media handheld, only screen and (max-width: 600px) {
+    .hidden-mobile {
+        display: none;
+    }
     #intro {
         width: 100%;
         font-size: 120%;
